@@ -7,11 +7,17 @@ Welcome to my site! I use this space to organize my personal and professional li
 
 ![Headshot](assets/img/headshot.jpg)
 
-# Mathematics
+# Professional
+
+## Mathematics
 
 * [Teaching](teaching/)
 * [Research](research/)
 * [Coursework](coursework/)
+
+## Other
+
+* Resume
 
 ---
 
