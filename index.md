@@ -17,7 +17,7 @@ Welcome to my site! I use this space to organize my personal and professional li
 
 ## Other
 
-* Resume
+* [Curriculum Vitae](cv/)
 
 ---
 
