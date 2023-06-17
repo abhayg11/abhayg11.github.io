@@ -1,0 +1,41 @@
+
+\documentclass[12pt]{exam}
+\input{../tmpl/packages.tex}
+\input{../tmpl/defs.tex}
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{Vakil - The Rising Sea} & \textbf{Name:} & Abhay Goel \\
+\textbf{Solutions} & \textbf{Last updated:} & \today \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+\section*{Chapter 1}
+
+\mtexe{1.2.A}
+\begin{proof}
+	The two notions can be identified. Indeed, given a group $G$ in the usual sense, define a category with a single object $X$, and for each $g \in G$, define a morphism $f_g : X \to X$. Further, for two morphisms $f_g,f_h$, define composition by $f_g \circ f_h = f_{gh}$. This gives a 1-object groupoid, since each morphism is an isomorphism: the morphism $f_g$ has inverse $f_{g^{-1}}$.
+	
+	Conversely, given a 1-object groupoid, the set of morphisms on that one object forms a group. \\
+	
+	On the other hand, there are clearly groupoids that aren't groups, e.g. a category with two objects and only the identity morphisms on those objects.
+\end{proof}
+
+\mtexe{1.2.B}
+\begin{proof}
+	The identity morphism is invertible, with itself as left- and right-inverse. The composition of two invertible morphisms is again invertible, since $(f \circ g) \circ (g^{-1} \circ f^{-1}) = \id$. Finally, the inverse of an invertible morphism is invertible. So, the set of invertible morphisms forms a group under composition. \\
+	
+	Given a set $X$, the automorphisms of $X$ in the category of sets is the set of bijections $f : X \to X$, i.e. the automorphism group is $S_X$, the symmetric group on $X$. The automorphisms of a vector space in $Vec_k$ are the automorphisms in the usual sense in linear algebra. \\
+	
+	Finally, if $A$ and $B$ are isomorphic objects, with an isomorphism $f : A \to B$, then for an automorphism $\phi : A \to A$, the morphism $f \circ \phi \circ f^{-1}$ is an automorphism of $B$, with inverse $f \circ \phi^{-1} \circ f^{-1}$. So, this association gives an isomorphism of automorphism groups.
+\end{proof}
+
+\mtexe{1.2.C} Skipped upon recommendation
+
+\mtexe{1.2.D} Skipped upon recommendation
+
+\end{document}
