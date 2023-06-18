@@ -5,7 +5,7 @@ title: Home
 
 Welcome to my site! I use this space to organize my personal and professional life.
 
-![Headshot](assets/img/headshot.jpg)
+![Headshot](assets/img/headshot.jpg)  
 (Photo: Yasi Shaker)
 
 I am a mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [Dr. Federico Ardila](https://fardila.com) and restate them here...
