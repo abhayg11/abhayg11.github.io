@@ -38,4 +38,52 @@
 
 \mtexe{1.2.D} Skipped upon recommendation
 
+\mtexe{1.3.A}
+\begin{proof}
+	Let $A,B$ both be initial objects in some category. Then, since $A$ is initial, there is a morphism $f : A \to B$, and since $B$ is initial, there is a morphism $g : B \to A$. Then $\id_A$ and $g \circ f$ are both morphisms $A \to A$, but since $A$ is initial, there is a unique such morphism, so $g \circ f = \id_A$. Similarly, $f \circ g = \id_B$. So, $f$ and $g$ are isomorphisms. Further, this isomorphism is unique since any isomorphism $A \to B$ is firstly a morphism, and there is a unique such morphism since $A$ is initial.
+	
+	The case of final objects is identical. In fact, this proof already shows it by noting that an object is final in a category if and only if it is initial in the opposite category.
+\end{proof}
+
+\mtexe{1.3.B}
+\begin{proof}[Solution]
+	The initial object in $Sets$ is the empty set, since there is a unique map from the empty set to any other set. The final object in $Sets$ is any set with a single element, since there is a unique map from any set to this set. Note that specifying which single-element set is irrelevant, since any two such sets are uniquely isomorphic as sets. \\
+	
+	The initial object in $Rings$ is $\ZZ$ (recall we are only considering commutative rings with unity and morphisms that preserve unities), since there is a unique morphism given by mapping $1$ to $1 \in R$ for a given ring $R$. The final object is the zero ring. \\
+	
+	$Top$ is the ``same'' as set: the initial object is the empty space and the final object is a single-point space, since there is a unique continuous map in each case. \\
+	
+	Given a set $S$, the poset category of subsets of $S$ has $\emptyset$ as an initial object since it is a subset of each other subset of $S$, and it has $S$ as a final object. If $S$ is a topological space and we consider the poset category of open subsets of $S$, the initial and final objects are the same.
+\end{proof}
+
+\mtexe{1.3.C}
+\begin{proof}
+	In one direction, suppose $s \in S$ is a zerodivisor, so that there is some nonzero $x \in A$ with $sx = 0$. Then, since $s(1 \cdot x - 1 \cdot 0)$, we get that $x/1 = 0/1$ in $S^{-1}A$. So, $x$ is in the kernel of the map $A \to S^{-1}A$ and it isn't injective.
+	
+	Conversely, suppose this map isn't injective. Then, there is some nonzero element $x$ in the kernel, so that $x/1 = 0/1$. I.e. there is some $s \in S$ with $s(1 \cdot x - 1 \cdot 0) = 0$, i.e. $sx = 0$, whence $s$ is a zerodivisor.
+\end{proof}
+
+\mtexe{1.3.D}
+\begin{proof}
+	First, note that $A \to S^{-1}A$ has the property that all elements of $S$ are mapped to invertible elements, since for $s \in S$, the image is $s/1$, which has inverse $1/s \in S^{-1}A$. Now we want to see that it is initial with respect to this property. So, let $f : A \to B$ be a morphism with each element of $S$ mapping to an invertible element of $B$. Then, we'd like to define a factorization through $S^{-1}A$. Define:
+	\[ g(a/s) = f(a)f(s)^{-1} \]
+	First, note that this definition makes sense, since for each $s \in S$, $f(s)$ is invertible and so $f(s)^{-1}$ exists. Second, we want to see that it is well-defined. So, suppose $a/s = b/t$, so that there is some $r \in S$ with $r(ta-sb) = 0$. Then,
+	\[ 0 = f(r(ta-sb)) = f(r)(f(t)f(a)-f(s)f(b)) \]
+	Since $f(r)$ is invertible, we can cancel it, and then multiplying by the inverses of $f(t)$ and $f(s)$ gives:
+	\[ f(a)f(s)^{-1} = f(b)f(t)^{-1} \]
+	so that $g$ is well-defined. Finally, we want to see it is a ring homomorphism. First, we have $g(1/1) = f(1)f(1)^{-1} = 1$. Second, if $a/s,b/t \in S^{-1}A$, then
+	\[ g(a/s+b/t) = g((at+bs)/(st)) = f(at+bs)f(st)^{-1} = f(a)f(s)^{-1}+f(b)f(t)^{-1} = g(a/s)+g(b/t) \]
+	and
+	\[ g((a/s)(b/t)) = g((ab)/(st)) = f(ab)f(st)^{-1} = f(a)f(b)f(s)^{-1}f(t)^{-1} = g(a/s)g(b/t) \]
+	as desired. Thus $g$ is a ring homomorphism. Penultimately, we show it factors $f$. Let $\iota : A \to S^{-1}A$ be the canonical map. Then, for $a \in A$,
+	\[ g(\iota(a)) = g(a/1) = f(a)f(1)^{-1} = f(a) \]
+	so that $f = g \circ \iota$ as desired. To finally finish, we need to see that $g$ is unique. So, suppose we have another ring homomorphism $h : S^{-1}A \to B$ with $f = h \circ \iota$. Then, let $a/s \in S^{-1}A$. We have
+	\[ h(a/s) = h((a/1)(1/s)) = h(a/1)h(1/s) = h(a/1)h(s/1)^{-1} = h(\iota(a))h(\iota(s))^{-1} = f(a)f(s)^{-1} = g(a/s) \]
+	so that $h = g$. This completes the proof that $S^{-1}A$ is initial among such rings. \\
+	
+	We address the ``furthermore.'' Let $M$ be an $S^{-1}A$-module. Then, it is also an $A$-module via $a \cdot m = (a/1) \cdot m$ for $a \in A$ and $m \in M$ (restriction of scalars). For $s \in S$, multiplication by $s$ is an isomorphism of $M$ since it has inverse given by multiplication by $1/s$.
+	
+	Conversely, suppose $M$ is an $A$ module such that multiplication by $s$ is an automorphism of $M$ for all $s \in S$. For $x \in A$, let $\varphi(x) : M \to M$ denote multiplication by $x$, and let $R' = \varphi(A)$ be the image of $A$ in the endomorphism ring of $M$. Then $R'$ is a commutative ring with unity, and an application of Zorn's Lemma gives a maximal subring $R$ of the endomorphism ring of $M$ containing $R'$. Then, $\varphi : A \to R$ and each element of $S$ maps to an invertible element of $R$, so this factors as a map from $S^{-1}A$, i.e. we get a map from $S^{-1}A$ into the endomorphism ring of $M$, i.e. $M$ is an $S^{-1}A$-module.
+\end{proof}
+
 \end{document}

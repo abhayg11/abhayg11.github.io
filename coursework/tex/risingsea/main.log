@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  16 JUN 2023 23:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  17 JUN 2023 12:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1036,22 +1036,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
 [1
 
 {C:/Users/12698/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+[2] [3]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25715 strings out of 478338
- 488518 string characters out of 2836700
- 768395 words of memory out of 3000000
+ 25717 strings out of 478338
+ 488530 string characters out of 2836700
+ 774395 words of memory out of 3000000
  43700 multiletter control sequences out of 15000+600000
  482642 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,6n,92p,437b,460s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 89i,6n,92p,687b,525s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
 kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
 ine/lbtn_oexx6f.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
@@ -1067,10 +1087,11 @@ blic/amsfonts/cm/cmr6.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmr8.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/12698/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/12698/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (1 page, 295750 bytes).
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/12698/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (3 pages, 324046 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 3 named destinations out of 1000 (max. 500000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 5 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
