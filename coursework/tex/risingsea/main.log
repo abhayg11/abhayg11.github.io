@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  17 JUN 2023 12:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  19 JUN 2023 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1058,20 +1058,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
 
-[2] [3]
+[2]
+Overfull \hbox (2.80608pt too wide) detected at line 99
+[] \OT1/cmr/m/n/12 + [] = [] + [] = [] = [] = [] + [] = [] + []
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
+
+ []
+
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+[7]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25717 strings out of 478338
- 488530 string characters out of 2836700
- 774395 words of memory out of 3000000
- 43700 multiletter control sequences out of 15000+600000
+ 25907 strings out of 478338
+ 493061 string characters out of 2836700
+ 780401 words of memory out of 3000000
+ 43886 multiletter control sequences out of 15000+600000
  482642 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,6n,92p,687b,525s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 89i,15n,92p,687b,1038s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
 kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
 ine/lbtn_oexx6f.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
@@ -1079,19 +1099,22 @@ ps/libertine/lbtn_lyu3x3.enc}<C:/Users/12698/AppData/Local/Programs/MiKTeX/font
 s/type1/public/libertine/LinLibertineT.pfb><C:/Users/12698/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/12698/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Us
-ers/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.p
+ers/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.p
 fb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr12.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/12698/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/12698/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/12698/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (3 pages, 324046 bytes).
+/cmmi12.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/12698/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/12698/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/12698/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/12698/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/12
+698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb>
+Output written on main.pdf (7 pages, 382636 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
