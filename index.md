@@ -46,7 +46,9 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 
 ## Dancing
 
-TBD
+Note: much of the music behind the dances is mixed, recorded, and performed by other artists.
+
+* Living Traditions 2023: [Remix](https://youtu.be/eMaFJ0GUA7Y) \| [Live dhol](https://youtu.be/Y2OWHEJIoe4)
 
 ## Programming
 
