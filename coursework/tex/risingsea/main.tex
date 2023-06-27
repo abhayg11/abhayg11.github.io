@@ -201,6 +201,59 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	Now, we give $B \otimes_A C$ a ring structure by defining the product of simple tensors by $(b \otimes c)(b' \otimes c') = (bb') \otimes (cc')$ and extending linearly. Since the definition is via linear extension, we immediately get that the product distributes over addition. Further, commutativity and associativity of multiplication follow from commutativity and associativity in each factor. Finally, $1 \otimes 1$ is the unity, so indeed we have a ring structure.
 \end{proof}
 
+\mtexe{1.3.L}
+\begin{proof}
+	Consider the map $\tilde{f} : S^{-1}A \times M \to S^{-1}M$ by $(a/s,m) \mapsto (am)/s$. This is $A$-bilinear, so we get a map $f : S^{-1}A \otimes_A M \to S^{-1}M$. Conversely, consider the map $\tilde{g} : M \to S^{-1}A \otimes_A M$ by $m \mapsto 1 \otimes m$. Then $S$ acts invertibly on the codomain, so this map factors through $g : S^{-1}M \to S^{-1}A \otimes_A M$. I claim this gives our isomorphism(s).
+	
+	Indeed, for $m/s \in S^{-1}M$, we have
+	\[ f(g(m/s)) = f(g(m/1)/s)= f(\tilde{g}(m)/s) = f((1 \otimes m)/s) = f((1/s) \otimes m) = (1m)/s = m/s \]
+	so $f \circ g$ is the identity on $S^{-1}M$. For $a/s \otimes m \in S^{-1}A \otimes_A M$, we have:
+	\[ g(f(a/s \otimes m)) = g((am)/s) = g(am/1)/s = (1 \otimes am)/s = a(1 \otimes m)/s = (a \otimes m)/s = (a/s) \otimes m \]
+	so $g \circ f$ is the identity on simple tensors, and hence on the full domain. So, the maps are mutual inverses. They are both $A$-module and $S^{-1}A$-module homomorphisms, so the two are isomorphic as both $A$- and $S^{-1}A$-modules.
+\end{proof}
+
+\mtexe{1.3.M}
+\begin{proof}
+	Let $P = \bigoplus_i N_i$. We wish to show that $M \otimes P \cong \bigoplus_i (M \otimes N_i)$. So, we should show that $M \otimes P$ satisfies the universal property of the direct sum. First, we need inclusion maps. Note that for each $i$, we have an inclusion map $f_i : N_i \to P$. So, we get a map $\id_M \otimes f_i : M \otimes N_i \to M \otimes P$. These are the proposed inclusions.
+	
+	To show that it satisfies the universal property, suppose that we have an $A$-module $Q$ and morphisms $g_i : M \otimes N_i \to Q$ for each $i$. For each $i$ and $m \in M$, we get a map $\varphi_{m,i} : N_i \to Q$ by $n \mapsto g_i(m \otimes n)$, each of which is an $A$-module homomorphism. So, by the universal property of $P$, we get a unique morphism $\varphi_m : P \to Q$ with $\varphi_m \circ f_i = \varphi_{m,i}$. Now, I claim $\varphi : M \times P \to Q$ given by $(m,p) \mapsto \varphi_m(p)$ is $A$-bilinear. The $A$-linearity in $P$ is obvious, since each $\varphi_m$ is $A$-linear. Then, for $a,b \in A$, $\ell,m \in M$, an index $i$, and $n \in N_i$ we have:
+	\begin{align*}
+	\varphi_{a\ell+bm,i}(n)
+		&= g_i((a\ell+bm) \otimes n) \\
+		&= ag_i(\ell \otimes n)+bg_i(m \otimes n) \\
+		&= a\varphi_{\ell,i}(n)+b\varphi_{m,i}(n) \\
+		&= (a\varphi_\ell+b\varphi_m)(f_i(n)) \\
+		&= ((a\varphi_\ell+b\varphi_m) \circ f_i)(n)
+	\end{align*}
+	So, $a\varphi_\ell+b\varphi_m : P \to Q$ satisfies the unique property of $\varphi_{a\ell+bm}$, i.e. they must be equal. This gives linearity in the first coordinate:
+	\[ \varphi(a\ell+bm,p) = \varphi_{a\ell+bm}(p) = (a\varphi_\ell+b\varphi_m)(p) = a\varphi_\ell(p)+b\varphi_m(p) = a\varphi(\ell,p)+b\varphi(m,p) \]
+	So, $\varphi$ factors as a morphism $h : M \otimes P \to Q$ with $h(m \otimes p) = \varphi(m,p)$ for all $m \in M$ and $p \in P$.
+	
+	Finally, we claim that $g_i = h \circ (\id_M \otimes f_i)$ for each $i$. It suffices to show this on simple tensors. So, let $m \in M$ and $n \in N_i$. Then,
+	\[ (h \circ (\id_M \otimes f_i))(m \otimes n) = h(m \otimes f_i(n)) = \varphi(m, f_i(n)) = \varphi_m(f_i(n)) = \varphi_{m,i}(n) = g_i(m \otimes n) \]
+	as claimed.
+	
+	To finish the proof of the universal property, we want to show that $h$ is uniquely determined. Suppose $h' : M \otimes P \to Q$ with $h' \circ (\id_M \otimes f_i) = g_i$ for all $i$. For $m \in M$, define $h'_m : P \to Q$ by $h'_m(p) = h'(m \otimes p)$. For each $m \in M$, index $i$, and $n \in N_i$, we have:
+	\[ h'_m(f_i(n)) = h'(m \otimes f_i(n)) = (h' \circ (\id_M \otimes f_i))(m \otimes n) = g_i(m \otimes n) = \varphi_{m,i}(n) \]
+	So $h'_m$ satisfies the unique property of $\varphi_m$, i.e. $h'_m = \varphi_m$. So, for each $m \in M$ and $p \in P$, we have:
+	\[ h'(m \otimes p) = h'_m(p) = \varphi_m(p) = \varphi(m,p) = h(m \otimes p) \]
+	and since they agree on simple tensors, they agree everywhere: $h' = h$. This completes the proof.
+\end{proof}
+
+\mtexe{1.3.N}
+\begin{proof}
+	We have the projection maps $\pi_1,\pi_2$ from $X \times_Z Y$ to each of $X$ and $Y$, and the square commutes by definition, since for $(x,y) \in X \times_Z Y$, we have $\alpha(\pi_1(x,y)) = \alpha(x) = \beta(y) = \beta(\pi_2(x,y))$.
+	
+	Further, it is initial with respect to this property. Indeed, let $S$ be any set with maps $f : S \to X$ and $g : S \to Y$ with $\alpha \circ f = \beta \circ g$. Then, define $F : S \to X \times_Z Y$ by $F(s) = (f(s),g(s))$. This indeed has the stated codomain since for all $s \in S$, $\alpha(f(s)) = \beta(g(s))$, so $(f(s),g(s)) \in X \times_Z Y$. Further, $F$ factors through the projections, since $\pi_1(F(s)) = \pi_1(f(s),g(s)) = f(s)$ and $\pi_2(F(s)) = \pi_2(f(s),g(s)) = g(s)$. I.e. $f = \pi_1 \circ F$ and $g = \pi_2 \circ F$.
+	
+	Finally, $F$ is unique, for if $G : S \to X \times_Z Y$ satisfies $f = \pi_1 \circ G$ and $g = \pi_2 \circ G$, then for each $s \in S$, we have $G(s) = (f(s),g(s)) = F(s)$, so $G = F$.
+\end{proof}
+
+\mtexe{1.3.O}
+\begin{proof}
+	Given two open subsets $U,V$ of $X$, the union $U \cup V$ is the fiber product.
+\end{proof}
+
 \mtexe{1.3.}
 \begin{proof}
 \end{proof}
