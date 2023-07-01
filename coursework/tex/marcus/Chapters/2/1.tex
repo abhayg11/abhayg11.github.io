@@ -1,0 +1,10 @@
+\mtexe{2.1} 
+\begin{proof}
+    Suppose $K$ is a degree two extension of $\QQ$. Then, pick any $x \in K \setminus \QQ$. We have that $\QQ \subseteq \QQ(x) \subseteq K$, but $[\QQ(x):\QQ] \neq 1$, so $\QQ(x) = K$. So, $K$ is obtained by adding a root of a (monic) degree two polynomial to $\QQ$. If this polynomial is $t^2+ax+b$, then completing the square gives the polynomial
+    \[ (t-a/2)^2 + b-a^2/4 \]
+    and so $K = \QQ(\sqrt{b-a^2/4})$. Clearing denominators, we have that $K = \QQ(\sqrt{m})$, where $b-a^2/4 = m/n^2$ for some $n \in \ZZ$. \\
+
+    Now, suppose $m,n \in \ZZ$ are squarefree (and not equal to 1). If $\QQ(\sqrt{m}) = \QQ(\sqrt{n})$, then there are $a,b \in \QQ$ with $\sqrt{n} = a + b\sqrt{m}$. Squaring gives
+    \[ n = a^2 + mb^2 + 2ab\sqrt{m} \]
+    By unique representations in $\QQ(\sqrt{m})$, we must therefore have $n = a^2+mb^2$ and $2ab = 0$. If $b = 0$, then this is a contradiction, since we get $n=a^2$, but $n$ is squarefree. So, $b \neq 0$, and so $a=0$, which gives $n = mb^2$. Since $n$ is squarefree, we must thus have $b = \pm 1$, and so $n = m$. In other words, the fields $\QQ(\sqrt{n})$ are distinct for $n$ squarefree.
+\end{proof}

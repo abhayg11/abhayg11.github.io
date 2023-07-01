@@ -1,0 +1,11 @@
+\mtexe{1.29}
+\begin{proof}
+    We compute blindly:
+    \begin{align*}
+    (1&+\omega^2+\omega^4+\omega^5+\omega^6+\omega^{10}+\omega^{11})(1+\omega+\omega^5+\omega^6+\omega^7+\omega^9+\omega^{11}) \\
+        &= 1+\omega+\omega^2+\omega^3+\omega^4+3\omega^5+3\omega^6+3\omega^7+\omega^8+3\omega^9+3\omega^{10}+7\omega^{11} \\
+        &\hspace{2em} +3\omega^{12}+3\omega^{13}+\omega^{14}+3\omega^{15}+3\omega^{16}+3\omega^{17}+\omega^{18}+\omega^{19}+\omega^{20}+\omega^{21}+\omega^{22} \\
+        &= 2\omega^5+2\omega^6+2\omega^7+2\omega^9+2\omega^{10}+6\omega^{11}+2\omega^{12}+2\omega^{13}+2\omega^{15}+2\omega^{16}+2\omega^{17}
+    \end{align*}
+    which is divisible by 2 in $\ZZ[\omega]$. On the other hand, $1,\omega,\ldots,\omega^{21}$ is a basis for $\QQ(\omega)$ over $\QQ$, so each factor is not divisible by 2 since the coefficients aren't.
+\end{proof}

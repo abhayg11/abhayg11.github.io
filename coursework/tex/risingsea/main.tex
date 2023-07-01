@@ -254,6 +254,56 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	Given two open subsets $U,V$ of $X$, the union $U \cup V$ is the fiber product.
 \end{proof}
 
+\mtexe{1.3.P}
+\begin{proof}
+	Let $Z$ be the final object, $X,Y$ be arbitrary, and let $F = X \times_Z Y$ and $P = X \times Y$. For each object $W$, let $f_W : W \to Z$ denote the unique morphism from $W$ to $Z$ guaranteed by $Z$ being final. Then, note that we have projections $\pi_X : P \to X$ and $\pi_Y : P \to Y$, so we can compose to get morphisms $f_X \circ \pi_X : P \to Z$ and $f_Y \circ \pi_Y : P \to Z$. Since there is a unique morphism to $Z$ from any given object, we have
+	\[ f_X \circ \pi_X = f_P = f_Y \circ \pi_Y \]
+	But then, the universal property of $F$ as the fiber product tells us that the maps from $P$ factor through $F$. I.e. we have a map $g : P \to F$ with $\pi_X = p_X \circ g$ and $\pi_Y = p_Y \circ g$, where $p_X : F \to X$ and $p_Y : F \to Y$ are the fibered projections.
+	
+	Conversely, the maps $p_X$ and $p_Y$ factor through $P$, since it is final with respect to having maps to $X$ and $Y$. I.e. there is a morphism $h : F \to P$ with $p_X = \pi_X \circ h$ and $p_Y = \pi_Y \circ h$.
+	
+	Then, we claim $g,h$ are inverses. First, note that
+	\[ \pi_X \circ (h \circ g) = p_X \circ g = \pi_X \text{ and } pi_Y \circ (h \circ g) = p_Y \circ g = \pi_Y \]
+	But there is a unique map $P \to P$ that factors $\pi_X,\pi_Y$ through themselves by definition of the product, and the identity map also satisfies this constraint. I.e. $h \circ g = \id_P$. Second, we have:
+	\[ p_X \circ (g \circ h) = \pi_X \circ h = p_X \text{ and } p_Y \circ (g \circ h) = \pi_Y \circ h = p_Y \]
+	and again, the definition of the fiber product says that there is a unique map $F \to F$ that factors in this way, namely $\id_F$, so $g \circ h = \id_F$.
+\end{proof}
+
+\mtexe{1.3.Q}
+\begin{proof}
+	To avoid overly cumbersome notation, we will denote the depicted arrows by $f_{AB} : A \to B$ for each of the seven pairs $A,B$ in the diagram. Now, we'd like to show the overall square is Cartesian, so let $T$ be an object with morphisms $g : T \to Y$ and $h : T \to V$ such that $f_{YZ} \circ g = (f_{XZ} \circ f_{VX}) \circ h$. Reparenthesizing gives $f_{YZ} \circ g = f_{XZ} \circ (f_{VX} \circ h)$, and so by the fact that $W$ is the fiber product along $f_{XZ}$ and $f_{YZ}$, we get a unique morphism $j : T \to W$ with $g = f_{WY} \circ j$ and $f_{VX} \circ h = f_{WX} \circ j$.
+	
+	But this equation gives maps of $T$ into the Cartesian diagram with product $U$. I.e. it further gives a unique map $m : T \to U$ with $h = f_{UV} \circ m$ and $j = f_{UW} \circ m$. Finally, this gives the overall factorization we needed, since:
+	\[ (f_{WY} \circ f_{UW}) \circ m = f_{WY} \circ j = g \text{ and } f_{UV} \circ m = h \]
+	as desired. Further, such a map is uniquely determined by uniqueness of $j,m$ in the construction (I've omitted the details, but its a further diagram chase).
+\end{proof}
+
+\mtexe{1.3.R}
+\begin{proof}
+	Note that it suffices to describe the dashed morphisms in the below diagram
+	\[ \begin{tikzcd} X_1 \times_Y X_2 \arrow[dashed]{r}{} \arrow[dashed]{d}{} & X_1 \arrow{d}{} \\ X_2 \arrow{r}{} & Z \end{tikzcd} \]
+	that make it commute, where the maps to $Z$ are the compositions $X_i \to Y \to Z$. But this is obvious; take the dashed maps to be the projections $X_1 \times_Y X_2 \to X_i$, and note that the diagram commutes since the maps $X_1 \times_Y X_2 \to X_i \to Y$ are independent of $i$, and we've simply composed these with the map $Y \to Z$.
+\end{proof}
+
+\mtexe{1.3.S}
+\begin{proof}
+	For notation, let $f_i : X_i \to Y$ and $g : Y \to Z$ be the given maps, let $P_Y = X_1 \times_Y X_2$, and let $P_Z = X_1 \times_Z X_2$. Now, suppose we have an object $A$ with morphisms $r : A \to P_Z$ and $s : A \to Y$ making the appropriate square commute. Then, expanding out the morphisms, we have a (large) commutative diagram:
+	\[ \begin{tikzcd} Y \arrow[bend right]{ddddrrr}{\id_Y} \arrow[bend left]{dddrrrr}{\id_Y} \arrow[bend right, dotted]{dddrrr}{} \\ & A \arrow{ul}{s} \arrow{dr}{r} \\ & & P_Z \arrow{r}{p_1} \arrow{d}{p_2} \arrow{dr}{} & X_1 \arrow{dr}{f_1} \\ & & X_2 \arrow{dr}{f_2} & Y \times_Z Y \arrow{r}{} \arrow{d}{} & Y \arrow{d}{g} \\ & & & Y \arrow{r}{g} & Z \end{tikzcd} \]
+	(The one arrow is dotted for legibility, rather than existence or some other mathematical reason). In particular, we see that the commutative square is the top-left of this diagram, with the two compositions from $A$ to $Y \times_Z Y$. We can see, by inspection, two morphisms $h_i : A \to X_i$, namely the compositions $p_i \circ r$. To get a morphism $A \to P_Y$, we want to show that further composing each with $f_i$ give the same map overall. But again, the diagram shows $f_i \circ h_i = \id_Y \circ s = s$, so they are indeed the same map. So, we get a unique map $t : A \to P_Y$ making the following commute:
+	\[ \begin{tikzcd} A \arrow[bend left]{ddrrr}{h_1} \arrow{dr}{t} \arrow[bend right,swap]{dddrr}{h_2} \\ & P_Y \arrow[bend left]{drr}{} \arrow[bend right]{ddr}{} \arrow{dr}{u} \\ & & P_Z \arrow{d}{p_2} \arrow{r}{p_1} & X_1 \arrow{d}{f_1} \\ & & X_2 \arrow{r}{f_2} & Y \arrow{dr}{g} \\ & & & & Z \end{tikzcd} \]
+	Note that we've added in the morphism $u$ from the previous problem since it appears along the top of the magic diagram and we need to argue about it. Indeed, we first should show that $u \circ t = r$. But for this, note that
+	\[ p_i \circ (u \circ t) = h_i = p_i \circ r \]
+	Since $P_Z$ is the fiber product, we have a unique morphism $A \to P_Z$ that factors in this way through both $p_i$, and so this gives $u \circ t = r$. Then, also, we get that the leftmost morphism in the magic diagram is $f_i \circ p_i \circ u$ for either $i$, and so
+	\[ (f_i \circ p_i \circ u) \circ t = f_i \circ p_i \circ r = f_i \circ h_i = s\]
+	as desired. In other words, the following commutes:
+	\[ \begin{tikzcd} A \arrow[bend left]{drr}{r} \arrow[bend right]{ddr}{s} \arrow{dr}{t} \\ & P_Y \arrow{r}{u} \arrow{d}{f_i \circ p_i \circ u} & P_Z \arrow{d}{} \\ & Y \arrow{r}{} & Y \times_Z Y \end{tikzcd} \]
+	which is the morphism we want for this diagram to be Cartesian.
+	
+	Finally, we want that $t$ is unique, i.e. if we have another morphism $t' : A \to P_Y$ with $r = u \circ t'$ and $s = (f_i \circ p_i \circ u) \circ t$, then we want to show $t' = t$. But the definition of $t$ was the unique map $A \to P_Y$ with $h_i = (p_i \circ u) \circ t$ for each $i$, while:
+	\[ (p_i \circ u) \circ t' = p_i \circ r = (p_i \circ u) \circ t \]
+	so that $t'$ also satisfies the criteria. I.e. $t = t'$, and so we've shown a unique map $A \to P_Y$ making the above commute. In other words, $P_Y$ is the fiber product of $P_Z \to Y \times_Z Y$ and $Y \to Y \times_Z Y$.
+\end{proof}
+
 \mtexe{1.3.}
 \begin{proof}
 \end{proof}

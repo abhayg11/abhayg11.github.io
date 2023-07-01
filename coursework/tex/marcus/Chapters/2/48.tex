@@ -1,0 +1,71 @@
+\mtexe{2.48} 
+\begin{proof} ${}$
+\begin{enumerate}
+\item
+    Let $g(x) = f(x-a/3)$. I.e.,
+    \begin{align*}
+    g(x)
+        &= (x-a/3)^3 + a(x-a/3)^2 + b(x-a/3) + c \\
+        &= x^3 + (3(-a/3)+a)x^2 + (3(-a/3)^2-2a(a/3)+b)x + f(-a/3) \\
+        &= x^3 - (d^2/3)x + f(-a/3)
+    \end{align*}
+    Now, let $\alpha_1,\alpha_2,\alpha_3$ denote the roots of $f$. Then $g$ is also irreducible over $\QQ$ with roots $\alpha_i+a/3$. Then,
+    \begin{align*}
+    \disc(\alpha)
+        &= \prod_{1 \leq r < s \leq 3} (\alpha_r-\alpha_s)^2 \\
+        &= \prod_{1 \leq r < s \leq 3} [(\alpha_r+a/3)-(\alpha_s+a/3)]^2 \\
+        &= \disc(\alpha+a/3) \\
+        &= -N(g'(\alpha+a/3))
+    \end{align*}
+    So, we compute $g'$:
+    \[ g'(x) = 3x^2 - d^2/3 \]
+    I.e.
+    \begin{align*}
+    \disc(\alpha)
+        &= -N(g'(\alpha+a/3)) \\
+        &= -N(3(\alpha+a/3)^2-d^2/3) \\
+        &= -\prod_{i=1}^3 \left(3\left(\alpha_i+\frac{a}{3}\right)^2-\frac{d^2}{3}\right) \\
+        &= -27\prod_{i=1}^3 \left(\alpha_i+\frac{a}{3}-\frac{d}{3}\right)\left(\alpha_i+\frac{a}{3}+\frac{d}{3}\right) \\
+        &= -27\prod_{i=1}^3 \left(\frac{-a+d}{3}-\alpha_i\right)\left(\frac{-a-d}{3}-\alpha_i\right) \\
+        &= -27f\left(\frac{-a+d}{3}\right)f\left(\frac{-a-d}{3}\right)
+    \end{align*}
+    as claimed.
+
+\item
+    The same proof above still works for $d \not\in \QQ$. Namely, the only time we use $d$ (as opposed to $d^2$) is in the final step, which is only a computation and does not rely on $d \in \QQ$.
+
+\item
+    We consider $xg'(x)$ modulo $g(x)$:
+    \[ xg'(x) = 3x^3 - \frac{d^2}{3}x \equiv 3\left(\frac{d^2}{3}x-f(-a/3)\right)-\frac{d^2}{3}x = \frac{2d^2}{3}x-3f\left(-\frac{a}{3}\right) \pmod{g(x)} \]
+    Note that the RHS has root $\frac{9f(-a/3)}{2d^2}$. So, by exercise (2.46):
+    \begin{align*}
+    \disc(\alpha)
+        &= (-1)^9\frac{\left(\frac{2d^2}{3}\right)^3g\left(\frac{9f(-a/3)}{2d^2}\right)}{g(0)} \\
+        &= -\frac{8(a^2-3b)^3}{27f(-a/3)}f\left(\frac{9}{2(a^2-3b)}(-a^3/27+a^3/9-ab/3+c)-\frac{a}{3}\right) \\
+        &= \frac{8(3b-a^2)^3}{27f(-a/3)}f\left(\frac{2a^3/3-3ab+9c-a(2a^2-6b)/3}{2a^2-6b}\right) \\
+        &= \frac{8(3b-a^2)^3}{27f(-a/3)}f\left(\frac{2a^3/3-3ab+9c-2a^3/3+2ab}{2a^2-6b}\right) \\
+        &= \frac{8(3b-a^2)^3}{27f(-a/3)}f\left(\frac{9c-ab}{2a^2-6b}\right)
+    \end{align*}
+    as claimed.
+
+\item
+    Finally, for the first explicit example, we have $a=-6$, $b=9$, and $c=3$. So,
+    \[ f(-a/3) = f(2) = 8 - 6 \cdot 4 + 9 \cdot 2 + 3 = 5 \]
+    and
+    \[ a^2-3b = (-6)^2-3 \cdot 9 = 9 \]
+    so
+    \[ f\left(\frac{9c-ab}{2a^2-6b}\right) = f\left(\frac{9 \cdot 3 - (-6) \cdot 9}{2 \cdot 9}\right) = f(9/2) = 729/8 - 6(81/4) + 9(9/2)+3 = \frac{105}{8}  \]
+    giving
+    \[ \disc(\alpha) = \frac{8(-9)^3(105/8)}{27(5)} = -3^47 = -567 \] \\
+
+    Similarly, for the second, we have $a,b,c = -6,-9,3$, respectively, so $a^2-3b = 36+27 = 63$ and:
+    \begin{align*}
+    \disc(\alpha)
+        &= \frac{8(-63)^3}{27f(2)}f\left(\frac{27-54}{2(63)}\right) \\
+        &= -\frac{2^33^37^3}{8-24-18+3}f(-3/14) \\
+        &= -\frac{2^33^37^3}{-31}\left(-\frac{27}{14^3}-6\frac{9}{14^2}+9\frac{3}{14}+3\right) \\
+        &= \frac{3^4}{31}(-9 - 18 \cdot 14 + 9 \cdot 14^2 + 14^3) \\
+        &= 3^4137 = 11097
+    \end{align*}\qedhere
+\end{enumerate}
+\end{proof}

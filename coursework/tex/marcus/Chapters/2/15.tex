@@ -1,0 +1,8 @@
+\mtexe{2.15} 
+\begin{proof}
+    An arbitrary element of $\ZZ[\sqrt{-5}]$ is of the form $a+b\sqrt{-5}$ and has norm $a^2+5b^2$. But there are clearly no integer solutions to $a^2+5b^2 = 2,3$, since such a solution must have $b=0$, else $a^2+5b^2$ would be too large, but then $a = \sqrt{2},\sqrt{3}$, which are not integers. \\
+
+    Now, to see that $2 \cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})$ is an example of nonunique factorization, it suffices to note that each term is irreducible and that neither $1 \pm \sqrt{-5}$ is divisible by 2 in $\ZZ[\sqrt{-5}]$. The latter fact is obvious, and to note that the elements are irreducible, we take norms:
+    \begin{align*} N(2) = 4 && N(3) = 9 && N(1\pm\sqrt{-5}) = 6 \end{align*}
+    But then if $\alpha$ is a proper irreducible factor of one of these terms, we would get $N(\alpha)$ is a nonunit integer divisor of the corresponding norm. But then $N(\alpha)$ has to be either 2 or 3, which we've seen cannot be.
+\end{proof}

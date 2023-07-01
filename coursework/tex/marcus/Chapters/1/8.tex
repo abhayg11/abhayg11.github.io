@@ -1,0 +1,8 @@
+\mtexe{1.8}
+\begin{proof}
+    As noted, $(\ZZ/p\ZZ)^\ast$ is cyclic of order $p-1$, so there is some $g \in \ZZ/p\ZZ$ that generates the group. If $p \equiv 1 \pmod{4}$, then $p-1$ is divisible by 4, and so $r = (p-1)/4$ is an integer. But then $(g^r)^2 \equiv -1 \pmod{4}$. Indeed, $g^{4r} = g^{p-1} = 1$, so $g^{2r}$ is a root of $x^2-1$, i.e. $g^{2r}$ is one of $\pm 1$ since these are the only roots in the field $\FF_p$. But we cannot have $g^{2r} = 1$, since $g$ has order $4r$.
+
+    Now, we have that $p$ divides $n^2+1 = (n+i)(n-i)$ for $n = g^r$. But $p$ does not divide either of $n+i$ or $n-i$ in $\ZZ[i]$ since the imaginary component is not divisible by $p$. So $p$ is not prime in $\ZZ[i]$ and so is not irreducible since $\ZZ[i]$ is a UFD and thus all irreducibles are prime.
+
+    So, we have that $p$ is reducible, i.e. there are nonunits $\alpha,\beta \in \ZZ[i]$ with $p = \alpha\beta$. Taking norms, we have $p^2 = N(\alpha)N(\beta)$. Since they are nonunits, we must have $N(\alpha) = N(\beta) = p$. Hence, for $\alpha = a+bi$, we have $p = N(\alpha) = a^2+b^2$ is the sum of two squares.
+\end{proof}

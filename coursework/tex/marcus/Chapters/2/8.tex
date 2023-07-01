@@ -1,0 +1,52 @@
+\begin{exe}{2.8} ${}$
+\begin{enumerate}
+\item Let $\omega = e^{2\pi i/p}$, $p$ an odd prime. Show that $\QQ[\omega]$ contains $\sqrt{p}$ if $p \equiv 1 \pmod{4}$, and $\sqrt{-p}$ if $p \equiv -1 \pmod{4}$. Express $\sqrt{-3}$ and $\sqrt{5}$ as polynomials in the appropriate $\omega$.
+\item Show that the 8th cyclotomic field contains $\sqrt{2}$.
+\item Show that every quadratic field is contained in a cyclotomic field.
+\end{enumerate} \end{exe}
+
+\begin{proof} ${}$
+\begin{enumerate}
+\item
+First, here's a very unmotivated explicit solution (skip below the line for the ``better'' proof). Let $\chi(n)$ denote the Legendre symbol, so that $\chi$ depends only on the residue mod $p$, $\chi(0) = 0$ and otherwise $\chi(n)=1$ if and only if $n$ is a perfect square mod $p$. For $t \in \{1,\ldots,p-1\}$, let $t^{-1}$ denote the unique integer in $\{1,\ldots,p-1\}$ such that $tt^{-1}$ is 1 modulo $p$. Define
+\[ a_r = \sum_{n=1}^{p-1} \chi(n(r-n)) \]
+Note that:
+\[ a_0 = \sum_{n=1}^{p-1} \chi(-n^2) = \chi(-1)(p-1) \]
+and for $1 \leq r \leq p-1$,
+\[ a_r = \sum_{n=1}^{p-1} \chi((r^{-1})^2)\chi(n(r-n)) = \sum_{n=1}^{p-1} \chi(r^{-1}n(1-r^{-1}n)) = \sum_{k=1}^{p-1} \chi(k(1-k)) = a_1 \]
+since multiplication by $r^{-1}$ simply permutes $\{1,\ldots,p-1\}$. Finally, define
+\[ f(x) = \sum_{n=0}^{p-1} \chi(n)x^n \]
+If $\gamma$ satisfies $\gamma^p = 1$, then
+\begin{align*}
+(f(\gamma))^2
+    &= \left(\sum_{n=0}^{p-1} \chi(n)\gamma^n\right)^2 \\
+    &= \sum_{n=0}^{p-1} \sum_{m=0}^{p-1} \chi(n)\chi(m)\gamma^{n+m} \\
+    &= \sum_{r=0}^{p-1} \sum_{m=0}^{p-1} \chi(m(r-m))\gamma^r & \text{for } r \equiv n+m \\
+    &= \sum_{r=0}^{p-1} a_r\gamma^r \\
+    &= \chi(-1)(p-1) + a_1\sum_{r=1}^{p-1} \gamma^r
+\end{align*}
+On one hand, since $1^p=1$, we can take $\gamma = 1$. But $f(1) = 0$ since there are exactly $(p-1)/2$ residues and nonresidues modulo $p$. So, this gives
+\[ \chi(-1)(p-1) + (p-1)a_1 = 0 \implies a_1 = -\chi(-1) \]
+On the other hand, we can take $\gamma = \omega$ which gives:
+\[ f(\omega)^2 = \chi(-1)(p-1) + a_1\sum_{r=1}^{p-1} \omega^r = \chi(-1)(p-1) + \chi(-1) = \chi(-1)p \]
+which is what we wished to show, since now $f(\omega)$ is in $\QQ(\omega)$ and has square $\pm p$.
+
+\rule[2ex]{\textwidth}{1pt}
+
+``Better'' proof: We've shown that $\disc(\omega) = p^{p-2}$ if $p \equiv 1 \pmod{4}$ and $\disc(\omega) = -p^{p-2}$ otherwise. But we can write $\disc(\omega) = |\sigma_i(\omega^j)|^2$, where $|\cdot|$ denotes the determinant, and $i,j$ range over the appropriate indices. Thus, $\pm p^{p-2}$ is a square of an element in $\QQ[\omega]$, and since $p$ is odd, so is $p^{p-3}$. Hence, the quotient is a square in $\QQ[\omega]$, namely $\sqrt{\pm p} \in \QQ[\omega]$. \\
+
+Now, we consider the explicit cases. Note that the ``worse'' proof actually helps here, since it was very explicit. For $p=3$, the proof showed that
+\[ \sqrt{-3} = \omega-\omega^2 = \omega-\omega^{-1} \]
+which is also clear since $\omega^{\pm 1} = -\frac12 \pm i\frac{\sqrt{3}}2$. For $p=5$, the proof showed:
+\[ \sqrt{5} = \omega-\omega^2-\omega^3+\omega^4 \]
+To confirm this, we can square the expression:
+\[ (\omega-\omega^2-\omega^3+\omega^4)^2 = \omega^2-2\omega^3-\omega^4+4\omega^5-\omega^6-2\omega^7+\omega^8 = 4-\omega-\omega^2-\omega^3-\omega^4 = 5 \]
+as claimed.
+
+\item Let $\omega = e^{2\pi i/8}$. Then, $\omega^2 = i$, so:
+\[ (\omega+\omega^{-1})^2 = \omega^2+2+\omega^{-2} = i+2-i = 2 \]
+i.e. $\sqrt{2} = \pm(\omega+\omega^{-1}) \in \QQ[\omega]$.
+
+\item Let $m$ be squarefree. Then we can write $m$ as a product of primes $\pm p_1 \cdots p_k$. Consider the field $K = \QQ(\omega)$, where $\omega = e^{2\pi i/(8m)}$. Then, $\omega^m = \sqrt{i}$, so $K$ contains the 8th cyclotomic field, and so contains $\sqrt{2}$. Similarly, $\omega^{2m} = i$, and so $K$ contains $\sqrt{-1}$. Finally, for each odd prime divisor $p_j$, $\omega^{4m/p_j} = e^{2\pi i/p_j}$, so $K$ contains $\sqrt{\pm p_j}$ for each $j$. Hence, multiplying the necessary terms, we have that $K$ contains $\sqrt{m}$. \qedhere
+\end{enumerate}
+\end{proof}

@@ -1,0 +1,8 @@
+\mtexe{2.14} 
+\begin{proof}
+    We have that $1 + \sqrt{2}$ is a unit since
+    \[ (1+\sqrt{2})(\sqrt{2}-1) = 2-1 = 1 \]
+    But it isn't a root of unity since $1+\sqrt{2}$ is a real number greater than 1, so $(1+\sqrt{2})^n > 1$ for all $n$. Hence, the elements $(1+\sqrt{2})^n$ are distinct for all $n$, but they are all elements of $\ZZ[\sqrt{2}]$. So, there are integers $a_n,b_n \in \ZZ$ with $(1+\sqrt{2})^n = a_n + b_n\sqrt{2}$. Taking norms, we get:
+    \[ a_n^2-2b_n^2 = N((1+\sqrt{2})^n) = N(1+\sqrt{2})^n = (-1)^n \]
+    So, this gives infinitely many solutions to each of $a^2-2b^2 = 1$ and $a^2-2b^2 = -1$ for integers $a,b$ by taking $n$ even and odd, respectively.
+\end{proof}

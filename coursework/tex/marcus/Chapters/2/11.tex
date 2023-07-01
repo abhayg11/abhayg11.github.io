@@ -1,0 +1,12 @@
+\mtexe{2.11} 
+\begin{proof}
+    Factorize $f$: $f(x) = \prod_{i=1}^n (x-a_i)$. Then, the coefficient of $x_r$ is
+    \[ \sum_S \prod_{i \in S} (-a_i) \]
+    where $S$ ranges over all subsets of $\{1,\ldots,n\}$ with $|S| = r$. So, the magnitude of the coefficient is at most
+    \[ \left|\sum_S \prod_{i \in S} (-a_i)\right| \leq \sum_S \prod_{i \in S} |a_i| = \sum_S 1 = {n \choose r} \]
+    since there are exactly ${n \choose r}$ such $S$. \\
+
+    Second, consider the set $T_n$ of all roots of all polynomials with integer coefficients of degree $n$ such that the coefficient of $x^r$ has magnitude at most ${n \choose r}$. Notice this is a finite set, since there are finitely many such polynomials and each one has at most $n$ distinct roots. I claim this contains all described numbers. Indeed, let $\alpha$ be an algebraic integer of degree $n$ all of whose conjugates have magnitude 1. Then, let $f$ be the (monic) minimal polynomial of $\alpha$. We've seen that $f$ must have integer coefficients since $\alpha$ is an algebraic integer. Then, all roots of $f$ have magnitude 1, since the roots are precisely the conjugates of $\alpha$. Hence, the computation above shows that $\alpha \in T_n$ since $f$ is one of the described polynomials. \\
+
+    Finally, in this case, note that $\alpha^k$ is also an algebraic integer for all $k \geq 1$, and that $|\sigma_i(\alpha^k)| = |\sigma_i(\alpha)|^k = 1$ for all embeddings $\sigma_i$. Finally, $\alpha^k \in \QQ(\alpha)$, so $\alpha^k$ has degree at most $n$. Hence, all of the powers of $\alpha$ are contained in the finite set $T_1 \cup \cdots \cup T_n$, and so by Pigeonhole, we must have $\alpha^j = \alpha^k$ for some $j < k$. I.e. $\alpha^{k-j} = 1$ so $\alpha$ is a root of unity.
+\end{proof}

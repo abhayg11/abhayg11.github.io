@@ -1,0 +1,73 @@
+\mtexe{2.41} 
+\begin{proof} 
+    The minimal polynomial for $\alpha$ over $\QQ$ is $f(x) = x^3-m$, so we can compute the discriminant (since $\alpha$ has degree 3) via:
+    \[ \disc(\alpha) = -N(f'(\alpha)) = -N(3\alpha^2) = -27N(\alpha)^2 = -27m^2 \]
+    where $N(\alpha) = m$ again comes from the minimal polynomial. Hence, from the previous problem, we get $d_1^6 = d_1^{n(n-1)} \mid \disc(\alpha) = -27m^2$. Since $m$ is cubefree, $m^2$ is sixth-power-free, i.e. the only possible prime divisor of $d_1$ is 3, and $9 \nmid d_1$ since $3^{12} \nmid 3^3m^2$. So, $d_1=1$ or $d_1=3$, and in the latter case $9 \mid m$. \\
+
+    Suppose that $d_1 = 3$, so that $9 \mid m$. Then the first basis element is $\beta = f_1(\alpha)/d_1 = (\alpha+b)/3$ for some $b \in \ZZ$. Then,
+    \[ \beta^3 = \frac{1}{27}(m+3\alpha^2b+3\alpha b^2 + b^3) \]
+    We have $T(\alpha) = 0$ from the minimal polynomial. We have $(\alpha^2)^3 - m^2 = 0$ and $\alpha^2$ has degree 3 over $\QQ$ since $\QQ \subsetneq \QQ(\alpha^2) \subseteq \QQ(\alpha)$. So, $x^3-m^2$ is the minimal polynomial of $\alpha^2$, which gives $T(\alpha^2) = 0$ as well. Thus,
+    \[ T(\beta^3) = \frac{1}{27}(3m+3b^3) = \frac{m+b^3}{9} \]
+    Since $9 \mid m$ and $T(\beta^3) \in \ZZ$, we have $9 \mid b^3$, i.e. $3 \mid b$. So, $b/3 \in \ZZ \subseteq R$, so $\alpha/3 = \beta - b/3 \in R$, but $\alpha/3 \notin R$, since it has minimal polynomial $x^3 - m/27$, which doesn't have integer coefficients. So, the contradiction gives $d_1 = 1$. By exercise 39, we may assume $f_1(x) = x$. \\
+
+    Note that
+    \[ (\alpha^2/k)^3 = \alpha^6/k^3 = m^2/k^3 = h^2k^4/k^3 = h^2k \in \ZZ \]
+    So, $\alpha^2/k$ satisfies $x^3-h^2k$ and is an algebraic integer. Note that this gives $k \mid d_2$. \\
+
+    Consider $m \equiv \pm 1 \pmod{9}$. Then, for $\beta = (\alpha \mp 1)^2/3$, we have
+    \begin{align*}
+    27 & \left(\beta^3-\beta^2+\frac{1 \pm 2m}{3}\beta - \frac{(m \mp 1)^2}{27}\right) \\
+        &= (3\beta)^3-3(3\beta)^2 + 3(1 \pm 2m)(3\beta) - (m \mp 1)^2 \\
+        &= (\alpha \mp 1)^6 - 3(\alpha \mp 1)^4 + 3(1 \pm 2m)(\alpha \mp 1)^2 - (m \mp 1)^2 \\
+        &= (\alpha^6 \mp 6\alpha^5 + 15\alpha^4 \mp 20\alpha^3 + 15\alpha^2 \mp 6\alpha + 1) - 3(\alpha^4 \mp 4\alpha^3 + 6\alpha^2 \mp 4\alpha + 1) \\
+            &\hspace{2em} + (3 \pm 6m)(\alpha^2 \mp 2\alpha + 1) - (m^2 \mp 2m + 1) \\
+        &= (\mp 6m+15-18+3 \pm 6m)\alpha^2 + (15m \mp 6 - 3m \pm 12 \mp 6 - 12m)\alpha \\
+            &\hspace{2em}+ (m^2 \mp 20m + 1 \pm 12m - 3 + 3 \pm 6m - m^2 \pm 2m - 1) \\
+        &= 0
+    \end{align*}
+    So, $\beta$ satisfies this polynomial. We have $1 \pm 2m \equiv 3 \pmod{9}$, so the linear coefficient is an integer. We also have $m \mp 1 \equiv 0 \pmod{9}$, so its square is a multiple of 81, hence the constant term is an integer (even a multiple of 3). So $\beta \in R$. \\
+
+    Since $m \equiv \pm 1 \pmod{9}$, we have $3 \nmid k$. So, $k^2 \equiv 1 \pmod{3}$, whence there is some $n \in \ZZ$ with $k^2-1 = 3n$. Then, since $\alpha,\alpha^2/k,\beta \in R$, so is $k\beta-n\alpha^2/k \pm k\alpha$. But this is:
+    \[ k\beta-n\frac{\alpha^2}{k} \pm k\alpha = \frac{k(\alpha \mp 1)^2}{3} - \frac{n\alpha^2}{k} \pm k\alpha = \frac{k^2\alpha^2 \mp 2k^2\alpha + k^2 - 3n\alpha^2 \pm 3k^2\alpha}{3k} = \frac{\alpha^2 \pm k^2\alpha + k^2}{3k} \]
+    as claimed. \\
+
+    From the previous problem, we get that $d_2^2 \mid \disc(\alpha) = -27m^2$. So, for each prime, we have $2v_p(d_2) \leq 3v_p(3)+2v_p(m)$. For $p \neq 3$, this gives $v_p(d_2) \leq v_p(m) = v_p(3m)$ as desired. For $p=3$, we have $v_p(d_2) \leq 3/2 + v_p(m)$, so $v_p(d_2) \leq 1+v_p(m) = v_p(3m)$ as well, since the equation is in integers, and so we get $d_2 \mid 3m$. \\
+
+    Since $p \mid d_2$ and $f_2(\alpha)/d_2 \in R$, we have $\gamma = (\alpha^2+a\alpha+b)/p = f_2(\alpha)/d_2 \cdot (d_2/p) \in R$ as claimed. We already computed $T(\alpha) = T(\alpha^2) = 0$, so $T(\gamma) = 3b/p \in \ZZ$. So, $p \mid 3b$, and since $p \neq 3$ we have $p \mid b$. So $b/p$ is an integer and so $\gamma-b/p \in R$ whence $(\gamma-b/p)^3 \in R$. We have
+    \[ (\gamma-b/p)^3 = \frac{\alpha^6+3a\alpha^5+3a^2\alpha^4+a^3\alpha^3}{p^3} = \frac{3am\alpha^2+2a^2m\alpha+(m^2+ma^3)}{p^3} \]
+    So, taking traces gives $p^3 \mid 3m(m+a^3)$. Since $p \neq 3$ we get $p^3 \mid m(m+a^3)$ again. Since $p \mid m$ but $p^2 \nmid m$, this gives $p^2 \mid m+a^3$. But again, $p \mid m$, so this gives $p \mid a^3$, so $p \mid a$, so $p^3 \mid a^3$. But then $p^2$ divides both $m+a^3$ and $a^3$, so we get $p^2 \mid m$, contrary to assumption. \\
+
+    Now, suppose $p \neq 3$ and $p^2 \mid m$. Then $p^2 \mid hk^2$, so $p^2 \mid h$ or $p^2 \mid k^2$, but not both since they are coprime. But the first is impossible since $h$ is squarefree, so $p \mid k \mid d_2$. We want to show $p^2 \nmid d_2$, so suppose $p^2 \mid d_2$ for contradiction. Mimicking the argument above, we have $f_2(\alpha)/p^2 \in R$, so by taking traces we get $p^2 \mid 3b$, whence $p^2 \mid b$ and so $(\alpha^2+a\alpha)/p^2 \in R$. Cubing again gives:
+    \[ \frac{m(\alpha^3+3a\alpha^2+3a^2\alpha+a^3)}{p^6} \in R \]
+    So, taking the trace gives $p^6 \mid m(m+a^3)$. So, $p^4 \mid m+a^3$, so $p \mid a^3$, so $p^3$ divides both $m+a^3$ and $a^3$, whence $p^3 \mid m$, contradicting that $m$ is cubefree. \\
+
+    As suggested, we note that $(f_2(\alpha)/d_2)^2 \in R$, and we know $d_2R \subseteq \ZZ[\alpha]$, so:
+    \[ \frac{\alpha^4+2a\alpha^3+(a^2+2b)\alpha^2+2ab\alpha+b^2}{d_2} = \frac{(a^2+2b)\alpha^2+(2ab+m)\alpha+(b^2+2am)}{d_2} \in \ZZ[\alpha] \]
+    So, by uniqueness of representations, we get that $d_2$ divides each of $a^2+2b$, $2ab+m$, and $b^2+2am$, as desired. \\
+
+    Everything we've done has shown that for $p \neq 3$ prime, that $v_p(d_2) = v_p(k) = v_p(3k)$. Finally we do the casework to determine $v_3(d_2)$. First, suppose $m \equiv \pm 1 \pmod{9}$. Then, we have $3 \mid d_2$ since we've shown that $(\alpha^2 \pm k^2\alpha + k^2)/(3k) \in R$ in this case, but we have $9 \nmid d_2$ since $d_2 \mid 3m$. We also have $v_3(k) = 0$ since $3 \nmid m$, so we get $v_3(d_2) = 1 = v_3(3k)$. Hence in this case $d_2 = 3k$ and we get the integral basis:
+    \[ 1,\alpha,\frac{\alpha^2 \pm k^2\alpha + k^2}{3k} \]
+    in this case. \\
+
+    In all other cases, I will show that $v_3(d_2) = v_3(k)$, so that $d_2 = k$. Then, we will conclude that
+    \[ 1,\alpha,\frac{\alpha^2}{k} \]
+    is an integral basis for $R$ over $\ZZ$. Our second case is when $m \equiv 4,7 \pmod{9}$. Suppose $3 \mid d_2$. Then $3 \nmid b$, else $3$ divides both $b$, and $2ab+m$, whence it divides $m$, contrary to assumption. Then, $b \equiv a^2 \equiv 1 \pmod{3}$, and $1 \equiv m \equiv ab \equiv a \pmod{3}$. So
+    \[ \frac{(\alpha-1)^2}{3} = \frac{\alpha^2-2\alpha+1}{3} = \frac{\alpha^2+a\alpha+b}{3} - \frac{(a+2)\alpha+(b-1)}{3} \in R \]
+    since the first term is our basis element and the second is in $\ZZ[\alpha]$ since $3 \mid a+2,b-1$. Then we also get $(\alpha-1)^8/81 \in R$, and so taking the trace gives:
+    \[ \frac{3(28\alpha^6-56\alpha^3+1)}{81} = \frac{28m^2-56m+1}{27} \in \ZZ \]
+    So, $27 \mid m^2-2m+1 = (m-1)^2$, so $9 \mid m-1$, i.e. $m \equiv 1 \pmod{9}$, contrary to assumption. So, we get $3 \nmid d_2$ and $k \mid d_2$ gives $3 \nmid k$, so that $v_3(d_2) = 0 = v_3(k)$ as claimed. \\
+
+    Third, suppose $m \equiv 2,5 \pmod{9}$, and again suppose $3 \mid d_2$. The same calculations above apply to get $b \equiv 1 \pmod{3}$ but now give $2 \equiv m \equiv a \pmod{3}$ this time. So,
+    \[ \frac{(\alpha+1)^2}{3} = \frac{\alpha^2+2\alpha+1}{3} = \frac{\alpha^2+a\alpha+b}{3}-\frac{(a-2)\alpha+(b-1)}{3} \in R \]
+    for the same reason as before. So, the fourth power is in $R$, and its trace is an integer, i.e.
+    \[ \frac{28m^2+56m+1}{27} \in \ZZ \]
+    whence $27 \mid m^2+2m+1 = (m+1)^2$, so $9 \mid m+1$, so $m \equiv -1 \pmod{9}$, contrary to assumption. So again $v_3(d_2) = 0 = v_3(k)$. \\
+
+    Fourth, suppose $m \equiv \pm 3 \pmod{9}$. Then again $3 \nmid k$, since otherwise $9 \mid k^2 \mid m$. Suppose $3 \mid d_2$. Then, we have $b^2 \equiv am \equiv 0 \pmod{3}$, so $3 \mid b$, and $a^2 \equiv b \equiv 0 \pmod{3}$, so $3 \mid a$ as well. So,
+    \[ \frac{\alpha^2}{3} = \frac{\alpha^2+a\alpha+b}{3}-\frac{a\alpha+b}{3} \in R \]
+    But this means $m^2/27 = (\alpha^2/3)^3 \in R \cap \QQ = \ZZ$, so $27 \mid m^2$, so $9 \mid m$, contrary to assumption. So, $3 \nmid d_2$, and $v_3(d_2) = 0 = v_3(k)$ again. \\
+
+    Fifth and finally, suppose $m \equiv 0 \pmod{9}$. Then $3 \mid k \mid d_2$ and $9 \nmid k$ since it's squarefree. It suffices to show $9 \nmid d_2$, since then $v_3(k) = 1 = v_3(d_2)$ and the proof will be complete. So, suppose $9 \mid d_2$. Then,
+    \[ a^4 \equiv (-2b)^2 \equiv 4b^2 \equiv 4(-2am) \equiv 0 \pmod{9} \]
+    so $3 \mid a$, so that $b \equiv 5a^2 \equiv 0 \pmod{9}$. Then $f_2(\alpha)-b/9 = (\alpha^2+a\alpha)/9 \in R$, and so its cube is also, so its trace is in $\ZZ$. I.e., $3^5 \mid m(m+a^3)$, so $3^3 \mid m+a^3$, but then $3 \mid a$ and $3^3 \mid a^3$, so that $3^3 \mid m$, contrary to $m$ being cubefree. So, finally, we get $9 \nmid d_2$ as claimed, completing the proof.
+\end{proof}

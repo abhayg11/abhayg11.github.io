@@ -1,0 +1,17 @@
+\mtexe{1.7}
+\begin{proof}
+    Let $I \subseteq \ZZ[i]$ be an ideal. If $I = (0)$, then it is clearly principal. Otherwise, $I$ has nonzero elements, and so we can choose $\alpha \in I$ with $\alpha \neq 0$ and $N(\alpha)$ minimized. I claim $I = (\alpha)$.
+
+    So, let $\beta \in I$. We have that $\beta/\alpha \in \QQ[i]$, so we can write $\beta/\alpha = x+yi$ for $x,y \in \QQ$. Then, we can choose integers $a,b$ with $|a-x|,|b-y| \leq \frac{1}{2}$ by rounding. Then, write $\gamma = \beta-\alpha(a+bi)$ and $\delta = (x-a)+(y-b)i$. Note that $\gamma \in I$ since $\alpha,\beta \in I$ and $a+bi \in \ZZ[i]$. Also note that
+    \[ \delta\overline{\delta} = (x-a)^2+(y-b)^2 \leq \frac14+\frac14 = \frac12 \]
+    Further, we can compute the norm directly:
+    \begin{align*}
+    N(\gamma)
+        &= \gamma\overline{\gamma} \\
+        &= (\beta-\alpha(a+bi))(\overline{\beta}-\overline{\alpha}(a-bi)) \\
+        &= \alpha\overline{\alpha}(x+yi-a-bi)(x-yi-a+bi) \\
+        &= N(\alpha)\delta\overline{\delta} \\
+        &< N(\alpha)
+    \end{align*}
+    So, by minimality of $N(\alpha)$ among nonzero elements of $I$, we must have $N(\gamma) = 0$, and so $\gamma = 0$. I.e. $\beta = \alpha(a+bi) \in (\alpha)$.
+\end{proof}

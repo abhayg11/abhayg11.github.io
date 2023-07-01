@@ -1,0 +1,6 @@
+\mtexe{1.3}
+\begin{proof}
+    Suppose $\alpha \in \ZZ[i]$ has $N(\alpha)$ prime, and write $\alpha = \beta\gamma$. Then $N(\beta)N(\gamma) = N(\alpha)$ is prime, so WLOG $N(\beta) = 1$. Hence $\beta$ is a unit and since this factorization was arbitrary, $\alpha$ is irreducible.
+
+    Similarly, if $N(\alpha) = p^2$ for a prime $p$ with $p \equiv 3 \pmod{4}$, then for $\alpha = \beta\gamma$, we get that $N(\beta)N(\gamma) = p^2$. If either of these factors is 1, then we are done as above, and otherwise we have $N(\beta) = N(\gamma) = p$. But if $\beta = a+bi$, then this gives $p = a^2+b^2$, which is a contradiction, since $a^2,b^2 \in \{0,1\}$ modulo 4.
+\end{proof}

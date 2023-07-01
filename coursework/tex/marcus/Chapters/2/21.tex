@@ -1,0 +1,6 @@
+\mtexe{2.21} 
+\begin{proof} 
+    Let $m \in \ZZ[x]$ be the minimal polynomial for $\alpha$. Then, since $f(\alpha) = 0$, we have $m \mid f$, so that $f(x) = m(x)g(x)$ for some polynomial $g$. By Gauss' Lemma, $g \in \ZZ[x]$ and is monic. Then,
+    \[ N(f'(\alpha)) = N(m'(\alpha)g(\alpha)+m(\alpha)g'(\alpha)) = N(m'(\alpha)g(\alpha)) = N(m'(\alpha))N(g(\alpha)) = \pm \disc(\alpha)N(g(\alpha)) \]
+    which shows the claim since $N(g(\alpha)) \in \ZZ$.
+\end{proof}

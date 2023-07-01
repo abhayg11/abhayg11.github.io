@@ -1,0 +1,25 @@
+\mtexe{2.19}
+\begin{proof}
+    For the induction, note that if $n=1$, we have that the determinant of the $1 \times 1$ matrix $1$ is just $1$, which is the product over pairs $i,j$ of $a_i-a_j$ (since it is the empty product).
+
+    Now, for the induction step, let
+    \[ A = \left(\begin{array}{cccc} 1 & a_1 & \cdots & a_1^{n-1} \\ \vdots & \vdots & \ddots & \vdots \\ 1 & a_n & \cdots & a_n^{n-1} \end{array}\right) \text{  and  } B = \left(\begin{array}{cccc} 1 & a_1 & \cdots & a_1^n \\ \vdots & \vdots & \ddots & \vdots \\ 1 & a_n & \cdots & a_n^n \\ 1 & a_{n+1} & \cdots & a_{n+1}^n \end{array}\right) \]
+    and we assume
+    \[ \det(A) = \prod_{1 \leq i < j \leq n} (a_i-a_j) \]
+    Now, consider the polynomial:
+    \[ f(t) = \prod_{i=1}^n (t-a_i) = t^n+c_{n-1}t^{n-1}+\cdots+c_0 \]
+    and define
+    \[ C = \left(\begin{array}{ccccc} 1 & 0 & \cdots & 0 & c_0 \\ 0 & 1 & \cdots & 0 & c_1 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \cdots & 1 & c_{n-1} \\ 0 & 0 & \cdots & 0 & 1 \end{array}\right) \]
+    Then, we have $\det(C) = 1$, and so:
+    \begin{align*}
+    \det(B)
+        &= \det(B)\det(C) \\
+        &= \det(BC) \\
+        &= \det\left(\begin{array}{ccccc} 1 & a_1 & \cdots & a_1^{n-1} & f(a_1) \\ 1 & a_2 & \cdots & a_2^{n-1} & f(a_2) \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 1 & a_n & \cdots & a_n^{n-1} & f(a_n) \\ 1 & a_{n+1} & \cdots & a_{n+1}^{n-1} & f(a_{n+1}) \end{array}\right) \\
+        &= \det\left(\begin{array}{ccccc} 1 & a_1 & \cdots & a_1^{n-1} & 0 \\ 1 & a_2 & \cdots & a_2^{n-1} & 0 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 1 & a_n & \cdots & a_n^{n-1} & 0 \\ 1 & a_{n+1} & \cdots & a_{n+1}^{n-1} & f(a_{n+1}) \end{array}\right) \\
+        &= f(a_{n+1})\det(A) \\
+        &= \prod_{i=1}^n (a_{n+1}-a_i) \cdot \prod_{1 \leq i < j \leq n} (a_j-a_i) \\
+        &= \prod_{1 \leq i < j \leq n+1} (a_j-a_i)
+    \end{align*}
+    as desired.
+\end{proof}

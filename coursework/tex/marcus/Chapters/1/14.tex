@@ -1,0 +1,10 @@
+\mtexe{1.14}
+\begin{proof}
+    Let $I \subseteq \ZZ[\omega]$ be an ideal. If $I=(0)$, then $I$ is principal. Otherwise, choose an element $\alpha \in I$ with $\alpha \neq 0$ and $N(\alpha)$ minimized. Again, I claim $I = (\alpha)$. So, let $\beta \in I$.
+
+    Again, we can take quotients to get $\beta/\alpha \in \QQ[\omega]$, so $\beta/\alpha = x+y\omega$ for $x,y \in \QQ$. Choose $a,b$ by rounding so $|x-a|,|y-b| \leq \frac12$. Then, let $\gamma = \beta-\alpha(a+b\omega)$ and $\delta = (x-a)+(y-b)\omega$. Then,
+    \[ |\delta|^2 = (x-a)^2-(x-a)(y-b)+(y-b)^2 \leq \frac14+\frac14+\frac14 < 1 \]
+    So, the rest of the proof goes exactly as before: $\gamma \in I$ and
+    \[ N(\gamma) = N(\alpha)|\delta|^2 < N(\alpha) \]
+    and so by minimality $\gamma = 0$. Hence $\beta \in (\alpha)$ as claimed.
+\end{proof}

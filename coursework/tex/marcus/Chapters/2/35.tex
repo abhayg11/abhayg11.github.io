@@ -1,0 +1,60 @@
+\mtexe{2.35} 
+\begin{proof} 
+    Since $\omega\theta = \omega^2 + 1$, we have that $\omega$ is a root of $x^2 - \theta x + 1$. \\
+
+    Second, note that $\overline{\omega} = \omega^{-1}$, and so $\overline{\theta} = \overline{\omega+\omega^{-1}} = \omega^{-1}+\omega = \theta$, so $\theta \in \RR$. Then, we have $\QQ(\theta) \subseteq \QQ(\omega) \cap \RR \subseteq \QQ(\omega)$, and the last inclusion is proper since $\omega \not\in \RR$. But the tower has degree at most 2 since $\omega$ satisfies a degree 2 polynomial over $\QQ(\theta)$, and so we must have the degree is exactly two and the intermediate degrees are 1 and 2, respectively, i.e. $\QQ(\theta) = \QQ(\omega) \cap \RR$. \\
+
+    Note $\sigma$ has order 2, so the fixed field $K$ has degree 2 as a subfield of $\QQ(\omega)$. Further, $\sigma(\theta) = \theta$ as we've already noted, so $\theta \in K$ which gives $\QQ(\theta) \subseteq K \subseteq \QQ(\omega)$, and the degrees again force $K = \QQ(\theta)$. \\
+
+    In one direction, we have:
+    \[ \AA \cap \QQ[\theta] \subseteq \QQ[\theta] \subseteq \RR \text{ and } \AA \cap \QQ[\theta] \subseteq \AA \cap \QQ[\omega] = \ZZ[\omega] \]
+    Conversely:
+    \[ \RR \cap \ZZ[\omega] \subseteq \RR \cap \QQ[\omega] = \QQ[\theta] \text{ and } \RR \cap \ZZ[\omega] \subseteq \ZZ[\omega] \subseteq \AA \]
+    so the two sets are equal. \\
+
+    More generally, let $B$ be a ring with a subring $A$ such that $B$ is a free $A$-module, and let $u \in B$ be a unit. Then, if $\{b_i\}$ is a basis for $B$ over $A$, then $\{b_iu\}$ is also a basis for $B$ over $A$. Indeed, it spans, for if $b \in B$, then $bu^{-1} \in B$, so there exists $a_i \in A$ with
+    \[ bu^{-1} = \sum_i a_ib_i \]
+    and multiplying by $u$ gives the result. Further, they are independent, for if
+    \[ \sum_i a_ib_iu = 0 \]
+    then multiplying through by $u^{-1}$ gives a relation on the original basis, whence each $a_i$ is zero.
+
+    So, $\{1,\omega,\omega^{-1},\ldots,\omega^{n-1},\omega^{1-n},\omega^n\}$ is an integral basis since it is obtained from the usual basis $\{1,\omega,\ldots,\omega^{2n-1}\}$ by multiplying through by the unit $\omega^{1-n}$.
+
+    Finally, to see that $\{1,\omega,\theta,\theta\omega,\ldots,\theta^{n-1},\theta^{n-1}\omega\}$ is a basis, we want to express each element in terms of the previous basis. Half of the terms are just powers of $\theta$, which can be evaluated:
+    \[ \theta^k = (\omega+\omega^{-1})^k = \sum_{i=0}^k {k \choose i}\omega^{k-2i} \]
+    and so this column of the change-of-basis matrix indeed has integer entries, and further, the exponents are in the range $-k,\ldots,k$, so this column has all zeros below the main diagonal. The following column is $\theta^k\omega$, which is given by taking this column and shifting each entry down one position. Hence, the entire matrix has integer entries and is upper triangular. So, the determinant is the product of the diagonal, which is the coefficient of $\omega^{-k}$ in $\theta^k$, which is 1 for each term. So, this matrix has determinant 1, showing that this set has the same discriminant (and so is also a basis). \\
+
+    We know that $\ZZ[\theta] \subseteq \QQ(\theta) \cap \AA$ since each of these are algebraic integers in this field. We've also shown that $\QQ(\theta) \cap \AA = \ZZ[\omega] \cap \RR$, and any element of this ring is a $\ZZ$-linear combination of $\theta^k$ and $\theta^k\omega$ for $k=0,\ldots,n-1$. Let $x$ be such an element, and group terms, so that
+    \[ x = (a_0+\cdots+a_{n-1}\theta^{n-1}) + \omega(b_0+\cdots+b_{n-1}\theta^{n-1}) \]
+    for integers $a_i,b_i$. But if the first parenthesized term is already in $\RR$ since $\ZZ[\theta] \subseteq \RR$, so in order for $x$ to be in $\ZZ[\omega] \cap \RR$, we must have that the second term is also real. But it is a real multiple of $\omega$, which can only be real if it is zero. So, we get that
+    \[ x = a_0+\cdots+a_{n-1}\theta^{n-1} \in \ZZ[\theta] \]
+    as claimed. \\
+
+    Finally, we consider $m=p$ for an odd prime $p$, so that $n = \varphi(m)/2 = (p-1)/2$. Now consider the tower of fields $\QQ \subseteq \QQ(\theta) \subseteq \QQ(\omega)$. Then $1,\theta,\ldots,\theta^{n-1}$ is a basis for $\QQ(\theta)$ over $\QQ$, and $1,\omega$ is a basis for $\QQ(\omega)$ over $\QQ(\theta)$. So, by exercise 23, we get:
+    \[ \disc_\QQ^{\QQ(\omega)}(1,\omega,\theta,\theta\omega,\ldots,\theta^{n-1},\theta^{n-1}\omega) = \left(\disc_\QQ^{\QQ(\theta)}(1,\theta,\ldots,\theta^{n-1})\right)^2N_\QQ^{\QQ(\theta)}\left(\disc_{\QQ(\theta)}^{\QQ(\omega)}(1,\omega)\right) \]
+    The LHS is the discriminant of an integral basis of $\QQ(\omega)$, which does not depend on the basis, so we have that it equals $(-1)^np^{p-2}$. For the final term, we can compute directly. For brevity, let $T = Tr_{\QQ(\theta)}^{\QQ(\omega)}$. From the constant term of the minimal polynomial $x^2 - \theta x + 1$ of $\omega$ over $\QQ(\theta)$, we can see that the other conjugate of $\omega$ is $\omega^{-1}$. Thus,
+    \[ \disc_{\QQ(\theta)}^{\QQ(\omega)}(1,\omega) = \det\left(\begin{array}{cc} 1 & \omega \\ 1 & \omega^{-1} \end{array}\right)^2 = (\omega-\omega^{-1})^2 \]
+    Now we need to take the norm. By transitivity, we have:
+    \begin{align*}
+    N_\QQ^{\QQ(\omega)}(\omega-\omega^{-1})
+        &= N_\QQ^{\QQ(\theta)}(N_{\QQ(\theta)}^{\QQ(\omega)}(\omega-\omega^{-1})) \\
+        &= N_\QQ^{\QQ(\theta)}((\omega-\omega^{-1})(\omega^{-1}-\omega)) \\
+        &= N_\QQ^{\QQ(\theta)}(-(\omega-\omega^{-1})^2) \\
+        &= (-1)^nN_\QQ^{\QQ(\theta)}((\omega-\omega^{-1})^2)
+    \end{align*}
+    So, it suffices to compute this first norm. Directly, we get:
+    \begin{align*}
+    N_\QQ^{\QQ(\omega)}(\omega-\omega^{-1})
+        &= \prod_{i=1}^{p-1} (\omega^i-\omega^{-i}) \\
+        &= \omega^{\sum_{i=1}^{p-1} i}\prod_{i=1}^{p-1} (1-\omega^{-2i}) \\
+        &= \omega^{(p-1)p/2}\prod_{i=1}^{p-1} (1-\omega^{-2i}) \\
+        &= p
+    \end{align*}
+    since the exponent on $\omega$ is a multiple of $p$, and the product is the evaluation of $(x^p-1)/(x-1)$ at $x=1$, since it has all the primitive $p$th roots of unity as zeros.
+
+    Finally, we combine all of our computations to get:
+    \[ (-1)^np^{p-2} = \left(\disc_\QQ^{\QQ(\theta)}(1,\theta,\ldots,\theta^{n-1})\right)^2(-1)^np \]
+    and so
+    \[ \disc(\theta) = \disc_\QQ^{\QQ(\theta)}(1,\theta,\ldots,\theta^{n-1}) = p^{(p-3)/2} \]
+    as claimed.
+\end{proof}

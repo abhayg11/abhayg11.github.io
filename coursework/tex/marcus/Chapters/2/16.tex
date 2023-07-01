@@ -1,0 +1,10 @@
+\mtexe{2.16}
+\begin{proof}
+    First, note that $T(\alpha) = \alpha + i\alpha - \alpha - i\alpha = 0$. Similarly, we have $T(\alpha^2),T(\alpha^3) = 0$. So, as suggested by the hint, write $\sqrt{3} = a + b\alpha + c\alpha^2 + d\alpha^3$, and by linearity of the trace, we have $T(\sqrt{3}) = a$. On the other hand, we know that the only conjugates of $\sqrt{3}$ are $\pm \sqrt{3}$, so $T(\sqrt{3}) = 2(\sqrt{3}-\sqrt{3}) = 0$. So, $a=0$.
+
+    Continuing with the hint, consider $\sqrt{3}/\alpha = b+c\alpha+d\alpha^2$. This has trace $b$. On the other hand, we have precisely four conjugates:
+    \[ \pm \sqrt{3}/\alpha, \pm i\sqrt{3}/\alpha \]
+    since these are all roots of $2t^4 - 9$, which is irreducible since its reciprocal polynomial $9t^4-2$ is irreducible by Eisenstein ($p=2$). But the sum of these is also zero, so we get $b = 0$.
+
+    Similarly, we have $\sqrt{3}/\alpha^2 = c+d\alpha$, and taking traces gives $c=0$ since the conjugates are $\pm \sqrt{3}/\alpha^2$. Finally, we have $\sqrt{3} = d\alpha^3$, and squaring gives $3 = d^2\alpha^6 = 2d^2\alpha^2$, which contradicts linear independence of $1$ and $\alpha^2$ over $\QQ$.
+\end{proof}

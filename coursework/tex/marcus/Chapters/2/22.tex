@@ -1,0 +1,12 @@
+\mtexe{2.22} 
+\begin{proof} 
+    Note that
+    \[ P = \sum_{g \in A_n} \prod_{i=1}^n \sigma_i(\alpha_{g(i)}) \]
+    where $A_n$ is the alternating group of even permutations. Similarly, $N$ is the same, but with $g \notin A_n$. This makes it clear that $P,N$ are algebraic integers, since ach $\sigma_i(\alpha_j)$ is, and these are in the ring they generate.
+
+    Now, fix a normal extension $L$ of $K/Q$. Let $f$ be an automorphism of $L$. Then, for each $i$, $f \circ \sigma_i$ is an embedding of $K$ into $\CC$ that fixes $\QQ$, so $f \circ \sigma_i = \sigma_{h(i)}$ for some $h(i)$. Then $h$ is a permutation since composing with $f^{-1}$ inverts this association. So,
+    \[ f(P) = \sum_{g \in A_n} \prod_{i=1}^n f(\sigma_i(\alpha_{g(i)})) = \sum_{g \in A_n} \prod_{i=1}^n \sigma_{h(i)}(\alpha_{g(i)}) = \sum_{g \in A_n} \prod_{i=1}^n \sigma_i(\alpha_{(g \circ h^{-1})(i)}) \]
+    Thus, if $h$ is even, then $f(P) = P$ and if $h$ is odd, then $f(P) = N$. Similarly, we find that $f(N) = N$ or $f(N) = P$ in these two cases, respectively.
+
+    So, $f$ fixes both $P+N$ and $PN$. Since $f$ was arbitrary, $P+N$ and $PN$ are fixed by every automorphism of $L$, so that $P+N$ and $PN$ are in $\QQ$. Finally, this gives that they are algebraic integers in $\QQ$, so they must be in $\ZZ$. This gives $d = (P-N)^2 = (P+N)^2 - 4PN$ is either 0 or 1 mod 4.
+\end{proof}

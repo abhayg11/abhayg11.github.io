@@ -1,0 +1,6 @@
+\mtexe{2.24} 
+\begin{proof} 
+    As noted, any subgroup of $\ZZ$ is either trivial or infinite cyclic, and so is free abelian of rank 0 or 1. Now, suppose any subgroup of $\ZZ^{n-1}$ is free abelian of rank $\leq n-1$, let $H \subseteq \ZZ^n$, let $\pi : \ZZ^n \to \ZZ$ be projection onto the first coordinate and let $K = \ker(\pi)$. Then $\pi(H)$ is a subgroup of $\ZZ$, so it is either trivial or infinite cyclic.
+
+    If it is trivial, then $H \subseteq K$, so $H$ is free abelian by the inductive hypothesis. Otherwise, choose $h \in H$ with $\pi(h)$ generating the image. Then $H$ is the direct sum of $\left<h\right>$ and $H \cap K$. Indeed, if $g \in H$, then $\pi(g) \in \pi(H)$, so $\pi(g) = \pi(h^r)$ for some $r$. Thus $h^{-r}g \in \ker(\pi) = K$ and is clearly in $H$, so $g = h^r(h^{-r}g)$ is in $\left<h\right>(H \cap K)$ as desired. Further, nothing is in the intersection since $\pi(h^r)$ is nonzero for all nonzero $r$. Since $H \cap K$ is a subgroup of $K$, it is free abelian of rank at most $n-1$, so this gives that $H$ is free abelian of rank at most $n$.
+\end{proof}
