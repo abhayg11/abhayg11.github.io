@@ -50,6 +50,10 @@ Note: much of the music behind the dances is mixed, recorded, and performed by o
 
 * Living Traditions 2023: [&#x2B9E;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x2B9E;Live dhol](https://youtu.be/Y2OWHEJIoe4)
 
+## Other art
+
+* [Crochet projects](art/crochet.md)
+
 ## Programming
 
 * Puzzles
