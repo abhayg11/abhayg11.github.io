@@ -5,7 +5,7 @@ title: Home
 
 Welcome to my site! I use this space to organize my [personal](hobbies.md) and [professional](math.md) life.
 
-![Headshot](assets/img/headshot.jpg)  
+![Headshot](/assets/img/headshot.jpg)  
 (Photo credit: Yasi Shaker)
 
 I am a mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x2B9E;Dr. Federico Ardila](https://fardila.com) and restate them here...
@@ -22,9 +22,9 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 # Links
 
 * [Mathematics](math.md)
-	- [Research](research/)
-	- [Notes and Solutions](notes/)
+	- [Research](/research/)
+	- [Notes and Solutions](/notes/)
 * [Hobbies](hobbies.md)
-	- [Animation](animation/donut.md)
-	- [Music](music/)
-	- [Art](art/crochet.md)
+	- [Animation](/animation/donut.md)
+	- [Music](/music/)
+	- [Art](/art/crochet.md)
