@@ -1,3 +1,5 @@
+Below is the original README from Dean Attali, from whom I've forked this repo. I will update this but in the meantime retain the credit and deep thanks.
+
 # Beautiful Jekyll
 
 [![Gem Version](https://badge.fury.io/rb/beautiful-jekyll-theme.svg)](https://badge.fury.io/rb/beautiful-jekyll-theme)
