@@ -3,7 +3,7 @@ layout: page
 title: Home
 ---
 
-Welcome to my site! I use this space to organize my personal and professional life.
+Welcome to my site! I use this space to organize my [personal](hobbies.md) and [professional](math.md) life.
 
 ![Headshot](assets/img/headshot.jpg)  
 (Photo credit: Yasi Shaker)
@@ -17,45 +17,14 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 
 ...as well as the statement proceeding these axioms: "These statements should not sound revolutionary, and considering the current practices of the mathematical society, they are a pressing call to action."
 
-# Professional
-
-## Mathematics
-
-* [Teaching](teaching/)
-* [Research](research/)
-* [Coursework](coursework/)
-
-## Other
-
-* [Curriculum Vitae](cv/)
-
 ---
 
-# Personal
+# Links
 
-## Animation
-
-* [Blender Donut](animation/donut.md)
-
-## Music
-
-* [Santur](music/santur.md)
-* [Dhol](music/dhol.md)
-* [Ukulele](music/ukulele.md)
-* [Harmonica](music/harmonica.md)
-
-## Dancing
-
-Note: much of the music behind the dances is mixed, recorded, and performed by other artists.
-
-* Living Traditions 2023: [&#x2B9E;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x2B9E;Live dhol](https://youtu.be/Y2OWHEJIoe4)
-
-## Other art
-
-* [Crochet projects](art/crochet.md)
-
-## Programming
-
-* Puzzles
-* Projects
-* Math
+* [Mathematics](math.md)
+	- [Research](research/)
+	- [Notes and Solutions](notes/)
+* [Hobbies](hobbies.md)
+	- [Animation](animation/donut.md)
+	- [Music](music/)
+	- [Art](art/crochet.md)
