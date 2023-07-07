@@ -10,4 +10,3 @@ Starter project (June 2023)
 
 ![Water bottle koozie](img/koozie.jpg)  
 Water bottle koozie (July 2023)
-

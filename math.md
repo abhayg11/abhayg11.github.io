@@ -9,7 +9,7 @@ Welcome to my academic site. Here, I organize the mathematics I do. If you're a 
 
 ## Current courses
 
-* Summer 2023 - University of Utah MATH 3210: [Syllabus](/assets/pdf/2023_3210_syllabus.pdf)
+* Summer 2023 - University of Utah MATH 3210: [Syllabus](assets/pdf/2023_3210_syllabus.pdf)
 
 ## Previous courses
 

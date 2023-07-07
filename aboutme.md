@@ -3,9 +3,45 @@ layout: page
 title: About me
 ---
 
+# Hello!
+
+I'm Abhay Goel (he/him/his). I wear lots of hats in my life - I'm a mathematician, a musician, a dancer, an activist, a teacher, a student, a gamer, a decent cook, a software engineer, a partner, an artist, and likely much more. I generally believe that if there is something that can be done by a person, then I can be that person - I just need to try and likely do a terrible job. It's highly motivating and reminds me not to just be one thing at any given time.
+
+Unfortunately, this point of view makes it difficult to write an about me page: where do I begin? Following my own advice, I'll start somewhere I guess! &#xAF;\_(&#x30C4;)_/&#xAF;
+
+## Mathematician
+
+I have loved mathematics essentially my whole life. My favorite topics come from studying symmetry - i.e. group theory - especially in the context of number theory.
+
+## Musician
+
+I've played music in some context since I was 10 or 11 years old. I started with piano and quickly moved to mallet percussion. My favorite instrument, which I've unfortunately not played for many years, is the marimba, with the vibraphone taking a close second. I also played other percussion for my middle school, high school, and marching bands.
+
+After high school, I started branching out into other instruments. In college, I played more non-Western percussion, especially spending a lot of time learning Taiko drumming from my teacher Esther Vandecar. After college, I've continued branching out, with my primary instruments for the past few years being the (Persian) santur, the dhol, and the (tenor) ukuklele.
+
+## Dancer
+
+## Activist
+
+## Teacher
+
+## Student
+
+## Gamer
+
+## Cook
+
+## Software Engineer
+
+## Partner
+
+## Artist
+
 # CV
 
-View as pdf (last updated 2023/06/17): [pdf](Curriculum_Vitae.pdf)
+I should probably move this...
+
+View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 
 ## Education
 

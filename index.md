@@ -22,9 +22,9 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 # Links
 
 * [Mathematics](math.md)
-	- [Research](research/)
-	- [Notes and Solutions](notes/)
+	- [Research](research/index.md)
+	- [Notes and Solutions](notes/index.md)
 * [Hobbies](hobbies.md)
 	- [Animation](animation/donut.md)
-	- [Music](music/)
+	- [Music](music/index.md)
 	- [Art](/art/crochet.md)
