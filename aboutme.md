@@ -7,7 +7,7 @@ title: About me
 
 I'm Abhay Goel (he/him/his). I wear lots of hats in my life - I'm a mathematician, a musician, a dancer, an activist, a teacher, a student, a gamer, a decent cook, a software engineer, a partner, an artist, and likely much more. I generally believe that if there is something that can be done by a person, then I can be that person - I just need to try and likely do a terrible job. It's highly motivating and reminds me not to just be one thing at any given time.
 
-Unfortunately, this point of view makes it difficult to write an about me page: where do I begin? Following my own advice, I'll start somewhere I guess! &#xAF;\_(&#x30C4;)_/&#xAF;
+Unfortunately, this point of view makes it difficult to write an about me page: where do I begin? Following my own advice, I'll start somewhere I guess! &#xAF;\\_(&#x30C4;)_/&#xAF;
 
 ## Mathematician
 

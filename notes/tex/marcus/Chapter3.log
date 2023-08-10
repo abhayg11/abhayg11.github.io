@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  1 JUL 2023 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  10 AUG 2023 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -819,8 +819,7 @@ tex.def
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 \l__pdf_internal_box=\box112
-)
-No file Chapter3.aux.
+) (Chapter3.aux)
 \openout1 = `Chapter3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -843,6 +842,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 \c@mv@tabular=\count328
 \c@mv@boldtabular=\count329
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -905,12 +905,14 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count336
 Package hyperref Info: Link coloring ON on input line 5.
+ (Chapter3.out) (Chapter3.out)
 \@outlinefile=\write4
 \openout4 = `Chapter3.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
- (C:\Users\12698\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(C:\Users\12698\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
@@ -931,47 +933,194 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
 (Chapters/3/1.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 3.
-) (Chapters/3/2.tex) (Chapters/3/3.tex) (Chapters/3/4.tex)
-(Chapters/3/5.tex) (Chapters/3/6.tex) (Chapters/3/7.tex) (Chapters/3/8.tex)
-(Chapters/3/9.tex) (Chapters/3/10.tex) (Chapters/3/11.tex) (Chapters/3/12.tex)
-(Chapters/3/13.tex) (Chapters/3/14.tex) (Chapters/3/15.tex) (Chapters/3/16.tex)
-(Chapters/3/17.tex) (Chapters/3/18.tex [1
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Overfull \hbox (6.61557pt too wide) in paragraph at lines 11--12
+[]\OT1/LinuxLibertineT-TLF/m/n/10 Finally, sup-pose ev-ery nonempty col-lec-tio
+n of ide-als has a max-i-mal el-e-ment. Let $\OML/cmm/m/it/10 I \OMS/cmsy/m/n/1
+0 ^^R \OML/cmm/m/it/10 R$ \OT1/LinuxLibertineT-TLF/m/n/10 be an ideal, and let 
+$\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
+ []
+
+) (Chapters/3/2.tex) (Chapters/3/3.tex) (Chapters/3/4.tex) (Chapters/3/5.tex)
+(Chapters/3/6.tex
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF
+ on input line 4.
+
+(C:\Users\12698\AppData\Local\Programs\MiKTeX\tex/latex/libertine\ts1linuxliber
+tinet-tlf.fd
+File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/
+LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 4.
+ [1
 
 {C:/Users/12698/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]) (Chapters/3
-/19.tex) (Chapters/3/20.tex)
-(Chapters/3/21.tex) (Chapters/3/22.tex) (Chapters/3/23.tex) (Chapters/3/24.tex)
-(Chapters/3/25.tex) (Chapters/3/26.tex) (Chapters/3/27.tex) (Chapters/3/28.tex)
-(Chapters/3/29.tex) (Chapters/3/30.tex) (Chapters/3/31.tex) (Chapters/3/32.tex)
-(Chapters/3/33.tex) (Chapters/3/34.tex) (Chapters/3/35.tex [2])
-(Chapters/3/36.tex) (Chapters/3/37.tex) (Chapters/3/38.tex) (Chapters/3/39.tex)
-(Chapters/3/40.tex) [3] (Chapter3.aux)
+/7.tex
 
-Package rerunfilecheck Warning: File `Chapter3.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 4.
 
-Package rerunfilecheck Info: Checksums for `Chapter3.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+) (Chapters/3/8.tex [2]) (Chapters/3/9.tex) (Chapters/3/10.tex)
+(Chapters/3/11.tex [3]) (Chapters/3/12.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+) (Chapters/3/13.tex [4]
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+) (Chapters/3/14.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 12.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
+
+ []
+
+) (Chapters/3/15.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+) (Chapters/3/16.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+) (Chapters/3/17.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+) (Chapters/3/18.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+ []
+
+
+Overfull \hbox (13.35803pt too wide) detected at line 18
+[]
+ []
+
+[7]) (Chapters/3/19.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+) (Chapters/3/20.tex [8]) (Chapters/3/21.tex) (Chapters/3/22.tex)
+(Chapters/3/23.tex) (Chapters/3/24.tex) (Chapters/3/25.tex) (Chapters/3/26.tex)
+(Chapters/3/27.tex) (Chapters/3/28.tex) (Chapters/3/29.tex) (Chapters/3/30.tex)
+(Chapters/3/31.tex) (Chapters/3/32.tex) (Chapters/3/33.tex [9])
+(Chapters/3/34.tex) (Chapters/3/35.tex) (Chapters/3/36.tex) (Chapters/3/37.tex)
+(Chapters/3/38.tex) (Chapters/3/39.tex) (Chapters/3/40.tex) [10] (Chapter3.aux)
+Package rerunfilecheck Info: File `Chapter3.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24773 strings out of 478338
- 477563 string characters out of 2836700
- 740962 words of memory out of 3000000
- 42659 multiletter control sequences out of 15000+600000
- 476644 words of font info for 45 fonts, out of 8000000 for 9000
+ 24832 strings out of 478338
+ 478716 string characters out of 2836700
+ 755142 words of memory out of 3000000
+ 42692 multiletter control sequences out of 15000+600000
+ 477347 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,6n,92p,441b,521s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 89i,17n,92p,943b,623s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
-kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
-ine/lbtn_oexx6f.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
-ps/libertine/lbtn_lyu3x3.enc}<C:/Users/12698/AppData/Local/Programs/MiKTeX/font
-s/type1/public/libertine/LinLibertineT.pfb><C:/Users/12698/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/12698/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on Chapter3.pdf (3 pages, 213491 bytes).
+naooyc.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
+ine/lbtn_kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
+ps/libertine/lbtn_oexx6f.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/font
+s/enc/dvips/libertine/lbtn_lyu3x3.enc}<C:/Users/12698/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/12698/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/12
+698/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.p
+fb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmex10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi5.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/12698/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/12698/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/12698/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/12698/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/1
+2698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:
+/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msbm7.pfb>
+Output written on Chapter3.pdf (10 pages, 403212 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

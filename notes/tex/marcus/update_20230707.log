@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  7 JUL 2023 02:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  7 JUL 2023 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -935,8 +935,12 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 3.
  [1
 
-{C:/Users/12698/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Chapters/2/
-30.tex [2]
+{C:/Users/12698/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+(Chapters/2/30.tex [2]
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
@@ -951,14 +955,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) [3]) [4] (update_20230707.aux)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+[3]) [4] (update_20230707.aux)
 Package rerunfilecheck Info: File `update_20230707.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  24605 strings out of 478338
  472369 string characters out of 2836700
- 754186 words of memory out of 3000000
+ 754187 words of memory out of 3000000
  42591 multiletter control sequences out of 15000+600000
  476644 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -983,7 +992,7 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/1
 2698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sy
 mbols/msbm7.pfb>
-Output written on update_20230707.pdf (4 pages, 371660 bytes).
+Output written on update_20230707.pdf (4 pages, 371750 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  9 named destinations out of 1000 (max. 500000)

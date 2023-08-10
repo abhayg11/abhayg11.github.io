@@ -13,7 +13,7 @@ When I'm not doing mathematics, I enjoy...
     - [Santur](music/santur.md)
     - [Dhol](music/dhol.md)
     - [Ukulele](music/ukulele.md)
-    - [Harmonica](music/harmonica.md)
+    - Harmonica
 * Playing games. Honorable mentions:
     - Chess
     - Factorio

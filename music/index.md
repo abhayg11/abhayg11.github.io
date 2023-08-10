@@ -8,4 +8,3 @@ Links:
 * [Santur](santur.md)
 * [Dhol](dhol.md)
 * [Ukulele](ukulele.md)
-* [Harmonica](harmonica.md)

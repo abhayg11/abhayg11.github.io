@@ -304,7 +304,82 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	so that $t'$ also satisfies the criteria. I.e. $t = t'$, and so we've shown a unique map $A \to P_Y$ making the above commute. In other words, $P_Y$ is the fiber product of $P_Z \to Y \times_Z Y$ and $Y \to Y \times_Z Y$.
 \end{proof}
 
-\mtexe{1.3.}
+\mtexe{1.3.T}
+\begin{proof}
+	Given two sets $A,B$, we have morphisms $i : A \to A \sqcup B$ and $j : B \to A \sqcup B$ given by the inclusions. Then the disjoint union is initial with respect to these maps, for if $C$ is a set with maps $f : A \to C$ and $g : B \to C$, then we get a map $h : A \sqcup B \to C$ given by:
+	\[ h(x) = \begin{cases} f(x) & \text{if }x \in A \\ g(x) & \text{if }x \in B \end{cases} \]
+	and then $f = h \circ i$ and $g = h \circ j$. Finally, it is clear that $h$ is unique.
+\end{proof}
+
+\mtexe{1.3.U}
+\begin{proof}
+	Suppose we have maps from $B$ and $C$ to some other ring $R$, such that the two compositions from $A \to R$ agree. Then these factor as a single map $B \times C \to R$ by the universal property of the product. But this overall map is then also $A$-bilinear, and so it further factors as a map $B \otimes_A C \to R$. It is fairly clear that this final map is unique, giving that the tensor is the fibered coproduct.
+\end{proof}
+
+\mtexe{1.3.V}
+\begin{proof}
+	Let $f : W \to X$ and $g : X \to Y$ be monomorphisms, and let $\alpha_1,\alpha_2 : Z \to W$ be two maps such that $(g \circ f) \circ \alpha_1 = (g \circ f) \circ \alpha_2$. Then, since $g \circ (f \circ \alpha_1) = g \circ (f \circ \alpha_2)$ and $g$ is a monomorphism, we get that $f \circ \alpha_1 = f \circ \alpha_2$. But then $f$ is a monomorphism, so $\alpha_1 = \alpha_2$. Thus, $g \circ f$ is a monomorphism.
+\end{proof}
+
+\mtexe{1.3.W}
+\begin{proof}
+	First, suppose that $\pi : X \to Y$ is a monomorphism. We'd like to show that the fibered product exists and is isomorphic to $X$ via the canonical map. So, we will show that $X$ itself (along with the identity maps to itself) satisfies the criterion of being the fibered product. Let $Z$ be an object with two morphisms $f : Z \to X$ and $g : Z \to X$ such that $\pi \circ f = \pi \circ g$. Then, since $\pi$ is a monomorphisms, we get $f = g$. So, we can fill in the dashed arrow in the following diagram with $f$ itself:
+	\[ \begin{tikzcd} Z \arrow[bend left]{drr}{f} \arrow[bend right]{ddr}{g} \arrow[dashed]{dr} \\ & X \arrow{r}{\id} \arrow{d}{\id} & X \arrow{d}{\pi} \\ & X \arrow{r}{\pi} & Y \end{tikzcd} \]
+	and in fact is the only way to fill it in, since any morphism $h$ making the diagram commute satisfies $\pi \circ h = \pi \circ \id \circ h = \pi \circ f$ and so $h = f$ since $\pi$ is a monomorphism. So $X \cong X \times_Y X$. \\
+	
+	Conversely, suppose that $\pi$ is such that $X \times_Y X$ exists and that the map $X \to X \times_Y X$ induced by the identity maps on $X$ is an isomorphism. In particular, this means that we can consider $X$ to be the fibered product, with the projection maps given by the identity maps. We'd like to show that $\pi$ is a monomorphism. So, let $f,g : Z \to X$ be two maps with $\pi \circ f = \pi \circ g$. By the universal property of the fibered product, we get a map $h : Z \to X \times_Y X \cong X$ such that $\id \circ h = f$ and $\id \circ h = g$. I.e. $f = g$. So, $\pi$ is indeed a monomorphism.
+\end{proof}
+
+\mtexe{1.3.X}
+\begin{proof}
+	Notice that if $Y \to Z$ is a monomorphism, then we've shown that the canonical map $Y \to Y \times_Z Y$ is an isomorphism. So, in the magic diagram, we have that the bottom arrow is an isomorphism, and we wish to show the top is an isomorphism. This is a completely general fact. That is, suppose:
+	\[ \begin{tikzcd} A \arrow{r}{f_1} \arrow{d}{f_2} & B \arrow{d}{g_2} \\ C \arrow{r}{g_1} & D \end{tikzcd} \]
+	is a Cartesian square such that the $g_1$ is an isomorphism. Then we will show $f_1$ is an isomorphism. Note that we have maps $\id_B : B \to B$ and $g_1^{-1} \circ g_2 : B \to C$ that satisfy:
+	\[ g_2 \circ \id_B = g_2 = g_1 \circ (g_1^{-1} \circ g_2) \]
+	and so the fact that this square is Cartesian means that we get a morphism $h : B \to A$ such that $f_1 \circ h = \id_B$ and $f_2 \circ h = g_1^{-1} \circ g_2$.
+	
+	Finally, we need to see that $h \circ f_1 = \id_A$. But
+	\[ f_1 \circ h \circ f_1 = \id_B \circ f_1 = f_1 \]
+	and
+	\[ f_2 \circ h \circ f_1 = g_1^{-1} \circ g_2 \circ f_1 = g_1^{-1} \circ (g_1 \circ f_2) = f_2 \]
+	But because the diagram above is Cartesian, there is a unique morphism $p : A \to A$ with $f_1 = f_1 \circ p$ and $f_2 = f_2 \circ p$. The above computations show that both $\id_A$ and $h \circ f_1$ satisfy this property, and so uniqueness gives $h \circ f_1 = \id_A$. This completes the proof that $f_1$ is an isomorphism.
+\end{proof}
+
+\mtexe{1.3.Y}
+\begin{proof}
+	Note that $i_A : \Mor(A,A) \to \Mor(A,A')$. So, we can apply it to the morphism $\id_A \in \Mor(A,A)$ to get a map $g = i_A(\id_A) \in \Mor(A,A')$. Now, we'd like to show this is the sought morphism $g$. So, let $C$ be an object and $u \in \Mor(C,A)$. Then, by assumption, the following diagram commutes:
+	\[ \begin{tikzcd} \Mor(A,A) \arrow{r}{\circ u} \arrow{d}{i_A} & \Mor(C,A) \arrow{d}{i_C} \\ \Mor(A,A') \arrow{r}{\circ u} & \Mor(C,A') \end{tikzcd} \]
+	So,
+	\[ i_C(u) = i_C(\id_A \circ u) = i_A(\id_A) \circ u = g \circ u \]
+	as claimed. We'd also like to show that this condition uniquely determines $g$. But if $h$ also satisfies the desired property, then considering the case $C = A$ and $u = \id_A$ gives:
+	\[ g = g \circ \id_A = i_A(\id_A) = h \circ \id_A = h \]
+	so that $g$ is indeed unique. \\
+	
+	Now, suppose that each $i_C$ is a bijection. Then, in particular $i_{A'} : \Mor(A',A) \to \Mor(A',A')$ is surjective, so there is some $h : A' \to A$ with $i_{A'}(h) = \id_{A'}$. I claim $g$ and $h$ are inverses, which will give the claim. In one direction, from the previous work we get:
+	\[ g \circ h = i_{A'}(h) = \id_{A'} \]
+	For the reverse, we have that the following diagram commutes:
+	\[ \begin{tikzcd} \Mor(A',A) \arrow{r}{\circ g} \arrow{d}{i_{A'}} & \Mor(A,A) \arrow{d}{i_A} \\ \Mor(A',A') \arrow{r}{\circ g} & \Mor(A,A') \end{tikzcd} \]
+	Then,
+	\[ i_A(h \circ g) = i_{A'}(h) \circ g = \id_{A'} \circ g = g = i_A(\id_A) \]
+	Since $i_A$ is bijective, it is injective, and so we get $h \circ g = \id_A$ as desired.
+\end{proof}
+
+\mtexe{1.3.Z} Skipped upon recommendation
+
+\mtexe{1.4.A}
+\begin{proof}
+	Let $\scI$ be a poset with an initial object $e$ and let $F : \scI \to \scC$ be a diagram indexed by $\scI$. Then I claim that $\varprojlim F = F(e)$. Indeed, given $i \in \scI$, we have a morphism $\varphi_i : e \to i$ and so we have a morphism $F(\varphi_i) : F(e) \to F(i)$. Further, for any morphism $t : i \to j$ in $\scI$, the following commutes:
+	\[ \begin{tikzcd} e \arrow[swap]{d}{\varphi_i} \arrow{dr}{\varphi_j} \\ i \arrow{r}{t} & j \end{tikzcd} \]
+	and so applying $F$ gives that the following commutes
+	\[ \begin{tikzcd} F(e) \arrow[swap]{d}{F(\varphi_i)} \arrow{dr}{F(\varphi_j)} \\ F(i) \arrow{r}{F(t)} & F(j) \end{tikzcd} \]
+	as desired.
+	
+	Finally, we show it is universal. Suppose $M \in \scC$ is such that for each $i$, we have a morphism $f_i : M \to F(i)$ such that for each $t : i \to j$ we have $F(t) \circ f_i = f_j$. Then, in particular, we have the morphism $f_e : M \to F(e)$, and this is the one needed in the definition. Namely, for each $i \in \scI$, we have:
+	\[ F(\varphi_i) \circ f_e = f_i \]
+	so that $F(e)$ and the morphisms $F(\varphi_i)$ are indeed final.
+\end{proof}
+
+\mtexe{1.4.}
 \begin{proof}
 \end{proof}
 
