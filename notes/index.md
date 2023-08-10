@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Coursework
+mathmode: ON
 ---
 
 # Solutions
