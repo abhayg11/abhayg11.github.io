@@ -19,6 +19,6 @@ For all source code (tex files), see [this repo](https://github.com/abhayg11/abh
 
 Ignore this, I'm just testing some things :D
 
-Let \( \mathbb{Z} \) denote the set of integers and \( \mathbb{R} \) denote the set of reals. Then we have
+Let \\( \mathbb{Z} \\) denote the set of integers and \\( \mathbb{R} \\) denote the set of reals. Then we have
 
 \\[ \forall x \in \mathbb{R} : \exists n \in \mathbb{Z} : n > x \\]
