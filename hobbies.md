@@ -26,7 +26,7 @@ When I'm not doing mathematics, I enjoy...
 * Programming
 	- Puzzles
 	- Projects
-	- [Math](programming/math/)
+	- [Math](programming/math.md)
 * Other artwork
     - [Crochet](art/crochet.md)
 	- Sketching
