@@ -5,6 +5,6 @@ title: Music
 
 Links:
 
-* [Santur](santur.md)
-* [Dhol](dhol.md)
-* [Ukulele](ukulele.md)
+* [Santur](santur.html)
+* [Dhol](dhol.html)
+* [Ukulele](ukulele.html)

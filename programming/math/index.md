@@ -7,7 +7,7 @@ title: Programming (Math)
 
 * David Harvey \| Pointcounting
   - [Course summary](harvey/pointcounting.pdf)
-  - [Chapter 1 solutions](harvey/1/)
+  - [Chapter 1 solutions](harvey/1.html)
 
 # Sage
 

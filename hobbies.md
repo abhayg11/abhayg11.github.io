@@ -8,11 +8,11 @@ When I'm not doing mathematics, I enjoy...
 * Dancing
 	- Living Traditions 2023: [&#x2B9E;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x2B9E;Live dhol](https://youtu.be/Y2OWHEJIoe4)
 * Animation
-	- [Blender Donut](animation/donut.md)
+	- [Blender Donut](animation/donut.html)
 * Playing music
-    - [Santur](music/santur.md)
-    - [Dhol](music/dhol.md)
-    - [Ukulele](music/ukulele.md)
+    - [Santur](music/santur.html)
+    - [Dhol](music/dhol.html)
+    - [Ukulele](music/ukulele.html)
     - Harmonica
 * Playing games. Honorable mentions:
     - Chess
@@ -26,7 +26,7 @@ When I'm not doing mathematics, I enjoy...
 * Programming
 	- Puzzles
 	- Projects
-	- [Math](programming/math.md)
+	- [Math](programming/math/)
 * Other artwork
-    - [Crochet](art/crochet.md)
+    - [Crochet](art/crochet.html)
 	- Sketching

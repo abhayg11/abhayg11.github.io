@@ -18,5 +18,5 @@ Welcome to my academic site. Here, I organize the mathematics I do. If you're a 
 
 # Personal
 
-* [Research](research/index.md)
-* [Notes and Solutions](notes/index.md)
+* [Research](research/)
+* [Notes and Solutions](notes/)

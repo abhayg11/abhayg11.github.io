@@ -21,10 +21,10 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 
 # Links
 
-* [Mathematics](math.md)
-	- [Research](research/index.md)
-	- [Notes and Solutions](notes/index.md)
+* [Mathematics](math.html)
+	- [Research](research/)
+	- [Notes and Solutions](notes/)
 * [Hobbies](hobbies.md)
-	- [Animation](animation/donut.md)
-	- [Music](music/index.md)
-	- [Art](/art/crochet.md)
+	- [Animation](animation/donut.html)
+	- [Music](music/)
+	- [Art](/art/crochet.html)
