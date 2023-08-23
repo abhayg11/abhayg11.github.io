@@ -36,7 +36,9 @@
 
 \mtexe{1.2.C} Skipped upon recommendation
 
-\mtexe{1.2.D} Skipped upon recommendation
+\mtexe{1.2.D} Skipped upon recommendation \\
+
+\hrule ${}$ \\
 
 \mtexe{1.3.A}
 \begin{proof}
@@ -364,7 +366,9 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	Since $i_A$ is bijective, it is injective, and so we get $h \circ g = \id_A$ as desired.
 \end{proof}
 
-\mtexe{1.3.Z} Skipped upon recommendation
+\mtexe{1.3.Z} Skipped upon recommendation \\
+
+\hrule ${}$ \\
 
 \mtexe{1.4.A}
 \begin{proof}
@@ -377,6 +381,15 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	Finally, we show it is universal. Suppose $M \in \scC$ is such that for each $i$, we have a morphism $f_i : M \to F(i)$ such that for each $t : i \to j$ we have $F(t) \circ f_i = f_j$. Then, in particular, we have the morphism $f_e : M \to F(e)$, and this is the one needed in the definition. Namely, for each $i \in \scI$, we have:
 	\[ F(\varphi_i) \circ f_e = f_i \]
 	so that $F(e)$ and the morphisms $F(\varphi_i)$ are indeed final.
+\end{proof}
+
+\mtexe{1.4.B}
+\begin{proof}
+	Let $A$ denote the proposed set and for $i \in \scI$, let $p_i : A \to A_i$ denote the projection. Then, if $x \in A$ and $m : j \to k$ is an arrow in $\scI$, then:
+	\[ F(m)(p_j(x)) = F(m)(a_j) = a_k = p_k(x) \]
+	as desired. We need to see that $A$ is universal with respect to this property. So, let $W$ be a set with maps $f_i : W \to A_i$ for each $i \in \scI$ such that $F(m) \circ f_j = f_k$ for each $m : j \to k$ in $\scI$. Then, define the map $f : W \to A$ by $(f(y))_i = f_i(y)$. This defines a map to the product, and to show it is actually a map to $A$, we should show the set condition. But this is exactly the assumption:
+	\[ F(m)((f(y))_j) = F(m)(f_j(y)) = (F(m) \circ f_j)(y) = f_k(y) = (f(y))_k \]
+	so $f(y) \in A$ as claimed. Then it is obvious that $f_i = p_i \circ f$ for each $i$, so $A$ is indeed universal.
 \end{proof}
 
 \mtexe{1.4.}

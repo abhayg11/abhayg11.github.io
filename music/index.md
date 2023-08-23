@@ -3,7 +3,7 @@ layout: page
 title: Music
 ---
 
-Links:
+## Links
 
 * [Santur](santur.html)
 * [Dhol](dhol.html)

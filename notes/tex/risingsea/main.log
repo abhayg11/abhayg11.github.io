@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  28 JUL 2023 20:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  18 AUG 2023 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,7 +1032,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
@@ -1049,42 +1054,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--83
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 [2]
-Overfull \hbox (2.80608pt too wide) detected at line 99
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+
+Overfull \hbox (2.80608pt too wide) detected at line 101
 [] \OT1/cmr/m/n/12 + [] = [] + [] = [] = [] = [] + [] = [] + []
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
 [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 [7] [8]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 266.
+(Font)              scaled to size 8.0pt on input line 268.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 266.
+(Font)              scaled to size 6.0pt on input line 268.
  [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 327--329
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
@@ -1097,11 +1117,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  26537 strings out of 478338
  507994 string characters out of 2836700
- 797859 words of memory out of 3000000
+ 792224 words of memory out of 3000000
  44512 multiletter control sequences out of 15000+600000
  485400 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,15n,92p,703b,1038s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 89i,15n,92p,703b,1036s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
 kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
 ine/lbtn_oexx6f.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
@@ -1123,7 +1143,7 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/12
 Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs
 /rsfs10.pfb>
-Output written on main.pdf (14 pages, 430564 bytes).
+Output written on main.pdf (14 pages, 431863 bytes).
 PDF statistics:
  151 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)

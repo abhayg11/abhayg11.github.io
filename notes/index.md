@@ -11,4 +11,4 @@ mathmode: ON
 
 # Source code
 
-For all source code (tex files), see [this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/notes/tex/).
+For all source code (tex files), see [&#x2B9E;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/notes/tex/).
