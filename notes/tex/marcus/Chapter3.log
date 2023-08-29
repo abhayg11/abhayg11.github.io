@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  18 AUG 2023 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  27 AUG 2023 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,12 +1084,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--12
 
  []
 
-) (Chapters/3/22.tex) (Chapters/3/23.tex) (Chapters/3/24.tex [9])
-(Chapters/3/25.tex) (Chapters/3/26.tex) (Chapters/3/27.tex) (Chapters/3/28.tex)
-(Chapters/3/29.tex) (Chapters/3/30.tex) (Chapters/3/31.tex) (Chapters/3/32.tex)
-(Chapters/3/33.tex) (Chapters/3/34.tex) (Chapters/3/35.tex) (Chapters/3/36.tex)
-(Chapters/3/37.tex) (Chapters/3/38.tex) (Chapters/3/39.tex) (Chapters/3/40.tex
-[10]) [11] (Chapter3.aux)
+) (Chapters/3/22.tex [9]
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+) (Chapters/3/23.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+) (Chapters/3/24.tex) (Chapters/3/25.tex) (Chapters/3/26.tex)
+(Chapters/3/27.tex [10]) (Chapters/3/28.tex) (Chapters/3/29.tex)
+(Chapters/3/30.tex) (Chapters/3/31.tex) (Chapters/3/32.tex) (Chapters/3/33.tex)
+(Chapters/3/34.tex) (Chapters/3/35.tex) (Chapters/3/36.tex) (Chapters/3/37.tex)
+(Chapters/3/38.tex) (Chapters/3/39.tex) (Chapters/3/40.tex) [11] (Chapter3.aux)
 Package rerunfilecheck Info: File `Chapter3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
@@ -1123,7 +1137,7 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/1
 .pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msbm7.pfb>
-Output written on Chapter3.pdf (11 pages, 407449 bytes).
+Output written on Chapter3.pdf (11 pages, 412025 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  20 named destinations out of 1000 (max. 500000)
