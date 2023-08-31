@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Programming (Math)
+title: PCMI 2022
 ---
-
-# PCMI 2022
 
 * Henry Cohn \| Sphere Packing
   - Lectures: [1](cohn/PCMICohn1.pdf), [2](cohn/PCMICohn2.pdf), [3](cohn/PCMICohn3.pdf), [4](cohn/PCMICohn4.pdf)
@@ -27,9 +25,3 @@ title: Programming (Math)
   - [Exercises](wittenberg/exercises.pdf)
 * Melanie Wood \| [Counting Number Fields](wood/notes.pdf)
   - [Lectures](wood/lectures.pdf)
-
-# Sage
-
-# Macaulay2
-
-* [Hello, World!](macaulay2/helloworld.html)

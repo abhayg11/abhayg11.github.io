@@ -19,12 +19,68 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 
 ---
 
-# Links
+# Mathematics
 
-* [Mathematics](math.html)
-	- [Research](research/)
-	- [Notes and Solutions](notes/)
-* [Hobbies](hobbies.md)
-	- [Animation](animation/donut.html)
-	- [Music](music/)
-	- [Art](/art/crochet.html)
+## Teaching
+
+### Current courses
+
+* None
+
+### Previous courses
+
+* Summer 2023 - University of Utah MATH 3210: [Syllabus](assets/pdf/2023_3210_syllabus.pdf)
+* Spring 2023 - University of Utah MATH 1320
+* Fall 2022 - University of Utah MATH 1320
+
+## Research
+
+My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x2B9E;Dr. Sean Howe](https://www.math.utah.edu/~howe/). Further details TBD.
+
+## Notes / Code / Etc.
+
+### Textbook Solutions
+
+For all of this source code (tex files), see [&#x2B9E;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
+
+* Vakil - The Rising Sea: [Solutions](assets/tex/risingsea/main.pdf)
+* Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](tex/marcus/Chapter2.pdf) \| [Chapter 3](tex/marcus/Chapter3.pdf)
+
+### Macaulay2
+
+* [Hello, World!](macaulay2/helloworld.md)
+
+### Other
+
+* [PCMI 2022](pcmi22/)
+
+---
+
+# Personal
+
+When I'm not doing mathematics, I enjoy...
+
+* Dancing
+	- Living Traditions 2023: [&#x2B9E;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x2B9E;Live dhol](https://youtu.be/Y2OWHEJIoe4)
+* Animation
+	- [Blender Donut](animation/donut.html)
+* Playing music
+    - [Santur](music/santur.html)
+    - [Dhol](music/dhol.html)
+    - [Ukulele](music/ukulele.html)
+    - Harmonica
+* Playing games. Honorable mentions:
+    - Chess
+    - Factorio
+    - Spirit Island
+    - Minecraft
+    - Backgammon
+* Listening to podcasts
+* Gardening
+* Reading
+* Programming
+	- Puzzles
+	- Projects
+* Other artwork
+    - [Crochet](art/crochet.html)
+	- Sketching
