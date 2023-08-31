@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Home
-full-width: true
 ---
 
 Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
