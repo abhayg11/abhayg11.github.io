@@ -3,6 +3,8 @@ layout: page
 title: PCMI 2022
 ---
 
+These are the lectures I attended during the 2022 Park City Mathematics Institute, along with some of my notes/solutions:
+
 * Henry Cohn \| Sphere Packing
   - Lectures: [1](cohn/PCMICohn1.pdf), [2](cohn/PCMICohn2.pdf), [3](cohn/PCMICohn3.pdf), [4](cohn/PCMICohn4.pdf)
   - Exercises: [1](cohn/PCMICohnExercises1.pdf), [2](cohn/PCMICohnExercises2.pdf), [3](cohn/PCMICohnExercises3.pdf), [4](cohn/PCMICohnExercises4.pdf)

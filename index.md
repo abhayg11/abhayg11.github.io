@@ -3,7 +3,7 @@ layout: page
 title: Home
 ---
 
-Welcome to my site! I use this space to organize my [personal](hobbies.md) and [professional](math.md) life.
+Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
 
 ![Headshot](assets/img/headshot.jpg)  
 (Photo credit: Yasi Shaker)
@@ -44,7 +44,7 @@ My interests are in number theory, arithmetic geometry, and representation theor
 For all of this source code (tex files), see [&#x2B9E;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
 
 * Vakil - The Rising Sea: [Solutions](assets/tex/risingsea/main.pdf)
-* Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](tex/marcus/Chapter2.pdf) \| [Chapter 3](tex/marcus/Chapter3.pdf)
+* Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](assets/tex/marcus/Chapter2.pdf) \| [Chapter 3](assets/tex/marcus/Chapter3.pdf)
 
 ### Macaulay2
 
