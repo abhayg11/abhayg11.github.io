@@ -21,9 +21,40 @@ After high school, I started branching out into other instruments. In college, I
 
 ## Dancer
 
+Growing up, I danced "Bollywood" style, which was really just members of the Desi community teaching a bunch of elementary schoolers to perform a simple choreography. I'm happy to have started this way, since along with piano this really cemented my inner metronome and translated it to all parts of my body. I continued this until it was no longer "cool." In my last few years of high school, I remembered how much I enjoyed it and picked it back up with some friends.
+
+Going into college, I wanted to expand my repetoire, so I took classes in ballet, modern, and salsa, and went to club meetings around swing and bachata. (Can you tell I went to a PWI?) I also spent time with Frelon Dance Company as a dancer; a choreographer; and, for one year, a co-leader. I danced most of these styles with the company, but I also reached out into self-teaching Bhangra.
+
+I then went into the workplace and my dancing largely stopped. I didn't dance in my apartment, with coworkers, or at classes, and I rarely went to clubs or parties.
+
+After 2-3 years of this, I moved states, and in the new city I found a performing Bhangra group. I've danced with that group ever since and perform quite regularly.
+
 ## Activist
 
+Come talk to me if you're interested!
+
 ## Teacher
+
+I've taught in various capacities in my life. In high school, I worked as a math and computer science tutor and grader, which included holding weekly office hours for students who sought help. In college, I continued this, working largely as a teaching assistant for various mathematics classes and working in my college's Math and Physics Center, which was intended just as a collaborative space to work with a few tutors to answer questions as they came up. At this time, I also taught fusion Bollywood/Bhangra choreography.
+
+Now, as a graduate student, I have worked as a tutor, teaching assistant, and full teacher for various courses.
+
+In general, I am very interested in pedagogy. I need to spend some time drafting a proper teaching statement, but some of my basic principles are:
+
+* Pedagogy _must_ be taught rather than assumed. A good mathematician(/dancer/scientist/etc.) is not automatically a good teacher.
+* Most learning happens via _doing_ rather than via being lectured at.
+* Teaching is a reciprocal process and treating it hierarchically decreases efficacy for everyone involved.
+* Equity is more important than equality when it comes to a teacher's time.
+* Grades:
+  * They are an overloaded concept, which causes tension:
+    - They are supposed to represent understanding of course material on an unweighted scale (i.e. not relative to their classmates, previous years, or other schools).
+    - They indicate to employers a measure of hireability.
+    - They are interpreted by students as a measure of worth (incorrectly, but at no fault of the students).
+  * They are usually less useful to both student and teacher than more explicit feedback (yes, even for mathematics).
+  * They entrench and reproduce social inequity unless corrected for explicitly.
+* The goal of teaching should be to engage each student to learn something they didn't previously know. This is often difficult, as lecturing on a specific topic will benefit only those students who 1) don't currently know the topic and 2) know enough background to understand the topic.
+* Opportunities should be provided for students to learn from each other as some learn better from their peers than from teachers. Conversely, students should have sufficient access to their teacher as some learn better from an instructor.
+* Testing should be a way for students to reflect on their knowledge and is not a good time to introduce interesting or clever problems (unless the in-class relationships are strong enough to allow students to thrive with such problems).
 
 ## Student
 
@@ -36,6 +67,8 @@ After high school, I started branching out into other instruments. In college, I
 ## Partner
 
 ## Artist
+
+---
 
 # CV
 

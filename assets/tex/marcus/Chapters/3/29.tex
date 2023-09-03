@@ -1,3 +1,14 @@
 \mtexe{3.29}
 \begin{proof}
+	Since $p \nmid |R/\ZZ[\alpha]|$, we can determine the splitting of $p$ by the factorization of $f \pmod{p}$. But by assumption, $f$ has a root $r \in \FF_p$, so $x-r$ is a factor of $f(x) \pmod{p}$. Hence, $P = (p,\alpha-r)$ is a prime lying over $p$ of inertial degree 1. I.e. we have an isomorphism $\FF_p \cong R/P$. Composing with the quotient map gives the desired result:
+	\[ R \to R/P \to \FF_p \]
+	since under this map, $\alpha-r \mapsto 0$, i.e. $\alpha \mapsto r$. \\
+	
+	Let $\alpha$ be a root of $f(x) = x^3-x-1$ and let $p=5$. Then
+	\[ \disc(\alpha) = -(4(-1)^3+27(-1)^2) = -23 \]
+	which is not divisible by $p$. Hence $p \nmid |R/\ZZ[\alpha]|$, and $f(2) = 8-2-1 = 5 \equiv 0 \pmod{p}$, so $f$ has a root in $\FF_p$. So, we get a ring homomorphism $\varphi : R \to \FF_5$ with $\alpha \mapsto 2$. Thus if $\beta \in R$ satisfied $\beta^2 = \alpha$, then
+	\[ \varphi(\beta)^2 = \varphi(\beta^2) = \varphi(\alpha) = 2 \]
+	but there is no element of $\FF_5$ that squares to 2. So, $\sqrt{\alpha} \notin R$. \\
+	
+	
 \end{proof}
