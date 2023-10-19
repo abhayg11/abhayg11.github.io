@@ -1,0 +1,12 @@
+\mtexe{2.3.3} 
+\begin{proof}
+	Notice that if $\frp \in F$, then $\frp \supseteq I$ tautologically, and so $\frp \in V(I)$ by definition. I.e. we immediately have $F \subseteq V(I)$, and since $V(I)$ is closed, this gives $\overline{F} \subseteq V(I)$. We wish to show the reverse.
+	
+	Conversely, we have that $\overline{F}$ is a closed set, so it is of the form $V(J)$ for some ideal $J$. Then:
+	\[ J \subseteq \sqrt{J} = \bigcap_{\frp \in V(J)} \frp = \bigcap_{\frp \in \overline{F}} \frp \subseteq \bigcap_{\frp \in F} \frp = I \]
+	where the inclusion comes from the fact that we are intersecting over a subset. So, by applying $V$, we get: $\overline{F} = V(J) \supseteq V(I)$, as desired. \\
+	
+	Any prime $\frp \in \im(f)$ contains $\ker\varphi$, so $\im(f) \subseteq V(\ker\varphi)$, and since the latter is closed, we have $\overline{\im(f)} \subseteq V(\ker\varphi)$. Conversely, again write $\overline{\im(f)}$ as $V(J)$ for some $J \in \Spec A$. Then, for any prime $\frp \in \Spec B$, we have $f(\frp) \in V(J)$, i.e. $\varphi^{-1}\frp \supseteq J$. Thus, $\varphi(J) \subseteq \frp$. Since this is true of any prime, $\varphi(J)$ is contained in their intersection, i.e. $\varphi(J) \subseteq \sqrt{0}$, and so $J \subseteq \sqrt{\ker\varphi}$. But then $V(J) \supseteq V(\ker\varphi)$ as desired.
+	
+	When we have $\varphi : A \to A_\frp$ for some $\frp \in \Spec A$, then on the one hand $\im f$ is precisely the set of primes contained in $\frp$. On the other hand, we have $\ker\varphi = \{ a \in A : au = 0 \text{ for some } u \notin \frp\} \subseteq \frp$. So, there is some subideal $I$ of $\frp$ such that the lattice of ideals containing $I$ corresponds (bijectively, inclusion-preserving) to the closure of the lattice of ideals contained in $\frp$.
+\end{proof}

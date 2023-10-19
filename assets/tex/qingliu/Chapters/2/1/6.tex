@@ -1,0 +1,16 @@
+\mtexe{2.1.6} 
+\begin{proof}
+	Let $Z$ be a closed subspace of a quasi-compact space $X$. Let $\{U_i\}$ be an open cover of $Z$. Then, each $U_i$ is of the form $U_i' \cap Z$ for some $U_i'$ open in $X$. Notice that $\{U_i'\} \cup \{ X \setminus Z \}$ is an open cover of $X$. This has a finite subcover, say $U_1',\ldots,U_n',X \setminus Z$ (if this last set is not needed, it doesn't hurt to have it anyway). Then $U_1,\ldots,U_n$ is a cover of $Z$, so indeed any open cover of $Z$ has a finite subcover. I.e. $Z$ is quasi-compact. \\
+	
+	Now, let $\{U_i\}$ be an open cover of $\Spec A$. By definition, each $U_i$ is the complement of $V(J_i)$ for some ideal $J_i$ of $A$. Then, we get:
+	\[ V\left(\sum_i J_i\right) = \bigcap_i V(J_i) = \Spec(A) \setminus \left(\bigcup_i U_i\right) = \emptyset \]
+	I.e. this ideal is not contained in any prime ideal, and so cannot be proper. I.e.
+	\[ \sum_i J_i = A \]
+	whence we have an equation:
+	\[ \sum_i j_i = 1 \]
+	where $j_i \in J_i$ and $j_i = 0$ for all but finitely many indices. But then if $S$ is the support of this sum (the set of $i$ where $j_i \neq 0$), then:
+	\[ \sum_{i \in S} j_i = 1 \implies \sum_{i \in S} J_i = A \]
+	So:
+	\[ \bigcup_{i \in S} U_i = \Spec(A) \setminus \bigcap_{i \in S} V(J_i) = \Spec(A) \setminus V\left(\sum_{i \in S} J_i\right) = \Spec(A) \setminus V(A) = \Spec(A) \]
+	so that we have found a finite subcover. I.e. $\Spec A$ is quasi-compact.
+\end{proof}

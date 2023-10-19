@@ -1,0 +1,8 @@
+\mtexe{2.1.1}
+\begin{proof}
+	Notice that each $f \in A$ with nonzero constant term is a unit. Indeed, after multiplying by an element of $k$, we may assume that the constant term is 1. I.e. $f = 1 + gT$ for some $g \in A$. Then, since $A$ is $T$-adically complete, we have that
+	\[ \sum_{k=0}^\infty (-gT)^k \]
+	converges to some $h \in A$. But then $hf = h(1+gT) = 1$ directly, so $f$ is invertible.
+	
+	It is also clear that $\{0A, TA\} \subseteq \Spec(A)$, and I claim this list is complete. Indeed, suppose $P \in \Spec(A)$ is nonzero. Then it contains some nonzero element which can be factorized as $T^rf$ for some $f$ with nonzero constant term. But we've shown that $f$ is a unit, so $P$ contains $T^r$, and since it's prime, it contains $T$. But $TA$ is maximal, so $P = TA$ as desired.
+\end{proof}

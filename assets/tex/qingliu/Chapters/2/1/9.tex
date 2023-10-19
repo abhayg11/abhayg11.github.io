@@ -1,0 +1,18 @@
+\mtexe{2.1.9} 
+\begin{proof}
+	First, note that since $A$ is a finite $k$-module, the extension is integral. Let $\frp \in \Spec A$; then it is contained in some maximal ideal $\frm \in \Spec A$. Then $\frp \cap k$ and $\frm \cap k$ must be primes in $k$, i.e. they must both be zero. So, they lie over the same prime, and since integral extensions satisfy incomparability, the containment $\frp \subseteq \frm$ implies $\frp = \frm$. So, indeed every prime is maximal.
+	
+	Now, suppose $\Spec A$ is has at least $d+1$ elements for $d = \dim_k(A)$. Then choose distinct prime (maximal) ideals $\frm_1,\frm_2,\frm_3,\ldots,\frm_{d+1}$. Let
+	\[ I_r = \bigcap_{j=1}^r \frm_j \]
+	Then we have the descending chain:
+	\[ A \supseteq I_1 \supseteq I_2 \supseteq I_3 \supseteq \cdots I_{d+1} \]
+	Each of these containments must be proper. Indeed, otherwise we would have
+	\[ \frm_1 \cdots \frm_r \subseteq I_r \subseteq \frm_{r+1} \]
+	But then, since $\frm_{r+1}$ is prime, it contains some $\frm_i$, whence $\frm_{r+1} = \frm_i$ by maximality, contrary to assumption.
+	
+	On the other hand, each of these is a $k$-submodule of $A$, i.e. a $k$-vector space. Since the containments are proper, we must have that $\dim_k(I_{r+1}) < \dim_k(I_r)$. But $\dim_k(A)=d$, so this is a contradiction, as we cannot have a strictly decreasing sequence of length $d+2$ among the integers $\{0,\ldots,d\}$. Thus, we must have $|\Spec A| \leq \dim_k(A)$. \\
+	
+	Note that $k[T_1,\ldots,T_d]$ is a UFD, and a nonzero polynomial is a unit iff it is a constant. Hence, Euclid's proof shows that there are infinitely many prime elements and so infinitely many primes. Explicitly: note that $T_1$ is prime, so there is at least one nonzero prime. Suppose that $\pi_1,\ldots,\pi_n$ is a list of nonzero primes, so that none of them may be constant. Then $a = \pi_1 \cdots pi_n + 1$ factors as a nonempty product of primes since it has positive degree. None of these primes can be any $\pi_i$, else $\pi_i$ divides 1. So, no finite list of primes of positive degree is complete, hence there are infinitely many primes. \\
+	
+	We've already shown one direction, so now suppose that $A$ is not a finite $k$-module. By Noether normalization, we can find a finite injective morphism $k[T_1,\ldots,T_d] \to A$. We must have $d \geq 1$ since we've assumed $A$ is not finite over $k$. But now, the extension $A$ over $k[T_1,\ldots,T_d]$ satisfies lying over, so we have at least one prime of $A$ over each prime of $k[T_1,\ldots,T_d]$. In fact, this association is injective since each prime of $A$ lies over a unique prime of $k[T_1,\ldots,T_d]$. So, $|\Spec A| \geq |\Spec k[T_1,\ldots,T_d]| = \infty$ as desired.
+\end{proof}

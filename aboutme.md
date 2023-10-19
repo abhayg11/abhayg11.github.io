@@ -41,7 +41,7 @@ Now, as a graduate student, I have worked as a tutor, teaching assistant, and fu
 
 In general, I am very interested in pedagogy. I need to spend some time drafting a proper teaching statement, but some of my basic principles are:
 
-* Pedagogy _must_ be taught rather than assumed. A good mathematician(/dancer/scientist/etc.) is not automatically a good teacher.
+* Pedagogy _must_ be taught rather than assumed. A good mathematician(/dancer/scientist/etc.) is [not automatically](http://smbc-comics.com/comic/2010-01-29) a good teacher.
 * Most learning happens via _doing_ rather than via being lectured at.
 * Teaching is a reciprocal process and treating it hierarchically decreases efficacy for everyone involved.
 * Equity is more important than equality when it comes to a teacher's time.
@@ -58,11 +58,23 @@ In general, I am very interested in pedagogy. I need to spend some time drafting
 
 ## Student
 
+To complement the above, I've also been a student for most of my life. While I don't think of it as necessarily fundamental to my identity, I would be remiss to ignore the ways it impacts my life and thoughts. In particular, I need to acknowledge the massive impact various teachers have had on my life. I am deeply indebted to my high school English teachers, my high school mathematics teachers, my college mathematics professors, my dance teachers, and my partner, to name (or not name, rather) a few.
+
+I also recognize that the system as it exists today encourages students to largely be consumers and takers. While I want to break down this relationship and engage with students more fully, a consequence for my life is that I feel a debt owed for the knowledge I've received as a student myself. I hope to find a way to give back to my community and to share my power throughout the rest of my life.
+
 ## Gamer
+
+"Gamer" certainly has a specific connotation, and I both accept it and want to extend it. That is, I do sometimes parallel the image of an individual frozen in place, staring at a screen, controller (or mouse) in hand. But I also just love games more generally--board games, improvised games, word games, etc.
+
+I play chess (chess.com username: abhay11), though I've hardly devoted time to study it properly. I haven't ever played minecraft vanilla, but I **love** modpacks, especially Regrowth, Skyfactory, and Sevtech Ages. Among board games, I like things with some role-playing aspect (like Spirit Island or D&D), or things that are very simple (like backgammon, solitaire, and minesweeper). And of course, [the factory must grow](https://www.factorio.com/).
 
 ## Cook
 
+Ooh, I should put a list of recipes here! I'll get to that. In the meantime: I mostly like making Indian food, and I don't like measuring things.
+
 ## Software Engineer
+
+You'd think I would've put this higher up. I worked for 4 years at Google as a software engineer, and I really enjoy the work involved therein. Designing a system to pass and process data well is exciting and scratches my "measure twice, cut once" mentality without having to use a saw.
 
 ## Partner
 
@@ -83,7 +95,7 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 | 2014--2018 | Kalamazoo College | B.A. Mathematics and Physics | GPA: 3.972/4.0. Thesis: On a Generalization of the Bestvina-Brady Construction. Relevant courses: Algebraic Number Theory, Intro to Algebraic Geometry, Abstract Algebra I/II, Real Analysis I/II, Complex Analysis, Differential Equations, Intro to Number Theory, Intro to Topology |
 | 2016--2017 | Budapest Semesters in Mathematics | Study Abroad | Relevant courses: Advanced Abstract Algebra, Topics in Analytic Number Theory, Commutative Algebra, Algebraic Topology, Conjecture and Proof, Functional Analysis |
 
-## Work Experience
+## Employment
 
 | Years | Location | Title | Team/Mentor | Description |
 | 2022-Present | University of Utah | Graduate Student | Dr. Sean Howe | Funded by teaching assistantships for undergraduate mathematics courses and research assistantships to study number theory and representation theory. |
@@ -101,9 +113,10 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 | 2018 | Kalamazoo College | Mathematics Colloquium | Presented distillation of senior thesis to audience of undergraduate students and professors at Kalamazoo College. |
 | 2018--2019 | Mathematical Association of America (MAA) | Journal Solution Submissions | Submitted various solutions to problems posed in the "Problems and Solutions" section of three MAA journals: American Mathematical Monthly, Mathematics Magazine, and College Mathematics Journals. Three such submissions were published as the accepted solution by the curators. |
 
-## Achievements
+## Selected grants, distinctions, and fellowships
 
 | Year | Location | Award | Description |
+| 2023 | University of Utah | NSF Grant Recipient | Graduate student research funded by [RTG Grant #1840190](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1840190) |
 | 2018 | Kalamazoo College | Phi Beta Kappa Member | |
 | 2014--2017 | Kalamazoo College | Putnam Exam | Scored 11,11,41,35 points per year, respectively. |
 | 2018 | Kalamazoo College | Clarke Benedict Williams Prize | Established by the mathematics majors in the Class of 1923, awarded to that member of the graduating class who has the best record in mathematics and the allied sciences. |

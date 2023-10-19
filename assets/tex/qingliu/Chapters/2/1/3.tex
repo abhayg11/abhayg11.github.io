@@ -1,0 +1,48 @@
+\mtexe{2.1.3} 
+\begin{proof}
+	Since $A/\frm$ is a finite field extension of $\RR$, it is either $\RR$ or $\CC$. So, it injects into $\CC$, giving:
+	\[ \RR[X,Y] \to A \to A/\frm \hookrightarrow \CC \]
+	Then the images of $1,x,x^2$ in $\CC$ are linearly dependent over $\RR$, so there is some $a,b,c \in \RR$ with
+	\[ a+bx+cx^2 \in \frm \]
+	If $c$ is nonzero, dividing by it gives the desired quadratic in $x$ contained in $\frm$. Otherwise, we must have $b$ nonzero, so dividing by $b$ and squaring gives the desired quadratic. The same argument applies to $y$. The same argument applied to $1,x,y$ gives the final claimed relation:
+	\[ f = \alpha x + \beta y + \gamma \in \frm \]
+	and if $(\alpha,\beta) = (0,0)$, then $\gamma \in \frm$ and $\gamma \neq 0$, which contradicts properness of $\frm$.
+	
+	We'd like to show $\frm = fA$. WLOG, assume $\beta \neq 0$. It suffices to show that $(f,X^2+Y^2+1)$ is maximal in $\RR[X,Y]$, where we also use $f$ to denote $\alpha X + \beta Y + \gamma$. We'll take the quotient iteratively. First, we claim that $\RR[X,Y]/(f) \cong \RR[t]$. Indeed, consider the map $\psi : \RR[X,Y] \to \RR[t]$ given by:
+	\[ X \mapsto t \text{ and } Y \mapsto -\frac{\alpha t + \gamma}{\beta} \]
+	Clearly $f \in \ker\psi$ and $\psi$ surjects. Further, if $g \in \ker\psi$, then by polynomial division (in $\RR[X][Y]$), we can write:
+	\[ g(X,Y) = f(X,Y)q(X,Y) + h(X) \]
+	since $\beta$ is a unit. Thus $\psi(h) = 0$, but $\psi(h) = h(t)$ is zero in $\RR[t]$ iff it is zero in $\RR[X]$. I.e. $g = fq \in (f)$. So, $\RR[X,Y]/(f) \cong \RR[t]$, and under this isomorphism, $X^2+Y^2+1$ maps to a quadratic $p(t)$ (it is actually quadratic since the leading coefficient is positive, hence nonzero).
+	
+	So, finally, to show that $(f,X^2+Y^2+1)$ is maximal, it suffices to show that $p$ is irreducible, i.e. that it has no root. Suppose it has a root $u$. Then we have the composite:
+	\[ v : \RR[X,Y] \to \RR[t] \to \RR \]
+	where the final map is evaluation $t \mapsto u$. Under the composition, we have $X^2+Y^2+1 \mapsto p(u) = 0$, but this would mean that $0 = v(X)^2+v(Y)^2+1 \geq 1$, which is a contradiction. Hence $p$ is irreducible and $(f,X^2+Y^2+1)$ is maximal, so that $\frm = fA$. \\
+	
+	The above proof shows in general that given $\alpha,\beta,\gamma \in \RR$ with $(\alpha,\beta) \neq (0,0)$, that $(\alpha x + \beta y + \gamma)$ is maximal in $A$. Multiplying the vector $(\alpha,\beta,\gamma)$ does not change this ideal, so we indeed get a map $\PP_\RR^2 \setminus \{(0:0:1)\} \to \Spec(A)$. We've also shown that this map surjects on the set of maximal ideals. So, we only need to show it injects. In other words, suppose $\frm = (\alpha x + \beta y + \gamma) = (\alpha'x+\beta'y+\gamma')$ for some $(\alpha:\beta:\gamma) \neq (\alpha':\beta':\gamma'] \in \PP_\RR^2 \setminus \{[0:0:1]\}$. We have two cases. First, suppose $(\alpha,\beta)$ and $(\alpha',\beta')$ are independent in $\RR^2$. Then they form a basis, so we can find $a,b,c,d \in \RR$ with:
+	\[ \twomat{\alpha}{\alpha'}{\beta}{\beta'}\twomat{a}{b}{c}{d} = \twomat{1}{0}{0}{1} \]
+	Then $\frm$ contains:
+	\[ a(\alpha x + \beta y + \gamma) + c(\alpha'x+\beta'y+\gamma') = x + r \]
+	for a constant $r \in \RR$. Similarly, $\frm$ contains:
+	\[ b(\alpha x + \beta y + \gamma) + d(\alpha'x+\beta'y+\gamma') = y + s \]
+	for a constant $s \in \RR$. But then, in $A/\frm$ we have $x \mapsto -r$ and $y \mapsto -s$, which gives:
+	\[ 0 = x^2+y^2+1 \mapsto r^2+s^2+1 \geq 1 \]
+	which is a contradiction.
+	
+	So we must have that $(\alpha,\beta)$ and $(\alpha',\beta')$ are linearly dependent. Since they are nonzero, there is a constant $c$ with $(\alpha,\beta) = c(\alpha',\beta')$. We cannot have $\gamma = c\gamma'$, since the two points are distinct in $\PP_\RR^2$. But then $\frm$ contains:
+	\[ (\alpha x + \beta y + \gamma) - c(\alpha'x + \beta'y + \gamma') = \gamma-c\gamma' \]
+	which is nonzero, contradicting the fact that $\frm$ is proper. So, we've exhausted all possibilities and must have that the map is injective. Thus, the association $(\alpha:\beta:\gamma) \mapsto (\alpha x + \beta y + \gamma)A$ is a bijection between $\PP_\RR^2 \setminus \{(0:0:1)\}$ and the maximal ideals of $A$. \\
+	
+	As claimed, the map $\RR[X] \to \RR[X,Y] \to A$ is injective. Indeed, any element of the ideal $(X^2+Y^2+1)$ necessarily has degree at least $2$ in $Y$, while any polynomial in $X$ has degree zero in $Y$. The morphism is also finite since we have a surjection of $\RR[X]$-modules $\RR[X]^2 \to A$ mapping $(u,v)$ to $u+yv$. Indeed, given $g \in A$, we can lift it to $g(X,Y) \in \RR[X,Y]$, and by polynomial division we can write
+	\[ g(X,Y) = (X^2+Y^2+1)q(X,Y) + Yr(X) + s(X) \]
+	so that after mapping into $A$ we get:
+	\[ g = yr(x) + s(x) \]
+	which is in the image of the $\RR[X]$-module map above.
+	
+	So now, if $\frp$ is a non-maximal prime of $A$, then I claim $\frp \cap \RR[X]$ is a non-maximal prime of $\RR[X]$. Indeed, let $\frm$ be a maximal ideal (strictly) containing $\frp$. Then, from the previous problem, $\RR[X] \cap \frm$ is maximal and contains $\RR[X] \cap \frp$. But we cannot have $\RR[X] \cap \frp = \RR[X] \cap \frm$ since $A$ is an integral extension of $\RR[X]$, which therefore satisfies incomparability. So $\RR[X] \cap \frp$ is strictly contained in $\RR[X] \cap \frm$, and therefore cannot be maximal.
+	
+	But $\RR[X]$ is a PID, so any nonzero prime is maximal, and therefore $\RR[X] \cap \frp = 0$. Now let $g \in \frp$. Then $g \in A$, which is integral over $\RR[X]$, so there is a relation:
+	\[ g^n + a_{n-1}g^{n-1} + \cdots + a_0 = 0 \]
+	where each $a_i \in \RR[X]$. We may further assume that $n \geq 1$ is as small as possible. Now notice that $a_0$ is a multiple of $g$, so $a_0 \in \RR[X] \cap \frp = 0$, so $a_0=0$. If $n > 1$, this gives
+	\[ g^{n-1} + a_{n-1}g^{n-2} + \cdots + a_1 = 0 \]
+	contradicting minimality of $n$. So instead we get $n=1$, whence $g = -a_0 = 0$. So $\frp = 0$, and there is at most one non-maximal prime of $A$.
+\end{proof}
