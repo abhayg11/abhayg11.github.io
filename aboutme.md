@@ -127,4 +127,4 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 
 ## Skills
 
-* Programming languages: C++, Python, Java, LaTeX
+* Programming languages: C++, Python, Java, LaTeX, SageMath, Macaulay2
