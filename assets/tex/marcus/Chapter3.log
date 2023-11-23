@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  1 SEP 2023 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  22 NOV 2023 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1129,22 +1129,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--28
 
  []
 
-) (Chapters/3/27.tex) (Chapters/3/28.tex) (Chapters/3/29.tex)
-(Chapters/3/30.tex) (Chapters/3/31.tex) (Chapters/3/32.tex) (Chapters/3/33.tex)
-(Chapters/3/34.tex) (Chapters/3/35.tex [12]) (Chapters/3/36.tex)
-(Chapters/3/37.tex) (Chapters/3/38.tex) (Chapters/3/39.tex) (Chapters/3/40.tex)
-[13] (Chapter3.aux)
+) (Chapters/3/27.tex [12]) (Chapters/3/28.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+) (Chapters/3/29.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+) (Chapters/3/30.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+) (Chapters/3/31.tex) (Chapters/3/32.tex) (Chapters/3/33.tex)
+(Chapters/3/34.tex) (Chapters/3/35.tex) (Chapters/3/36.tex) (Chapters/3/37.tex)
+(Chapters/3/38.tex) (Chapters/3/39.tex) (Chapters/3/40.tex) [15] (Chapter3.aux)
 Package rerunfilecheck Info: File `Chapter3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24835 strings out of 478338
- 478787 string characters out of 2836700
- 755142 words of memory out of 3000000
+ 24837 strings out of 478338
+ 478801 string characters out of 2836700
+ 756155 words of memory out of 3000000
  42692 multiletter control sequences out of 15000+600000
  477347 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,17n,92p,943b,623s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 89i,17n,92p,943b,624s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
 naooyc.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
 ine/lbtn_kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
@@ -1155,21 +1203,22 @@ al/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/12
 698/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.p
 fb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmex10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmmi5.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/12698/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/12698/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/12698/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/12698/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/1
-2698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:
-/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/symbols/msbm7.pfb>
-Output written on Chapter3.pdf (13 pages, 422987 bytes).
+sfonts/cmextra/cmex7.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/12698/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/12698/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/12698/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/1269
+8/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Use
+rs/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy5.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on Chapter3.pdf (15 pages, 447831 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 24 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
