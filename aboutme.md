@@ -41,7 +41,7 @@ Now, as a graduate student, I have worked as a tutor, teaching assistant, and fu
 
 In general, I am very interested in pedagogy. I need to spend some time drafting a proper teaching statement, but some of my basic principles are:
 
-* Pedagogy _must_ be taught rather than assumed. A good mathematician(/dancer/scientist/etc.) is [&#x2B9E;not automatically](http://smbc-comics.com/comic/2010-01-29) a good teacher.
+* Pedagogy _must_ be taught rather than assumed. A good mathematician(/dancer/scientist/etc.) is [&#x21B7;not automatically](http://smbc-comics.com/comic/2010-01-29) a good teacher.
 * Most learning happens via _doing_ rather than via being lectured at.
 * Teaching is a reciprocal process and treating it hierarchically decreases efficacy for everyone involved.
 * Equity is more important than equality when it comes to a teacher's time.
@@ -66,7 +66,7 @@ I also recognize that the system as it exists today encourages students to large
 
 "Gamer" certainly has a specific connotation, and I both accept it and want to extend it. That is, I do sometimes parallel the image of an individual frozen in place, staring at a screen, controller (or mouse) in hand. But I also just love games more generally--board games, improvised games, word games, etc.
 
-I play chess (chess.com username: abhay11), though I've hardly devoted time to study it properly. I haven't ever played minecraft vanilla, but I **love** modpacks, especially Regrowth, Skyfactory, and Sevtech Ages. Among board games, I like things with some role-playing aspect (like Spirit Island or D&D), or things that are very simple (like backgammon, solitaire, and minesweeper). And of course, [&#x2B9E;the factory must grow](https://www.factorio.com/).
+I play chess (chess.com username: abhay11), though I've hardly devoted time to study it properly. I haven't ever played minecraft vanilla, but I **love** modpacks, especially Regrowth, Skyfactory, and Sevtech Ages. Among board games, I like things with some role-playing aspect (like Spirit Island or D&D), or things that are very simple (like backgammon, solitaire, and minesweeper). And of course, [&#x21B7;the factory must grow](https://www.factorio.com/).
 
 ## Cook
 
@@ -116,7 +116,7 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 ## Selected grants, distinctions, and fellowships
 
 | Year | Location | Award | Description |
-| 2023 | University of Utah | NSF Grant Recipient | Graduate student research funded by [&#x2B9E;RTG Grant #1840190](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1840190) |
+| 2023 | University of Utah | NSF Grant Recipient | Graduate student research funded by [&#x21B7;RTG Grant #1840190](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1840190) |
 | 2018 | Kalamazoo College | Phi Beta Kappa Member | |
 | 2014--2017 | Kalamazoo College | Putnam Exam | Scored 11,11,41,35 points per year, respectively. |
 | 2018 | Kalamazoo College | Clarke Benedict Williams Prize | Established by the mathematics majors in the Class of 1923, awarded to that member of the graduating class who has the best record in mathematics and the allied sciences. |

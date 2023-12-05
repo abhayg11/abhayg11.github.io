@@ -3,20 +3,12 @@ layout: page
 title: Home
 ---
 
-* &#x27A1;Test1
-* &#x21A6;Test2
-* &#x2B95;Test3
-* &#x21E8;Test4
-* &#x21B3;Test5
-* &#x21D2;Test6
-* &#x21B7;Test7
-
 Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
 
 ![Headshot](assets/img/headshot.jpg)  
 (Photo credit: Yasi Shaker)
 
-I am a mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x27A1;Dr. Federico Ardila](https://fardila.com) and restate them here...
+I am a mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x21B7;Dr. Federico Ardila](https://fardila.com) and restate them here...
 
 * Axiom 1. Mathematical potential is equally present in different groups, irrespective of geographic, demographic, and economic boundaries.
 * Axiom 2. Everyone can have joyful, meaningful, and empowering mathematical experiences.
@@ -43,13 +35,13 @@ I am a mathematician, musician, activist, and dancer interested in building comm
 
 ## Research
 
-My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x2B9E;Dr. Sean Howe](https://www.math.utah.edu/~howe/). Further details TBD.
+My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x21B7;Dr. Sean Howe](https://www.math.utah.edu/~howe/). Further details TBD.
 
 ## Notes / Code / Etc.
 
 ### Textbook Solutions
 
-For all of this source code (tex files), see [&#x2B9E;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
+For all of this source code (tex files), see [&#x21B7;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
 
 * Bump - Automorphic Forms and Representations: [Chapter 4](assets/tex/bump/Chapter4.pdf)
 * Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](assets/tex/marcus/Chapter2.pdf) \| [Chapter 3](assets/tex/marcus/Chapter3.pdf)
@@ -72,7 +64,7 @@ For all of this source code (tex files), see [&#x2B9E;this repo](https://github.
 When I'm not doing mathematics, I enjoy...
 
 * Dancing
-	- Living Traditions 2023: [&#x2B9E;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x2B9E;Live dhol](https://youtu.be/Y2OWHEJIoe4)
+	- Living Traditions 2023: [&#x21B7;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x21B7;Live dhol](https://youtu.be/Y2OWHEJIoe4)
 * Animation
 	- [Blender Donut](animation/donut.html)
 * Playing music
