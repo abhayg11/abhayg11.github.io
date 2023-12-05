@@ -43,8 +43,10 @@ My interests are in number theory, arithmetic geometry, and representation theor
 
 For all of this source code (tex files), see [&#x2B9E;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
 
-* Vakil - The Rising Sea: [Solutions](assets/tex/risingsea/main.pdf)
+* Bump - Automorphic Forms and Representations: [Chapter 4](assets/tex/bump/Chapter4.pdf)
 * Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](assets/tex/marcus/Chapter2.pdf) \| [Chapter 3](assets/tex/marcus/Chapter3.pdf)
+* Qing Liu - Algebraic Geometry and Arithmetic Curves: [Chapter 1](assets/tex/qingliu/Chapter1.pdf) \| [Chapter 2](assets/tex/qingliu/Chapter2.pdf)
+* Vakil - The Rising Sea: [Solutions](assets/tex/risingsea/main.pdf)
 
 ### Macaulay2
 
@@ -52,6 +54,7 @@ For all of this source code (tex files), see [&#x2B9E;this repo](https://github.
 
 ### Other
 
+* [PAWS 2023](assets/tex/paws23/)
 * [PCMI 2022](pcmi22/)
 
 ---
