@@ -1,0 +1,45 @@
+\mtexe{4.1.1}
+\begin{proof}
+	We are given a finite group $G$, a subgroup $H$, a representation $(U,\tau)$ of $G$, and a representation $(V,\pi)$ of $H$. First, I claim that the map $\Hom_G(U,V^G) \to \Hom_H(U_H,V)$ given by:
+	\[ \Phi \mapsto (u \mapsto \Phi(u)(e) \]
+	is a $\CC$-linear transformation, where $e$ denotes the identity of $G$. Linearity is clear, so we only need to show that the image of $\Phi$ is an $H$-equivariant map. For $h \in H$ and $u \in U$, we have:
+	\[ \Phi(\tau(h)u)(e) = (\pi^G(h)\Phi(u))(e) = \Phi(u)(eh) = \Phi(u)(he) = \pi(h)\Phi(u)(e) \]
+	as desired.
+	
+	Conversely, we claim that the map $\Hom_H(U_H,V) \to \Hom_G(U,V^G)$ given by:
+	\[ \Psi \mapsto (u \mapsto (g \mapsto \Psi(\tau(g)u))) \]
+	is also $\CC$-linear. Linearity is again clear, so we wish to show that the image of $\Psi$ is $G$-equivariant and that this image evaluated at $u$ is an element of $V^G$ for each $u$. For both, it will be convenient for a fixed $\Psi$ to define $f_u : G \to V$ by:
+	\[ f_u(g) = \Psi(\tau(g)u) \]
+	for each $u \in U$. Then the map above can be defined by $\Psi \mapsto (u \mapsto f_u)$. To see that $f_u$ is in $V^G$, note that for any $h \in H$ and $g \in G$,
+	\[ f_u(hg) = \Psi(\tau(hg)u) = \Psi(\tau(h)(\tau(g)u)) = \pi(h)\Psi(\tau(g)u) = \pi(h)f_u(g) \]
+	as desired. Finally, we show that the overall map is $G$-equivariant; for $g,g' \in G$ and $u \in U$, we have:
+	\[ f_{\tau(g')u}(g) = \Psi(\tau(g)(\tau(g')u)) = \Psi(\tau(gg')u) = f_u(gg') = (\pi^G(g')f_u)(g) \]
+	So that $f_{\tau(g')u} = \pi^G(g')f_u$ as desired.
+	
+	Finally, to complete the proof, we show these two morphisms are inverses. For $\Phi \in \Hom_G(U,V^G)$, let $\Psi$ be the image over the first morphism and $\Phi'$ be the image of $\Psi$ across the second. Then, for $u \in U$ and $g \in G$,
+	\[ \Phi'(u)(g) = \Psi(\tau(g)u) = \Phi(\tau(g)u)(e) = (\pi^G(g)\Phi(u))(e) = \Phi(u)(eg) = \Phi(u)(g) \]
+	so that $\Phi' = \Phi$. Conversely, for $\Psi \in \Hom_H(U_H,V)$, let $\Phi$ be the image over the second and $\Psi'$ be the image of $\Phi$ over the first. Then, for $u \in U$,
+	\[ \Psi'(u) = \Phi(u)(e) = \Psi(\tau(e)u) = \Psi(u) \]
+	so $\Psi' = \Psi$. Hence both compositions are the identity, and we have $\Hom_G(U,V^G) \cong \Hom_H(U_H,V)$ as $\CC$-vector spaces. \\
+	
+	Now let $(\pi_1,V_1)$ and $(\pi_2,V_2)$ be representations of the same finite group $G$ with characters $\chi_1,\chi_2$. As per the hint, we know that both $\left<\chi_1,\chi_2\right>_G$ and $\dim\Hom_G(\pi_1,\pi_2)$ are linear in each coordinate. Namely, if $\pi_1$ is the direct sum of sub-representations, then $\chi_1$ is the corresponding sum of characters, the inner product expands as a sum, the vector space of homs splits as a direct sum since each map can be defined on each summand, and the dimension adds. Similarly, using the projections, both terms are linear in $\pi_2$. So, showing these quantities are equal reduces to the case when $\pi_1,\pi_2$ are irreducible.
+	
+	Let $S \in \Hom_G(\pi_1,\pi_2)$. Then note that $\ker S$ is a $\pi_1$-equivariant subspace of $V_1$, and $\im S$ is a $\pi_2$-equivariant subspace. Indeed, for $v \in \ker S$, $w = Sz \in \im S$, and $g \in G$ arbitrary:
+	\begin{align*}
+		S\pi_1(g)v &= \pi_2(g)Sv = \pi_2(g)0 = 0 \\
+		\pi_2(g)w &= \pi_2(g)Sz = S\pi_1(g)z
+	\end{align*}
+	so that $\pi_g(v) \in \ker S$ and $\pi_2(g)w \in \im S$. By irreducibility, this shows that the kernel and image are trivial. If either $\ker S = V_1$ or $\im S = 0$, then $S=0$ is the zero map. Otherwise $\ker S = 0$ and $\im S = V_2$ and $S$ is an isomorphism. So each nonzero element of $\Hom_G(\pi_1,\pi_2)$ is an isomorphism of representations.
+	
+	We now have two cases. If $\pi_1 \not\cong \pi_2$, then the above shows that $\Hom_G(\pi_1,\pi_2) = 0$, which has dimension zero. But in this case we also know $\left<\chi_1,\chi_2\right> = 0$, so the two quantities are equal as claimed. Otherwise $\pi_1 \cong \pi_2$, and we can pick an explicit isomorphim $T$. We know $\left<\chi_1,\chi_2\right> = 1$ in this case, so it suffices to show that $\Hom_G(\pi_1,\pi_2) = \CC T$. To this end, let $S \in \Hom_G(\pi_1,\pi_2)$. Either $S=0=0T \in \CC T$, or $S$ is an isomorphism. Then $T^{-1}S$ is a $\pi_1$-equivariant automorphism of $V_1$. Let $\lambda,v$ be an eigenvalue-eigenvector pair of $T^{-1}S$. Then
+	\[ \Span \{ \pi_1(g)v \mid g \in G \} \]
+	is a nonzero $\pi_1$-invariant subspace of $V_1$ (since it contains $v$), so it must be all of $V_1$ by irreducibility. So, for $w \in V_1$, we can write:
+	\[ w = \sum_i c_i\pi_1(g_i)v \]
+	for some finite collection of $c_i \in \CC$ and $g_i \in G$. Then,
+	\[ T^{-1}Sw = T^{-1}S\sum_i c_i\pi_1(g_i)v = \sum_i c_i(T^{-1}S\pi_1(g_i))v = \sum_i c_i(\pi_1(g)T^{-1}S)v = \sum_i c_i\pi_1(g_i)\lambda v = \lambda \sum_i c_i\pi_1(g_i)v = \lambda w \]
+	So that $T^{-1}S = \lambda I$, i.e. $S = \lambda T \in \CC T$, completing the proof. \\
+	
+	Finally, the last statement combines these two trivially:
+	\[ \left<\sigma,\chi^G\right> = \dim\Hom_G(\tau,\pi^G) = \dim\Hom_H(\tau_H,\pi) = \left<\sigma_H,\chi\right> \]
+	as claimed.
+\end{proof}
