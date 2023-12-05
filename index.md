@@ -3,13 +3,13 @@ layout: page
 title: Home
 ---
 
-* &#27A1;Test1
-* &#21A6;Test2
-* &#2B95;Test3
-* &#21E8;Test4
-* &#21B3;Test5
-* &#21D2;Test6
-* &#21B7;Test7
+* Test1 &#27A1;Test1
+* Test2 &#21A6;Test2
+* Test3 &#2B95;Test3
+* Test4 &#21E8;Test4
+* Test5 &#21B3;Test5
+* Test6 &#21D2;Test6
+* Test7 &#21B7;Test7
 
 Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
 
