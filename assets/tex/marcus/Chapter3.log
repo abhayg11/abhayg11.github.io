@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  22 NOV 2023 23:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  6 DEC 2023 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1179,17 +1179,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
-) (Chapters/3/31.tex) (Chapters/3/32.tex) (Chapters/3/33.tex)
-(Chapters/3/34.tex) (Chapters/3/35.tex) (Chapters/3/36.tex) (Chapters/3/37.tex)
-(Chapters/3/38.tex) (Chapters/3/39.tex) (Chapters/3/40.tex) [15] (Chapter3.aux)
+) (Chapters/3/31.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 24--26
+
+ []
+
+) (Chapters/3/32.tex) (Chapters/3/33.tex) (Chapters/3/34.tex)
+(Chapters/3/35.tex) (Chapters/3/36.tex) (Chapters/3/37.tex) (Chapters/3/38.tex)
+(Chapters/3/39.tex) (Chapters/3/40.tex) [16] (Chapter3.aux)
 Package rerunfilecheck Info: File `Chapter3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24837 strings out of 478338
- 478801 string characters out of 2836700
- 756155 words of memory out of 3000000
- 42692 multiletter control sequences out of 15000+600000
+ 24839 strings out of 478338
+ 478812 string characters out of 2836700
+ 756164 words of memory out of 3000000
+ 42693 multiletter control sequences out of 15000+600000
  477347 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,17n,92p,943b,624s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1216,9 +1241,9 @@ cmsy5.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Chapter3.pdf (15 pages, 447831 bytes).
+Output written on Chapter3.pdf (16 pages, 455053 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,7 +8,7 @@ Welcome to [my](aboutme.html) site! I use this space to organize my personal and
 ![Headshot](assets/img/headshot.jpg)  
 (Photo credit: Yasi Shaker)
 
-I am a mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x21B7;Dr. Federico Ardila](https://fardila.com) and restate them here...
+I am a queer mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x21B7;Dr. Federico Ardila](https://fardila.com) and restate them here...
 
 * Axiom 1. Mathematical potential is equally present in different groups, irrespective of geographic, demographic, and economic boundaries.
 * Axiom 2. Everyone can have joyful, meaningful, and empowering mathematical experiences.

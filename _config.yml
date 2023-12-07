@@ -20,7 +20,9 @@ author: Abhay Goel
 ###############################################
 
 navbar-links:
+  Home: ""
   About Me: "aboutme"
+  Curriculum Vitae: "cv"
 
 ################
 # --- Logo --- #
