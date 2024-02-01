@@ -27,4 +27,10 @@
 	For $b \in A^G$, we have that
 	\[ y \in p^{-1}(D(b)) \iff b \notin p(y) \iff b \notin y \iff y \in D(bA) \]
 	so that $p^{-1}(D(b)) = D(bA)$. Only the middle biconditional is non-obvious, so to spell it out, note that if $b \in p(y)$ then clearly $b \in y$ since $p(y) \subseteq y$. Conversely, if $b \in y$, then since $b \in A^G$, we get $b \in y \cap A^G = p(y)$, as claimed. The equality $(A^G)_b = (A_b)^G$ is immediate, since for $b \in A^G$, a fraction in $A_b$ is fixed by $G$ iff the numerator is fixed by $G$. 
+	
+	To see that $G$ acts on the scheme $p^{-1}(V)$, note that we've already demonstrated that it acts on $\Spec A$ as a scheme, and so it suffices to show that for each $\sigma \in G$, the morphism of schemes $\sigma|_{p^{-1}(V)} : p^{-1}(V) \to \Spec A$ has image in the open subscheme $p^{-1}(V)$. But this is immediate; if $\frp$ is a prime lying over a prime of $A^G$, then each conjugate of $\frp$ lies over the same prime, and so is also in $p^{-1}(V)$.
+	
+	Finally, we wish to show the two stated rings are the same. If $V = D(b)$ is a principal open subset, we are done, since:
+	\[ \scO_{\Spec A}(p^{-1}(D(b)))^G = \scO_{\Spec A}(D(bA))^G = (A_b)^G = (A^G)_b = \scO_{\Spec A^G}(D(b)) \]
+	Otherwise, we're still done since $V = \bigcup_i D(b_i)$ for some collection of principal opens, and we obtain the result via gluing.
 \end{proof}
