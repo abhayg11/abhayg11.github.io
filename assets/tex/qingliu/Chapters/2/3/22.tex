@@ -1,3 +1,8 @@
 \mtexe{2.3.22} 
-\begin{proof} 
+\begin{proof}
+	It is clear that $n$ is an automorphism of $k[T]$ for each $n$, with inverse $-n$, and thus of $\AA^1_k$. Now, suppose that $U$ is an open subset of $\AA^1_k$. Then the complement of $U$ is closed, so it is of the form $V(I)$ for some ideal $I$, but since $k[T]$ is a PID, we can write $I = (f)$ for some polynomial $f$. Then $V(I)$ is precisely the set of prime factors of $f$, with $U$ being its complement. If $f \in k$ is a unit, then it has no prime divisors and $U = \AA^1_k$. If $f = 0$, then every prime divides it, and so $U = \emptyset$.
+	
+	Otherwise, $V(f)$ is nonempty and finite; in particular, it contains some prime ideal $(g(T))$. But if $(g(T+n)) \notin V(f)$, then $(g(T+n)) \in U$, and so $(g(T+n-n)) = (g(T)) \in U$, contrary to assumption. So, $V(f)$ contains $(g(T+n))$ for every $n$. Since we are in characteristic zero, $(g(T+n)) = (g(T+m))$ iff $n = m$, and so we have our contradiction, since $V(f)$ is supposed to be finite, but we have an injection $\ZZ \hookrightarrow V(f)$ given by $n \mapsto (g(T+n))$. \\
+	
+	
 \end{proof}
