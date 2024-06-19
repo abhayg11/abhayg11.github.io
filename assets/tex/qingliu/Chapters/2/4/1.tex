@@ -1,0 +1,12 @@
+\mtexe{2.4.1} 
+\begin{proof}
+	Note that an affine scheme $\Spec A$ is reduced (irreducible) iff $A$ is reduced (has a unique minimal prime, respectively). For each of the following, write $P = Q_1^{e_1} \cdots Q_m^{e_m}$ for $Q_i$ distinct primes, which can be done since $k[T_1,\ldots,T_n]$ is a UFD. Then, by CRT, we can write
+	\[ k[T_1,\ldots,T_n] \cong \bigoplus_{i=1}^m k[T_1,\ldots,T_n]/(Q_i^{e_i}) \]
+	Let $A = k[T_1,\ldots,T_n]/(P)$ for what follows.
+	
+	Now, we have $\Spec A$ is reduced iff $A$ is reduced. If $P$ is squarefree, then each $e_i = 1$, and the above isomorphism exhibits the $A$ as the direct sum of domains, which is reduced. Conversely, if $P$ is not squarefree, then $e_i \geq 2$ for some $i$. Then $P/Q_i$ is in $k[T_1,\ldots,T_n]$ but not in $(P)$ and $P^2/Q^2 = (P/Q^2)P \in (P)$, so the image of $P/Q$ is zero in the quotient and $A$ is not reduced.
+	
+	Second, recall that primes in a direct sum correspond to the (disjoint) union of primes of each summand. So, if $m \geq 2$, then $(Q_1)$ and $(Q_2)$ are distinct minimal primes of $A$, whence $A$ is not irreducible. Conversely, if $m = 1$, then any prime ideal of $A$ corresponds to a prime of $k[T_1,\ldots,T_n]$ containing $P = Q_1^{e_1}$, and so this prime contains $Q_1$. Thus, $(Q_1)$ is the unique minimal prime of $A$ and so $A$ is irreducible.
+	
+	Finally, combining these, $\Spec A$ is integral iff $m=1$ and $e_1=1$, iff $P = Q_1$ is irreducible.
+\end{proof}

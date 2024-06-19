@@ -1,0 +1,23 @@
+\mtexe{2.2.4} 
+\begin{proof}
+	Name the maps:
+	\[ 0 \to \scF' \xrightarrow{\varphi} \scF \xrightarrow{\psi} \scF'' \to 0 \]
+	Recall that this implies that for each $x \in X$ that we have an exact sequence:
+	\[ 0 \to \scF'_x \xrightarrow{\varphi_x} \scF_x \xrightarrow{\psi_x} \scF''_x \to 0 \]
+	
+	Now, exactness at $\scF'(X)$ is obvious, since a map of sheaves is injective iff it is injective on each open set. So, we would like to show exactness at $\scF(X)$. First, let $s \in \scF'(X)$. Then for each $x \in X$ we have:
+	\[ [\psi(X)(\varphi(X)(s))]_x = \psi_x([\varphi(X)(s)]_x) = \psi_x(\varphi_x(s_x)) = 0 \]
+	since $\psi_x \circ \varphi_x = 0$. Hence the image of $\varphi(X)$ is contained in the kernel of $\psi(X)$. Conversely, suppose $s \in \ker(\psi(X)) \subseteq \scF(X)$. Then, again, for each $x$, we have
+	\[ \psi_x(s_x) = [\psi(X)(s)]_x = 0 \]
+	So, $s_x \in \ker(\psi_x) = \im(\varphi_x)$. Hence, for each $x$ we can find an open neighborhood $U(x)$ of $x$ and a section $t(x) \in \scF'(U(x))$ with $\varphi(U(x))(t(x)) = s|_{U(x)}$. We would like to glue these to a single global section, and so we need to see that they agree on overlaps.
+	
+	To that end, let $x,y \in X$, let $a = t(x)|_{U(x) \cap U(y)}$, and let $b = t(y)|_{U(x) \cap U(y)}$. If $U(x) \cap U(y) = \emptyset$, then we must have $a = b$, and there is nothing to show. Otherwise, let $z \in U(x) \cap U(y)$. Then we have:
+	\[ \varphi_z(a_z) = \varphi_z(t(x)_z) = [\varphi(U(x))(t(x))]_z = (s|_{U(x)})_z = s_z \]
+	and similarly:
+	\[ \varphi_z(b_z) = \varphi_z(t(y)_z) = [\varphi(U(y))(t(y))]_z = (s|_{U(y)})_z = s_z \]
+	So, $\varphi_z(a_z) = \varphi_z(b_z)$ and by injectivity of $\varphi_z$ we get $a_z = b_z$. Since this is true for all $z \in U(x) \cap U(y)$, we get that $a=b$, and so the $t(x)$ do indeed agree on overlaps. Hence they glue to a single section $t \in \scF'(X)$ with $t|_{U(x)} = t(x)$.
+	
+	But then we are finished, for if $x \in X$, then:
+	\[ [\varphi(X)(t)]_x = \varphi_x(t_x) = \varphi_x((t|_{U(x)})_x) = \varphi_x(t(x)_x) = [\varphi(U(x))(t(x))]_x = (s|_{U(x)})_x = s_x \]
+	and so $\varphi(X)(t) = s$ since they are equal on all stalks. I.e. $s$ is in the image of $\varphi(X)$.
+\end{proof}

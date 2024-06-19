@@ -1,0 +1,24 @@
+\mtexe{4.6}
+\begin{proof}
+	By the invariant factor decomposition, we can find an integral basis for $\scO_K$ of the form
+	\[ 1,\frac{f_1(\alpha)}{d_1},\frac{f_2(\alpha)}{d_2} \]
+	where $f_i \in \ZZ[x]$ is monic of degree $i$ and $1 \mid d_1 \mid d_2$ are the invariant factors of $\scO_K$ over $\ZZ[\alpha]$. Thus, $|\scO_K/\ZZ[\alpha]| = d_1d_2$. We can compute the discriminant of $\alpha$ directly:
+	\[ \Delta(\ZZ[\alpha]/\ZZ) = -N(3\alpha^2-1) = -N(3\alpha^3-\alpha)/N(\alpha) = -N(2\alpha-6)/(-2) = 4N(\alpha-3) = -4f(3) = -4 \cdot 26 = -2^3 \cdot 13 \]
+	But we also have $\Delta(\ZZ[\alpha]/\ZZ) = \Delta(\scO_K/\ZZ)|\scO_K/\ZZ[\alpha]|^2 = \Delta(\scO_K/\ZZ)(d_1d_2)^2$. So, $d_1^4$ divides $-2^3 \cdot 13$ which forces $d_1 = 1$ and $d_2^2 \mid -2^3 \cdot 13$ which gives $d_2 = 1$ or $d_2 = 2$. Assume $d_2 = 2$ for contradiction. After adding multiples of previous basis elements if necessary, we can now assume our basis is of the form
+	\[ 1,\alpha,\frac{\alpha^2+x\alpha+y}{2} \]
+	where $x,y \in \{0,1\}$. In particular, these are all algebraic integers, so their traces should be in $\ZZ$. If $\alpha_1,\alpha_2,\alpha_3$ denote the roots of $x^3-x+1$ over a splitting field, then we get
+	\[ T(\alpha^2) = \alpha_1^2+\alpha_2^2+\alpha_3^2 = (\alpha_1+\alpha_2+\alpha_3)^2 - 2(\alpha_1\alpha_2 + \alpha_1\alpha_3 + \alpha_2\alpha_3) = 0^2 - 2(-1) = 2 \]
+	So, our last basis element has trace
+	\[ \frac{2+0+3y}{2} = 1+\frac32y \in \ZZ \]
+	which forces $y = 0$. Similarly, we can take the norm of our last basis element to get
+	\[ N\left(\frac{\alpha^2+x\alpha}{2}\right) = \frac{1}{8}N(\alpha)N(\alpha+x) = -\frac{1}{4}f(-x) = \pm \frac{1}{2} \notin \ZZ \]
+	which is a contradiction. So, indeed $d_2 = 1$ and $\scO_K = \ZZ[\alpha]$. \\
+	
+	Now we'd like to compute the class number. Note that $x^3-x+2$ only has one real root. Indeed it strictly increases on the interval $(-\infty,-\sqrt{1/3})$, giving one root; strictly decreases on $(-\sqrt{1/3},\sqrt{1/3})$ with a minimum of $f(\sqrt{1/3}) > 0$; and strictly increases on the rest of $(\sqrt{1/3},\infty)$, thus remaining strictly positive. Hence $K$ has two nonreal complex embeddings and so the Minkowski bound is:
+	\[ \frac{3!}{3^3}\left(\frac4\pi\right)^1|-2^313|^{1/2} \frac{16\sqrt{26}}{9\pi} < 3 \]
+	So, if any ideal of $\scO_K$ is not principal, it must have norm 2, in which case it must be a prime lying over 2. So, we consider the factorization of 2, which amounts to the factorization:
+	\[ x^3-x+2 \equiv x(x-1)^2 \pmod{2} \]
+	So, we get
+	\[ (2) = (2,\alpha)(2,\alpha-1)^2 \]
+	in $\scO_K$. But note that $N(\alpha) = -2$, so $2$ is a multiple of $\alpha$, showing that $(2,\alpha) = (\alpha)$ is principal. Similarly, $N(\alpha-1) = -f(1) = -2$, so $(2,\alpha-1) = (\alpha-1)$ is also principal. So, there are no non-principal ideals of norm 2, and hence none at all. In other words, $\scO_K$ has class number 1 and is a PID.
+\end{proof}

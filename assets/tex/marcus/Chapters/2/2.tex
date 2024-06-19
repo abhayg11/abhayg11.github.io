@@ -1,0 +1,20 @@
+\mtexe{2.2} 
+\begin{proof}
+    Let $R = \ZZ[\sqrt{-3}]$. It is clear that $I \neq 2R$, since $1+\sqrt{3} \in I$, but $\frac{1+\sqrt{-3}}{2} \notin R$. On the other hand, we have:
+    \[ I^2 = (2,1+\sqrt{-3})^2 = (4,2+2\sqrt{-3},-2+2\sqrt{-3}) = (4,2+2\sqrt{-3}) = 2(2,1+\sqrt{-3}) = 2I \]
+    as claimed. Thus, ideals in $R$ don't factorize uniquely into primes, since the ideal $I^2$ would have the two distinct factorizations coming from doubling the exponents on the prime factors of $I$ and the factorization coming from concatenating the factorizations of $I$ and $2R$.
+
+    For the rest of the statement, we first show that $I$ is prime. Indeed,
+    \[ R/I = \ZZ[\sqrt{-3}]/(2,1+\sqrt{-3}) = \ZZ[x]/(2,1+x,x^2+3) = \FF_2[x]/(x+1,x^2+3) = \FF_2 \]
+    is a domain. In fact it is a field, so $I$ is maximal.
+    
+    Second, suppose that $P$ is a prime ideal containing $2R$. Then it necessarily contained $2$, and also,
+    \[ (1+\sqrt{-3})^2 = -2+2\sqrt{-3} \in 2R \]
+    hence $1+\sqrt{-3} \in P$ since $P$ is prime. So, $P$ contains $I$, but since $I$ is maximal we get $P = I$.
+    
+    Third, note that a product of ideals is necessarily contained in each of the multiplicands. So, if $2R$ has a factorization, each factor must contain $2R$, and so a factorization into primes must be of the form $2R = I^k$ since this is the only prime containing $2R$ as we've just shown. We also know $k \geq 2$ since $2R \neq R$ and we've shown $2R \neq I$. But then we have:
+    \[ I^3 \subseteq I^2 = 2I = I^{k+1} \subseteq I^3 \]
+    and so all of these ideals are equal, which we need to show cannot be. But,
+    \[ I^3 = (I^2)I = (2I)I = 4I \]
+    and so in particular $4 \in 2I = I^2$, but $4 \notin 4I = I^3$. Hence $I^3 \neq I^2$.
+\end{proof}

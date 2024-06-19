@@ -1,0 +1,9 @@
+\mtexe{1.12}
+\begin{proof}
+    Again, exactly as before: if $N(\alpha) = 1$, then $\alpha\overline{\alpha} = 1$, so $\alpha$ is a unit, and if $\alpha$ is a unit, then $\alpha\beta = 1$, so $N(\alpha) = 1$ since it is a positive integer divisor of 1.
+
+    So, to find units, we solve for $a^2-ab+b^2 = 1$. Multiplying by 4 gives
+    \[ 4 = 4a^2-4ab+4b^2 = (2a-b)^2 + 3b^2 \]
+    So, $|b| < 2$, else $(2a-b)^2 + 3b^2 \geq 0+12$. If $b = \pm 1$, then we have $(2a-b)^2 = 1$, and so $2a = b\pm 1$. This gives the solutions $(a,b) = (1,1),(0,1),(0,-1),(-1,-1)$. Otherwise $b=0$ and then we have $a^2 = 1$, so $a=\pm 1$, i.e. we have the solutions $(1,0),(-1,0)$. Since $1+\omega = -\omega^2$, this gives the full list of units:
+    \[ \pm 1, \pm \omega, \pm \omega^2 \]
+\end{proof}

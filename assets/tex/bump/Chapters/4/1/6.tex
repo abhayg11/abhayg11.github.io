@@ -1,0 +1,8 @@
+\mtexe{4.1.6}
+\begin{proof}
+	As suggested in the hint, let $Z_0$ be the kernel of $\chi_0$. Then, if $x,y \in A$, we have
+	\[ \chi_0(xyx^{-1}y^{-1}) = \left<\overline{x},\overline{y}\right> = 1 \]
+	since $A$ is isotropic. So, $xyx^{-1}y^{-1} \in Z_0$, so $xZ_0$ and $yZ_0$ commute in $A/Z_0$. These are arbitrary, and so $A/Z_0$ is abelian.
+	
+	But then, $\chi_0$ factors through $Z \to Z/Z_0$, and so $\chi_0$ is a character of $Z/Z_0$, whence it can be extended to the finite abelian overgroup $A/Z_0$. Abusing notation and referring to this map as $\chi_0$ as well, we finally get an extension to $A$ by precomposing with the quotient map $A \to A/Z_0$ as desired.
+\end{proof}

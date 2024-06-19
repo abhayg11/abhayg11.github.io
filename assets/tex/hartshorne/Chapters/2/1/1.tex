@@ -1,0 +1,14 @@
+\mtexe{2.1.1}
+\begin{proof}
+	Let us show that the constant sheaf $\scF$ satisfies the universal property of being the sheafification of the constant presheaf $\scA$. First, we exhibit the universal morphism $\theta$. For $\emptyset \neq U \subseteq X$ open, define $\theta(U) : \scA(U) = A \to \scF(U)$ by:
+	\[ \theta(U)(a)(x) = a \]
+	That is, we map an element $a$ to the constant map $U \to A$ evaluating to $a$. Constant maps are always continuous, so this is a well-defined function, and $\theta(U)$ is clearly a homomorphism. Finally, $\theta$ is clearly compatible with restrictions, so it is a morphism of presheaves.
+	
+	Now, suppose we have a sheaf $\scG$ and a morphism $\varphi : \scA \to \scG$. We construct a factorization through $\theta$. Fix an open subset $U \subseteq X$ and an element $f \in \scF(U)$. For each $a \in A$, we get that $V_a = f^{-1}(a)$ is an open subset of $U$, since we've assumed $f$ is continuous with $A$ given the discrete topology. In fact, from this definition, it is clear that the collection $\{V_a\}$ is an open cover of $U$ consisting of disjoint sets. Thus, if we define, for each $a$, the element $g_a = \varphi(V_a)(a) \in \scG(V_a)$, then because $\scG$ is a sheaf, we can glue these to a single element $g \in \scG(U)$. Overall, let us define $\psi(U)(f) = g$.	
+	
+	Notice this is a well-defined function (there were, in the end, no choices made). Furthermore, each $\psi(U)$ is a homomorphism, for if $f_1,f_2 \in \scF(U)$, then we can compute $\psi(U)(f_1+f_2)$ by gluing along the finer open cover given by $V_{a,b} = f_1^{-1}(a) \cap f_2^{-1}(b)$ for each $a,b \in A$. Finally, it is clear that $\psi$ is compatible with restrictions.
+	
+	Finally, it remains to show that $\varphi = \psi \circ \theta$. But this is clear, for if $a \in A$, $U$ is open, and $f_a$ denotes the constant function $U \to A$ with $f_a(x) = a$, then in the above notation $V_a = U$ and $V_b = \emptyset$ for $b \neq a$, so $g = g_a = \varphi(U)(a)$. Thus,
+	\[ \psi(U)(\theta(U)(a)) = \psi(f_a) = g = \varphi(U)(a) \]
+	as desired. So, indeed we get that $\scF$ satisfies the universal property, and so $\scF$ is the sheafification of $\scA$.
+\end{proof}

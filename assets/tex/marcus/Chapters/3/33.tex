@@ -1,0 +1,24 @@
+\mtexe{3.33}
+\begin{proof}
+	Note that both $A^{-1}$ and $A^\ast$ are clearly additive groups. Suppose that $\alpha \in A^{-1}$ and $s \in S$. Then $s\alpha A \subseteq sS \subseteq S$, so $s\alpha \in A^{-1}$. So $A^{-1}$ is further an $S$-module. For $\alpha \in A^\ast$ and $r \in R$,
+	\[ \Tr^L_K(r\alpha A) = r\Tr^L_K(\alpha A) \subseteq R \]
+	So $r\alpha \in A^\ast$ and $A^\ast$ is an $R$-module. Finally, if $\alpha \in A^{-1}$, then
+	\[ \Tr^L_K(\alpha A) \subseteq \Tr^L_K(S) = R \]
+	so that $\alpha \in A^\ast$. \\
+	
+	First, suppose that $A$ is a fractional ideal. Then it's an $S$-module, so $SA = A$. Further, there is some $x/y \in L$ and ideal $I$ of $S$ with $A = (x/y)I$. But then $yA = xI \subseteq S$, so $y \in A^{-1}$ shows that $A^{-1} \neq \{0\}$. Conversely, suppose that $SA = A$ and $A^{-1} \neq \{0\}$. Let $y \neq 0$ be in $A^{-1}$. Then $yA \subseteq S$ and is an $S$-module since $(yA)S = y(AS) = yA$, so $yA$ is an ideal of $S$. But then $A = (1/y)(yA)$ is a fractional ideal. \\
+	
+	Suppose $A \subseteq B$. If $\alpha \in B^{-1}$, then $\alpha A \subseteq \alpha B \subseteq S$, so $\alpha \in A^{-1}$ and $A^{-1} \supseteq B^{-1}$. If $\alpha \in B^\ast$, then $\Tr^L_K(\alpha A) \subseteq \Tr^L_K(\alpha B) \subseteq R$, so $\alpha \in A^\ast$ and $A^\ast \supseteq B^\ast$.
+	
+	From the previous, we have that $A^{-1} \subseteq A^\ast$, so $\diff A = (A^\ast)^{-1} \subseteq (A^{-1})^{-1}$ as claimed.
+	
+	We've noted that the fractional ideals form a group, with $I^{-1}$ being the inverse of $I$ under this group operation, and so $(I^{-1})^{-1} = I$.
+	
+	Hence, for a fractional ideal $I$, we have $\diff I \subseteq (I^{-1})^{-1} = I$ as desired.
+	
+	The next two facts follow from a unified fact: if $\diff A$ is contained in a fractional ideal $J$, then it is a fractional ideal. Indeed $(\diff A)^{-1} \supseteq J^{-1} \neq \{0\}$, so it suffices to show $S(\diff A) = \diff A$, and since $1 \in S$, it further suffices to show that $S(\diff A) \subseteq \diff A$. But note that $\diff A = (A^\ast)^{-1}$, and we've already noted that the inverse of any abelian subgroup of $L$ is an $S$-module, so $\diff A$ is a fractional ideal.
+	
+	To see how this lemma implies both of the claims, note that $\diff I \subseteq I$ exhibits $\diff I$ as a subset of a fractional ideal, so by the lemma $\diff I$ is a fractional ideal. Then, if $A \subseteq I$, then $A^\ast \supseteq I^\ast$, and $\diff A = (A^\ast)^{-1} \subseteq (I^\ast)^{-1} = \diff I$. But we've just shown that $\diff I$ is a fractional ideal, so $\diff A$ is contained in a fractional ideal and hence is also itself a fractional ideal.
+	
+	Then
+\end{proof}

@@ -1,0 +1,12 @@
+\mtexe{2.20}
+\begin{proof}
+    First, note that $f$ has no repeated roots. Indeed, if $\beta \in \CC$ is a multiple root of $f$, then $f(x) = (x-\beta)^2g(x)$ for some $g \in \CC[x]$. Then $f'(x) = 2(x-\beta)g(x)+(x-\beta)^2g'(x)$ has $\beta$ as a root. In other words, both $f$ and $f'$ are divisible by the minimal polynomial of $\beta$ in $K[x]$, and since $f$ is irreducible, it must actually equal the minimal polynomial of $\beta$. But then $f \mid f'$, which cannot be since $\deg(f') < \deg(f)$.
+
+    So, we have that
+    \[ f(x) = \prod_\beta (x-\beta) \]
+    where the product ranges over all roots of $f$ in $\CC$. Then,
+    \[ f'(x) = \sum_\gamma \prod_{\beta \neq \gamma} (x-\beta) \]
+    and so
+    \[ f'(\alpha) = \sum_\gamma \prod_{\beta \neq \gamma} (\alpha-\beta) = \prod_{\beta \neq \alpha} (\alpha-\beta) \]
+    as desired.
+\end{proof}

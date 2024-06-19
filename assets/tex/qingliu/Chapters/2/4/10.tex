@@ -1,0 +1,8 @@
+\mtexe{2.4.10} 
+\begin{proof}
+	Suppose $f(X) \subseteq V(I)$, and let $g \in f^\#(\Spec A)(I)$. Let $U = \Spec B$ be an open affine subset of $X$ and note then that the restriction of $f^\#$ is a ring homomorphism $A \to B$, so there is some $h \in I$ with $g|_U = f^\#(h)$. Now, if $P$ is a prime in $B$, then $(f^\#)^{-1}(P) = f(P) \in V(I)$ and so contains $h$. So, $g|_U = f^\#(h) \in P$. This is true for all $P$, and so $g|_U$ is contained in the nilradical of $B$, and so there is some $n$ with $(g|_U)^n = 0$.
+	
+	Now, since $f$ is quasi-compact, $f^{-1}(\Spec A) = X$ is quasi-compact, and so we can cover $X$ by finitely many affine neighborhoods $U_1,\ldots,U_m$. The argument above shows that there are $n_1,\ldots,n_m$ with $(g|_{U_j})^{n_j} = 0$. But then for $n = \max\{n_1,\ldots,n_m\}$, we have $(g^n)|_{U_j} = (g|_{U_j})^n = 0$, and so $g^n = 0$ on $X$ by gluing. This shows one implication. \\
+	
+	Conversely, suppose $f^\#(\Spec A)(I)$ is nilpotent. Let $x \in X$ and pick an affine neighborhood $U = \Spec B$ of $x$. Then, if $g \in I$, we have $f^\#(g)$ is nilpotent and so contained in each prime of $B$, including $x$, and so $g \in (f^\#)^{-1}(x) = f(x)$. So $I \subseteq f(x)$ and $f(x) \in V(I)$. Since $x$ was arbitrary, $f(X) \subseteq V(I)$ as desired.
+\end{proof}

@@ -1,0 +1,8 @@
+\mtexe{4.1.10}
+\begin{proof}
+	We've chosen $\omega(g)$ to be an intertwiner between the $H$-reps $(\pi,W)$ and $(\pi_g,W)$. So, for $h \in H$, we have $\omega(g)\pi(h) = \pi_g(h)\omega(g) = \pi(^gh)\omega(g)$ i.e. $\pi(^gh) = \omega(g)\pi(h)\omega(g)^{-1}$.
+	
+	From this, we can see that $\omega$ is a homomorphism, for if $g,g' \in G$, then
+	\[ \omega(g)\omega(g')\pi(h)\omega(g')^{-1}\omega(g)^{-1} = \omega(g)\pi(^{g'}h)\omega(g)^{-1} = \pi(^g(^{g'}h)) = \pi(^{gg'}h) = \omega(gg')\pi(h)\omega(gg')^{-1} \]
+	So, $\omega(gg')^{-1}\omega(g)\omega(g')$ is an intertwiner from $\pi$ to itself, and by Schur, this means that $\omega(g)\omega(g')$ and $\omega(gg')$ differ by a constant multiple. In other words, $\omega(g)\omega(g') = \omega(gg')$ in $PGL(W)$.
+\end{proof}

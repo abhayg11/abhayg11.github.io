@@ -1,0 +1,24 @@
+\mtexe{2.5.12} 
+\begin{proof}
+	More generally, if $A$ is a ring and $f \in A$, then $D(f) \subseteq \Spec(A)$ is isomorphic to $\Spec(A_f)$, and so a principal open subset of an affine scheme is affine. Similarly, if $B$ is graded and $f \in B_{+}$ is homogeneous, then $D_{+}(f) \cong \Spec(B_{(f)})$ and so is also affine. \\
+	
+	By the sheaf condition, $\scO_{\AA_k^n}(X)$ is the kernel of the map:
+	\[ \prod_i \scO_{\AA_k^n}(D(f_i)) \to \prod_{i,j} \scO_{\AA_k^n}(D(f_i) \cap D(f_j)) \]
+	On the one hand, $\scO_{\AA_k^n}(D(f_i)) = k[T_1,\ldots,T_n]_{f_i}$. Then,
+	\[ D(f_i) \cap D(f_j) = \AA_k^n \setminus V((f_i) \cap (f_j)) = D(\lcm(f_i,f_j)) \]
+	So $\scO_{\AA_k^n}(D(f_i) \cap D(f_j)) = k[T_1,\ldots,T_n]_{f_{ij}}$ where $f_{ij} = \lcm(f_i,f_j)$. Composing with an injection doesn't change the kernel, so to simplify, we can embed everything in $K = k(x_1,\ldots,x_n)$, the field of fractions. Then, an element in the first ring looks like a tuple $(g_if_i^{-t_i})_i$, and if it is in the kernel, then $g_if_i^{-t_i} = g_jf_j^{-t_j}$ in $K$ for every $i,j$. Fix some index $i$ and by factorization in $k[x_1,\ldots,x_n]$, write $g_if_i^{-t_i} = a/b$ for $a,b$ coprime; I claim that $b \mid f^r$ for some $r \in \ZZ$. Indeed, it suffices to show that each prime factor of $b$ also divides $f$. Let $p \mid b$ be a prime factor, and write $\nu_p$ for the $p$-adic valuation. For contradiction, suppose $\nu_p(f)=0$. Then
+	\[ t_i\nu_p(f_i) = \nu_p(af_i^{t_i}) - \nu_p(a) = \nu_p(bg_i) = \nu_p(b)+\nu_p(g_i) \]
+	where we've used the fact that $p \nmid a$ since $a,b$ are coprime. On the other hand, $p$ doesn't divide the gcd of a set of polynomials, so it fails to divide one of them, say $p \nmid f_j$. By the kernel condition,
+	\[ t_i\nu_p(f_i) = \nu_p(f_i^{t_i}g_j) = \nu_p(f_j^{t_j}g_i) = \nu_p(g_i) \]
+	Equating these gives $\nu_p(b) = 0$, contrary to assumption. So, indeed, $p \mid f$ and so $b \mid f^r$ for some $r$.
+	
+	But now, what we've shown is that any element of the kernel is a tuple where each element can be written in the form $a_if^{-r_i}$. But the kernel condition also implied that each of these elements are equal (in $K$), and so really they are the image of a single element $af^{-r} \in k[x_1,\ldots,x_n]_f$. Conversely, it is clear that the image of any such element gives a tuple in the kernel. So, $\scO_{\AA_k^n}(X) = k[x_1,\ldots,x_n]_f$ as claimed.
+	
+	Note that
+	\[ X = \bigcup_i D(f_i) = \AA_k^n \setminus \bigcap_i V(f_i) = \AA_k^n \setminus V\left(\sum_i (f_i)\right) \subseteq \AA_k^n \setminus V(f) = D(f) \]
+	since $f \mid f_i$ for each $i$. If $X$ is affine, then this containment exhibits $X$ as a localization of $D(f)$ which is isomorphic to it, whence we get $X = D(f)$ is principal. [There's something wrong here; come back to it] \\
+	
+	Let $Z$ be an irreducible closed subset of $\PP_k^n$ of dimension $n-1$. In each coordinate chart, this is an irreducible closed subset of $\AA_k^n$ of dimension $n-1$, so it equals $V(P)$ for a height 1 prime $P$, which is principal since $k[x_1,\ldots,x_n]$ is a UFD. So, $Z$ is principal in each chart and glues to be principal overall. [Fill in the details: why does $Z$ not drop in dimension in charts, why can we glue, etc.] \\
+	
+	[Not sure].
+\end{proof}

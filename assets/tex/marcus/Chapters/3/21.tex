@@ -1,0 +1,22 @@
+\mtexe{3.21}
+\begin{proof}
+	As suggested, suppose $p \mid |S/G|$, so there is some $a \in S \setminus G$ such that $pa \in G$. I.e. we can write:
+	\[ pa = c_1\alpha_1 + \cdots + c_n\alpha_n \]
+	for some $c_i \in \ZZ$. But since the $\alpha_i$ are independent, we conclude that each $c_i \in p\ZZ$, i.e. $c_i = pd_i$ for some $d_i \in \ZZ$. Then
+	\[ a = d_1\alpha_1 + \cdots + d_n\alpha_n \in G \]
+	contrary to assumption.
+	
+	Then,
+	\[ \disc(\alpha_1,\ldots,\alpha_n) = \disc(G) = |S/G|^2\disc(S) \]
+	which is the claim, since $m = |S/G|^2$ is not divisible by $p$. \\
+	
+	Now, let $M$ be a normal extension of $L/\QQ$ and let $T$ be its ring of integers. Extend the $K$-embeddings of $L$ into $\CC$ to automorphisms $\sigma_1,\ldots,\sigma_n$ of $M$. From the previous problem, we are considering the elements $\alpha_{ij}\beta_{ik}$. Then $\disc(\alpha_{ij}\beta_{ik}) = \det(A)^2$, where $A$ is the matrix consisting of elements $\sigma_t(\alpha_{ij}\beta_{ik})$. Fix a prime $U$ of $T$ lying over $Q_1$ and let $e = e(U|P)$ be the common ramification index; we'd like to compute $v_U(\det(A))$, the power of $U$ appearing in the factorization of $\det(A)T$. Since each automorphism permutes the primes in $T$, $v_U(\sigma(x))$ is at least as large as the smallest exponent occuring in the factorization of $xT$. Thus:
+	\[ v_U(\sigma_t(\alpha_{ij}\beta_{ik})) \geq v_U(\sigma_t(\alpha_{ij})) \geq \min\left(\left\{\frac{e}{e_i}(j-1)\right\} \cup \left\{ \frac{e}{e_h}N \mid h \neq i \right\}\right) = \frac{e}{e_i}(j-1) \]
+	as long as $N$ is large enough.
+	
+	Thus, when computing the valuation of $\det(A)$, we can factor out at least $U^{e(j-1)/e_i}$ from the column corresponding to $\alpha_{ij}\beta_{ik}$. Thus, we get:
+	\[ v_U(\det(A)) \geq \sum_{i=1}^r \sum_{j=1}^{e_i} \sum_{k=1}^{f_i} \frac{e(j-1)}{e_i} = \frac{e}{2}\sum_{i=1}^r f_i(e_i-1) \]
+	and so
+	\[ v_p(\det(A)^2) = \frac{2}{e}v_U(\det(A)) \geq \sum_{i=1}^r f_i(e_i-1) = k \]
+	as claimed. The first part of the problem gives that $p^k \mid \disc(S)$ as well, since $\det(A)^2/\disc(S)$ is a $p$-free integer.
+\end{proof}

@@ -1,0 +1,26 @@
+\mtexe{4.1.2}
+\begin{proof}
+	We would like to show $\Delta(x_i)$ is $S_i$-equivariant for each $i$. For this, suppose $g \in S_i$. Then,
+	\[ \Delta(x_i) \circ \pi_{1,i}(g) = \pi_2(e) \circ \Delta(x_i) \circ \pi_1(x_i^{-1}gx_i) = \Delta(ex_ix_i^{-1}gx_i) = \Delta(gx_ie) = \pi_2(g) \circ \Delta(x_i) \circ \pi_1(e) = \pi_{2,i}(g) \circ \Delta(x_i) \]
+	as desired. \\
+	
+	This now suggests that we can define $\Phi : \Hom_G(V_1^G,V_2^G) \to \bigoplus_{i=1}^r \Hom_{S_i}(\pi_{1,i},\pi_{2,i})$ by:
+	\[ \Phi(\Delta) = (\Delta(x_1),\ldots,\Delta(x_r)) \]
+	where we identify $\Hom_G(V_1^G,V_2^G)$ with the vector space of functions $\Delta$ satisfying equation (1.4). The above computation shows that we have correctly stated the codomain. It is also clear that $\Phi$ is linear.
+	
+	So, we now wish to show it is bijective. For injectivity, suppose $\Delta \in \ker\Phi$, whence $\Delta(x_i) = 0$ for all $i$. Now, let $g \in G$, and note that $g = h_2x_ih_1$ for some $h_2 \in H_2$ and $h_1 \in H_1$ since we have chosen the $x_i$ to represent the double cosets. Then,
+	\[ \Delta(g) = \pi_2(h_2) \circ \Delta(x_i) \circ \pi_1(h_1) = 0 \]
+	and so we have that $\Delta = 0$ identically. For surjectivity, assume that $\{\phi_i\}_{i=1}^r$ is a collection of intertwiners $\phi_i : \pi_{1,i} \to \pi_{2,i}$. Define:
+	\[ \Delta(h_2x_ih_1) = \pi_2(h_2) \circ \phi_i \circ \pi_1(h_1) \]
+	for $h_1 \in H_1$ and $h_2 \in H_2$. First, we show this is well-defined. Suppose $h_2x_ih_1 = h_2'x_jh_1'$. Then these lie in the same $(H_1,H_2)$ double coset, so $i=j$ by assumption. Then, $s := (h_2')^{-1}h_2 = x_ih_1'h_1^{-1}x_i^{-1} \in H_2 \cap x_iH_1x_i^{-1} = S_i$. So,
+	\begin{align*}
+	\pi_2(h_2) \circ \phi_i \circ \pi_1(h_1)
+		&= \pi_2(h_2') \circ \pi_2((h_2')^{-1}) \circ \pi_2(h_2) \circ \phi_i \circ \pi_1(h_1) \\
+		&= \pi_2(h_2') \circ \pi_2(s) \circ \phi_i \circ \pi_1(h_1) \\
+		&= \pi_2(h_2') \circ \pi_{2,i}(s) \circ \phi_i \circ \pi_1(h_1) \\
+		&= \pi_2(h_2') \circ \phi_i \circ \pi_{1,i}(s) \circ \pi_1(h_1) \\
+		&= \pi_2(h_2') \circ \phi_i \circ \pi_1(x_i^{-1}sx_ih_1) \\
+		&= \pi_2(h_2') \circ \phi_i \circ \pi_1(h_1')
+	\end{align*}
+	as desired. Second, it is clear that $\Delta$ equation (1.4), and so $\Delta \in \Hom_G(V_1^G,V_2^G)$ with $\Phi(\Delta) = (\phi_1,\ldots,\phi_r)$. This shows surjectivity and completes the proof.
+\end{proof}

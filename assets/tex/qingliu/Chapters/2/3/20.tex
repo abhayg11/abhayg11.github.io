@@ -1,0 +1,36 @@
+\mtexe{2.3.20}
+\begin{proof}
+	Notice that each $\sigma \in G$ is an invertible map $A \to A$. Let $i : G \to G$ denote the inversion map for notational coherence. Then, taking preimages in the usual way, $i(\sigma)$ induces a map $\Spec A \to \Spec A$. Setting $\sigma \cdot x$ to be the image of $x$ under this induced map is a group action, for if $x \in \Spec A$ and $\sigma,\tau \in G$, then
+	\[ (\sigma \circ \tau) \cdot x = i(\sigma \circ \tau)^{-1}(x) = [i(\tau) \circ i(\sigma)]^{-1}(x) = i(\sigma)^{-1}(i(\tau)^{-1}(x)) = i(\sigma)^{-1}(\tau \cdot x) = \sigma \cdot (\tau \cdot x) \]
+	as desired. That inverses and the identity behave as expected is clear. Note that taking both inverses amounts to just taking $\sigma \cdot x = \sigma(x)$, the image of $x$ under the function $\sigma$.
+	
+	Note that the map $p : \Spec A \to \Spec A^G$ is given by $p(x) = x \cap A^G$ since we have an inclusion of rings. So, first suppose that $x_1,x_2 \in \Spec A$ are such that there exists $\sigma \in G$ with $\sigma(x_1) = x_2$. Then, explicitly, we have that
+	\[ a \in p(x_1) \iff a \in x_1 \text{ and } a \in A^G \iff \sigma(a) \in \sigma(x_1) \text{ and } a \in A^G \iff a \in x_2 \text{ and } a \in A^G \iff a \in p(x_2) \]
+	so $p(x_1) = p(x_2)$.
+	
+	On the other hand, suppose $p(x_1) = p(x_2)$. From the above, we also have $p(x_1) = p(\sigma(x_1))$ for any $\sigma$. So, $\sigma(x_1)$ and $x_2$ lie over the same prime of $A^G$. Because $A$ is integral over $A^G$ (see below), it suffices to show that $\sigma(x_1)$ contains $x_2$ for some $\sigma$ by incomparability. By prime avoidance, it now suffices to show that
+	\[ x_2 \subseteq \bigcup_{\sigma \in G} \sigma(x_1) \]
+	This is what we will show. Let $a \in x_2$, and consider
+	\[ b = \prod_{\sigma \in G} \sigma(a) \]
+	Then, one of the multiplicands is $\id(a) = a$, so $b \in x_2$ as well. But clearly each element of $G$ would permute the terms in the product and so leave $b$ fixed. I.e. $b \in A^G$ as well, so $b \in x_2 \cap A^G = p(x_2) = p(x_1) \subseteq x_1$. So, $b \in x_1$, and by primality so is one of the factors, say $\sigma(a) \in x_1$. But then $a \in \sigma^{-1}(x_1)$, which is what we wished to show. This completes the argument. \\
+	
+	Now we show explicitly that $A$ is integral over $A^G$. Let $a \in A$, and consider
+	\[ P(T) = \prod_{\sigma \in G} (T-\sigma(a)) \]
+	This is a monic polynomial; it has $a$ as a root, since one of the factors is $T-\id(a) = T-a$; and the factors are permuted by elements of $G$, so $P \in A[T]$ is fixed by $G$. In other words, each coefficient is in $A^G$, and so we've constructed an integral relation for $a$ over $A^G$ as desired. Since integral extensions satisfy lying over, this also shows that $p$ is surjective. \\
+	
+	We show that $p(D(a)) = \bigcup_i D(b_i)$ directly. Suppose $x \in p(D(a))$. Then $x = y \cap A^G$ for some $y \in D(a)$, i.e. some prime $y$ that does not contain $a$. Suppose, for contradiction, that $b_i \in y$ for each $i$. Then,
+	\[ a^d = -\sum_i b_ia^i \in y \]
+	and by primality, we would conclude that $a \in y$, contrary to assumption. So, instead, there is some $i$ for which $b_i \notin y$. Then $b_i \notin x$ since $x \subseteq y$, and so $x \in D(b_i)$. This shows one containment.
+	
+	For the reverse, let $x \in \bigcup_i D(b_i)$, so there is some $i$ for which $b_i \notin x$. Let $y$ be such that $p(y) = x$, and suppose for contradiction that $\sigma(a) \in y$ for all $\sigma$. Then we can write $b$ as a symmetric polynomial in these elements, and so $b_i \in y$ and of course $b_i \in A^G$, so $b_i \in A^G \cap y = p(y) = x$, contrary to assumption. So, instead, there is some $\sigma$ for which $\sigma(a) \notin y$, i.e. $a \notin \sigma^{-1}(y)$. But then $\sigma^{-1}(y) \in D(a)$, and so $x = p(y) = p(\sigma^{-1}(y)) \in p(D(a))$, as desired. We've shown now that the image under $p$ of a principal open set is open (as a union of principal open sets), and since these form a base for the topology, this shows that $p$ is open. \\
+	
+	For $b \in A^G$, we have that
+	\[ y \in p^{-1}(D(b)) \iff b \notin p(y) \iff b \notin y \iff y \in D(bA) \]
+	so that $p^{-1}(D(b)) = D(bA)$. Only the middle biconditional is non-obvious, so to spell it out, note that if $b \in p(y)$ then clearly $b \in y$ since $p(y) \subseteq y$. Conversely, if $b \in y$, then since $b \in A^G$, we get $b \in y \cap A^G = p(y)$, as claimed. The equality $(A^G)_b = (A_b)^G$ is immediate, since for $b \in A^G$, a fraction in $A_b$ is fixed by $G$ iff the numerator is fixed by $G$. 
+	
+	To see that $G$ acts on the scheme $p^{-1}(V)$, note that we've already demonstrated that it acts on $\Spec A$ as a scheme, and so it suffices to show that for each $\sigma \in G$, the morphism of schemes $\sigma|_{p^{-1}(V)} : p^{-1}(V) \to \Spec A$ has image in the open subscheme $p^{-1}(V)$. But this is immediate; if $\frp$ is a prime lying over a prime of $A^G$, then each conjugate of $\frp$ lies over the same prime, and so is also in $p^{-1}(V)$.
+	
+	Finally, we wish to show the two stated rings are the same. If $V = D(b)$ is a principal open subset, we are done, since:
+	\[ \scO_{\Spec A}(p^{-1}(D(b)))^G = \scO_{\Spec A}(D(bA))^G = (A_b)^G = (A^G)_b = \scO_{\Spec A^G}(D(b)) \]
+	Otherwise, we're still done since $V = \bigcup_i D(b_i)$ for some collection of principal opens, and we obtain the result via gluing.
+\end{proof}

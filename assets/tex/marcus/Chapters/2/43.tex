@@ -1,0 +1,72 @@
+\mtexe{2.43} 
+\begin{proof} 
+    We have:
+    \[ \disc(\alpha) = N(f'(\alpha)) = N(5\alpha^4+a) = \frac{N(5\alpha^5+a\alpha)}{N(\alpha)} = \frac{N(5(-a\alpha-b)+a\alpha)}{-b} = \frac{N(4a\alpha+5b)}{b} \]
+    To find this last norm, we need to multiply the conjugates. We have:
+    \[ f(x) = \prod_i (x-\alpha_i) \]
+    where the $\alpha_i$ denote the five conjugates of $\alpha$. So,
+    \begin{align*}
+    N(4a\alpha+5b)
+        &= \prod_i (4a\alpha_i+5b) \\
+        &= (-4a)^5\prod_i \left(-\frac{5b}{4a} - \alpha_i\right) \\
+        &= -4^5a^5f\left(-\frac{5b}{4a}\right) \\
+        &= -4^5a^5\left(-\frac{5^5b^5}{4^5a^5}-a\frac{5b}{4a}+b\right) \\
+        &= 5^5b^5 + (4^45-4^5)a^5b
+    \end{align*}
+    So, overall, we get:
+    \[ \disc(\alpha) = \frac{5^5b^5 + 4^4a^5b}{b} = 5^5b^4 + 4^4a^5 \]
+    as claimed. \\
+
+    When $a=b=-1$, $\disc(\alpha) = 5^5-4^4 = 3125 - 256 = 2869 = 19 \cdot 151$, is squarefree. So, the ring of integers is $\ZZ[\alpha]$. \\
+
+    In this case, we have
+    \[ \disc(\alpha) = a^4(4^4a+5^5) \]
+    The latter factor is squarefree, and $a$ is squarefree, so $\disc(R)$ must be one of $\disc(\alpha),\disc(\alpha)/a^2,\disc(\alpha)/a^4$. I.e. we have $d_1 \mid d_2 \mid d_3 \mid d_4$ and $(d_1d_2d_3d_4)^2$ is one of $1,a^2,a^4$, i.e. $d_1d_2d_3d_4$ is one of $1,a,a^2$. This forces $d_1 = 1$, since $d_1^4 \mid d_1d_2d_3d_4 \mid a^2$ and $a$ is squarefree. Similarly, $d_2 = 1$ since $d_2^3 \mid d_1d_2d_3d_4 \mid a^2$. So, we're left with $d_3d_4 = d_1d_2d_3d_4 \mid a^2$ as claimed.
+
+    For the explicit computations, first note the hint is true, for if $m$ is not squarefree, then it is divisible by $p^2$ for some prime $p$. Then either $m = p^2$ is a square, or else $m/p^2$ has a prime factor $q$. If $r$ is the smallest prime divisor of $m$, then $m \geq p^2q \geq r^3$, so $r \leq \sqrt[3]{m}$.
+
+    Let $\gamma = 4^4a+5^5$. We're considering $-20 < a < 0$, so $\gamma < 5^5 = 3125$ and
+    \[ \gamma > 5^5\left(-20\frac{4^4}{5^5}+1\right) = 5^5\left(-20\frac{2^{13}}{10^5}+1\right) = 5^5\left(-20\frac{8192}{100000}+1\right) > 5^5\left(-20\frac{10000}{100000}+1\right) = -5^5 \]
+    So, we only need to consider primes $p$ with $p^3 < 5^5$. Since $5^5 = 3195 < 4096 = 2^{12} = 16^3$, we only need to consider $p=2,3,5,7,11,13$. Clearly $4^4a+5^5$ isn't a multiple of either 2 or $5^2$, so we only consider $p=3,7,11,13$.
+
+    We'll compute the cases directly. When $a=-2$:
+    \[ 4^4a + 5^5 = 3125 - 512 = 2613 = 3 \cdot 13 \cdot 67 \]
+    which is clearly squarefree.
+
+    When $a=-3$,
+    \[ 4^4a + 5^5 = 3125 - 768 = 2357 \]
+    This isn't divisible by either 3 or 11 (considering the sum and alternating sum of the digits). If $7 \mid 2357$, then $7 \mid 2350 = 10 \cdot 5 \cdot 47$, but clearly it doesn't divide any of these factors. Similarly, if $13 \mid 2357$ then $13 \mid 2370 = 10 \cdot 237$, so $13 \mid 237$. But then $13 \mid 250 = 2 \cdot 5^3$, which it doesn't. We're done if $\gamma$ is not a square, but $\gamma \equiv 2 \pmod{3}$, so it cannot be a square. So, in this case $\gamma$ is squarefree.
+
+    When $a=-6$,
+    \[ 4^4a + 5^5 = 3125 - 6 \cdot 256 = 1589 = 7 \cdot 227 \]
+    and $227$ is prime so $\gamma$ is squarefree.
+
+    When $a=-7$,
+    \begin{align*}
+    4^4a+5^5 &\equiv a+2 \equiv 1 & \pmod{3} \\
+    4^4a+5^5 &\equiv (-2)^5 \equiv -32 \equiv 3 & \pmod{7} \\
+    4^4a+5^5 &\equiv 16^2 \cdot 4 + 25^2 \cdot 5 \equiv 5^2 \cdot 4 + 3^2 \cdot 5 \equiv 3 \cdot 4 + 9 \cdot 5 \equiv 1+1 \equiv 2 & \pmod{11} \\
+    4^4a+5^5 &\equiv 16^2 \cdot 6 + 25^2 \cdot 5 \equiv 9 \cdot 6 + 5 \equiv 7 & \pmod{13}
+    \end{align*}
+    So it isn't divisible by any of these primes and isn't a square since 3 is a quadratic nonresidue mod 7.
+
+    When $a=-10$,
+    \[ 4^4a+5^5 = 3125 - 2560 = 565 = 5 \cdot 113 \]
+    which is again clearly squarefree.
+
+    When $a=-11$,
+    \[ 4^4a+5^5 = 565 - 256 = 309 = 3 \cdot 103 \]
+    which is squarefree.
+
+    When $a=-13$,
+    \[ 4^4a+5^5 = 309 - 512 = -203 = -7 \cdot 29 \]
+    which is squarefree.
+
+    When $a=-15$,
+    \[ 4^4a+5^5 = -203 - 512 = -715 = -5 \cdot 143 = -5 \cdot 11 \cdot 13 \]
+    which is squarefree. \\
+
+    Ignoring the hint, we have:
+    \[ N(1+\alpha) = \prod_i (1+\alpha_i) = (-1)^5\prod_i (-1-\alpha_i) = -f(-1) = -((-1)^5+a(-1)+a) = 1 \]
+    so $1+\alpha$ is a unit.
+\end{proof}

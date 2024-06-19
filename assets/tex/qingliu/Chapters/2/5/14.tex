@@ -1,0 +1,16 @@
+\mtexe{2.5.14} 
+\begin{proof}
+	For $x \in L$, let $m_x : L \to L$ be the multiplication by $x$ map. Picking a basis for $L$ over $K$ allows us to write $m_x$ as a matrix with coefficients in $K$, whence $N(x) = \det(m_x) \in K$. Multiplicativity is also clear, since for $x,y \in L$: $N(xy) = \det(m_{xy}) = \det(m_x \circ m_y) = \det(m_x)\det(m_y) = N(x)N(y)$. \\
+	
+	Let $b \in B$, and let
+	\[ f(T) = T^n + a_{n-1}T^{n-1} + \cdots + a_0 \]
+	be the minimal polynomial of $b$ over $K$. Consider the tower $K \subseteq K(b) \subseteq L$. Fixing a basis $c_1,\ldots,c_r$ of $L$ over $K(b)$ gives the basis $\{c_ib^j \mid 1 \leq i \leq r, 0 \leq j \leq n-1 \}$ of $L$ over $K$. With respect to this basis, multiplication by $b$ has a simple form: it is block diagonal, where each block is the matrix:
+	\[ A = \left(\begin{array}{cccccc} 0 & 0 & 0 & \cdots & 0 & -a_0 \\ 1 & 0 & 0 & \cdots & 0 & -a_1 \\ 0 & 1 & 0 & \cdots & 0 & -a_2 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & 0 & \cdots & 1 & -a_{n-1} \end{array}\right) \]
+	So, $N_{L/K}(b) = \pm a_0^{[L:K(b)]}$ and it suffices to show $a_0$ is integral over $A$.
+	
+	Now, let $M$ be the splitting field for $f$ over $L$, so that in $M$ there are elements $b = b_1,\ldots,b_n$ with
+	\[ f(T) = \prod_{i=1}^n (T-b_i) \]
+	We also have that $b$ is integral over $A$, so there is a monic polynomial $g \in A[T]$ with $g(b) = 0$. By the definition of the minimal polynomial, we then get that $f \mid g$ in $K[T]$, so that $g(b_i) = 0$ for all $i$. But then each $b_i$ is also integral over $A$ as we've exhibited a monic polynomial relation for it. So, the product of all $b_i$ is also integral over $A$, which is the same as $\pm f(0) = \pm a_0$, completing the argument. \\
+	
+	Finally, suppose that $A$ is a polynomial ring over $k$. In particular, this means that $A$ is a UFD, which further implies that $A$ is integrally closed in its field of fractions $K$ (in fact this last assumption is all that we need). But now for $b \in B$, we have that $N_{L/K}(b)$ is in $K$ and integral over $A$, so it is in $A$ as claimed.
+\end{proof}

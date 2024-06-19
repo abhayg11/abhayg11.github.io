@@ -1,0 +1,25 @@
+\mtexe{3.13}
+\begin{proof}
+	As with the previous, we define $I$ and compute:
+	\begin{align*}
+	I
+		&= (23,\alpha-10)^2(23,\alpha-3) \\
+		&= (23^2,23(\alpha-10),\alpha^2-20\alpha+100)(23,\alpha-3) \\
+		&= (23^3, 23^2(\alpha-10), 23(\alpha^2-20\alpha+100), 23^2(\alpha-3), 23(\alpha^2-13\alpha+30), \alpha^3-23\alpha^2+160\alpha-300) \\
+		&= (23^3, 23^2(\alpha-10), 23(\alpha^2-20\alpha+100), 23^2(\alpha-3), 23(\alpha^2-13\alpha+30), -23\alpha^2+161\alpha-299) \\
+		&= (23^3, 23^2(\alpha-10), 23(\alpha^2-20\alpha+100), 23^2(\alpha-3), 23(\alpha^2-13\alpha+30), -23(\alpha^2-7\alpha+13)) \\
+	\end{align*}
+	This is contained in $23S$ since each generator is a multiple of 23. Further, we have:
+	\[ \det\left(\begin{array}{ccc} 1 & 1 & 1 \\ -20 & -13 & -7 \\ 100 & 30 & 13 \end{array}\right) = 7 \cdot 43 \]
+	which is nonzero in $\FF_{23}$. So, by linear algebra there are $a,b,c \in \ZZ$ with
+	\[ a(x^2-20x+100) + b(x^2-13x+30) + c(x^2-7x+13) = 23r(x)+1 \]
+	for some polynomial $r \in \ZZ[x]$. Thus, $23^2r(x)+23 \in I$. We also have
+	\[ 23^2(\alpha-3) - 23^2(\alpha-10) = 23^2 \cdot 7 \in I \]
+	Since $23$ and $7$ are coprime (in $\ZZ$), there are $u,v \in \ZZ$ with $23u+7v=1$. Then, $23^3 \in I$, so
+	\[ 23^3u+(23^2 \cdot 7)v = 23^2(23u+7v) = 23^2 \in I \]
+	as well. Since $23^2 \in I$ and $23^2r + 23 \in I$, we finally conclude $23 \in I$, as claimed. Thus finally we get $23S = I$. \\
+	
+	We have $(23,\alpha-10) + (23,\alpha-3) = (23,\alpha-10,\alpha-3)$, so if we can show the latter is $S$, then they will indeed be coprime ideals. But the latter ideal contains
+	\[ 23u + (\alpha-3)v - (\alpha-10)v = 23u + 7v = 1 \]
+	and so it is $S$.
+\end{proof}

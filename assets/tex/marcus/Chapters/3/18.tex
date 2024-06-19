@@ -1,0 +1,20 @@
+\mtexe{3.18}
+\begin{proof}
+	Let $\sigma_1,\ldots,\sigma_n$ be the embeddings of $K$ into $\CC$. Then:
+	\begin{align*}
+	\disc(r\alpha_1,\alpha_2,\ldots,\alpha_n)
+		&= \det\left(\begin{array}{cccc} r\sigma_1(\alpha_1) & r\sigma_2(\alpha_1) & \cdots & r\sigma_n(\alpha_1) \\ \sigma_1(\alpha_2) & \sigma_2(\alpha_2) & \cdots & \sigma_n(\alpha_2) \\ \vdots & \vdots & \ddots & \vdots \\ \sigma_1(\alpha_n) & \sigma_2(\alpha_n) & \cdots & \sigma_n(\alpha_n) \\ \end{array}\right)^2 \\
+		&= r^2\det\left(\begin{array}{cccc} \sigma_1(\alpha_1) & \sigma_2(\alpha_1) & \cdots & \sigma_n(\alpha_1) \\ \sigma_1(\alpha_2) & \sigma_2(\alpha_2) & \cdots & \sigma_n(\alpha_2) \\ \vdots & \vdots & \ddots & \vdots \\ \sigma_1(\alpha_n) & \sigma_2(\alpha_n) & \cdots & \sigma_n(\alpha_n) \\ \end{array}\right)^2 \\
+		&= r^2\disc(\alpha_1,\ldots,\alpha_n)
+	\end{align*}
+	as claimed. \\
+	
+	Similarly, if $\beta = c_2\alpha_2+\cdots+c_n\alpha_n$:
+	\begin{align*}
+	\disc(\alpha_1+\beta,\alpha_2,\ldots,\alpha_n)
+		&= \det\left(\begin{array}{cccc} \sigma_1(\alpha_1+\beta) & \sigma_2(\alpha_1+\beta) & \cdots & \sigma_n(\alpha_1+\beta) \\ \sigma_1(\alpha_2) & \sigma_2(\alpha_2) & \cdots & \sigma_n(\alpha_2) \\ \vdots & \vdots & \ddots & \vdots \\ \sigma_1(\alpha_n) & \sigma_2(\alpha_n) & \cdots & \sigma_n(\alpha_n) \\ \end{array}\right)^2 \\
+		&= \left[\det\left(\begin{array}{cccc} \sigma_1(\alpha_1) & \sigma_2(\alpha_1) & \cdots & \sigma_n(\alpha_1) \\ \sigma_1(\alpha_2) & \sigma_2(\alpha_2) & \cdots & \sigma_n(\alpha_2) \\ \vdots & \vdots & \ddots & \vdots \\ \sigma_1(\alpha_n) & \sigma_2(\alpha_n) & \cdots & \sigma_n(\alpha_n) \\ \end{array}\right)+\sum_{j=2}^n c_j\det\left(\begin{array}{cccc} \sigma_1(\alpha_j) & \sigma_2(\alpha_j) & \cdots & \sigma_n(\alpha_j) \\ \sigma_1(\alpha_2) & \sigma_2(\alpha_2) & \cdots & \sigma_n(\alpha_2) \\ \vdots & \vdots & \ddots & \vdots \\ \sigma_1(\alpha_n) & \sigma_2(\alpha_n) & \cdots & \sigma_n(\alpha_n) \\ \end{array}\right)\right]^2 \\
+		&= \disc(\alpha_1,\ldots,\alpha_n)
+	\end{align*}
+	since each term of the sum is zero, as it contains a repeated row. \\
+\end{proof}

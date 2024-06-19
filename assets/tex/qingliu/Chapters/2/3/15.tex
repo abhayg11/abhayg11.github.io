@@ -1,0 +1,6 @@
+\mtexe{2.3.15} 
+\begin{proof}
+	Since $X$ is quasi-compact, we can write it as a finite union of affine schemes, say $X = \bigcup_{i=1}^n U_i$ for $U_i = \Spec B_i$. Then, the compositions $U_i \to X \to \Spec A$ induce maps $\varphi_i : A \to B_i$ for each $i$; in fact, since the map $X \to \Spec A$ is induced by $\id_A$, we have that $\varphi_i$ is just the restriction map $\rho_{X,U_i}$. We wish to show that $f(X)$ is dense in $\Spec A$, i.e. we want to compute the closure of $f(X)$. By (exercise 2.3.3) we know that $\overline{f(U_i)} = V(\ker \varphi_i)$, and so:
+\[ \overline{f(X)} = \overline{f\left(\bigcup_{i=1}^n U_i\right)} = \overline{\bigcup_{i=1}^n f(U_i)} = \bigcup_{i=1}^n \overline{f(U_i)} = \bigcup_{i=1}^n V(\ker\varphi_i) = V\left(\bigcap_{i=1}^n \ker\varphi_i\right) = V(0) = \Spec A \]
+We've used multiple facts here. Trivially, we've used that images commute with unions and that closures commute with finite unions. Less trivially, we've noted that $\bigcap_{i=1}^n \ker\varphi_i = 0$. This is in fact just the sheaf condition. For if $g \in \bigcap_{i=1}^n \ker\varphi_i$, then $g|_{U_i} = \varphi_i(g) = 0$, so $g$ is zero on an open cover, and hence globally zero.
+\end{proof}

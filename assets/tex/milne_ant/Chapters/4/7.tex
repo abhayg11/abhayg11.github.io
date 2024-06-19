@@ -1,0 +1,36 @@
+\mtexe{4.7}
+\begin{proof}
+	Let $i = \sqrt{-1}$ and $\alpha = \frac{1+\sqrt{5}}{2}$. Note the minimal polynomial of $\alpha$ is $x^2-x-1$. We have that $\scO_K \supseteq \ZZ[i,\alpha]$, and we can compute the discriminant $\Delta$ of the basis $\{1,\alpha,i,i\alpha\}$ directly:
+	\[ \Delta = \det\left(\begin{array}{cccc} T(1) & T(\alpha) & T(i) & T(i\alpha) \\ T(\alpha) & T(\alpha+1) & T(i\alpha) & T(i(\alpha+1)) \\ T(i) & T(i\alpha) & T(-1) & T(-\alpha) \\ T(i\alpha) & T(i(\alpha+1)) & T(-\alpha) & T(-\alpha-1) \end{array}\right) = \det\left(\begin{array}{cccc} 4 & 2 & 0 & 0 \\ 2 & 6 & 0 & 0 \\ 0 & 0 & -4 & -2 \\ 0 & 0 & -2 & -6 \end{array}\right) = 20^2 = 2^45^2 \]
+	So, we can conclude that $|\scO_K/\ZZ[i,\alpha]| \mid 20$. Suppose $2 \mid |\scO_K/\ZZ[i,\alpha]|$. Then we can find $u \in \scO_K \setminus \ZZ[i,\alpha]$ of the form
+	\[ u = \frac{a+b\alpha+ci+di\alpha}{2} \]
+	for $a,b,c,d \in \ZZ$. Let $\sigma : K \to K$ denote the automorphism with $\sqrt{5} \mapsto -\sqrt{5}$ and keeps $i$ fixed. I.e. $\sigma(\alpha) = 1-\alpha$ and $\sigma(i) = i$. Then $\sigma(u) \in \scO_K$ as well, and
+	\[ \sigma(u) = \frac{a+b(1-\alpha)+ci+di(1-\alpha)}{2} \]
+	But then the sum of these is $u+\sigma(u) = (a+b/2) + (c+d/2)i \in \scO_K \cap \QQ(i) = \scO_{\QQ(i)} = \ZZ[i]$. So we must have $b,d$ even. Then
+	\[ u-\frac{b\alpha+di\alpha}{2} = \frac{a+ci}{2} \in \scO_K \cap \QQ(i) = \ZZ[i] \]
+	as well, giving that $a,c$ are even. But then $u \in \ZZ[i,\alpha]$ contrary to assumption. So $|\scO_K/\ZZ[i,\alpha]| \mid 5$. Similarly, if we assume that it equals 5, we can find
+	\[ v = \frac{w+x\alpha+yi+zi\alpha}{5} \in \scO_K \setminus \ZZ[i,\alpha] \]
+	for $w,x,y,z \in \ZZ$. If we let $\tau$ be the other generating automorphism with $\tau(\alpha) = \alpha$ and $\tau(i) = -i$, we get
+	\[ v+\tau(v) = \frac{2w+2x\alpha}{5} \in \scO_K \cap \QQ(\alpha) = \ZZ[\alpha] \]
+	and so both $w,x$ are multiples of $5$. Finally,
+	\[ iv+\tau(iv) = \frac{-2y-2z\alpha}{5} \in \ZZ[\alpha] \]
+	and so $y,z$ are multiples of 5 as well. But this shows that $v \in \ZZ[i,\alpha]$ contrary to assumption and so we must have $\scO_K = \ZZ[i,\alpha]$ after all. \\
+	
+	This immediately shows that $2,5$ ramify and no other primes, as they are precisely the primes dividing $\Delta$. We know that $i(1-i)^2 = 2$, so we've already factorized somewhat. 
+	\[ \ZZ[i,\alpha]/(1-i) = \ZZ[\alpha][x]/(x^2+1,1-x) = \ZZ[\alpha][x]/(2,x-1) = \ZZ[\alpha]/(2) = \ZZ[x]/(2,x^2-x-1) = \FF_2[x]/(x^2+x+1) = \FF_4 \]
+	so that $(1-i)$ is a prime ideal. Thus, we've factored $(2) = (1-i)^2$ as ideals in $\scO_K$, and indeed it ramifies with index 2. Similarly, $(2\alpha-1)^2 = (\sqrt{5})^2 = 5$, and
+	\[ \ZZ[i,\alpha]/(2\alpha-1) = \ZZ[i][x]/(x^2-x-1,2x-1) = \ZZ[i][x]/(5,x+2) = \ZZ[i]/(5) = \FF_5[x]/(x^2+1) \]
+	However, this is not a domain since $x^2+1 = (x-2)(x+2)$ in $\FF_5[x]$ is reducible. But this suggests the fix: we should enlarge our ideal to contain the preimage of $x+2$, namely $2+i$, and so we consider the ideal $(2\alpha-1,2+i)$. We'll need the factorization so we compute:
+	\[ (2\alpha-1,2+i)(2\alpha-1,2-i) = (4\alpha^2-4\alpha+1,(2\alpha-1)(2+i),(2\alpha-1)(2-i),5) = (5,(2\alpha-1)(2+i),(2\alpha-1)(2-i)) = (2\alpha-1) \]
+	Indeed for the last equality ``$\subseteq$'' is obvious as each generator is a multiple of $2\alpha-1 = \sqrt{5}$, and for the reverse containment note that $5(2\alpha-1)-(2\alpha-1)(2+i)-(2\alpha-1)(2-i) = 2\alpha-1$. So, overall, we get the factorization
+	\[ (5) = (2\alpha-1,2+i)^2(2\alpha-1,2-i)^2 \]
+	Comparing norms gives $5^4 = N(\frp)^2N(\frq)^2$. We can see that $\frp$ is proper iff $\frq$ is by taking conjugates, so we cannot have $N(\frp) = 1$, hence $N(\frp) = N(\frq) = 5$, which also shows that they must be prime, thus giving that this is the complete factorization of $5$ in $\scO_K$, and that it is ramified of index 2. \\
+	
+	Now, suppose that $\frP$ is a prime of $\scO_K$ lying over the prime $P$ of $\scO_{\QQ(\sqrt{-5})} = \ZZ[\sqrt{-5}]$ which itself lies over the prime $(p)$ of $\ZZ$. Then $e(\frP/(p)) = e(\frP/P)e(P/(p))$. If $p \neq 2,5$, then $e(\frP/(p)) = 1$, so $e(\frP/P) = 1$ and $\frP$ is unramified. If $p = 2,5$, then $e(\frP/(p)) = 2$ as we've shown. But the discriminant of $\ZZ[\sqrt{-5}]$ is $-20$, so $p$ ramifies here as well, giving $e(P/(p)) > 1$. On the other hand, the extension is of degree 2, so we must have $e(P/(p) \leq 2$, whence $e(P/(p)) = 2$ and $e(\frP/P) = 1$. So, in any case, we get that $\frP$ is unramified, and so the extension $K/\QQ(\sqrt{-5})$ is totally unramified. \\
+	
+	Finally, if we show that $\QQ(\sqrt{-5})$ has class number 2, then we are done, as the Hilbert class field must contain $K$ but is also a degree two extension of $\QQ(\sqrt{-5})$, and so would equal $K$. But we know the ring of integers is $\ZZ[\sqrt{-5}]$ and the discriminant is $\Delta = -20$, so the Minkowski bound is
+	\[ \frac{2!}{2^2}\left(\frac4\pi\right)^1|-20|^{1/2} < 3 \]
+	So the class group can be represented by $(1)$ and primes lying over 2. For this we factor $x^2+5 \equiv (x+1)^2 \pmod{2}$, so
+	\[ (2) = (2,1+\sqrt{-5})^2 \]
+	in $\ZZ[\sqrt{-5}]$. So, we seek to show that $(2,1+\sqrt{-5})$ is not principal, for which it suffices to show that $N(a+b\sqrt{-5}) = 2$ has no solutions. But this is obvious, as $a^2+5b^2 = 2$ has no integer solutions. So, indeed, the class number is 2 and we have exhibited its Hilbert class field.
+\end{proof}

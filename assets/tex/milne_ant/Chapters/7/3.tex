@@ -1,0 +1,16 @@
+\mtexe{7.3}
+\begin{proof}
+	First suppose $a = 7x^2$ for some $x \in \ZZ_7$ and $a \in \ZZ$. Assume $a \neq 0$. Then $\nu_7(a) = 1+2\nu_7(x)$ is odd, so we can write $a = 7^{2k+1}b$ and $x = 7^ky$ for $k,b \in \ZZ$ and $y \in \ZZ_7$ such that $7 \nmid b$. We then get that $b = y^2$, and so reducing mod 7 gives $b \equiv 1,2,4 \pmod{7}$.
+	
+	In fact, I claim this suffices: if $a \in \ZZ$ is either zero or of the form $7^{2k+1}b$ for $b,k \in \ZZ$ and $b \equiv 1,2,4 \pmod{7}$, then $a = 7x^2$ for some $x \in \ZZ_7$. By Hensel's lemma, since $X^2-\overline{b}$ factors into two distinct linear factors in $\FF_7$, we get that $X^2-b$ does the same in $\ZZ_7$. So, it has a root $y \in \ZZ_7$; let $x = 7^ky$. Then we're done since $7x^2 = 7(7^ky)^2 = 7^{2k+1}y^2 = 7^{2k+1}b = a$. \\
+	
+	Similarly, for $a \in \QQ^\times$, suppose there is an $x \in \QQ_7$ such that $a = 7x^2$, and write $a = c/d$ with $c,d$ coprime. Then, $cd = ad^2 = (dx)^2$, so $cd = 7^{2k+1}b$ as above. Factor $c = 7^ie$ and $d = 7^jf$, and since $c,d$ are coprime, $\{i,j\} = \{0,2k+1\}$. So $a = 7^{\pm(2k+1)}(e/f)$, with $e/f \in \ZZ_{(7)}$. In fact, under the residue field map $\ZZ_{(7)} \to \FF_7$, we get
+	\[ e/f \mapsto \bar{e}/\bar{f} = \overline{ef}\overline{f}^{-2} = \overline{b}\overline{f}^{-2} \in (\FF_7^\times)^2 \]
+	Conversely, suppose $a = 7^{2k+1}x \neq 0$ with $k \in \ZZ$ and $x \in \ZZ_{(7)}$ such that $\bar{x} \in (\FF_7^\times)^2$. Write $x = e/f$ with $e,f$ coprime and $7 \nmid f$. Note that $7 \nmid e$ either since $\bar{x} \neq 0$. In fact,
+	\[ \overline{ef} = \bar{e} \cdot \bar{f} = \bar{x} \cdot \bar{f}^2 \in \FF_7^2 \]
+	Suppose first that $k \geq 0$. Then by the above, there exists $x \in \ZZ_7$ such that $7x^2 = 7^{2k+1}ef$. Then
+	\[ a = 7^{2k+1}e/f = 7^{2k+1}ef/f^2 = 7(x/f)^2 \]
+	and since $7 \nmid f$, $f \in \ZZ_7^\times$. So, $x/f \in \ZZ_7$ and we're done. Otherwise, $k \leq -1$ and similarly we can write $7^{2(-k)+1}ef = 7x^2$ for some $x \in \ZZ_7$. Then
+	\[ a = 7^{2k+1}e/f = 7^2e^2/(7x^2) = 7(e/x)^2 \]
+	and $e/x \in \QQ_7$.
+\end{proof}

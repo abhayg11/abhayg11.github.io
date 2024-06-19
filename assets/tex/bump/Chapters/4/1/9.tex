@@ -1,0 +1,50 @@
+\mtexe{4.1.9}
+\begin{proof}
+	Suppose we have a 2-cocycle $\sigma : G \times G \to A$ and a 1-chain $\phi : G \to A$ with coboundary $\delta\phi$. We wish to show $\tilde{G}_\sigma \cong \tilde{G}_{\sigma\cdot\delta\phi}$. Define the map $f : \tilde{G}_\sigma \to \tilde{G}_{\sigma \cdot \delta\phi}$ by:
+	\[ f(g,a) = (g,a\phi(g)^{-1}\phi(1)) \]
+	This is a group homomorphism since
+	\begin{align*}
+	f((g,a)(g',a'))
+		&= f(gg',aa'\sigma(g,g')\sigma(1,1)^{-1}) \\
+		&= (gg',aa'\sigma(g,g')\sigma(1,1)^{-1}\phi(gg')^{-1}\phi(1)) \\
+		&= (g,a\phi(g)^{-1}\phi(1))(g',a'\phi(g')^{-1}\phi(1)) \\
+		&= f(g,a)f(g',a')
+	\end{align*}
+	If $(g,a)$ is in the kernel of $f$, then since the first coordinate is preserved, we get $g = 1$, and then the second coordinate gives $1 = a\phi(1)^{-1}\phi(1) = a$, so $a=1$ as well. I.e. $f$ injects. On the other hand, it also clearly surjects. Indeed, for $g \in G$ and $a \in A$, we have:
+	\[ f(g,a\phi(g)\phi(1)^{-1}) = (g,a\phi(g)\phi(1)^{-1}\phi(g)^{-1}\phi(1)) = (g,a) \]
+	So, we have furnished an isomorphism $\tilde{G}_\sigma \to \tilde{G}_{\sigma \cdot \delta\phi}$ as desired. \\
+	
+	Now, suppose $1 \to A \xrightarrow{i} \tilde{G} \xrightarrow{q} G \to 1$ is a central extension of $G$ by $A$. Since $q$ surjects, we can choose a function (not a group homomorphism) $s : G \to \tilde{G}$ with $q(s(g)) = g$; for convenience, choose $s(1) = 1$. Now, for $g,g' \in G$, note that
+	\[ q(s(gg')^{-1}s(g)s(g')) = q(s(gg'))^{-1}q(s(g))q(s(g')) = (gg')^{-1}gg' = 1 \]
+	So, $s(gg')^{-1}s(g)s(g')$ is in the kernel of $q$, which equals the image of $i$. So, let $\sigma(g,g')$ be any element of $A$ satisfying $i(\sigma(g,g')) = s(gg')^{-1}s(g)s(g')$; again, for convenience, since $i(\sigma(1,1)) = s(1)^{-1}s(1)s(1) = s(1) = 1$, we may choose $\sigma(1,1) = 1$. For this map $\sigma : G \times G \to A$, we construct a group homomorphism $f : \tilde{G}_\sigma \to \tilde{G}$ by:
+	\[ f(g,a) = s(g)i(a) \]
+	This is indeed a group homomorphism since:
+	\begin{align*}
+	f((g,a)(g',a'))
+		&= f(gg',aa'\sigma(g,g')\sigma(1,1)^{-1}) \\
+		&= s(gg')i(aa'\sigma(g,g')) \\
+		&= s(gg')i(\sigma(g,g'))i(a)i(a') \\
+		&= s(g)i(a)s(g')i(a') \\
+		&= f(g,a)f(g',a')
+	\end{align*}
+	where we have used liberally the fact that the image of $i$ lies in the center of $\tilde{G}$. This gives the diagram:
+	\[ \begin{tikzcd} 1 \arrow{r}{} & A \arrow{d}{\id_A} \arrow{r}{} & \tilde{G}_\sigma \arrow{r}{} \arrow{d}{f} & G \arrow{d}{\id_G} \arrow{r}{} & 1 \\ 1 \arrow{r}{} & A \arrow{r}{i} & \tilde{G} \arrow{r}{q} & G \arrow{r}{} & 1 \end{tikzcd} \]
+	We wish to show that this diagram commutes and that $f$ is an isomorphism. For $a \in A$, we have $f(1,a) = s(1)i(a) = i(a) = i(\id_A(a))$, giving commutativity of the first square. For $(g,a) \in \tilde{G}_\sigma$, we have $q(f(g,a)) = q(s(g)i(a)) = q(s(g))q(i(a)) = g \cdot 1 = g$, giving commutativity of the second square. But now $f$ is an isomorphism by the five lemma.
+	
+	Finally, we wish to show uniqueness: if $\tilde{G}_\sigma$ is equivalent to $\tilde{G}_\tau$, then $\sigma = \tau \cdot \delta\phi$ for some 1-chain $\phi$. Suppose that $f : \tilde{G}_\sigma \to \tilde{G}_\tau$ is an isomorphism fitting into a commutative diagram as above. Then $f(g,a) = (g,\pi(g,a))$ for some function $\pi : G \times A \to A$ by commutativity of the second square, and $\pi(1,a) = a$ by commutativity of the first. Then, for $g,g' \in G$:
+	\begin{align*}
+		(gg',\pi(gg',1)\sigma(g,g')\sigma(1,1)^{-1})
+		&= (gg',\pi(gg',1))(1,\sigma(g,g')\sigma(1,1)^{-1}) \\
+		&= f(gg',1)f(1,\sigma(g,g')\sigma(1,1)^{-1}) \\
+		&= f((gg',1)(1,\sigma(g,g')\sigma(1,1)^{-1})) \\
+		&= f(gg',\sigma(g,g')\sigma(1,1)^{-1}) \\
+		&= f((g,1)(g',1)) \\
+		&= f(g,1)f(g',1) \\
+		&= (g,\pi(g,1))(g',\pi(g',1)) \\
+		&= (gg',\pi(g,1)\pi(g',1)\tau(g,g')\tau(1,1)^{-1})
+	\end{align*}
+	So, for $\phi(g) = \pi(g,1)\sigma(1,1)\tau(1,1)^{-1}$:
+	\[ \sigma(g,g') = \tau(g,g')\pi(g,1)\pi(g',1)\pi(gg',1)^{-1}\sigma(1,1)\tau(1,1)^{-1} = \tau(g,g')\phi(g)\phi(g')\phi(gg')^{-1} = \tau(g,g') \cdot \delta\phi(g,g') = (\tau \cdot \delta\phi)(g,g') \]
+	completing the proof.
+\end{proof}
+

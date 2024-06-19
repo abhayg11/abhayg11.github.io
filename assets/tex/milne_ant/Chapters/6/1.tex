@@ -1,0 +1,28 @@
+\mtexe{6.1}
+\begin{proof}
+	To see that $f(x) = x^3-3x+1$ is irreducible, it suffices to show it has no rational roots, since $f$ is cubic. Since $f$ is monic with constant term 1, the only possible rational roots are $\pm 1$, but $f(-1) = 3$ and $f(1) = -1$. So, $f$ is irreducible, and since $f(-2) = -1$ and $f(2) = 3$, it is clear that $f$ has three real roots by the intermediate value theorem: one in $(-2,-1)$, one in $(-1,1)$, and one in $(1,2)$.
+	
+	Now, if $\alpha$ is one of the roots and $\Delta = \disc(\ZZ[\alpha])$, we get
+	\[ \Delta = -N(f'(\alpha)) = -N(3\alpha^2-3) = -3^3N(\alpha-1)N(\alpha+1) = -3^3f(1)f(-1) = 3^4 \]
+	Since $\disc(\ZZ[\alpha]) = \disc(\scO_K)|\scO_K/\ZZ[\alpha]|^2$ and $\disc(\scO_K) \neq 1$, we get that $|\scO_K/\ZZ[\alpha]| \mid 3$. So $\scO_K \supseteq \ZZ[\alpha] \supseteq 3\scO_K$ as claimed.
+	
+	Now, to see that $\alpha$ is a unit in $\ZZ[\alpha]$, we have
+	\[ \alpha(3-\alpha^2) = 3\alpha-\alpha^3 = 1 \]
+	and for $\alpha+2$, we have
+	\[ (\alpha+2)(\alpha^2-2\alpha+1) = \alpha^3-3\alpha+2 = 1 \]
+	Hence they are also units in $\scO_K$. We can also do the computation:
+	\[ (\alpha+1)^3 = \alpha^3+3\alpha^2+3\alpha+1 = 3\alpha^2+6\alpha = 3\alpha(\alpha+2) \]
+	Note that $N(\alpha+1) = -f(-1) = -3$, so if we factorize $(\alpha+1)$ as a product of primes and take norms, we see that $(\alpha+1)$ must itself be prime. In fact, since $\alpha,\alpha+2$ are units, we get $(3) = (\alpha+1)^3$ in both $\ZZ[\alpha]$ and $\scO_K$.
+	
+	But this says that the ramification index $e = 3$, so the inertial degree is $f=1$, giving $\scO_K/(\alpha+1) \cong \FF_3 = \ZZ/3\ZZ$. Hence, if $\beta \in \scO_K$, then $\beta - n \in (\alpha+1)$ for some $n \in \ZZ$, i.e. $\beta \in \ZZ + (\alpha+1) \subseteq \ZZ[\alpha] + (\alpha+1)\scO_K$. The reverse containment $\ZZ[\alpha]+(\alpha+1)\scO_K \subseteq \scO_K$ is obvious, so we have established the equality. Then,
+	\[ (\alpha+1)^2\scO_K = (\alpha+1)^2\ZZ[\alpha]+(\alpha+1)^3\scO_K = (\alpha+1)^2\ZZ[\alpha]+3\scO_K \subseteq \ZZ[\alpha] \]
+	so
+	\[ (\alpha+1)\scO_K = (\alpha+1)\ZZ[\alpha]+(\alpha+1)^2\scO_K \subseteq \ZZ[\alpha] \]
+	and so finally,
+	\[ \scO_K = \ZZ[\alpha] + (\alpha+1)\scO_K \subseteq \ZZ[\alpha] \]
+	Thus we have shown that $\scO_K = \ZZ[\alpha]$.
+	
+	Now, we can find the factorization of $(2)$ by factoring $f$ in $\FF_2$. But $x^3-3x+1$ is irreducible in $\FF_2[x]$, so we get that $(2)$ itself is prime in $\scO_K$. Finally, note that the Minkowski bound for $\scO_K$ is:
+	\[ \frac{3!}{3^3}\left(\frac{4}{\pi}\right)^0|3^4|^{1/2} = 2 \]
+	So, the class group is represented by integral ideals with norm at most 2, which must divide $(2)$. But we've just shown that it is inert, so there are no non-principal ideals. I.e. $\scO_K$ is a PID.
+\end{proof}

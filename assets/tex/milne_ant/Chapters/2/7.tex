@@ -1,0 +1,12 @@
+\mtexe{2.7}
+\begin{proof}
+	First, it is clear that $S^{-1}B$ is integral over $S^{-1}A$. Indeed, for $b/s \in S^{-1}B$, since $b$ is integral over $A$, we have
+	\[ b^n + a_{n-1}b^{n-1} + \cdots + a_0 = 0 \]
+	for some $a_i \in A$. But then
+	\[ (b/s)^n + a_{n-1}/s(b/s)^{n-1} + \cdots + a_0/s^n = (b^n+a_{n-1}b^{n-1}+\cdots+a_0)/s^n = 0 \]
+	and for each $i$, it is clear that $a_i/s^{n-i} \in S^{-1}A$. \\
+	
+	So, it remains to show that $S^{-1}B$ is integrally closed in $L$. Suppose that $\alpha \in L$ satisfies a monic polynomial with coefficients in $S^{-1}B$. I.e. for some $b_i \in B$ and $s_i \in S$:
+	\[ \alpha^n + (b_{n-1}/s_{n-1})\alpha^{n-1} + \cdots + b_0/s_0 = 0 \]
+	Let $s = s_0 \cdots s_{n-1}$ be the product. Then multiplying through by $s^n$ cancels all of the denominators, so we get that $s\alpha$ satisfies a monic polynomial with coefficients in $B$, and so is integral over $B$. Since $B$ is integrally closed in $L$, we conclude that $s\alpha \in B$. But then $s \in S$ as the product of elements of $S$, so $\alpha = (s\alpha)/s \in S^{-1}B$.
+\end{proof}

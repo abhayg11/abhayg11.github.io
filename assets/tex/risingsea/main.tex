@@ -1,0 +1,428 @@
+
+\documentclass[12pt]{exam}
+\input{../tmpl/packages.tex}
+\input{../tmpl/defs.tex}
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{Vakil - The Rising Sea} & \textbf{Name:} & Abhay Goel \\
+\textbf{Solutions} & \textbf{Last updated:} & \today \\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+\section*{Chapter 1}
+
+\mtexe{1.2.A}
+\begin{proof}
+	The two notions can be identified. Indeed, given a group $G$ in the usual sense, define a category with a single object $X$, and for each $g \in G$, define a morphism $f_g : X \to X$. Further, for two morphisms $f_g,f_h$, define composition by $f_g \circ f_h = f_{gh}$. This gives a 1-object groupoid, since each morphism is an isomorphism: the morphism $f_g$ has inverse $f_{g^{-1}}$.
+	
+	Conversely, given a 1-object groupoid, the set of morphisms on that one object forms a group. \\
+	
+	On the other hand, there are clearly groupoids that aren't groups, e.g. a category with two objects and only the identity morphisms on those objects.
+\end{proof}
+
+\mtexe{1.2.B}
+\begin{proof}
+	The identity morphism is invertible, with itself as left- and right-inverse. The composition of two invertible morphisms is again invertible, since $(f \circ g) \circ (g^{-1} \circ f^{-1}) = \id$. Finally, the inverse of an invertible morphism is invertible. So, the set of invertible morphisms forms a group under composition. \\
+	
+	Given a set $X$, the automorphisms of $X$ in the category of sets is the set of bijections $f : X \to X$, i.e. the automorphism group is $S_X$, the symmetric group on $X$. The automorphisms of a vector space in $Vec_k$ are the automorphisms in the usual sense in linear algebra. \\
+	
+	Finally, if $A$ and $B$ are isomorphic objects, with an isomorphism $f : A \to B$, then for an automorphism $\phi : A \to A$, the morphism $f \circ \phi \circ f^{-1}$ is an automorphism of $B$, with inverse $f \circ \phi^{-1} \circ f^{-1}$. So, this association gives an isomorphism of automorphism groups.
+\end{proof}
+
+\mtexe{1.2.C} Skipped upon recommendation
+
+\mtexe{1.2.D} Skipped upon recommendation \\
+
+\hrule ${}$ \\
+
+\mtexe{1.3.A}
+\begin{proof}
+	Let $A,B$ both be initial objects in some category. Then, since $A$ is initial, there is a morphism $f : A \to B$, and since $B$ is initial, there is a morphism $g : B \to A$. Then $\id_A$ and $g \circ f$ are both morphisms $A \to A$, but since $A$ is initial, there is a unique such morphism, so $g \circ f = \id_A$. Similarly, $f \circ g = \id_B$. So, $f$ and $g$ are isomorphisms. Further, this isomorphism is unique since any isomorphism $A \to B$ is firstly a morphism, and there is a unique such morphism since $A$ is initial.
+	
+	The case of final objects is identical. In fact, this proof already shows it by noting that an object is final in a category if and only if it is initial in the opposite category.
+\end{proof}
+
+\mtexe{1.3.B}
+\begin{proof}[Solution]
+	The initial object in $Sets$ is the empty set, since there is a unique map from the empty set to any other set. The final object in $Sets$ is any set with a single element, since there is a unique map from any set to this set. Note that specifying which single-element set is irrelevant, since any two such sets are uniquely isomorphic as sets. \\
+	
+	The initial object in $Rings$ is $\ZZ$ (recall we are only considering commutative rings with unity and morphisms that preserve unities), since there is a unique morphism given by mapping $1$ to $1 \in R$ for a given ring $R$. The final object is the zero ring. \\
+	
+	$Top$ is the ``same'' as set: the initial object is the empty space and the final object is a single-point space, since there is a unique continuous map in each case. \\
+	
+	Given a set $S$, the poset category of subsets of $S$ has $\emptyset$ as an initial object since it is a subset of each other subset of $S$, and it has $S$ as a final object. If $S$ is a topological space and we consider the poset category of open subsets of $S$, the initial and final objects are the same.
+\end{proof}
+
+\mtexe{1.3.C}
+\begin{proof}
+	In one direction, suppose $s \in S$ is a zerodivisor, so that there is some nonzero $x \in A$ with $sx = 0$. Then, since $s(1 \cdot x - 1 \cdot 0)$, we get that $x/1 = 0/1$ in $S^{-1}A$. So, $x$ is in the kernel of the map $A \to S^{-1}A$ and it isn't injective.
+	
+	Conversely, suppose this map isn't injective. Then, there is some nonzero element $x$ in the kernel, so that $x/1 = 0/1$. I.e. there is some $s \in S$ with $s(1 \cdot x - 1 \cdot 0) = 0$, i.e. $sx = 0$, whence $s$ is a zerodivisor.
+\end{proof}
+
+\mtexe{1.3.D}
+\begin{proof}
+	First, note that $A \to S^{-1}A$ has the property that all elements of $S$ are mapped to invertible elements, since for $s \in S$, the image is $s/1$, which has inverse $1/s \in S^{-1}A$. Now we want to see that it is initial with respect to this property. So, let $f : A \to B$ be a morphism with each element of $S$ mapping to an invertible element of $B$. Then, we'd like to define a factorization through $S^{-1}A$. Define:
+	\[ g(a/s) = f(a)f(s)^{-1} \]
+	First, note that this definition makes sense, since for each $s \in S$, $f(s)$ is invertible and so $f(s)^{-1}$ exists. Second, we want to see that it is well-defined. So, suppose $a/s = b/t$, so that there ihs some $r \in S$ with $r(ta-sb) = 0$. Then,
+	\[ 0 = f(r(ta-sb)) = f(r)(f(t)f(a)-f(s)f(b)) \]
+	Since $f(r)$ is invertible, we can cancel it, and then multiplying by the inverses of $f(t)$ and $f(s)$ gives:
+	\[ f(a)f(s)^{-1} = f(b)f(t)^{-1} \]
+	so that $g$ is well-defined. Finally, we want to see it is a ring homomorphism. First, we have $g(1/1) = f(1)f(1)^{-1} = 1$. Second, if $a/s,b/t \in S^{-1}A$, then
+	\[ g(a/s+b/t) = g((at+bs)/(st)) = f(at+bs)f(st)^{-1} = f(a)f(s)^{-1}+f(b)f(t)^{-1} = g(a/s)+g(b/t) \]
+	and
+	\[ g((a/s)(b/t)) = g((ab)/(st)) = f(ab)f(st)^{-1} = f(a)f(b)f(s)^{-1}f(t)^{-1} = g(a/s)g(b/t) \]
+	as desired. Thus $g$ is a ring homomorphism. Penultimately, we show it factors $f$. Let $\iota : A \to S^{-1}A$ be the canonical map. Then, for $a \in A$,
+	\[ g(\iota(a)) = g(a/1) = f(a)f(1)^{-1} = f(a) \]
+	so that $f = g \circ \iota$ as desired. To finally finish, we need to see that $g$ is unique. So, suppose we have another ring homomorphism $h : S^{-1}A \to B$ with $f = h \circ \iota$. Then, let $a/s \in S^{-1}A$. We have
+	\[ h(a/s) = h((a/1)(1/s)) = h(a/1)h(1/s) = h(a/1)h(s/1)^{-1} = h(\iota(a))h(\iota(s))^{-1} = f(a)f(s)^{-1} = g(a/s) \]
+	so that $h = g$. This completes the proof that $S^{-1}A$ is initial among such rings. \\
+	
+	We address the ``furthermore.'' Let $M$ be an $S^{-1}A$-module. Then, it is also an $A$-module via $a \cdot m = (a/1) \cdot m$ for $a \in A$ and $m \in M$ (restriction of scalars). For $s \in S$, multiplication by $s$ is an isomorphism of $M$ since it has inverse given by multiplication by $1/s$.
+	
+	Conversely, suppose $M$ is an $A$ module such that multiplication by $s$ is an automorphism of $M$ for all $s \in S$. For $x \in A$, let $\varphi(x) : M \to M$ denote multiplication by $x$, and let $R' = \varphi(A)$ be the image of $A$ in the endomorphism ring of $M$. Then $R'$ is a commutative ring with unity, and an application of Zorn's Lemma gives a maximal subring $R$ of the endomorphism ring of $M$ containing $R'$. Then, $\varphi : A \to R$ and each element of $S$ maps to an invertible element of $R$, so this factors as a map from $S^{-1}A$, i.e. we get a map from $S^{-1}A$ into the endomorphism ring of $M$, i.e. $M$ is an $S^{-1}A$-module.
+\end{proof}
+Note: This last part of the proof could be simplified if we prove that the universal property doesn't require the target ring to be commutative, because then we can directly note that an $A$-module $M$ with image of each $s \in S$ being an isomorphism is precisely a map from $A$ into the endomorphism ring of $M$ with each element of $S$ mapping to a unit.
+
+\mtexe{1.3.E}
+\begin{proof}
+	As suggested, define $S^{-1}M$ by symbols $m/s$ with $m \in M$ and $s \in S$ such that $m/s = n/t$ iff there is some $u \in S$ with $u(tm-sn) = 0$. This is an equivalence relation on pairs $(m,s)$ since $1(sm-sm) = 0$, $u(tm-sn) = 0$ implies $u(sn-tm) = 0$, and if $u(tm-sn) = 0$ and $v(rn-t\ell)=0$ implies
+	\[ ut(rm-s\ell) = r(utm)-uts\ell = r(usn)-uts\ell = us(rn-t\ell) = 0 \]
+	so that $m/s = \ell/r$ (note that $ut \in S$ since $u,t \in S$ and $S$ is multiplicative).
+	
+	We have the operation $m/s + n/t = (tm+sn)/(st)$. This is well-defined, for if $m/s = m'/s'$ and $n/t = n'/t'$, so that $u(t'n - tn') = 0 = v(s'm - sm')$, then
+	\[ uv(s't'(tm+sn) - st(t'm'+s'n')) = utt'(v(s'm-sm')) + vss'(u(t'n-tn')) = 0 \]
+	so the sums are equal. Under this operation, $S^{-1}M$ is a group, since $0/1 + m/s = (s0 + 1m)/(1s) = m/s$, and $m/s + (-m)/s = (sm + s(-m))/(s^2) = 0/(s^2) = 0/1$, and:
+	\[ \left(\frac{m}{s}+\frac{n}{t}\right)+\frac{\ell}{r} = \frac{tm+sn}{st}+\frac{\ell}{r} = \frac{r(tm+sn)+st\ell}{st(r)} = \frac{trm + s(rn+t\ell)}{s(tr)} = \frac{m}{s}+\frac{rn+t\ell}{tr} = \frac{m}{s}+\left(\frac{n}{t}+\frac{\ell}{r}\right) \]
+	Now, $S^{-1}M$ is an $A$-module, under $a \cdot (m/s) = (am)/s$, where the fact that this satisfies the module conditions follows from the fact that $M$ is an $A$-module [proof omitted, this is already so long].
+	
+	Finally, we have the map $\phi : M \to S^{-1}M$ via $m \mapsto m/1$. This has the property that for $s \in S$, multiplication by $s$ is invertible, with inverse $m/t \mapsto m/(ts)$. Further, if $N$ is an $A$-module with each element of $S$ inducing an automorphism of $N$ and $\alpha : M \to N$ is an $A$-module homomorphism, then we get a map $\alpha' : S^{-1}M \to N$ via $m/s \mapsto s^{-1} \cdot \alpha(m)$, where $s^{-1}$ denotes the inverse of the isomorphism of $N$ induced by $s$.
+\end{proof}
+
+\mtexe{1.3.F}
+\begin{proof}
+	Parts (a) and (b) are both subsumed under showing that localization commutes with arbitrary direct sums. For this, it's useful to give direct sums a universal property. We claim (and show after this proof) that the direct sum of $A$-modules $\{M_j\}$ is an $A$-module $P$ along with maps $P \to M_j$ that is initial with respect to have maps into each $M_j$.
+	
+	Now, given this property, define $P = \bigoplus_j M_j$ and $Q = \bigoplus_j S^{-1}M_j$. We wish to show that $Q = S^{-1}P$. To do this, we show that $Q$ has the universal property of being the localization of $P$. First, we need a map $P \to Q$. To find it, note that for each $j$ we have maps $\ell_j : M_j \to S^{-1}M_j$ via localization and $g_j : S^{-1}M_j \to Q$ via the direct sum. Hence, since $P$ is the direct sum, we have a unique map $f : P \to Q$ such that $f \circ f_j = g_j \circ \ell_j$ for each $j$, i.e. we have commutative diagrams:
+	\[ \begin{tikzcd} M_j \arrow{r}{\ell_j} \arrow{d}{f_j} & S^{-1}M_j \arrow{d}{g_j} \\ P \arrow{r}{f} & Q \end{tikzcd} \]
+	
+	Finally, we show that $f : P \to Q$ is the localization map. To prove this, let $N$ be an $S^{-1}A$-module, and let $\alpha : P \to N$ be a morphism. Then, for each $j$, we have the composition map $\alpha \circ f_j$, and by the universal property of the localization, we thus get that each of these factors through a map $\alpha_j : S^{-1}M_j \to N$. I.e. the diagram extends
+	\[ \begin{tikzcd} M_j \arrow{r}{\ell_j} \arrow{d}{f_j} & S^{-1}M_j \arrow{d}{g_j} \arrow{ddr}{\alpha_j} \\ P \arrow{r}{f} \arrow{drr}{\alpha} & Q \arrow[dashed]{dr}{\beta} \\ & & N \end{tikzcd} \]
+	By the universal property of $Q$, the dashed arrow exists and makes the diagram commute. We finally wish to show that $\alpha = \beta \circ f$. Fix a $j$, and note that
+	\[ (\beta \circ f) \circ f_j = \beta \circ (g_j \circ \ell_j) = \alpha_j \circ \ell_j = \alpha \circ f_j \]
+	So, the two maps agree when composed by $f_j$ for each $j$, and by the uniqueness part of the property of direct sums, we get that $\beta \circ f = \alpha$.
+	
+	Finally, we wish to show $\beta$ is unique. Suppose $\gamma : Q \to N$ satisfies $\gamma \circ f = \alpha$. Then, for each $j$ we have
+	\[ \gamma \circ g_j \circ \ell_j = \gamma \circ f \circ f_j = \beta \circ f \circ f_j = \beta \circ g_j \circ \ell_j \]
+	By the universal property of $\ell_j$, for each $j$, we get $\gamma \circ g_j = \beta \circ g_j$. Then, by the universal property of $Q$, we have that $\gamma = \beta$. This proves uniqueness. In other words, $(Q,f)$ has the property that for any $S$-invertible map $P \to N$ factors uniquely through $f$, so that $Q = S^{-1}P$. \\
+	
+	For the counterexample, we consider the suggestion, and let $A = \ZZ$ and for each $n \in \NN$ let $M_n = \ZZ$ as well. Let $S = \ZZ \setminus \{0\}$, so that $S^{-1}M_n = \QQ$ for each $n$. Thus,
+	\[ (1, 1/2, 1/3, 1/4, \ldots) \in \prod_{n=1}^\infty \QQ = Q \]
+	On the other hand, our explicit description of $S^{-1}P$ shows that for each element of $S^{-1}P$, there is an element of $S$ that multiplies it into (the image of) $P$. But for this element, there is no multiple of it that consists entirely of integers, since the denominators get arbitrarily large. So, this element of $Q$ isn't in $S^{-1}P$ and so they aren't equal.
+\end{proof}
+
+\mtexe{1.3.G}
+\begin{proof}
+	We'd like to define a map $\ZZ/2\ZZ \to \ZZ/10\ZZ \otimes \ZZ/12\ZZ$, for which we only need to map the single element: let it map to $1 \otimes 1$. This is a homomorphism, since
+	\[ 2(1 \otimes 1) = 2(1 \otimes 25) = 10(1 \otimes 5) = 10 \otimes 5 = 0 \otimes 5 = 0 \]
+	It is injective since $1 \otimes 1$ is nonzero. Finally, it is surjective. Indeed, consider an arbitrary element:
+	\[ \sum_j a_j \otimes b_j = \sum_j a_jb_j(1 \otimes 1) \]
+	which is the image of $\sum_j a_jb_j$.
+\end{proof}
+
+\mtexe{1.3.H}
+\begin{proof}
+	To see that it is a functor, note that it gives a way to map objects to objects, but we also need to map morphisms to morphisms. So, let $f : M \to L$ be a morphism of $A$-modules. Then, we can define $f \otimes N : M \otimes N \to L \otimes N$ via $m \otimes n \mapsto f(m) \otimes n$ and extending linearly. Now, we have $(\id_M \otimes N)(m \otimes n) = \id_M(m) \otimes n = m \otimes n$ for all $m,n$, so that the identity is mapped to the identity. Second, if $f : M \to L$ and $g : L \to K$, then for all $m \in M$, $n \in N$:
+	\begin{align*}
+	((g \circ f) \otimes N)(m \otimes n)
+		&= (g \circ f)(m) \otimes n \\
+		&= g(f(m)) \otimes n \\
+		&= (g \otimes N)(f(m) \otimes n) \\
+		&= (g \otimes N)((f \otimes N)(m \otimes n)) \\
+		&= ((g \otimes N) \circ (f \otimes N))(m \otimes n)
+	\end{align*}
+	so that $\otimes N$ distributes over compositions. This shows that $\otimes N$ is a functor. \\
+	
+	Now, let $M \xrightarrow{f} L \xrightarrow{g} K \to 0$ is exact. We wish to show that $g \otimes N$ surjects and that $\ker(g \otimes N) = \im(f \otimes N)$. For the first, it suffices for the image to contain each simple tensor, but this is immediate: for $k \in K$ there is $\ell \in L$ with $g(\ell) = k$, so that $(g \otimes N)(\ell \otimes n) = k \otimes n$ for any $n \in N$.
+	
+	For the second, first note that $((g \otimes N) \circ (f \otimes N)) = (g \circ f) \otimes N = 0 \otimes N = 0$ is the zero map. So, we have that the image is contained in the kernel; we need the reverse. For this, we lift to the free modules lying over the tensor products and pick generators there. We lift to a map $\hat{g} : A[L \times N] \to A[K \times N]$ via $(\ell,n) \mapsto (g(\ell), n)$, and note that $(g \otimes N) \circ \pi_L = \pi_K \circ \hat{g}$, where $\pi_x$ denotes the projection $A[x \times N] \to x \otimes N$. Since $\pi_L$ is surjective, we have
+	\[ \ker(g \otimes N) = \pi_L(\ker((g \otimes N) \circ \pi_L)) = \pi_L(\ker(\pi_K \circ \hat{g})) = \pi_L(\hat{g}^{-1}(\ker(\pi_K))) \]
+	Now, $\ker(\pi_K)$ is generated by all of the tensor relations:
+	\[ (k+k',n)-(k,n)-(k',n), (k,n+n')-(k,n)-(k,n'), a(k,n)-(ak,n), a(k,n)-(k,an) \]
+	So, the preimage under $\hat{g}$ is generated by the preimage of these generators and the kernel of $\hat{g}$ itself. The preimages are precisely the tensor relations of $L \otimes N$ since $g$ is surjective, i.e. all of these relations:
+	\[ (\ell+\ell',n)-(\ell,n)-(\ell',n), (\ell,n+n')-(\ell,n)-(\ell,n'), a(\ell,n)-(a\ell,n), a(\ell,n)-(\ell,an) \]
+	Further, $\hat{g}$ is a map between free modules, so the kernel is generated by elements of the form $x-x'$ with $x,x'$ among the basis and $\hat{g}(x)=\hat{g}(x')$. I.e. for elements $\ell,\ell' \in L$ and $n \in N$ with $g(\ell)=g(\ell')$, the kernel is generated by $(\ell,n)-(\ell',n)$.
+	
+	Finally, we map all of these generators back under $\pi_L$. The tensor relations all map to zero in $L \otimes N$ essentially by definition. So, $\ker(g \otimes N)$ is generated by $\ell \otimes n - \ell' \otimes n$ for $g(\ell)=g(\ell')$. But then $g(\ell-\ell') = 0$, so $\ell-\ell' \in \ker(g) = \im(f)$ by exactness, so that there is some $m \in M$ with $f(m) = \ell-\ell'$. But then,
+	\[ (f \otimes N)(m \otimes n) = f(m) \otimes n = (\ell-\ell') \otimes n = \ell \otimes n - \ell' \otimes n \]
+	is in the image of $(f \otimes N)$.
+\end{proof}
+
+\mtexe{1.3.I}
+\begin{proof}
+	First, suppose $(T',t' : M \times N \to T')$ has the same property, i.e. it is initial among $A$-bilinear maps from $M \times N$. Then, since $(T,t)$ is initial in this way, we get a map $f : T \to T'$ and since $(T',t')$ is initial, we get a map $g : T' \to T$ such that $t' = f \circ t$ and $t = g \circ t'$. Then,
+	\[ \id_T \circ t = t = g \circ t' = g \circ (f \circ t) = (g \circ f) \circ t \]
+	and so the uniqueness property of factorizations out of $(T,t)$ gives $\id_T = g \circ f$. Doing the same with $t'$ gives $f \circ g = \id_{T'}$. Thus $f$ and $g$ are isomorphisms. Furthermore, they are uniquely determined since there is a unique map $f$ with $t' = f \circ t$ in the first place.
+\end{proof}
+
+\mtexe{1.3.J}
+\begin{proof}
+	Let $f : M \times N \to L$ be an $A$-bilinear map and let $t : M \times N \to M \otimes N$ be the usual map $(m,n) \mapsto m \otimes n$. Then $f$ lifts to a map on the free module $\widehat{f} : A[M \times N] \to L$ via $\widehat{f}(x) = f(x)$ for all $x \in M \times N$ and extended $A$-linearly. Now, I claim that all of the tensor relations are in the kernel of $\widehat{f}$. Indeed, for $m,m' \in M$, $n,n' \in N$, and $a \in A$, we have:
+	\begin{align*}
+		\widehat{f}((m+m',n)-(m,n) &- (m',n)) \\
+			&= f(m+m',n) - f(m,n) - f(m',n) \\
+			&= f(m,n)+f(m',n)-f(m,n)-f(m',n) = 0 \\
+		\widehat{f}((m,n+n')-(m,n) &- (m,n')) \\
+			&= f(m,n+n') - f(m,n) - f(m,n') \\
+			&= f(m,n)+f(m,n')-f(m,n)-f(m,n') = 0 \\
+		\widehat{f}(a(m,n)-(am,n)) &= af(m,n) - f(am,n) = af(m,n) - af(m,n) = 0 \\
+		\widehat{f}(a(m,n)-(m,an)) &= af(m,n) - f(m,an) = af(m,n) - af(m,n) = 0 \\
+	\end{align*}
+	using repeatedly that $\widehat{f}$ extends $f$ via $A$-linearity and that $f$ is $A$-bilinear. So, $\widehat{f}$ factors through the quotient by these relations, which is precisely the tensor product we've defined. I.e. there is a map $g : M \otimes N \to L$ with $\widehat{f} = g \circ \pi$, where $\pi$ is the quotient map.
+	
+	Now, for $(m,n) \in M \times N$, we have:
+	\[ (g \circ t)(m,n) = g(m \otimes n) = g(\pi(m,n)) = \widehat{f}(m,n) = f(m,n) \]
+	so that $g \circ t = f$ is the desired factorization. Finally, we wish to show $g$ is unique. Suppose $h : M \otimes N \to L$ also satisfies $h \circ t = f$. Then, for $m \in M$ and $n \in N$,
+	\[ h(m \otimes n) = h(t(m,n)) = f(m,n) = g(t(m,n)) = g(m \otimes n) \]
+	and so $g$ and $h$ agree on simple tensors. Hence, by linearity, they agree on all of $M \otimes N$, so that $h = g$.
+\end{proof}
+
+\mtexe{1.3.K}
+\begin{proof}
+	Note that $f$ makes $B$ an $A$-module, and so the tensor $B \otimes_A M$ makes sense and is an $A$-module. Now, for $b \in B$, define:
+	\[ b \cdot \left(\sum_i b_i \otimes m_i\right) = \sum_i (bb_i) \otimes m_i \]
+	We want to see that this makes $B \otimes_A M$ into a $B$-module. It is clear that for $x \in B \otimes M$ and for $b,b' \in B$, that $b \cdot (b' \cdot x) = (bb') \cdot x$ from the definition above and the associativity of multiplication in $B$. The definition is also clearly linear in $B \otimes M$, since $b$ acts on each summand separately. So, indeed the tensor is a $B$-module.
+	
+	We'd like to show this is functorial in $M$. First, note that if $f : M \to N$ is a morphism of $A$-modules, then we get a map $\id_B \otimes f : B \otimes_A M \to B \otimes_A N$. By checking on simple tensors, we see that $\id_B \otimes \id_M = \id_{B \otimes M}$. Further, if $f : M \to N$ and $g : N \to L$ are two morphisms of $A$-modules, then $\id_B \otimes (g \circ f) = (\id_B \otimes g) \circ (\id_B \otimes f)$ by again checking on simple tensors. So this indeed gives a functor from the category of $A$-modules to that of $B$-modules. \\
+	
+	Now, we give $B \otimes_A C$ a ring structure by defining the product of simple tensors by $(b \otimes c)(b' \otimes c') = (bb') \otimes (cc')$ and extending linearly. Since the definition is via linear extension, we immediately get that the product distributes over addition. Further, commutativity and associativity of multiplication follow from commutativity and associativity in each factor. Finally, $1 \otimes 1$ is the unity, so indeed we have a ring structure.
+\end{proof}
+
+\mtexe{1.3.L}
+\begin{proof}
+	Consider the map $\tilde{f} : S^{-1}A \times M \to S^{-1}M$ by $(a/s,m) \mapsto (am)/s$. This is $A$-bilinear, so we get a map $f : S^{-1}A \otimes_A M \to S^{-1}M$. Conversely, consider the map $\tilde{g} : M \to S^{-1}A \otimes_A M$ by $m \mapsto 1 \otimes m$. Then $S$ acts invertibly on the codomain, so this map factors through $g : S^{-1}M \to S^{-1}A \otimes_A M$. I claim this gives our isomorphism(s).
+	
+	Indeed, for $m/s \in S^{-1}M$, we have
+	\[ f(g(m/s)) = f(g(m/1)/s)= f(\tilde{g}(m)/s) = f((1 \otimes m)/s) = f((1/s) \otimes m) = (1m)/s = m/s \]
+	so $f \circ g$ is the identity on $S^{-1}M$. For $a/s \otimes m \in S^{-1}A \otimes_A M$, we have:
+	\[ g(f(a/s \otimes m)) = g((am)/s) = g(am/1)/s = (1 \otimes am)/s = a(1 \otimes m)/s = (a \otimes m)/s = (a/s) \otimes m \]
+	so $g \circ f$ is the identity on simple tensors, and hence on the full domain. So, the maps are mutual inverses. They are both $A$-module and $S^{-1}A$-module homomorphisms, so the two are isomorphic as both $A$- and $S^{-1}A$-modules.
+\end{proof}
+
+\mtexe{1.3.M}
+\begin{proof}
+	Let $P = \bigoplus_i N_i$. We wish to show that $M \otimes P \cong \bigoplus_i (M \otimes N_i)$. So, we should show that $M \otimes P$ satisfies the universal property of the direct sum. First, we need inclusion maps. Note that for each $i$, we have an inclusion map $f_i : N_i \to P$. So, we get a map $\id_M \otimes f_i : M \otimes N_i \to M \otimes P$. These are the proposed inclusions.
+	
+	To show that it satisfies the universal property, suppose that we have an $A$-module $Q$ and morphisms $g_i : M \otimes N_i \to Q$ for each $i$. For each $i$ and $m \in M$, we get a map $\varphi_{m,i} : N_i \to Q$ by $n \mapsto g_i(m \otimes n)$, each of which is an $A$-module homomorphism. So, by the universal property of $P$, we get a unique morphism $\varphi_m : P \to Q$ with $\varphi_m \circ f_i = \varphi_{m,i}$. Now, I claim $\varphi : M \times P \to Q$ given by $(m,p) \mapsto \varphi_m(p)$ is $A$-bilinear. The $A$-linearity in $P$ is obvious, since each $\varphi_m$ is $A$-linear. Then, for $a,b \in A$, $\ell,m \in M$, an index $i$, and $n \in N_i$ we have:
+	\begin{align*}
+	\varphi_{a\ell+bm,i}(n)
+		&= g_i((a\ell+bm) \otimes n) \\
+		&= ag_i(\ell \otimes n)+bg_i(m \otimes n) \\
+		&= a\varphi_{\ell,i}(n)+b\varphi_{m,i}(n) \\
+		&= (a\varphi_\ell+b\varphi_m)(f_i(n)) \\
+		&= ((a\varphi_\ell+b\varphi_m) \circ f_i)(n)
+	\end{align*}
+	So, $a\varphi_\ell+b\varphi_m : P \to Q$ satisfies the unique property of $\varphi_{a\ell+bm}$, i.e. they must be equal. This gives linearity in the first coordinate:
+	\[ \varphi(a\ell+bm,p) = \varphi_{a\ell+bm}(p) = (a\varphi_\ell+b\varphi_m)(p) = a\varphi_\ell(p)+b\varphi_m(p) = a\varphi(\ell,p)+b\varphi(m,p) \]
+	So, $\varphi$ factors as a morphism $h : M \otimes P \to Q$ with $h(m \otimes p) = \varphi(m,p)$ for all $m \in M$ and $p \in P$.
+	
+	Finally, we claim that $g_i = h \circ (\id_M \otimes f_i)$ for each $i$. It suffices to show this on simple tensors. So, let $m \in M$ and $n \in N_i$. Then,
+	\[ (h \circ (\id_M \otimes f_i))(m \otimes n) = h(m \otimes f_i(n)) = \varphi(m, f_i(n)) = \varphi_m(f_i(n)) = \varphi_{m,i}(n) = g_i(m \otimes n) \]
+	as claimed.
+	
+	To finish the proof of the universal property, we want to show that $h$ is uniquely determined. Suppose $h' : M \otimes P \to Q$ with $h' \circ (\id_M \otimes f_i) = g_i$ for all $i$. For $m \in M$, define $h'_m : P \to Q$ by $h'_m(p) = h'(m \otimes p)$. For each $m \in M$, index $i$, and $n \in N_i$, we have:
+	\[ h'_m(f_i(n)) = h'(m \otimes f_i(n)) = (h' \circ (\id_M \otimes f_i))(m \otimes n) = g_i(m \otimes n) = \varphi_{m,i}(n) \]
+	So $h'_m$ satisfies the unique property of $\varphi_m$, i.e. $h'_m = \varphi_m$. So, for each $m \in M$ and $p \in P$, we have:
+	\[ h'(m \otimes p) = h'_m(p) = \varphi_m(p) = \varphi(m,p) = h(m \otimes p) \]
+	and since they agree on simple tensors, they agree everywhere: $h' = h$. This completes the proof.
+\end{proof}
+
+\mtexe{1.3.N}
+\begin{proof}
+	We have the projection maps $\pi_1,\pi_2$ from $X \times_Z Y$ to each of $X$ and $Y$, and the square commutes by definition, since for $(x,y) \in X \times_Z Y$, we have $\alpha(\pi_1(x,y)) = \alpha(x) = \beta(y) = \beta(\pi_2(x,y))$.
+	
+	Further, it is initial with respect to this property. Indeed, let $S$ be any set with maps $f : S \to X$ and $g : S \to Y$ with $\alpha \circ f = \beta \circ g$. Then, define $F : S \to X \times_Z Y$ by $F(s) = (f(s),g(s))$. This indeed has the stated codomain since for all $s \in S$, $\alpha(f(s)) = \beta(g(s))$, so $(f(s),g(s)) \in X \times_Z Y$. Further, $F$ factors through the projections, since $\pi_1(F(s)) = \pi_1(f(s),g(s)) = f(s)$ and $\pi_2(F(s)) = \pi_2(f(s),g(s)) = g(s)$. I.e. $f = \pi_1 \circ F$ and $g = \pi_2 \circ F$.
+	
+	Finally, $F$ is unique, for if $G : S \to X \times_Z Y$ satisfies $f = \pi_1 \circ G$ and $g = \pi_2 \circ G$, then for each $s \in S$, we have $G(s) = (f(s),g(s)) = F(s)$, so $G = F$.
+\end{proof}
+
+\mtexe{1.3.O}
+\begin{proof}
+	Given two open subsets $U,V$ of $X$, the union $U \cup V$ is the fiber product.
+\end{proof}
+
+\mtexe{1.3.P}
+\begin{proof}
+	Let $Z$ be the final object, $X,Y$ be arbitrary, and let $F = X \times_Z Y$ and $P = X \times Y$. For each object $W$, let $f_W : W \to Z$ denote the unique morphism from $W$ to $Z$ guaranteed by $Z$ being final. Then, note that we have projections $\pi_X : P \to X$ and $\pi_Y : P \to Y$, so we can compose to get morphisms $f_X \circ \pi_X : P \to Z$ and $f_Y \circ \pi_Y : P \to Z$. Since there is a unique morphism to $Z$ from any given object, we have
+	\[ f_X \circ \pi_X = f_P = f_Y \circ \pi_Y \]
+	But then, the universal property of $F$ as the fiber product tells us that the maps from $P$ factor through $F$. I.e. we have a map $g : P \to F$ with $\pi_X = p_X \circ g$ and $\pi_Y = p_Y \circ g$, where $p_X : F \to X$ and $p_Y : F \to Y$ are the fibered projections.
+	
+	Conversely, the maps $p_X$ and $p_Y$ factor through $P$, since it is final with respect to having maps to $X$ and $Y$. I.e. there is a morphism $h : F \to P$ with $p_X = \pi_X \circ h$ and $p_Y = \pi_Y \circ h$.
+	
+	Then, we claim $g,h$ are inverses. First, note that
+	\[ \pi_X \circ (h \circ g) = p_X \circ g = \pi_X \text{ and } pi_Y \circ (h \circ g) = p_Y \circ g = \pi_Y \]
+	But there is a unique map $P \to P$ that factors $\pi_X,\pi_Y$ through themselves by definition of the product, and the identity map also satisfies this constraint. I.e. $h \circ g = \id_P$. Second, we have:
+	\[ p_X \circ (g \circ h) = \pi_X \circ h = p_X \text{ and } p_Y \circ (g \circ h) = \pi_Y \circ h = p_Y \]
+	and again, the definition of the fiber product says that there is a unique map $F \to F$ that factors in this way, namely $\id_F$, so $g \circ h = \id_F$.
+\end{proof}
+
+\mtexe{1.3.Q}
+\begin{proof}
+	To avoid overly cumbersome notation, we will denote the depicted arrows by $f_{AB} : A \to B$ for each of the seven pairs $A,B$ in the diagram. Now, we'd like to show the overall square is Cartesian, so let $T$ be an object with morphisms $g : T \to Y$ and $h : T \to V$ such that $f_{YZ} \circ g = (f_{XZ} \circ f_{VX}) \circ h$. Reparenthesizing gives $f_{YZ} \circ g = f_{XZ} \circ (f_{VX} \circ h)$, and so by the fact that $W$ is the fiber product along $f_{XZ}$ and $f_{YZ}$, we get a unique morphism $j : T \to W$ with $g = f_{WY} \circ j$ and $f_{VX} \circ h = f_{WX} \circ j$.
+	
+	But this equation gives maps of $T$ into the Cartesian diagram with product $U$. I.e. it further gives a unique map $m : T \to U$ with $h = f_{UV} \circ m$ and $j = f_{UW} \circ m$. Finally, this gives the overall factorization we needed, since:
+	\[ (f_{WY} \circ f_{UW}) \circ m = f_{WY} \circ j = g \text{ and } f_{UV} \circ m = h \]
+	as desired. Further, such a map is uniquely determined by uniqueness of $j,m$ in the construction (I've omitted the details, but its a further diagram chase).
+\end{proof}
+
+\mtexe{1.3.R}
+\begin{proof}
+	Note that it suffices to describe the dashed morphisms in the below diagram
+	\[ \begin{tikzcd} X_1 \times_Y X_2 \arrow[dashed]{r}{} \arrow[dashed]{d}{} & X_1 \arrow{d}{} \\ X_2 \arrow{r}{} & Z \end{tikzcd} \]
+	that make it commute, where the maps to $Z$ are the compositions $X_i \to Y \to Z$. But this is obvious; take the dashed maps to be the projections $X_1 \times_Y X_2 \to X_i$, and note that the diagram commutes since the maps $X_1 \times_Y X_2 \to X_i \to Y$ are independent of $i$, and we've simply composed these with the map $Y \to Z$.
+\end{proof}
+
+\mtexe{1.3.S}
+\begin{proof}
+	For notation, let $f_i : X_i \to Y$ and $g : Y \to Z$ be the given maps, let $P_Y = X_1 \times_Y X_2$, and let $P_Z = X_1 \times_Z X_2$. Now, suppose we have an object $A$ with morphisms $r : A \to P_Z$ and $s : A \to Y$ making the appropriate square commute. Then, expanding out the morphisms, we have a (large) commutative diagram:
+	\[ \begin{tikzcd} Y \arrow[bend right]{ddddrrr}{\id_Y} \arrow[bend left]{dddrrrr}{\id_Y} \arrow[bend right, dotted]{dddrrr}{} \\ & A \arrow{ul}{s} \arrow{dr}{r} \\ & & P_Z \arrow{r}{p_1} \arrow{d}{p_2} \arrow{dr}{} & X_1 \arrow{dr}{f_1} \\ & & X_2 \arrow{dr}{f_2} & Y \times_Z Y \arrow{r}{} \arrow{d}{} & Y \arrow{d}{g} \\ & & & Y \arrow{r}{g} & Z \end{tikzcd} \]
+	(The one arrow is dotted for legibility, rather than existence or some other mathematical reason). In particular, we see that the commutative square is the top-left of this diagram, with the two compositions from $A$ to $Y \times_Z Y$. We can see, by inspection, two morphisms $h_i : A \to X_i$, namely the compositions $p_i \circ r$. To get a morphism $A \to P_Y$, we want to show that further composing each with $f_i$ give the same map overall. But again, the diagram shows $f_i \circ h_i = \id_Y \circ s = s$, so they are indeed the same map. So, we get a unique map $t : A \to P_Y$ making the following commute:
+	\[ \begin{tikzcd} A \arrow[bend left]{ddrrr}{h_1} \arrow{dr}{t} \arrow[bend right,swap]{dddrr}{h_2} \\ & P_Y \arrow[bend left]{drr}{} \arrow[bend right]{ddr}{} \arrow{dr}{u} \\ & & P_Z \arrow{d}{p_2} \arrow{r}{p_1} & X_1 \arrow{d}{f_1} \\ & & X_2 \arrow{r}{f_2} & Y \arrow{dr}{g} \\ & & & & Z \end{tikzcd} \]
+	Note that we've added in the morphism $u$ from the previous problem since it appears along the top of the magic diagram and we need to argue about it. Indeed, we first should show that $u \circ t = r$. But for this, note that
+	\[ p_i \circ (u \circ t) = h_i = p_i \circ r \]
+	Since $P_Z$ is the fiber product, we have a unique morphism $A \to P_Z$ that factors in this way through both $p_i$, and so this gives $u \circ t = r$. Then, also, we get that the leftmost morphism in the magic diagram is $f_i \circ p_i \circ u$ for either $i$, and so
+	\[ (f_i \circ p_i \circ u) \circ t = f_i \circ p_i \circ r = f_i \circ h_i = s\]
+	as desired. In other words, the following commutes:
+	\[ \begin{tikzcd} A \arrow[bend left]{drr}{r} \arrow[bend right]{ddr}{s} \arrow{dr}{t} \\ & P_Y \arrow{r}{u} \arrow{d}{f_i \circ p_i \circ u} & P_Z \arrow{d}{} \\ & Y \arrow{r}{} & Y \times_Z Y \end{tikzcd} \]
+	which is the morphism we want for this diagram to be Cartesian.
+	
+	Finally, we want that $t$ is unique, i.e. if we have another morphism $t' : A \to P_Y$ with $r = u \circ t'$ and $s = (f_i \circ p_i \circ u) \circ t$, then we want to show $t' = t$. But the definition of $t$ was the unique map $A \to P_Y$ with $h_i = (p_i \circ u) \circ t$ for each $i$, while:
+	\[ (p_i \circ u) \circ t' = p_i \circ r = (p_i \circ u) \circ t \]
+	so that $t'$ also satisfies the criteria. I.e. $t = t'$, and so we've shown a unique map $A \to P_Y$ making the above commute. In other words, $P_Y$ is the fiber product of $P_Z \to Y \times_Z Y$ and $Y \to Y \times_Z Y$.
+\end{proof}
+
+\mtexe{1.3.T}
+\begin{proof}
+	Given two sets $A,B$, we have morphisms $i : A \to A \sqcup B$ and $j : B \to A \sqcup B$ given by the inclusions. Then the disjoint union is initial with respect to these maps, for if $C$ is a set with maps $f : A \to C$ and $g : B \to C$, then we get a map $h : A \sqcup B \to C$ given by:
+	\[ h(x) = \begin{cases} f(x) & \text{if }x \in A \\ g(x) & \text{if }x \in B \end{cases} \]
+	and then $f = h \circ i$ and $g = h \circ j$. Finally, it is clear that $h$ is unique.
+\end{proof}
+
+\mtexe{1.3.U}
+\begin{proof}
+	Suppose we have maps from $B$ and $C$ to some other ring $R$, such that the two compositions from $A \to R$ agree. Then these factor as a single map $B \times C \to R$ by the universal property of the product. But this overall map is then also $A$-bilinear, and so it further factors as a map $B \otimes_A C \to R$. It is fairly clear that this final map is unique, giving that the tensor is the fibered coproduct.
+\end{proof}
+
+\mtexe{1.3.V}
+\begin{proof}
+	Let $f : W \to X$ and $g : X \to Y$ be monomorphisms, and let $\alpha_1,\alpha_2 : Z \to W$ be two maps such that $(g \circ f) \circ \alpha_1 = (g \circ f) \circ \alpha_2$. Then, since $g \circ (f \circ \alpha_1) = g \circ (f \circ \alpha_2)$ and $g$ is a monomorphism, we get that $f \circ \alpha_1 = f \circ \alpha_2$. But then $f$ is a monomorphism, so $\alpha_1 = \alpha_2$. Thus, $g \circ f$ is a monomorphism.
+\end{proof}
+
+\mtexe{1.3.W}
+\begin{proof}
+	First, suppose that $\pi : X \to Y$ is a monomorphism. We'd like to show that the fibered product exists and is isomorphic to $X$ via the canonical map. So, we will show that $X$ itself (along with the identity maps to itself) satisfies the criterion of being the fibered product. Let $Z$ be an object with two morphisms $f : Z \to X$ and $g : Z \to X$ such that $\pi \circ f = \pi \circ g$. Then, since $\pi$ is a monomorphisms, we get $f = g$. So, we can fill in the dashed arrow in the following diagram with $f$ itself:
+	\[ \begin{tikzcd} Z \arrow[bend left]{drr}{f} \arrow[bend right]{ddr}{g} \arrow[dashed]{dr} \\ & X \arrow{r}{\id} \arrow{d}{\id} & X \arrow{d}{\pi} \\ & X \arrow{r}{\pi} & Y \end{tikzcd} \]
+	and in fact is the only way to fill it in, since any morphism $h$ making the diagram commute satisfies $\pi \circ h = \pi \circ \id \circ h = \pi \circ f$ and so $h = f$ since $\pi$ is a monomorphism. So $X \cong X \times_Y X$. \\
+	
+	Conversely, suppose that $\pi$ is such that $X \times_Y X$ exists and that the map $X \to X \times_Y X$ induced by the identity maps on $X$ is an isomorphism. In particular, this means that we can consider $X$ to be the fibered product, with the projection maps given by the identity maps. We'd like to show that $\pi$ is a monomorphism. So, let $f,g : Z \to X$ be two maps with $\pi \circ f = \pi \circ g$. By the universal property of the fibered product, we get a map $h : Z \to X \times_Y X \cong X$ such that $\id \circ h = f$ and $\id \circ h = g$. I.e. $f = g$. So, $\pi$ is indeed a monomorphism.
+\end{proof}
+
+\mtexe{1.3.X}
+\begin{proof}
+	Notice that if $Y \to Z$ is a monomorphism, then we've shown that the canonical map $Y \to Y \times_Z Y$ is an isomorphism. So, in the magic diagram, we have that the bottom arrow is an isomorphism, and we wish to show the top is an isomorphism. This is a completely general fact. That is, suppose:
+	\[ \begin{tikzcd} A \arrow{r}{f_1} \arrow{d}{f_2} & B \arrow{d}{g_2} \\ C \arrow{r}{g_1} & D \end{tikzcd} \]
+	is a Cartesian square such that the $g_1$ is an isomorphism. Then we will show $f_1$ is an isomorphism. Note that we have maps $\id_B : B \to B$ and $g_1^{-1} \circ g_2 : B \to C$ that satisfy:
+	\[ g_2 \circ \id_B = g_2 = g_1 \circ (g_1^{-1} \circ g_2) \]
+	and so the fact that this square is Cartesian means that we get a morphism $h : B \to A$ such that $f_1 \circ h = \id_B$ and $f_2 \circ h = g_1^{-1} \circ g_2$.
+	
+	Finally, we need to see that $h \circ f_1 = \id_A$. But
+	\[ f_1 \circ h \circ f_1 = \id_B \circ f_1 = f_1 \]
+	and
+	\[ f_2 \circ h \circ f_1 = g_1^{-1} \circ g_2 \circ f_1 = g_1^{-1} \circ (g_1 \circ f_2) = f_2 \]
+	But because the diagram above is Cartesian, there is a unique morphism $p : A \to A$ with $f_1 = f_1 \circ p$ and $f_2 = f_2 \circ p$. The above computations show that both $\id_A$ and $h \circ f_1$ satisfy this property, and so uniqueness gives $h \circ f_1 = \id_A$. This completes the proof that $f_1$ is an isomorphism.
+\end{proof}
+
+\mtexe{1.3.Y}
+\begin{proof}
+	Note that $i_A : \Mor(A,A) \to \Mor(A,A')$. So, we can apply it to the morphism $\id_A \in \Mor(A,A)$ to get a map $g = i_A(\id_A) \in \Mor(A,A')$. Now, we'd like to show this is the sought morphism $g$. So, let $C$ be an object and $u \in \Mor(C,A)$. Then, by assumption, the following diagram commutes:
+	\[ \begin{tikzcd} \Mor(A,A) \arrow{r}{\circ u} \arrow{d}{i_A} & \Mor(C,A) \arrow{d}{i_C} \\ \Mor(A,A') \arrow{r}{\circ u} & \Mor(C,A') \end{tikzcd} \]
+	So,
+	\[ i_C(u) = i_C(\id_A \circ u) = i_A(\id_A) \circ u = g \circ u \]
+	as claimed. We'd also like to show that this condition uniquely determines $g$. But if $h$ also satisfies the desired property, then considering the case $C = A$ and $u = \id_A$ gives:
+	\[ g = g \circ \id_A = i_A(\id_A) = h \circ \id_A = h \]
+	so that $g$ is indeed unique. \\
+	
+	Now, suppose that each $i_C$ is a bijection. Then, in particular $i_{A'} : \Mor(A',A) \to \Mor(A',A')$ is surjective, so there is some $h : A' \to A$ with $i_{A'}(h) = \id_{A'}$. I claim $g$ and $h$ are inverses, which will give the claim. In one direction, from the previous work we get:
+	\[ g \circ h = i_{A'}(h) = \id_{A'} \]
+	For the reverse, we have that the following diagram commutes:
+	\[ \begin{tikzcd} \Mor(A',A) \arrow{r}{\circ g} \arrow{d}{i_{A'}} & \Mor(A,A) \arrow{d}{i_A} \\ \Mor(A',A') \arrow{r}{\circ g} & \Mor(A,A') \end{tikzcd} \]
+	Then,
+	\[ i_A(h \circ g) = i_{A'}(h) \circ g = \id_{A'} \circ g = g = i_A(\id_A) \]
+	Since $i_A$ is bijective, it is injective, and so we get $h \circ g = \id_A$ as desired.
+\end{proof}
+
+\mtexe{1.3.Z} Skipped upon recommendation \\
+
+\hrule ${}$ \\
+
+\mtexe{1.4.A}
+\begin{proof}
+	Let $\scI$ be a poset with an initial object $e$ and let $F : \scI \to \scC$ be a diagram indexed by $\scI$. Then I claim that $\varprojlim F = F(e)$. Indeed, given $i \in \scI$, we have a morphism $\varphi_i : e \to i$ and so we have a morphism $F(\varphi_i) : F(e) \to F(i)$. Further, for any morphism $t : i \to j$ in $\scI$, the following commutes:
+	\[ \begin{tikzcd} e \arrow[swap]{d}{\varphi_i} \arrow{dr}{\varphi_j} \\ i \arrow{r}{t} & j \end{tikzcd} \]
+	and so applying $F$ gives that the following commutes
+	\[ \begin{tikzcd} F(e) \arrow[swap]{d}{F(\varphi_i)} \arrow{dr}{F(\varphi_j)} \\ F(i) \arrow{r}{F(t)} & F(j) \end{tikzcd} \]
+	as desired.
+	
+	Finally, we show it is universal. Suppose $M \in \scC$ is such that for each $i$, we have a morphism $f_i : M \to F(i)$ such that for each $t : i \to j$ we have $F(t) \circ f_i = f_j$. Then, in particular, we have the morphism $f_e : M \to F(e)$, and this is the one needed in the definition. Namely, for each $i \in \scI$, we have:
+	\[ F(\varphi_i) \circ f_e = f_i \]
+	so that $F(e)$ and the morphisms $F(\varphi_i)$ are indeed final.
+\end{proof}
+
+\mtexe{1.4.B}
+\begin{proof}
+	Let $A$ denote the proposed set and for $i \in \scI$, let $p_i : A \to A_i$ denote the projection. Then, if $x \in A$ and $m : j \to k$ is an arrow in $\scI$, then:
+	\[ F(m)(p_j(x)) = F(m)(a_j) = a_k = p_k(x) \]
+	as desired. We need to see that $A$ is universal with respect to this property. So, let $W$ be a set with maps $f_i : W \to A_i$ for each $i \in \scI$ such that $F(m) \circ f_j = f_k$ for each $m : j \to k$ in $\scI$. Then, define the map $f : W \to A$ by $(f(y))_i = f_i(y)$. This defines a map to the product, and to show it is actually a map to $A$, we should show the set condition. But this is exactly the assumption:
+	\[ F(m)((f(y))_j) = F(m)(f_j(y)) = (F(m) \circ f_j)(y) = f_k(y) = (f(y))_k \]
+	so $f(y) \in A$ as claimed. Then it is obvious that $f_i = p_i \circ f$ for each $i$, so $A$ is indeed universal.
+\end{proof}
+
+\mtexe{1.4.}
+\begin{proof}
+\end{proof}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

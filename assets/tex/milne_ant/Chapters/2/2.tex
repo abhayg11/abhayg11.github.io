@@ -1,0 +1,6 @@
+\mtexe{2.2}
+\begin{proof}
+	Since $f$ is reducible in $K[X]$, we can write $f = gh$ with $g,h \in K[X]$. Further, we may assume $g,h$ are also monic by rescaling if necessary.
+	
+	Now, let $L$ be a splitting field for $f$ over $K$, and let $B$ be the integral closure of $A$ in $L$. In $L[X]$, the polynomials $g,h$ split completely since they are factors of $f$, which splits completely. Each root of $g$ in $L$ is a root of $f$, which is a monic polynomial with coefficients in $A$. So, each root of $g$ is contained in $B$. The coefficients of $g$ are polynomials in the roots with integer coefficients (here we use that $g$ is monic), so the coefficients of $g$ are then also in $B$, and so integral over $A$. But the coefficients of $g$ are also elements of $K$ by assumption, so since $A$ is integrally closed in $K$, they must be in $A$ itself. That is, $g \in A[X]$, and the same argument shows $h \in A[X]$, completing the proof.
+\end{proof}

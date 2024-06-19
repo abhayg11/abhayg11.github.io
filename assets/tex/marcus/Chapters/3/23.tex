@@ -1,0 +1,18 @@
+\mtexe{3.23}
+\begin{proof}
+	We establish each of the missing parts. First, 3.2. We have:
+	\[ (2,1+\sqrt{m})^2 = (4,2+2\sqrt{m},m+1+2\sqrt{m}) \]
+	This is contained in $2R$ since $m$ is odd. Since $m \equiv 3 \pmod{4}$, we have $m = 3+4k$ for some $k$, so this ideal also contains:
+	\[ (m+1+2\sqrt{m})-(2+2\sqrt{m})-k(4) = m-1-4k = 2 \]
+	So, it contains $2R$ and the two are equal. \\
+	
+	For 3.3, we have $m = 8k+1$ for some $k$, so:
+	\[ \left(2,\frac{1+\sqrt{m}}{2}\right)\left(2,\frac{1-\sqrt{m}}{2}\right) = \left(4,1+\sqrt{m},1-\sqrt{m},\frac{1-m}{4}\right) = (4,1+\sqrt{m},1-\sqrt{m},-2k) \]
+	This is again clearly contained in $2R$ (since $(1 \pm \sqrt{m})/2 \in R$). But it also contains $(1+\sqrt{m})+(1-\sqrt{m}) = 2$, so it contains $2R$. \\
+	
+	Finally, for 3.5, we have $n^2 = m + kp$ for some $k$, so
+	\[ (p, n+\sqrt{m})(p, n-\sqrt{m}) = (p^2, p(n+\sqrt{m}), p(n-\sqrt{m}), kp) \]
+	which is clearly contained in $pR$. Conversely, it contains
+	\[ p(n+\sqrt{m}) + p(n-\sqrt{m}) = 2np \]
+	and so it contains $\gcd(2np,p^2) = p$, since $p \nmid 2n$ as $p$ is an odd prime and $p \nmid m$. So it contains $pR$.
+\end{proof}

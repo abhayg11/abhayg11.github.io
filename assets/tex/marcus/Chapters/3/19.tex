@@ -1,0 +1,22 @@
+\mtexe{3.19}
+\begin{proof}
+	As suggested, let $\overline{\alpha} \in R/P$ and $\overline{\beta} \in S/PS$ be the images of $\alpha,\beta$ under the quotient maps. Since $S/PS$ is an $R/P$-vector space, the equation $\overline{\alpha}\overline{\beta} = 0$ implies that $\overline{\alpha}=0$, so $\alpha \in P$, or else $\overline{\beta}=0$, so $\beta \in PS$.
+	
+	More directly, if $\alpha\beta \in PS$ and we assume $\beta \notin P$, then since $P$ is maximal, $R\beta + P = R$, so we can find $r \in R$ and $p \in P$ with $r\beta + p = 1$. Then,
+	\[ \alpha = r\alpha\beta + p\alpha \in PS \]
+	since both summands are. \\
+	
+	Note that if $\beta_i \notin P$ for some $i$, then $\gamma=1$ works trivially. So, we may assume $\beta_i \in P$ for each $i$, so that $\alpha\beta \in PS$. But $\alpha \notin PS$, so the previous argument gives $\beta \in P$ as well. Thus, $B = (\beta,\beta_1,\ldots,\beta_n) \subseteq P$. By a lemma from the chapter, there is some $\gamma \in K$ with $B\gamma \subseteq R$ but $B\gamma \not\subseteq P$. It is clear that $\beta\gamma \in R$ and $\beta_i\gamma \in R$ for each $i$. So, we need only show that it isn't the case that $\beta_i\gamma \in P$ for all $P$. Suppose this is the case; then
+	\[ \alpha(\beta\gamma) = \sum_{i=1}^n \alpha_i(\beta_i\gamma) \in PS \]
+	and so the previous result again gives $\beta\gamma \in P$. But then $B\gamma \subseteq P$, contrary to assumption. So, $\beta_i\gamma \notin P$ for some $i$. \\
+	
+	For the claim, we imitate the proof of theorem 24. Since $P$ is ramified in $S$, the factorization of $PS$ contains a repeated prime. Removing that prime, we get an ideal $I$ of $S$ such that $I \supsetneq PS$ and such that each prime lying over $P$ divides $I$. Now, $I$ contains $PS$ properly, so choose $\alpha \in I \setminus PS$, and using the fact that the $\alpha_i$ form a basis, write:
+	\[ \alpha = c_1\alpha_1 + \cdots + c_n\alpha_n \]
+	for some $c_i \in K$. Clearing denominators gives:
+	\[ \alpha\beta = \alpha_1\beta_1 + \cdots + \alpha_n\beta_n \]
+	for $\beta,\beta_i \in R$ and $c_i = \beta_i/\beta$. By the previous, after multiplying by an element $\gamma \in K$ if necessary, we may assume that not all $\beta_i \in P$, and after rearranging we may assume $\beta_1 \notin P$. Then, from a previous exercise, we have:
+	\[ \disc_K^L(\alpha,\alpha_2,\ldots,\alpha_n) = \disc_K^L(\alpha_1\beta_1,\alpha_2,\ldots,\alpha_n) = \beta_1^2\disc_K^L(\alpha_1,\ldots,\alpha_n) \]
+	So, to show that $\disc_K^L(\alpha_1,\ldots,\alpha_n) \in P$, it suffices to show that $d = \disc_K^L(\alpha,\alpha_2,\ldots,\alpha_n) \in P$, since $P$ is prime and $\beta_1 \notin P$.
+	
+	Let $M$ be a normal extension of $L/K$, fix a prime $Q$ of (the ring of integers of) $M$, and let $\sigma$ be a $K$-embedding of $L$ into $\CC$. Then $\sigma$ extends to an automorphism of $M$, and so $\sigma^{-1}(Q)$ is also a prime lying over $P$. So $\sigma^{-1}(Q) \cap S$ is a prime of $S$ lying over $P$, which divides (and thus contains) $I$, and so $\alpha \in \sigma^{-1}(Q)$. This shows that $\sigma(\alpha) \in Q$ for each $\sigma$, and so expanding $d$ as a determinant shows that $d \in Q$ as well. But we also have that $d \in R$, and so $d \in R \cap Q = P$ as desired.
+\end{proof}

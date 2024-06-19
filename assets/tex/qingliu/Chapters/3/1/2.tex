@@ -1,0 +1,8 @@
+\mtexe{3.1.2}
+\begin{proof}
+	Suppose first that $f$ is an isomorphism with inverse $f^{-1} : Y \to X$. Then we have $(f^{-1}(T) \circ f(T))(g) = f^{-1} \circ (f \circ g) = g$ and $(f(T) \circ f^{-1}(T))(g) = f \circ (f^{-1} \circ g) = g$, so $f(T)$ is a bijection (with inverse $f^{-1}(T)$).
+	
+	Now, suppose that $f(T)$ is a bijection for every $T$. In particular, for $T = Y$, we have $\id_Y \in Y(T)$, so by surjectivity there is some $g : Y \to X$ such that $f \circ g = f(T)(g) = \id_Y$. Then, taking $T = X$ instead, we have:
+	\[ f(T)(g \circ f) = f \circ (g \circ f) = (f \circ g) \circ f = \id_Y \circ f = f = f \circ \id_X = f(T)(\id_X) \]
+	so by injectivity $g \circ f = \id_X$. But we've shown that $g$ is a two-sided inverse to $f$, so $f$ is an isomorphism.
+\end{proof}

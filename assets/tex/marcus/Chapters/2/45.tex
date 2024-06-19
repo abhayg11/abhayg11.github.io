@@ -1,0 +1,46 @@
+\mtexe{2.45} 
+\begin{proof} 
+    We repeat the process in the past few problems. If $\alpha$ is a root of an irreducible polynomial $f(x) = x^n+ax+b$ for $a,b \in \ZZ$, then
+    \begin{align*}
+    \disc(\alpha)
+        &= (-1)^{(n^2-n)/2}N(f'(\alpha)) \\
+        &= (-1)^{(n^2-n)/2}N(n\alpha^{n-1}+a) \\
+        &= (-1)^{(n^2-n)/2}\frac{N(n\alpha^n+a\alpha)}{N(\alpha)} \\
+        &= (-1)^{(n^2-n)/2}\frac{N(n(-a\alpha-b)+a\alpha)}{(-1)^nb} \\
+        &= (-1)^{(n^2+n)/2}\frac{N(a(1-n)\alpha-nb)}{b}
+    \end{align*}
+    Then, letting $\alpha_1,\ldots,\alpha_n$ denote the conjugates of $\alpha$, we have
+    \[ f(x) = \prod_i (x-\alpha_i) \]
+    and so
+    \begin{align*}
+    N(a(1-n)\alpha-nb)
+        &= \prod_i (a(1-n)\alpha_i-nb) \\
+        &= [a(n-1)]^n\prod_i \left(\frac{nb}{a(1-n)}-\alpha_i\right) \\
+        &= [a(n-1)]^nf\left(\frac{nb}{a(1-n)}\right) \\
+        &= a^n(n-1)^n\left(\frac{n^nb^n}{a^n(1-n)^n}+a\frac{nb}{a(1-n)}+b\right) \\
+        &= (-nb)^n+(n-1)^{n-1}a^nb(n-1-n) \\
+        &= (-nb)^n-(n-1)^{n-1}a^nb
+    \end{align*}
+    So, overall, we get:
+    \[ \disc(\alpha) = (-1)^{(n^2+n)/2}\frac{(-nb)^n-(n-1)^{n-1}a^nb}{b} = (-1)^{(n^2-n)/2}\left(n^nb^{n-1} - (-1)^n(n-1)^{n-1}a^n\right) \]
+    Note that this agrees with our previous cases: when $n=3$ (see exercise 28), we get
+    \[ \disc(\alpha) = (-1)^3(3^3b^2-(-1)^32^2a^3) = -(27b^2+4a^3) \]
+    and when $n=5$ (exercise 43):
+    \[ \disc(\alpha) = (-1)^{10}(5^5b^4-(-1)^54^4a^5) = 5^5b^4+4^4a^5 \] \\
+
+    Similarly, suppose now that $\alpha$ is a root of the irreducible polynomial $f(x) = x^n+ax^{n-1}+b$ with $a,b \in \ZZ$. Then, writing the roots of $f$ as $\alpha_1,\ldots,\alpha_n$, we get:
+    \begin{align*}
+    \disc(\alpha)
+        &= (-1)^{(n^2-n)/2}N(f'(\alpha)) \\
+        &= (-1)^{(n^2-n)/2}N(n\alpha^{n-1}+(n-1)a\alpha^{n-2}) \\
+        &= (-1)^{(n^2-n)/2}N(\alpha)^{n-2}N(n\alpha+(n-1)a) \\
+        &= (-1)^{(n^2-n)/2}((-1)^nb)^{n-2}\prod_i (n\alpha_i+(n-1)a) \\
+        &= (-1)^{(n^2-n)/2}(-1)^{n^2-2n}b^{n-2}(-n)^n\prod_i \left(\frac{1-n}{n}a-\alpha_i\right) \\
+        &= (-1)^{(-n^2+n)/2}b^{n-2}n^nf\left(\frac{1-n}{n}a\right) \\
+        &= (-1)^{(-n^2+n)/2}b^{n-2}n^n\left(\frac{(1-n)^n}{n^n}a^n + a\frac{(1-n)^{n-1}}{n^{n-1}}a^{n-1} + b\right) \\
+        &= (-1)^{(-n^2+n)/2}b^{n-2}((1-n)^{n-1}a^n(1-n+n) + bn^n) \\
+        &= (-1)^{(n^2-n)/2}b^{n-2}((-1)^{n-1}(n-1)^{n-1}a^n + n^nb)
+    \end{align*}
+    This agrees with the previous exercise when $n=5$:
+    \[ \disc(\alpha) = (-1)^{10}b^3((-1)^44^4a^5+5^5b) = b^3(4^4a^5+5^5b) \]
+\end{proof}

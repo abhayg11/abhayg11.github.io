@@ -1,0 +1,10 @@
+\mtexe{2.12} 
+\begin{proof}
+    First, note that the conjugate of an element of $\ZZ[\omega]$ is again in $\ZZ[\omega]$ since $\overline{\omega} = \omega^{-1}$. Hence, if $u$ is a unit in $\ZZ[\omega]$, we have $v \in \ZZ[\omega]$ with $uv = 1$, and so $1 = \overline{u} \cdot \overline{v}$ and so $\overline{u}$ is also a unit in $\ZZ[\omega]$. Hence, $u/\overline{u} \in \ZZ[\omega]$ is an algebraic integer. Finally, to see that $u/\overline{u}$ is a root of unity, it suffices to show that each conjugate has magnitude 1. But any automorphism of $\QQ[\omega]$ commutes with complex conjugation, so if $\sigma$ is such an automorphism, then:
+    \[ \left|\sigma\left(\frac{u}{\overline{u}}\right)\right| = \left|\frac{\sigma(u)}{\overline{\sigma(u)}}\right| = 1 \]
+    which completes the claim. We've characterized the roots of unity in $\QQ[\omega]$ to be precisely the $2p$th roots of unity, since $p$ is odd, which can be written as $\pm \omega^k$ for some $0 \leq k < p$. \\
+
+    Now, suppose for contradiction that $u/\overline{u} = -\omega^k$ for some $k$. Then, $u^p = (-\overline{u}\omega^k)^p = -\overline{u^p}$. But now, by (1.25), we have that $u^p \equiv a \pmod{p}$ for some $a \in \ZZ$. Then,
+    \[ a \equiv u^p \equiv -\overline{u^p} \equiv -a \pmod{p} \]
+    Hence $p \mid 2a$, and so $p \mid a$ since $p$ is an odd prime. So, $p \mid u^p$, i.e. $u^p = p\alpha$ for some $\alpha \in \ZZ[\omega]$. But $u$ is a unit, so dividing by it gives $1/p \in \ZZ[\omega]$, which is not true.
+\end{proof}

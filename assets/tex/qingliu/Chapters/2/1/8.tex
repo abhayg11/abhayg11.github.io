@@ -1,0 +1,22 @@
+\mtexe{2.1.8} 
+\begin{proof}
+	In other words, we would like to show that if $\varphi : A \to B$ is integral and $\frm \in \Spec B$ is maximal, then $\varphi^{-1}\frm$ is maximal. Consider the induced map $\varphi A/\varphi^{-1}\frm \to B/\frm$. This is an injective integral extension (since the reduction of the same polynomials work) from a domain to a field. So, we must have that $A/\varphi^{-1}\frm$ is also a field, i.e. $\varphi^{-1}\frm$ is maximal as claimed.
+	
+	The second claim is false. Indeed, if $\scO$ is the ring of integers in a number field $K$ and $p$ is an unramified non-inert prime of the extension $\scO/\ZZ$ lying over $p$, then the preimage $\Spec(\varphi)^{-1}(p\ZZ)$ is the set of primes lying over $p$, which is not a singleton by choice. I.e. the preimage of a closed point is not a closed point (while $\ZZ \to \scO$ is integral). \\
+	
+	Directly, each element $b \otimes 1$ is integral over $A_\frp$ since it is integral over $A$ and the same polynomial works. So, the integral closure of the image contains each simple tensor $b \otimes 1$ and each $1 \otimes (a/s)$, so it must be the full ring. \\
+	
+	That $T$ is multiplicative is obvious. To see that $T^{-1}B \neq 0$, it suffices to notice that $0 \notin T$ since $\varphi$ is injective and $0 \notin A \setminus \frp$. So, lastly we show the isomorphism. Notice that we have an $A$-bilinear map $B \times A_\frp \to T^{-1}B$ given by:
+	\[ \left(b,\frac{a}{s}\right) \mapsto \frac{\varphi(a)b}{\varphi(s)} \]
+	which thus factors through a map $f : B \otimes_A A_\frp \to T^{-1}B$. We also have a map $B \to B \otimes_A A_\frp$ given by $b \mapsto b \otimes 1$. If $t = \varphi(a) \in T$, where $a \notin \frp$, then it maps to $t \otimes 1$, which satisfies:
+	\[ (t \otimes 1)\left(1 \otimes \frac{1}{a}\right) = \left(\varphi(a) \otimes \frac{1}{a}\right) = a \cdot \left(1 \otimes \frac{1}{a}\right) = 1 \cdot 1 \]
+	so that each element of $T$ maps to something invertible. So, the map factors through a map $g : T^{-1}B \to B \otimes_A A_\frp$. These are the desired isomorphisms. Indeed, for $b/t \in T^{-1}B$:
+	\[ f(g(b/t)) = f((b \otimes 1)(t \otimes 1)^{-1}) = \frac{b}{1}\left(\frac{t}{1}\right)^{-1} = b/t \]
+	so this composition is the identity. For a simple tensor $b \otimes (a/s)$, we have:
+	\[ g(f(b \otimes (a/s))) = g\left(\frac{\varphi(a)b}{\varphi(s)}\right) = (\varphi(a)b \otimes 1)(\varphi(s) \otimes 1)^{-1} = a(b \otimes 1)[s(1 \otimes 1)]^{-1} = a(b \otimes 1)(1 \otimes (1/s)) = b \otimes (a/s) \]
+	and so is identity on simple tensors, and hence on all of the domain. So, $f$ and $g$ do indeed establish the isomorphism.
+	
+	This gives the final claim. Indeed, given $\frp \in \Spec A$, we have the square:
+	\[ \begin{tikzcd} A \arrow{r}{} \arrow{d}{} & B \arrow{d}{} \\ A_\frp \arrow{r}{} & B \otimes_A A_\frp = T^{-1}B \end{tikzcd} \]
+	Let $\frm$ be any closed point in $\Spec T^{-1}B$. Then, the image along the bottom arrow is a closed point in $\Spec A_\frp$, which therefore must be $\frp A_\frp$, as this is the unique closed point. Taking the further image along the localization map thus gives the ideal $\frp \in \Spec A$. But since this diagram commutes, the image in $\Spec B$ of $\frm$ gives a point of $\frm' \in \Spec B$ such that $\Spec(\varphi)(\frm') = \frp$ as desired.
+\end{proof}

@@ -1,0 +1,12 @@
+\mtexe{2.5.3} 
+\begin{proof}
+	If $Z$ contains an irreducible component $W$, then
+	\[ \codim(Z,X) = \inf_{T\text{ irred comp of }Z} \codim(T,X) \leq \codim(W,X) = 0 \]
+	since $W$ is a maximal irreducible closed subset by assumption. Conversely, if $\codim(Z,X) = 0$, then $\codim(T,X) = 0$ for some irreducible component $T$ of $Z$. Then $T$ is irreducible and closed in $X$, so it is contained in an irreducible component $W$ of $X$. But if $T \neq W$, then the chain $T \subseteq W$ shows $\codim(T,X) \geq 1$, contrary to assumption. So $T = W$ is an irreducible component of $X$ itself.
+	
+	If we let $X$ be the union of a plane and a line and let $Z$ be the line, then $Z$ is an irreducible component of $X$, and so has codimension zero, but $\dim(Z) = 1$ and $\dim(X) = 2$. Explicitly, let $A = k[x,y,z]/(xz,yz)$ for any field $k$, let $X = \Spec A$, and let $Z = V(x,y)$. Clearly $Z$ is closed, and it is irreducible since $(x,y)$ is a prime ideal of $A$. The codimension is zero as claimed since $(x,y)$ is a minimal prime of $A$. Further, $Z$ is one-dimensional since $A/(x,y) \cong k[z]$ is one-dimensional. But $X$ is two dimensional, since we have the sequence of primes
+	\[ (z) \subsetneq (y,z) \subsetneq (x,y,z) \]
+	in A. \\
+	
+	Let $A = \scO_K$ and note that $A[T]/(tT-1) \cong A_t \cong \Frac(A)$, and so $(f)$ is maximal. Since $A[T]$ is a domain, $X$ is integral and so clearly irreducible. We have $\dim \scO_{X,x} = \height(f) = 1$, where the former is essentially the definition, and the latter follows from Krull's principal ideal theorem, and the fact that $(0)$ is prime. Also $\dim\{x\} = 0$ since $(f)$ is maximal. Finally, $\dim(X) \geq 2$ since we have the chain of primes $(0) \subsetneq (T) \subsetneq (T,t)$ in $A[T]$. But this shows the claim: $\codim(\{x\},X)+\dim\{x\} = 0 + 1 < 2 \leq \dim(X)$.
+\end{proof}

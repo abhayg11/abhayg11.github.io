@@ -1,0 +1,16 @@
+\mtexe{2.34} 
+\begin{proof} 
+    Let $\alpha = 1+\omega+\cdots+\omega^{k-1}$. Since $m$ and $k$ are coprime, there are $a,b \in \ZZ$ with $am+bk = 1$. Then, let
+    \[ \beta = 1+\omega^k+\omega^{2k}+\cdots+\omega^{(b-1)k} \]
+    Then,
+    \[ \alpha\beta = \left(\sum_{i=0}^{k-1} \omega^i\right)\left(\sum_{j=0}^{b-1} \omega^{jk}\right) = \sum_{i=0}^{k-1} \sum_{j=0}^{b-1} \omega^{jk+i} = \sum_{n=0}^{bk-1} \omega^n = \frac{1-\omega^{bk}}{1-\omega} = \frac{1-\omega^{1-am}}{1-\omega} = \frac{1-\omega}{1-\omega} = 1 \]
+    for $n = jk+i$ - the ranges for $i,j$ biject via this map onto $n=0,\ldots,bk-1$. \\
+
+    For the second half, note that we have
+    \[ p = \prod_{1 \leq k \leq m \atop p \nmid k} (1-\omega^k) \]
+    For such a $k$, we have:
+    \[ (1+\omega+\cdots+\omega^{k-1})(1-\omega) = 1-\omega^k \]
+    and we've just shown this first factor is a unit. So, $1-\omega^k = u_k(1-\omega)$ for a unit $u_k$ for each such $k$. So,
+    \[ p = \prod_{1 \leq k \leq m \atop p \nmid k} u_k(1-\omega) = u(1-\omega)^n \]
+    where $u$ is the product of the $u_k$ and hence a unit, and $n = \varphi(m)$ is the number of terms in the product.
+\end{proof}

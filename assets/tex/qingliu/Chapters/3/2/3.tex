@@ -1,0 +1,24 @@
+\mtexe{3.2.3}
+\begin{proof}
+	Since $f : X \to Y$ is an immersion, we can factor it as $X \xrightarrow{i} Z \xrightarrow{j} Y$ with $i$ an open immersion and $j$ a closed immersion. We identify each scheme with its image, so that $X \subseteq Z \subseteq Y$, with $i,j$ the inclusion maps on points. Then $X$ is an open subset of $Z$, so it is of the form $U \cap Z$ for some open subset $U$ of $Y$. Since $f(X) \subseteq U$, the map $f$ factors through the open immersion $U \hookrightarrow Y$. I.e. we have the commutative diagram
+	\[ \begin{tikzcd} X \arrow[r,"i"] \arrow[d,"g"] & Z \arrow[d,"j"] \\ U \arrow[r,"u"] & Y \end{tikzcd} \]
+	It now suffices to show that $g$ is a closed immersion, and since closed immersions are stable under base change, it suffices to show that this diagram is Cartesian. So, to show that $X$ satisfies the universal property, let $W$ be a scheme with $v : W \to Z$ and $w : W \to U$ such that $j \circ v = u \circ w$. On points, we have $j(v(W)) = u(w(W)) \subseteq U$, so $v(W) \subseteq U \cap Z = X$. Since $i$ is an open immersion, we get a unique map $x : W \to X$ such that $i \circ x = v$. Then
+	\[ u \circ (g \circ x) = (u \circ g) \circ x = (j \circ i) \circ x = j \circ (i \circ x) = j \circ v = u \circ w \]
+	Since $u$ is an open immersion, it is a monomorphism, so $g \circ x = w$. Hence $w$ factors $u$ and $v$ as needed, and the uniqueness comes solely from uniquely factoring $v$, completing the argument. \\
+	
+	Now, suppose $f$ is quasi-compact and factors as $f = u \circ g$ for a closed immersion $g : X \to U$ and an open immersion $u : U \to Y$. As $f$ is a quasi-compact, it also factors as $j \circ i$ for a map $i : X \to Z$ and the scheme-theoretic closure $j : Z \to Y$ of $f$. It suffices to show that $i$ is an open immersion. On points, it is clear that $i$ injects, since
+	\[ i(a) = i(b) \implies u(g(a)) = j(i(a)) = j(i(b)) = u(g(b)) \implies g(a) = g(b) \implies a = b \]
+	So we have that $U,Z$ are subsets of $Y$ and we can identify $X$ as a subset of $U \cap Z$. In fact, since $g$ is a closed immersion, $X = U \cap W$ for some closed subset $W$ of $Y$. But then $X$ is contained in the closed subset $W \cap Z$ of $Z$ and $X$ is dense in $Z$, so $W \cap Z = Z$, i.e. $W \supseteq Z$. Hence $X = U \cap W \supseteq U \cap Z \supseteq X$, so these are all equal. This makes it clear that $i$ is an open immersion of spaces, and it remains to see that $i^\#$ is an isomorphism.
+	
+	Explicitly, we have $Z = V(\scI)$, where $\scI = \ker(f^\#) = \ker(g^\# \circ u^\#)$. FINISH \\
+	
+	Now, $f : X \to Y$ and $g : Y \to Z$ are immersions, so we can factor each as an open immersion followed by a closed immersion:
+	\[ \begin{tikzcd} X \arrow[rr,"f"] \arrow[dr] & & Y \arrow[rr,"g"] \arrow[dr,"b"] & & Z \\ & A \arrow[ur,"a"] & & B \arrow[ur,"i"] \end{tikzcd} \]
+	Next, we'll show that $b \circ a$ is quasi-compact. The composition of quasi-compact morphisms is quasi-compact, so it suffices to show each one is quasi-compact. Closed immersions are quasi-compact, so we're done with $a$ and only need to consider $b$. Then since $i$ is also a closed immersion, it is a monomorphism, so the fiber product of two $B$-schemes is isomorphic to the fiber product of the same schemes over $Z$ via $i : B \to Z$. In particular,
+	\[ Y \cong Y \times_B B \cong Y \times_Z B \]
+	In particular, the map $b : Y \to B$ is the base change of $g : Y \to Z$ along $i$. But quasi-compactness is stable under base change, so $b$ is quasi-compact as desired.
+	
+	Now $b \circ a$ is quasi-compact and we've written it as a closed immersion followed by an open immersion. By the above, it is also an immersion, i.e. it factors as an open immersion followed by a closed immersion:
+	\[ \begin{tikzcd} X \arrow[rr,"f"] \arrow[dr] & & Y \arrow[rr,"g"] \arrow[dr,"b"] & & Z \\ & A \arrow[ur,"a"] \arrow[dr] & & B \arrow[ur,"i"] \\ & & C \arrow[ur] \end{tikzcd} \]
+	So we're done, since $X \to A \to C$ is an open immersion as the composition of open immersions, and $C \to B \to Z$ is a closed immersion as the composition of closed immersions. Hence, the overall composition $g \circ f$ is an immersion as claimed.
+\end{proof}

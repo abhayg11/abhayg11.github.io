@@ -1,0 +1,38 @@
+\mtexe{3.14}
+\begin{proof}
+	First, note that $G$ acts on the set of primes lying over $P$. We've shown that this action is transitive; for a prime $Q$ over $P$, let $G_Q$ denote the stabilizer of $Q$. Thus, if $Q,Q'$ are two primes lying over $P$, then there is some $\alpha \in G$ with $\alpha(Q) = Q'$, and so $\alpha G_Q$ is the set of automorphisms that map $Q$ to $Q'$. But $\alpha G_Q$ and $G_Q$ have the same size, as desired. Thus, if there are $r$ primes lying over $P$, then $re(Q|P)f(Q|P) = n = r|G_Q|$, so $|G_Q| = e(Q|P)f(Q|P)$ as claimed. \\
+	
+	Computing directly, we have, for a fixed $Q$ over $P$:
+	\begin{align*}
+	P^{f(Q|P)}
+		&= R \cap P^{f(Q|P)}S \\
+		&= R \cap \prod_{Q' \in \Spec S \atop Q \supseteq P} (Q')^{e(Q'|P)f(Q|P)} \\
+		&= R \cap \prod_{\sigma \in G} \sigma(Q) \\
+		&= N_K^L(Q)
+	\end{align*}
+	since $f(Q|P) = f(Q'|P)$ for any $Q'$ lying over $P$. \\
+	
+	Note that if $\sigma$ is an automorphism of $L/K$ and $I,J$ are ideals of $S$, then $\sigma(IJ) = \sigma(I)\sigma(J)$. So, let $I$ be a nonzero ideal of $S$, so we can factorize it as $I = \prod_{i=1}^n Q_i$, where each $Q_i$ is a prime lying over $P_i = Q_i \cap R$. So,
+	\[ \prod_{\sigma \in G} \sigma(I) = \prod_{\sigma \in G} \prod_{i=1}^n \sigma(Q_i) = \prod_{i=1}^n P_i^{f(Q_i|P_i)}S \]
+	so the product is $JS$ for $J = \prod_{i=1}^n P_i^{f(Q_i|P_i)}$. Then,
+	\[ J = R \cap JS = R \cap \prod_{\sigma \in G} \sigma(I) = N_K^L(I) \]
+	and so
+	\[ \prod_{\sigma \in G} \sigma(I) = JS = N_K^L(I)S \]
+	as claimed. \\
+	
+	Directly, we have:
+	\begin{align*}
+	N_K^L(IJ)
+		&= R \cap N_K^L(IJ)S \\
+		&= R \cap \prod_{\sigma \in G} \sigma(IJ) \\
+		&= R \cap \prod_{\sigma \in G} \sigma(I)\sigma(J) \\
+		&= R \cap \left[\left(\prod_{\sigma \in G} \sigma(I)\right)\left(\prod_{\sigma \in G} \sigma(J)\right)\right] \\
+		&= \left[\left(R \cap \prod_{\sigma \in G} \sigma(I)\right)\left(R \cap \prod_{\sigma \in G} \sigma(J)\right)\right] \\
+		&= N_K^L(I)N_K^L(J)
+	\end{align*}
+	as desired. \\
+	
+	Again, we do this directly:
+	\[ N_K^L(\alpha S) = R \cap \prod_{\sigma \in G} \sigma(\alpha S) = R \cap \left(\prod_{\sigma \in G} \sigma(\alpha)\right)S = R \cap N_K^L(\alpha)S = N_K^L(\alpha)R \]
+	as claimed.
+\end{proof}

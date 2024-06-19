@@ -1,0 +1,29 @@
+\mtexe{4.1.12}
+\begin{proof}
+	Suppose $\Phi : V \to \CC$ is arbitrary, and define $\phi : H \to \CC$ by:
+	\[ \phi(x,y,z) = \psi(z-B(x,y))\Phi(y) \]
+	I claim $\phi \in W_\rho$. Indeed, we need to show $\phi(ah) = \chi(a)\phi(h)$ for $a \in A$. Directly, for $a = (x,0,z)$ and $h = (u,v,w)$, we get
+	\begin{align*}
+	\phi(ah) - \chi(a)\phi(h)
+		&= \phi((x,0,z)(u,v,w)) - \chi(x,0,z)\phi(u,v,w) \\
+		&= \phi(x+u,v,z+w+B(x,v)) - \psi(z)\psi(w-B(u,v))\Phi(v) \\
+		&= \psi(z+w+B(x,v)-B(x+u,v))\Phi(v) - \psi(z+w-B(u,v))\Phi(v) \\
+		&= \psi(z+w-B(u,v))\Phi(v) - \psi(z+w-B(u,v))\Phi(v) \\
+		&= 0
+	\end{align*}
+	as desired. This is the $\phi$ sought, since for $v \in V$ we have $\phi(0,v,0) = \psi(0)\Phi(v) = \Phi(v)$. Finally, $\phi$ is unique, for if $f \in W_\rho$ is such that $f(0,v,0) = \Phi(v)$ for all $v \in V$, then
+	\[ f(x,y,z) = f((x,0,z-B(x,y))(0,y,0)) = \chi(x,0,z-B(x,y))f(0,y,0) = \psi(z-B(x,y))\Phi(y) = \phi(x,y,z) \]
+	as claimed. \\
+	
+	Now, note that
+	\begin{align*}
+	(\pi(u,0,0)\Phi)(v)
+		&= (\rho(u,0,0)\phi)(0,v,0) \\
+		&= \phi((0,v,0)(u,0,0)) \\
+		&= \phi(u,v,-B(u,v)) \\
+		&= \psi(-2B(u,v))\Phi(v)
+	\end{align*}
+	Since $\pi$ is chosen so that $\Phi \mapsto \phi$ is an isomorphism. Similarly:
+	\[ (\pi(0,u,0)\Phi)(v) = (\rho(0,u,0)\phi)(0,v,0) = \phi((0,v,0)(0,u,0)) = \phi(0,v+u,0) = \Phi(v+u) \]
+	completing the argument.
+\end{proof}

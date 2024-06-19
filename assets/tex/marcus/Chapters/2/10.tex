@@ -1,0 +1,12 @@
+\mtexe{2.10} 
+\begin{proof}
+    We'll proceed by induction on $m$. As a base case, suppose that $m$ is a power of two, i.e. $m = 2^a$ for some $a \geq 1$ (since $m$ is even). Then we can write $r = 2^br'$ for some $r'$ odd and $b \geq a$. Thus, we get:
+    \[ 2^{a-1} = \phi(m) \geq \phi(r) = 2^{b-1}\phi(r') \]
+    which gives $a = b$ and $\phi(r') = 1$, so $r' = 1$, since $r'$ is odd. I.e. $r = 2^a = m$ as claimed.
+
+    Otherwise, $m$ has an odd prime divisor $p$. Similar to above, write $m = p^am'$ and $r = p^br'$ for $a \leq b$ and $m',r'$ not divisible by $p$. Then,
+    \[ \phi(m') = \frac{\phi(m)}{\phi(p^a)} \geq \frac{\phi(r)}{\phi(p^b)} = \phi(r') \]
+    since $\phi$ is multiplicative and $\phi(p^j) = p^{j-1}(p-1)$ is increasing in $j$. But $m'$ is even and $m' \mid r'$, so by induction, we have $m' = r'$. Finally, we have
+    \[ p^{a-1}(p-1) = \phi(p^a) = \frac{\phi(m)}{\phi(m')} \geq \frac{\phi(r)}{\phi(r')} = \phi(p^b) = p^{b-1}(p-1) \]
+    so $a \geq b$, i.e. $a = b$. So, $r=m$ and we're done.
+\end{proof}

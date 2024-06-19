@@ -1,0 +1,14 @@
+\mtexe{3.15}
+\begin{proof}
+	Note that it suffices to show the claim for primes, since both sides are multiplicative. So, let $R \subseteq S \subseteq T$ be the rings of integers in $K,L,M$, respectively, let $U \in \Spec T$, let $Q = U \cap S$, and let $P = Q \cap R$. Then,
+	\[ N_K^L(N_L^M(U)) = N_K^L(Q^{f(U|Q)}) = N_K^L(Q)^{f(U|Q)} = (P^{f(Q|P)})^{f(U|Q)} = P^{f(U|Q)f(Q|P)} = P^{f(U|P)} = N_K^M(U) \]
+	as claimed. \\
+	
+	As suggested, now let $M$ be the normal closure of $L/K$. Then for $\alpha \in S$, and $n = [M:L]$, $N_L^M(\alpha) = \alpha^n$, so
+	\[ N_K^L(\alpha^nS) = N_K^L(N_L^M(\alpha T)) = N_K^M(\alpha T) = N_K^M(\alpha)R = [N_K^L(\alpha)]^nR \]
+	using the result of the previous problem and the fact that $M/L$ and $M/K$ are normal. Since the norm is multiplicative and prime factorizations are unique, $N_K^L(\alpha S) = N_K^L(\alpha)R$ as claimed. \\
+	
+	As suggested, note that if $P \in \Spec S$, then $P$ lies over a rational prime $p \in \ZZ$, and
+	\[ N_\QQ^L(P) = (p\ZZ)^{f(P|p)} = p^{f(P|p)}\ZZ = |S/P|\ZZ = \|P\|\ZZ \]
+	as claimed. Further, both sides are multiplicative, so this is now true for all ideals $I$ of $S$.
+\end{proof}

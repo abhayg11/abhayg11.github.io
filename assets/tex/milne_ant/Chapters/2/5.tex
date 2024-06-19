@@ -1,0 +1,6 @@
+\mtexe{2.5}
+\begin{proof}
+	Let $\alpha \in A[\beta] \cap A[\beta^{-1}]$. Then $\alpha = f(\beta) = g(\beta^{-1})$ for polynomials $f,g \in A[x]$ of degrees $m,n$, respectively. Let $r = m+n-1$ and consider the $A$-submodule $M = A \oplus \beta A \oplus \cdots \oplus \beta^rA$ of $B$. Since $1 \in M$, it now suffices to show that $M$ is also an $A[\alpha]$-module, because then it is automatically faithful and clearly finitely generated.
+	
+	In particular, it suffices to show that $\alpha\beta^i \in M$ for $i \in \{0,\ldots,r\}$. For $i < n$, we have $\alpha\beta^i = f(\beta)\beta^i \in M$ because the exponents on $\beta$ are all in the range $[i,m+i] \subseteq [0,r]$. For $i \geq n$, we have $\alpha\beta^i = g(\beta^{-1})\beta^i \in M$ since the exponents are in the range $[i-n,i] \subseteq [0,r]$.
+\end{proof}

@@ -1,0 +1,13 @@
+\mtexe{3.2}
+\begin{proof}
+	We've seen already that because $3,7 \not\equiv 1 \pmod{4}$ and are squarefree, the ring of integers of $\QQ(\sqrt{3})$ and $\QQ(\sqrt{7})$ are $\ZZ[\sqrt{3}]$ and $\ZZ[\sqrt{7}]$, respectively. To see that the ring of integers in $\QQ(\sqrt{3},\sqrt{7})$ is not $\ZZ[\sqrt{3},\sqrt{7}]$, it suffices to show that $\alpha = \frac{\sqrt{3}+\sqrt{7}}{2}$ is integral over $\ZZ$, since clearly $\alpha \notin \ZZ[\sqrt{3},\sqrt{7}]$.
+	
+	But this is a direct manipulation. We have $(2\alpha)^2 = 3+7+2\sqrt{21}$, so
+	\[ 84 = (4\alpha^2-10)^2 = 16\alpha^4-80\alpha^2+100 \]
+	and so
+	\[ \alpha^4-5\alpha^2+1 = 0 \]
+	completing the argument.
+	% No idea if this is true.
+	% As an interesting aside, if $K = \QQ(\sqrt{3},\sqrt{7})$ and $\scO_K$ is its ring of integers, then in fact we can show that $\scO_K = \ZZ[\alpha]$. First, note that $\QQ(\alpha)$ contains $2\alpha^2-5 = \sqrt{21}$, so it contains $\alpha(\sqrt{21}-3)/2 = \sqrt{3}$, and so it contains $2\alpha-\sqrt{3} = \sqrt{7}$, showing that $K = \QQ(\alpha)$. Hence $\alpha$ has degree 4 over $\QQ$, so $f(x) = x^4-5x^2+1$ is its minimal polynomial from above. From this we can compute the discriminant $D$ of the basis $\{1,\alpha,\alpha^2,\alpha^3\}$ as:
+	% \[ D = (-1)^{4(4-1)/2}N(f'(\alpha)) = N(4\alpha^3-10\alpha) = N(\alpha)N(4\alpha^2-10) = N(2\sqrt{21}) = 2^43^27^2 \]
+\end{proof}

@@ -1,0 +1,10 @@
+\mtexe{3.1.6}
+\begin{proof}
+	First consider the case that $\pi$ is an immersion (open or closed). Then $\pi$ is injective on points and $\pi^\#$ is surjective. So, on points, the fact that $\pi \circ f = \pi \circ g$ implies $f = g$, and on structure sheaves, the fact that $f^\# \circ \pi^\# = g^\# \circ \pi^\#$ implies that $f^\# = g^\#$. Hence $f = g$ as maps of sheaves as claimed. When $\pi$ is induced by a localization, then it is still injective on points, but is not surjective on the level of rings. But $f^\# : F^{-1}A \to B$ is fully determined by the map $f^\# \circ \pi^\# : A \to B$ since $f^\#(a/u) = f^\#(\pi^\#(a))/f^\#(\pi^\#(u))$. On principal open sets, this is exactly the condition we have, so we conclude that $f = g$. \\
+	
+	This statement holds in any category with fiber products given that $\pi$ is a monomorphism. First, note that since the compositions $X \times_T Y \to X \to T$ and $X \times_T Y \to Y \to T$ are equal, composing with the map $\pi : T \to S$ retains that equality. Hence, we get the claimed map $X \times_T Y \to X \times_S Y$.
+	\[ \begin{tikzcd} X \times_T Y \arrow[rd] \arrow[rrd] \arrow[rdd] \\ & X \times_S Y \arrow[r] \arrow[d] & X \arrow[d] \arrow[ddr] \\ & Y \arrow[r] \arrow[rrd] & T \arrow[rd, "\pi"] \\ & & & S \end{tikzcd} \]
+	For the reverse map, note that the maps $X \times_S Y \to X \to T \xrightarrow{\pi} S$ and $X \times_S Y \to X \to T \xrightarrow{\pi} S$ are equal. But by the above, $\pi$ is mono, so we get that $X \times_S Y \to X \to T$ and $X \times_S Y \to Y \to T$ are equal. So, we get a map $X \times_S Y \to X \times_T Y$. It is immediate from a diagram chase that these two maps are pairwise inverse, so that the fiber products are canonically isomorphic. \\
+	
+	Finally, take the case $X = Y = T = \Spec \QQ(i)$ and $S = \Spec \QQ$ with $\pi : T \to S$ induced from the inclusion $\QQ \hookrightarrow \QQ(i)$. Then $X \times_T Y = T \times_T T = T = \Spec \QQ(i)$, but $X \times_S Y = T \times_S T = \Spec(\QQ(i) \times_\QQ \QQ(i)) = \Spec(\QQ(i) \oplus \QQ(i))$. These cannot be isomorphic since the former is a single point while the latter is a two-point space.
+\end{proof}

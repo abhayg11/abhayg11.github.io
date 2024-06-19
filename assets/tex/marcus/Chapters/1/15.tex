@@ -1,0 +1,10 @@
+\mtexe{1.15}
+\begin{proof}
+    Note that $(n,x,m)$ is a primitive Pythagorean triple. Indeed, if $p$ divides all of these, then it also divides $y^2 = 2mn$ and $w = m^2+n^2$, but $(x^2,y^2,w)$ is primitive. Since $x$ is assumed odd, we thus conclude
+    \begin{align*} x = r^2-s^2 && n = 2rs && m = r^2+s^2 \end{align*}
+    for $r,s$ coprime and not both odd.
+
+    For the second claim, note that if $p$ divides any two of $r,s,m$, then it divides the third since $m=r^2+s^2$. But $r,s$ are coprime, so this cannot be. Hence, as noted, since $y^2 = 2mn = 2m(2rs) = 4mrs$, we get that $m,r,s$ are all perfect squares by unique factorization (each prime must occur to an even power since it does in the LHS).
+
+    Hence, for $r=a^2,s=b^2,m=c^2$, we get $c^2 = m = r^2+s^2 = a^4+b^4$. But $c \leq c^2 = m \leq m^2 < m^2+n^2 = w$, so this contradicts the minimality of $w$.
+\end{proof}

@@ -1,0 +1,8 @@
+\mtexe{1.30}
+\begin{proof}
+    Suppose that $A,B$ are ideals of $R$ in the same ideal class, so there are nonzero elements $a,b \in R$ with $aA = bB$. Note that the map $A \to aA$ given by $x \mapsto ax$ is an $R$-module isomorphism. Indeed, it is a group homomorphism since $a(x+y) = ax+ay$, and it is compatible with multiplication in $R$: $a(rx) = r(ax)$. Finally, it is surjective essentially by definition and injective since $R$ is a domain and $a$ is nonzero. The same proof shows that $B \cong bB$. But $bB = aA$, and so we have $A \cong B$.
+
+    On the other hand, suppose that $f : A \to B$ is an $R$-module isomorphism of ideals $A,B$ of $R$. If $A = 0$, then clearly $B=0$ as well, and so $A=B$ are obviously in the same ideal class. Otherwise, choose a nonzero element $x \in A$, and let $y = f(x)$. I claim $yA = xB$.
+
+    First, let $xb \in xB$. Then, since $f$ is an isomorphism, there is $a \in A$ with $f(a) = b$. Then $xb = xf(a) = f(xa) = af(x) = ay \in yA$. So, $xB \subseteq yA$. The same argument using $f^{-1}$ shows $yA \subseteq xB$. This completes the proof.
+\end{proof}

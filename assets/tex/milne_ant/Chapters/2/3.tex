@@ -1,0 +1,8 @@
+\mtexe{2.3}
+\begin{proof}
+	Note that if $M/L$ and $L/K$ are field extensions, then
+	\[ \disc(M/K) = \disc(L/K)^{[M:L]}N_{L/K}(\disc(M/L)) \]
+	So, to show that $L/K$ inseparable has discriminant zero, it suffices to show this for some intermediate subextension. First, we can replace $K$ with its separable closure in $L$ and assume that $L/K$ is purely inseparable. Now, it is known that any element of $L$ has minimal polynomial $T^{p^r}-a$ for some $r \in \ZZ$ and $a \in K$. Choose an element $\alpha \in L \setminus K$ with minimal polynomial $f(T) = T^{p^r}-a$ and replace $L$ with the extension $K[\alpha]$. Then a basis for the extension is $1,\alpha,\ldots,\alpha^{p^r-1}$. With respect to this basis, the discriminant is:
+	\[ \pm N(f'(\alpha)) = \pm N(p^r\alpha^{p^r-1}) = \pm N(0) = 0 \]
+	as desired.
+\end{proof}

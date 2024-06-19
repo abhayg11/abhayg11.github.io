@@ -1,0 +1,8 @@
+\mtexe{1.26}
+\begin{proof}
+    Suppose $x+y\omega \equiv u\alpha^p \pmod{p}$ for $x,y \in \ZZ$, a unit $u$, and some $\alpha \in \ZZ[\omega]$. Then, we've shown that $\alpha^p \equiv a \pmod{p}$ for some $a \in \ZZ$, i.e. $x+y\omega \equiv ua \pmod{p}$. Then, we've also shown that
+    \[ x+y\omega^{-1} = \overline{x+y\omega} \equiv \overline{u}a = u\omega^{-k}a \pmod{p} \]
+    for some $k$, where we've used $u/\overline{u} = \omega^k$ by Kummer's result on units. Multiplying through by $\omega^k$ gives:
+    \[ (x+y\omega^{-1})\omega^k \equiv ua \equiv x+y\omega \pmod{p} \]
+    as claimed.
+\end{proof}

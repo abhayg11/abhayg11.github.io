@@ -1,0 +1,22 @@
+\mtexe{3.30}
+\begin{proof}
+	As suggested, first consider the case when $f(0) = 1$. Then, suppose that $f$ only has a root mod $p$ for primes in a finite set $P$. Note that $f(x) = \pm 1$ only has finitely many roots since $f$ is nonconstant. So, we can choose $m$ to be a multiple of the product of the primes in $P$, such that $f(m) \neq \pm 1$ and note that
+	\[ f(m) = a_nm^n + a_{n-1}m^n + \cdots + a_1m + 1 \]
+	This has a prime divisor $p$ since it is neither $\pm 1$, and so $p \in P$ since $f(m) \equiv 0 \pmod{p}$. But then $p \mid m$, and so $f(m) \equiv 1 \pmod{p}$, which is a contradiction. So there is no such finite set.
+	
+	More generally, if $f(0)$ is not necessarily $1$, let $g(x) = f(xf(0))/f(0)$. Note that this is also a polynomial with integer coefficients since each coefficient is divisible by $f(0)$ when $f$ is evaluated at $xf(0)$. But $g(0) = f(0)/f(0) = 1$, so by the above, $g$ has a root for infinitely many $p$. For each such $p$, if $t$ is a root, then $tf(0)$ is a root of $f$ mod that prime, so $f$ also has roots mod infinitely many primes. \\
+	
+	Now, let $K$ be a number field, so there is some primitive element $\alpha$ with $K = \QQ[\alpha]$. Let $R = K \cap \AA$ be the ring of integers, and let $f$ be the minimal polynomial of $\alpha$ over $\ZZ$. Then, by the above, there are infinitely many primes $p$ such that $f$ has a root mod $p$. Of these, at most finitely many divide $|R/\ZZ[\alpha]|$: disregard them. Now, for each remaining prime $p$, we have that the factorization of $f$ over $\FF_p$ has a linear factor, corresponding to a prime $P$ of $R$ lying over $p$ with $f(P|p) = 1$, as desired. \\
+	
+	Fix $m$, and let $\omega = e^{2\pi i/m}$. Then, from the above, there are infinitely many primes of $\ZZ[\omega]$ with inertial degree 1 over the corresponding prime of $\ZZ$. Of these, finitely many divide $m$: again, disregard them. For each remaining prime $P$ lying over $p$, we also know that $f(P|p)$ is the multiplicative order of $p$ modulo $m$. So, the fact that this equals 1 implies that $p \equiv 1 \pmod{m}$ as desired. \\
+	
+	Let $M$ be the normal closure of $L/K$, and let $R,S,T$ be the rings of integers of $K,L,M$, respectively. By the above, there are infinitely primes $U$ of $M$ such that $f(U|p)=1$, where $p$ is the prime of $\ZZ$ lying under $U$. Of these, only finitely many are ramified (those that divide the discriminant), which we disregard. Thus, for each such $U$, we also have $e(U|p) = 1$. Since $M$ is Galois over $\QQ$, we also have that
+	\[ pT = U_1 \cdots U_r \]
+	splits as the product of $r$ primes, one of which is $U$, such that they all have the same inertial degrees and ramification indices. That is, $e(U_i|p)=f(U_i|p)=1$ for each $i$, and so by counting, we see that there must be $r=[M:\QQ]$ of them.
+	
+	Now, let $P = U \cap R$ be the prime lying under $U$ in $R$. We have that
+	\[ PS = Q_1 \cdots Q_t \]
+	is the product of primes of $S$, each of which lies under some $U_i$. But this implies that $f(Q_i|P) = e(Q_i|P) = 1$ since these quantities are multiplicative in towers. Hence we must have $t = [L:K]$ and we conclude that each such $P$ splits completely as claimed. Since each $P$ lies over a different prime $p \in \ZZ$, we conclude that we indeed have infinitely many of them. \\
+	
+	Finally, let $f,R$ be as stated. Let $K = \Frac(R)$ be the field of fractions, let $L = K[x]/(f) = K[\alpha]$ be the field extension given by adjoining the root $\alpha$ of $f$, and let $S$ be the ring of integers in $L$. By the above, there are infinitely many primes $P$ of $R$ that split completely in $S$. Of these, finitely many lie over a prime of $\ZZ$ that divides $|S/R[\alpha]|$, which we disregard. For the remaining primes, we can determine the splitting of $PS$ by the factorization of $f$ in $(R/P)[x]$. Since we already know $PS$ splits completely, we conclude that $f$ splits completely (into linear factors) mod $P$, as claimed.
+\end{proof}

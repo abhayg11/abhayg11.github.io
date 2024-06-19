@@ -1,0 +1,22 @@
+\mtexe{3.24}
+\begin{proof}
+	Equivalently, $P$ is totally ramified in $L$ if there is a unique prime $Q$ of $S$ lying over $P$ with inertial degree 1. Now, $Q \cap M$ is the unique prime of $M$ lying over $P$ since any prime of $M$ lying over $P$ must be contained in a prime of $S$ lying over $P$. We then also have:
+	\[ 1 = f(Q \mid P) = f(Q \mid Q \cap M)f(Q \cap M \mid P) \]
+	and so $f(Q \cap M \mid P) = 1$. I.e. $P$ is totally ramified in $M$. \\
+	
+	Notice that $K \subseteq L \cap L' \subseteq L$, so by the previous part, $P$ is totally ramified in $L \cap L'$. But since $K \subseteq L \cap L' \subseteq L'$, it is also unramified in $L \cap L'$. That is, if $U$ is a prime of $L'$ lying over $Q \cap L'$, then
+	\[ 1 = e(U \mid P) = e(U \mid Q \cap L')e(Q \cap L' \mid P) \]
+	and so
+	\[ 1 = e(Q \cap L' \mid P) = [L \cap L' : K] \]
+	so that $L \cap L' = K$ as claimed. \\
+	
+	Let $R$ denote the ring of integers in $\QQ[\omega]$, where $\omega$ is a primitive $m$th root of unity. Recall that we computed $\disc(\omega)$, which did not require knowing the degree of the extension, and found that it divides a power of $m$. Hence, we know that a prime can only ramify if it divides $m$.
+	
+	As suggested, if we first take $m = p^r$, then we've shown in 2.34 that $p = u(1-\omega)^{\varphi(m)}$ for some unit $u$. Thus, in this case, $pR$ splits into at least $\varphi(m)$ factors, i.e. $[\QQ(\omega) : \QQ] \geq \varphi(m)$. But we know that each conjugate of $\omega$ must be a root of $(x^m-1)/(x^{m/p}-1)$, and so there are at most $m-m/p = p^r(1-1/p) = \varphi(m)$ of them. I.e. $[\QQ(\omega):\QQ] = \varphi(m)$ in this case. We've also shown that $p$ is totally ramified in this extension.
+	
+	For the general case, suppose inductively that for a given $m$, we've shown that $[\QQ(\zeta_t) : \QQ] = \varphi(t)$ for $2 \leq t < m$ where $\zeta_t$ is a primitive $t$th root of unity. If $m$ is a prime power, we're done, so assume it is not. Then, let $p$ be a prime dividing $m$ and factorize $m = p^rn$ with $r > 0$ and $p \nmid n$. Then, we have
+	\[ \zeta_{p^r},\zeta_n \in \QQ(\omega) \]
+	and in fact they generate the full field extension over $\QQ$. That is, $\QQ(\omega)$ is the compositum of $\QQ(\zeta_{p^r})$ and $\QQ(\zeta_n)$. So,
+	\[ [\QQ(\omega) : \QQ] = \frac{[\QQ(\zeta_{p^r}) : \QQ][\QQ(\zeta_n) : \QQ]}{[\QQ(\zeta_{p^r}) \cap \QQ(\zeta_n) : \QQ]} = \frac{m}{[\QQ(\zeta_{p^r}) \cap \QQ(\zeta_n) : \QQ]} \]
+	since the subextensions are Galois, and where the numerator comes from the inductive hypothesis. So, it suffices to show that $\QQ(\zeta_{p^r}) \cap \QQ(\zeta_n) = \QQ$. But this is immediate from the previous part of the problem; we have seen that $p$ is totally ramified in $\QQ(\zeta_{p^r})$ and unramified in $\QQ(\zeta_n)$, and so the two fields intersect in $\QQ$ as desired.
+\end{proof}

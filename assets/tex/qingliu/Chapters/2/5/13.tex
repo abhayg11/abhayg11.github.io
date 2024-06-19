@@ -1,0 +1,10 @@
+\mtexe{2.5.13} 
+\begin{proof}
+	First, suppose that $X$ is an integral algebraic variety over $k$ of dimension $n$. We've already seen that this implies that the transcendence degree of $K(X)$ is then $\dim(X) = n$ as desired. It is also finitely generated as a field extension over $k$. Indeed, choose an affine subvariety $U = \Spec A$, where $A$ is a domain and a finitely generated $k$-algebra, and note that $K(X) = \scO_{X,\xi} \cong \Frac(\scO_X(U)) = \Frac(A)$, which is generated (as a field over $k$) by the same generators of $A$ over $k$.
+	
+	Conversely, suppose $K$ has transcendence degree $n$ over $k$ and is finitely generated. Choose a transcendence basis $\{f_1,\ldots,f_n\} \subseteq K$, so that $K$ is algebraic over $L = k(f_1,\ldots,f_n)$; let $A = k[f_1,\ldots,f_n]$. In fact, $K$ is also finitely generated over $L$ since it is finitely generated over $k$, so we can choose generators $g_1,\ldots,g_r$ giving $K = L(g_1,\ldots,g_r)$. Let $L_i = L(g_1,\ldots,g_i)$ and $A_i = A[g_1,\ldots,g_i]$, so we get a tower of extensions $L \subseteq L_1 \subseteq \cdots \subseteq L_r = K$. At each step, we adjoin a single element $g_i$ with minimal polynomial $m_i \in L_{i-1}[T]$. In fact, by clearing denominators, we can find $a \in A$ such that the minimal polynomial of $ag_i \in A_{i-1}[T]$ instead. Replacing $g_i$ with $ag_i$ doesn't change any of the fields involved, so without loss of generality, we may assume $m_i \in A_{i-1}[T]$ for each $i$.
+	
+	Now, let $X = \Spec A_r$. We've constructed the tower of rings to be integral extensions at each step, so $\dim(X) = \dim(A_r) = \dim(A) = n$. It is also clear that $A_r$ is a finitely generated $k$-algebra and a domain, so $X$ is an integral algebraic variety over $k$. Finally, $K(X) = \Frac(A_r) = L_r = K$ as desired. So, we're done.
+	
+	[I'm not totally clear on how to make $X$ projective. Maybe it already is? I should try to embed it in $\PP_k^{n+r}$ or something. Something something ample divisor.]
+\end{proof}

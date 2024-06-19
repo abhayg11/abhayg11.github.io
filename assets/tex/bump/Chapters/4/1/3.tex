@@ -1,0 +1,10 @@
+\mtexe{4.1.3}
+\begin{proof}
+	Let $A \in GL_n(F)$, and consider $tI - A$, a matrix with entries in the PID $F[t]$. We know that this matrix has a unique Smith normal form $S$, and that it is obtained via row and column operations. That is, there are matrices $P$ and $Q$ in $GL_n(F[t])$ with $P(tI-A)Q = S$.
+	
+	Now, $tI-A^T$ also has a unique Smith normal form. But note:
+	\[ Q^T(tI-A^T)P^T = Q^T(tI-A)^TP^T = (P(tI-A)Q)^T = S^T = S \]
+	since $tI$ and $S$ are diagonal. Hence, the Smith normal form for $tI-A^T$ is also $S$, since $Q^T$ and $P^T$ are invertible.
+	
+	So, we conclude that $tI-A$ and $tI-B$ are equivalent matrices, whence $A$ and $B$ are similar.
+\end{proof}

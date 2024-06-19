@@ -1,0 +1,30 @@
+\mtexe{3.28}
+\begin{proof}
+	Notice
+	\[ \alpha^n = -a_{n-1}\alpha^{n-1} - \cdots - a_0 = p^r\beta \]
+	since each coefficient is divisible by $p^r$. Further, taking norms gives:
+	\[ \pm a_0^n = (\pm a_0)^n = N(\alpha)^n = N(\alpha^n) = N(p^r\beta) = p^{rn}N(\beta) \]
+	and so $p \nmid N(\beta)$ in $\ZZ$. But then if $I$ is an ideal of $R$ containing both $\beta$ and $p$, then it contains $N(\beta)$ and $p$, and so it contains $\gcd(N(\beta),p) = 1$. So $I=R$ is the only ideal containing both; i.e. $p$ and $\beta$ are coprime in $R$.
+	
+	But now factoring $\alpha R$, $p^rR$, and $\beta R$ gives that $p^rR$ is the $n$th power of an ideal. Namely, it is the subproduct of the factorization of $(\alpha R)^n$ consisting of those primes that contain $p^r$ (and thus do not contain $\beta$). \\
+	
+	If $\gcd(r,n)=1$, then we can choose $a,b \in \NN$ with $ar-bn = 1$. Then if $I^n = p^rR$ we get:
+	\[ (I^a)^n = (I^n)^a = (p^rR)^a = p^{ar}R = p^{1+bn}R = (p^bR)^n \cdot pR \]
+	and so unique factorization gives that $pR$ is an $n$th power as well. So, for any prime lying over $p$, the ramification index must be at least $n$, and so exactly $n$, giving that $p$ is totally ramified. \\
+	
+	By 4.21, $\disc(R)$ is divisible by
+	\[ p^{\sum (e_i-1)f_i} = p^{(n-1) \cdot 1} = p^{n-1} \]
+	when $\gcd(r,n)=1$. If $\gcd(n,r)=m > 1$, then the above calculations generalize to show $p^mR$ is an $n$th power, so that $pR$ is a $n/m$th power. So, each prime lying over $p$ has $e_i \geq n/m$. So, $v_p(\disc(R))$ is at least:
+	\[ n - \sum f_i \geq n - \sum \frac{me_i}{n}f_i = n - \frac{m}{n}\sum e_if_i = n - \frac{m}{n} \cdot n = n-m \]
+	I.e. $\disc(R)$ is divisible by $p^{n-m}$. \\
+	
+	As in 2.43, let $f(x) = x^5 + ax + a$ for $a$ squarefree and not $\pm 1$ such that $4^4a+5^5$ is squarefree. We then have:
+	\[ a^4(4^4a+5^5) = \disc(\alpha) = (d_3d_4)^2\disc(R) \]
+	and in that problem we've shown $d_3d_4 \mid a^2$. Then for any prime divisor $p$ of $a$, we have $r = 1$, so the above shows $\disc(R)$ is divisible by $p^{n-1} = p^4$. If $p \neq 5$, then $p \nmid 4^4a+5^5$, and if $p=5$, then $p \mid 4^4a+5^5$, but $p^2 \nmid 4^4a+5^5$. So, applying $v_p$ gives:
+	\[ 2v_p(d_3d_4) + 4 = 4+v_p(4^4a+5^5) \leq 5 \]
+	and so $v_p(d_3d_4) \leq 1/2$, but it's an integer and so $v_p(d_3d_4) = 0$ for all prime divisors of $d_3d_4$. In other words, we must have $d_3d_4 = 1$ and so $d_3=d_4=1$.
+	
+	Similarly, in 2.44 we have $f(x) = x^5 + ax \pm a$ with $a,(4a)^4 \pm 5^5$ both squarefree, whence
+	\[ a^4((4a)^4 \pm 5^5) = \disc(\alpha) = (d_3d_4)^2\disc(R) \]
+	and $d_3d_4 \mid a^2$. But then for any prime divisor $p$ of $a$, we have that $r=1$, so $p^4 \mid \disc(R)$. As above, $p^4 \mid a^4$ and $p^2 \nmid ((4a)^4 \pm 5^5)$, so $p \nmid d_3d_4$ and we get $d_3=d_4=1$.
+\end{proof}

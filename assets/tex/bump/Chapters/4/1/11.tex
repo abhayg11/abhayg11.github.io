@@ -1,0 +1,14 @@
+\mtexe{4.1.11}
+\begin{proof}
+	Let $\alpha = (x,y,z) \in H$ be in the kernel of the pairing induced by $\chi_0$. To show that $\chi_0$ is generic, we wish to show that $\alpha \in Z$, i.e. $x=y=0$. Note that $\alpha^{-1} = (-x,-y,-z)$. Consider first $\beta = (0,ax,0)$ for $a \in F$. Then, $\beta^{-1} = (0,-ax,0)$ and
+	\[ 1 = \left<\alpha,\beta\right> = \chi_0(\alpha\beta\alpha^{-1}\beta^{-1}) = \chi_0((x,ax+y,z+B(x,ax))(-x,-ax-y,-z+B(-x,-ax))) = \psi(2aB(x,x)) \]
+	If $x \neq 0$, then $B(x,x)$ is nonzero by nondegeneracy of the form, but then $2aB(x,x)$ varies over all elements of $F$ as $a$ varies. This would then imply that $\psi$ is the trivial character, which we have assumed not to be true. Hence $x=0$, i.e. $\alpha = (0,y,z)$. Similarly, now consider $\beta = (ay,0,0)$ so $\beta^{-1} = (-ay,0,0)$ and compute:
+	\[ 1 = \left<\alpha,\beta\right> = \chi_0((ay,y,z-B(ay,y))(-ay,-y,-z-B(-ay,-y))) = \psi(-2aB(y,y)) \]
+	which implies that $y=0$ by the same argument. So, $\alpha \in Z$ as desired. \\
+	
+	Now, let's show that $A$ is polarizing. First, note that
+	\[ (x,0,z),(x',0,z') = (x+x',0,z+z') = (x',z')(x,z) \]
+	so that $A$ is abelian. But then half of the claim is obvious: for $\alpha,\beta \in A$, we have $\left<\alpha,\beta\right> = \chi_0(\alpha\beta\alpha^{-1}\beta^{-1}) = \chi_0(0,0,0) = 1$. Conversely, suppose that $\alpha = (x,y,z) \in A^\perp$. We wish to show that $y=0$. Note that for $\beta = (ay,0,0)$,
+	\[ 1 = \left<\alpha,\beta\right> = \psi(-2aB(y,y)) \]
+	so that $2aB(y,y) = 0$ for all $a \in F$, and as before, this gives $B(y,y) = 0$ and so $y = 0$ as desired.
+\end{proof}

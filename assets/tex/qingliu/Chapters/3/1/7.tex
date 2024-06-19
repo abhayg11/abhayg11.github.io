@@ -1,0 +1,18 @@
+\mtexe{3.1.7}
+\begin{proof}
+	Fix $s \in S$, $x \in X_s$, and $y \in Y_s$ as noted. The set $\{ z \in X \times_S Y : p(z) = x, q(z) = y\}$ can be identified with the fiber of a fiber: $((X \times_S Y)_x)_y$. This allows us to compute it directly:
+	\begin{align*}
+	((X \times_S Y)_x)_y
+		&= (\Spec(k(x)) \times_X (X \times_S Y))_y \\
+		&= (\Spec(k(x)) \times_{X_s} (X_s \times_X (X \times_S Y)))_y \\
+		&= (\Spec(k(x)) \times_{X_s} (X_s \times_S Y))_y \\
+		&= (\Spec(k(x)) \times_{X_s} (X_s \times_{k(s)} (\Spec(k(s)) \times_S Y)))_y \\
+		&= (\Spec(k(x)) \times_{X_s} (X_s \times_{k(s)} Y_s))_y \\
+		&= (\Spec(k(x)) \times_{k(s)} Y_s)_y \\
+		&= (\Spec(k(x)) \times_{k(s)} Y_s) \times_{Y_s} \Spec(k(y)) \\
+		&= \Spec(k(x)) \times_{k(s)} \Spec(k(y)) \\
+		&= \Spec(k(x) \otimes_{k(s)} k(y))
+	\end{align*}
+	which completes the claim. To visualize the above argument, consider the diagram:
+	\[ \begin{tikzcd} \Spec(k(x) \otimes_{k(s)} k(y)) \arrow[rrr] \arrow[d] & & & \Spec(k(y)) \\ \Spec(k(x)) \times_{k(s)} Y_s \arrow[r] \arrow[dd] & X_s \times_S Y \arrow[rr] \arrow[dr] \arrow[dd] & & Y_s \\ & & X \times_S Y \arrow[rr] \arrow[dd] & & Y \\ \Spec(k(x)) \arrow[r] & X_s \arrow[rr] \arrow[dr] & & \Spec(k(s)) \\ & & X \arrow[rr] & & S \end{tikzcd} \]
+\end{proof}

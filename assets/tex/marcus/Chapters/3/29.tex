@@ -1,0 +1,20 @@
+\mtexe{3.29}
+\begin{proof}
+	Since $p \nmid |R/\ZZ[\alpha]|$, we can determine the splitting of $p$ in $R$ by the factorization of $f \pmod{p}$. But by assumption, $f$ has a root $r \in \FF_p$, so $x-r$ is a factor of $f(x) \pmod{p}$. Hence, $P = (p,\alpha-r)$ is a prime lying over $p$ of inertial degree 1. I.e. we have an isomorphism $\FF_p \cong R/P$. Composing with the quotient map gives the desired result:
+	\[ R \to R/P \to \FF_p \]
+	since under this map, $\alpha-r \mapsto 0$, i.e. $\alpha \mapsto r$. \\
+	
+	Let $\alpha$ be a root of $f(x) = x^3-x-1$ and let $p=5$. Then
+	\[ \disc(\alpha) = -(4(-1)^3+27(-1)^2) = -23 \]
+	which is not divisible by $p$. Hence $p \nmid |R/\ZZ[\alpha]|$, and $f(2) = 8-2-1 = 5 \equiv 0 \pmod{p}$, so $f$ has a root in $\FF_p$. So, we get a ring homomorphism $\varphi : R \to \FF_5$ with $\alpha \mapsto 2$. Thus if $\beta \in R$ satisfied $\beta^2 = \alpha$, then
+	\[ \varphi(\beta)^2 = \varphi(\beta^2) = \varphi(\alpha) = 2 \]
+	but there is no element of $\FF_5$ that squares to 2. So, $\sqrt{\alpha} \notin R$. Hence, it is also not in $\QQ[\alpha]$, since if it were, it is also clearly integral, satisfying $f(x^3)$. \\
+	
+	We use a similar approach for the other cases. Let $\alpha$ again be a root of $f(x) = x^3-x-1$ and now let $p=7$. Then $p$ still does not divide the discriminant $-23$, and $f(-2) = (-8)-(-2)-1 = -7 \equiv 0 \pmod{p}$. So, we get a morphism $R \to \FF_7$ with $\alpha \mapsto -2$. But since $-2$ is not a cube in $\FF_7$, we cannot have $\sqrt[3]{\alpha} \in R$. Similarly, there is no solution to $t^2+2 = -2$ in $\FF_7$, and so $\sqrt{\alpha-2} \notin R$. \\
+	
+	Finally, let $\alpha$ be a root of $f(x) = x^5+2x-2$ and let $R = \AA \cap \QQ[\alpha]$. Then, $f$ is irreducible by Eisenstein's criterion, and
+	\[ \disc(\alpha) = 4^4(2)^5 + 5^5(-2)^4 \]
+	Note that this is not divisible by $p=5$ since the second term is but the first term is not. Also note that $f(-1) = -1-2-2 = -5 \equiv 0 \pmod{p}$. So, we get a map $\varphi : R \to \FF_5$ with $\alpha \mapsto -1$. Now, suppose there are $x,y,z \in R$ with $x^4+y^4+z^4=\alpha$. Then,
+	\[ -1 = \varphi(\alpha) = \varphi(x^4+y^4+z^4) = \varphi(x)^4 + \varphi(y)^4 + \varphi(z)^4 \]
+	But in $\FF_5$, fourth powers are either zero or one, so the sum on the right is one of $\{0,1,2,3\}$, none of which are $-1 \pmod{5}$. This is a contradiction, so there are no such $x,y,z$.
+\end{proof}

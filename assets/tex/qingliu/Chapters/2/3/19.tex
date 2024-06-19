@@ -1,0 +1,6 @@
+\mtexe{2.3.19} 
+\begin{proof}
+	Let $U$ be an open subset of $\Spec \scO_K$. Then $U = \Spec \scO_K \setminus V(I)$ for some ideal $I$ of $\scO_K$. Since the class group of $K$ has finite order, we know that $I^k = (f)$ is principal for some integer $k > 0$. I claim that $U = D(f)$. Indeed, if $\frp \in \Spec \scO_K$, then $\frp \in U$ iff $\frp \notin V(I)$ iff $\frp \not\supseteq I$. Since $\scO_K$ is a Dedekind domain, this is equivalent to $\frp \nmid I$, which is true iff $\frp \nmid I^k = (f)$ iff $\frp \in D(f)$. This shows the claim.
+	
+	From this it is clear that every open subscheme is affine, as $U \cong \Spec (\scO_K)_{f}$.
+\end{proof}

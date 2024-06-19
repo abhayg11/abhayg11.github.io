@@ -1,0 +1,38 @@
+\mtexe{2.44} 
+\begin{proof} 
+    As above, we have:
+    \[ \disc(\alpha) = N(f'(\alpha)) = N(5\alpha^4+4a\alpha^3) = N(\alpha)^3N(5\alpha+4a) = (-b)^3N(5\alpha+4a) \]
+    and we compute the second term by considering the conjugates:
+    \begin{align*}
+    N(5\alpha+4a)
+        &= \prod_i (5\alpha_i+4a) \\
+        &= (-5)^5\prod_i (-4a/5 - \alpha_i) \\
+        &= -5^5f(-4a/5) \\
+        &= -5^5\left(-\frac{4^5a^5}{5^5}+a\frac{4^4a^4}{5^4}+b\right) \\
+        &= 4^5a^5 - 4^45a^5 - 5^5b \\
+        &= 4^4(4-5)a^5 - 5^5b \\
+        &= -(4^4a^5+5^5b)
+    \end{align*}
+    So, overall,
+    \[ \disc(\alpha) = b^3(4^4a^5+5^5b) \] \\
+
+    As before, we have
+    \[ b^3(4^4a^5+5^5b) = (d_1d_2d_3d_4)^2\disc(R) \]
+    where $d_1 \mid d_2 \mid d_3 \mid d_4$. Suppose $p$ is a prime divisor of $d_3$. Then $p \mid d_4$, so $p^4 \mid (d_3d_4)^2 \mid b^3(4^4a^5+5^5b)$. Since $b$ and $4^4a^5+5^5b$ are squarefree, this is only possible if each is divisible by $p$ (and not $p^2$, of course). But then $p \mid 4^4a^5 \mid (2a)^8$, so $p \mid 2a$, which contradicts $\gcd(b,2a) = 1$. So, such a prime cannot exist, i.e. $d_3 = 1$, and since $d_1 \mid d_2 \mid d_3$, they are all equal to 1.
+
+    Finally, we have $d_4^2 \mid b^3(4^4a^5+5^5b)$. If $p \mid d_4$, then $p^2$ divides this expression, and so $p$ divides both $b$ and $4^4a^5+5^5b$. Further, $p^2 \nmid d_4$ in this case, else we would again be in the above case where $b^3(4^4a+5^5b)$ is divisible by $p^4$. So, $v_p(d_4) = 1 = v_p(b)$, whence $d_4 \mid b$.
+    
+    When $a=-2$ and $b=5$, we get
+    \[ \disc(\alpha) = 5^3(4^4(-2)^5+5^5(5)) = 5^3(15625-8192) = 5^3 \cdot 7433 \]
+    and 7433 is squarefree since it isn't divisible by any of 2, 3, 5, 7, 11, 13, 17, or 19, while $7433 < 8000 = 20^3$, and $7433 \equiv 2 \pmod{3}$ so it isn't a perfect square. \\
+
+    For the case $a=b$, $\disc(\alpha) = a^4((4a)^4+5^5) = (d_1d_2d_3d_4)^2\disc(R)$. If $a$ and $(4a)^4+5^5$ are squarefree, then $d_2^6 \mid a^4((4a)^4+5^5)$, implies that $d_2 = 1$, which gives $d_1 = 1$. So, we have $(d_3d_4)^2 \mid a^4((4a)^4+5^5)$. For each prime divisor $p$ of $d_3d_4$, we have $2v_p(d_3d_4) \leq 4v_p(a)+v_p((4a)^4+5^5) \leq 4v_p(a)+1$. Since these are integers, this gives $2v_p(d_3d_4) \leq 4v_p(a)$, i.e. $v_p(d_3d_4) \leq v_p(a^2)$, and since this is true for all primes, we get $d_3d_4 \mid a^2$.
+
+    Similarly, when $a=-b$, $\disc(\alpha) = a^4((4a)^4-5^5) = (d_1d_2d_3d_4)^2\disc(R)$. So, if $a$ and $(4a)^4-5^5$ are squarefree, then $d_2^6 \mid a^4((4a)^4-5^5)$, so $d_2 = 1 \implies d_1=1$. Then $d_3d_4 \mid a^2$ as in the previous case. \\
+
+    Finally, in the case $a=b$, we have $a(\alpha^4+1) = -\alpha^5$. Taking norms gives:
+    \[ N(\alpha^4+1) = \frac{N(-\alpha^5)}{N(a)} = \frac{(-1)^5N(\alpha)^5}{a^5} = \frac{-(-a)^5}{a^5} = 1 \]
+    so $\alpha^4+1$ is a unit. In the case $a=-b$, we have $a(\alpha^4-1) = -\alpha^5$, so
+    \[ N(\alpha^4-1) = \frac{N(-\alpha^5)}{N(a)} = \frac{(-1)^5(-a)^5}{a^5} = 1 \]
+    so $\alpha^4-1$ is a unit.
+\end{proof}

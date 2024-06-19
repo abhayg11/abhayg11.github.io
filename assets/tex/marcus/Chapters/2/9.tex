@@ -1,0 +1,6 @@
+\mtexe{2.9} 
+\begin{proof}
+    Let $\zeta_j = e^{2\pi i/j}$. As suggested, suppose $\omega = \zeta_m$ and that $\theta$ is a primitive $k$th root of unity, so that $\theta = e^{2\pi ih/k} = \zeta_k^h$ for some $h$ with $(h,k)=1$. Then, we can write $ah+bk = 1$ for some $a,b \in \ZZ$. Second, if $d = (m,k)$ is the gcd, then there are $t,v$ such that $tm+vk = d$. Let $u = at$. Finally, since $r$ is the lcm of $m$ and $k$, we have $r = mk/d$. So,
+    \[ \theta^u\omega^v = \theta^{at}\omega^v = \zeta_k^{hat}\zeta_m^v = \zeta_k^{(1-bk)t}\zeta_m^v = \zeta_k^t\zeta_m^v = \zeta_{rd/m}^t\zeta_{rd/k}^v = \zeta_r^{tm/d}\zeta_r^{vk/d} = \zeta_r^{(tm+vk)/d} = \zeta_r \]
+    as claimed.
+\end{proof}

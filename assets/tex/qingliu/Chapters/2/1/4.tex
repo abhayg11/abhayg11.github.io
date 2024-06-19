@@ -1,0 +1,21 @@
+\mtexe{2.1.4}
+
+First, a geometric argument:
+
+\begin{proof}
+	Notice that $\frp$ is an irreducible component of $\Spec A$. Then, if $f \in A_\frp$, then $f$ is the germ of a function defined locally on $\frp$, and if $f \in \frp A_\frp$, then it vanishes on all of $\frp$. Hence, $f$ vanishes everywhere, so by the Nullstellensatz, some power of it is zero. \\
+	
+	Now, since $A$ is reduced, only the zero function vanishes on all of $\Spec A$. Hence, if $f$ is a zerodivisor, then there is some nonzero $g$ with $fg = 0$, and $g$ being nonzero implies that $g$ does not vanish everywhere. Pick an irreducible component $Z$ that $g$ does not vanish on. Then
+	\[ Z = Z \cap \Spec(A) = Z \cap V(fg) = Z \cap (V(f) \cup V(g)) = (Z \cap V(f)) \cup (Z \cap V(g)) \]
+	By irreducibility, we must have $V(f) \supseteq Z$, so $f$ vanishes on all of $Z$.
+\end{proof}
+
+Now, the formal algebra:
+ 
+\begin{proof}
+	Note that $\frp A_\frp$ is the unique prime of $A_\frp$ since $\frp$ is minimal. Hence, the nilradical of $A_\frp$, as the intersection of the primes of $A_\frp$, is precisely $\frp A_\frp$. Hence, if $f \in \frp$ is nonzero, then its image is in $\frp A_\frp$, so there is some $n$ such that $\frac{f^n}{1} = 0$. I.e. there is some $u \notin \frp$ with $f^nu = 0$, so $f$ is a zerodivisor. \\
+	
+	Now, let $A$ be reduced, and let $f$ be a zerodivisor, so there is some nonzero $g$ with $fg = 0$. Then notice that $g$ is not contained in every minimal prime, since otherwise it would be contained in
+	\[ \bigcap_{\frp \text{ minimal prime}} \frp = \bigcap_{\frp \text{ prime}} \frp = \sqrt{0} = 0 \]
+	since $A$ is reduced. So, there is some minimal prime $\frp$ with $g \notin \frp$. But $fg = 0 \in \frp$, so $f \in \frp$ by primality.
+\end{proof}

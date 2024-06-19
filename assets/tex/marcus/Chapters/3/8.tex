@@ -1,0 +1,22 @@
+\mtexe{3.8}
+\begin{proof} ${}$
+\begin{enumerate}
+\item Suppose, for contradiction, that $(2,x) = (f)$ for some $f \in \ZZ[x]$. Then $2 = fg$ for some $g \in \ZZ[x]$, so that $f$ has degree zero, i.e. $f \in \ZZ$. Then $f = \pm 1$ or $f = \pm 2$. We cannot have either of the first two, since then $(f) = \ZZ[x]$, but
+\[ \ZZ[x]/(f) = \ZZ[x]/(2,x) \cong \FF_2 \]
+is nontrivial. But we also cannot have $f = \pm 2$ because $2 \nmid x$ in $\ZZ[x]$.
+
+\item As usual, we refer to the gcd of the coefficients of a polynomial as the content of that polynomial, and refer to any polynomial with content 1 as primitive. As suggested, we first show that the product of primitive polynomials is primitive. Indeed, suppose that $f = \sum_i a_ix^i$ and $g = \sum_j b_jx^j$ are both primitive. Now, let $p$ be a prime, and note that there is some first coefficient of $f$ that is not divisible by $p$, say $a_n$ and similarly for $g$, i.e. $b_m$. But then the coefficient of $x^{n+m}$ in $fg$ is
+\[ \sum_{i=0}^{n+m} a_ib_{n+m-i} \]
+and every term in this sum is divisible by $p$ except the term $a_nb_m$, since it involves $a_i$ for $i<n$ or $b_j$ for $j<m$. So, this coefficient is not divisible by $p$. I.e. $fg$ is primitive.
+
+Now, for the general case, if $m$ is the content of $f$ and $n$ is the content of $g$, then $1$ is the content of $(f/m)(g/n)$, and so $mn$ is the content of $fg = mn(f/m)(g/n)$.
+
+\item Contrapositively, suppose $f \in \ZZ[x]$ is reducible over $\QQ$, so that $f = gh$ for nonconstant polynomials $g,h \in \QQ[x]$. Then, we can clear denominators: for some $a,b \in \ZZ$ we get $ag,bh \in \ZZ[x]$. So,
+\[ abf = (ag)(bh) \]
+i.e. this multiple of $f$ is reducible in $\ZZ[x]$. Let $t$ be the smallest positive integer such that $tf$ is reducible in $\ZZ[x]$. If $t \neq 1$, then let $p$ be a prime divisor of $t$, and note that if $tf = g'h'$, then $p$ divides the content of $tf$, so it divides the product of the contents of $g'$ and $h'$. So, it divides one of these, i.e. WLOG $p$ divides the content of $g'$, whence $g'/p \in \ZZ[x]$. But then $(t/p)f = (g'/p)h'$, contradicting the minimality of $t$. So we must have $t = 1$ so that $tf = f$ is reducible in $\ZZ[x]$.
+
+\item Since $f$ is irreducible in $\ZZ[x]$, we've shown that $f$ is irreducible in $\QQ[x]$. So, $f \mid gh$ implies that $f \mid g$ or $f \mid h$ in $\QQ[x]$. WLOG, suppose $f \mid g$, so that $g = fq$ for some $q \in \QQ[x]$. As above, by clearing denominators, we can write $ag = f(aq)$ for some $a \in \ZZ$ such that $aq \in \ZZ[x]$. Then $a$ divides the content of $ag$, which equals the content of $aq$, since $f$ is primitive. So $q = (aq)/a \in \ZZ[x]$, so that $f \mid g$ in $\ZZ[x]$.
+
+\item To see that $\ZZ[x]$ is a UFD, we will show that every element can be written as a product of irreducibles and that all irreducibles are prime. The former is immediate, since this is true for any Noetherian ring ($\ZZ[x]$ is Noetherian since $\ZZ$ is, by an application of the Hilbert Basis Theorem). The latter is essentially what we've shown. Suppose $f$ is irreducible and primitive. Then the above shows that if $f \mid gh$ then $f \mid g$ or $f \mid h$, so that $f$ is prime. If $f$ is not primitive, then $f = d(f/d)$, where $d$ is the content of $f$. But since $f$ is irreducible, we must have that $d$ is a prime integer and that $f/d$ is a unit, i.e. it is $\pm 1$, so that $f$ itself is $\pm p$ for a prime $p \in \ZZ$. In this case, $f = p$ is also prime in $\ZZ[x]$. So, in either case, we've shown that any irreducible is prime, and so $\ZZ[x]$ is a UFD.
+\end{enumerate}
+\end{proof}

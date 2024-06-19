@@ -1,0 +1,19 @@
+\mtexe{3.2.4}
+\begin{proof}
+	First, note that $x$ is the unique maximal ideal of $\scO_{X,x}$, so let $y = f_x(x)$ and $s \in S$ be the point that $x,y$ lie over. Choose a Noetherian affine neighborhood $\Spec R$ of $s$, and choose an affine open neighborhood $y \in \Spec A$ contained in the preimage of $\Spec R$. Then $f_x^{-1}(\Spec A)$ is an open subset of $\Spec \scO_{X,x}$ containing $x$, whence it must be all of $\Spec \scO_{X,x}$. So, $f_x$ factors through $\Spec \scO_{X,x} \to \Spec A$, which corresponds to a map $\varphi : A \to \scO_{X,x}$. After choosing an affine neighborhood $\Spec B$ of $x \in X$, this becomes a map $\varphi : A \to B_x$. It would suffice to show that this lifts to a map $A \to B_f$ for some $f \notin x$. Indeed, if we can do this, then $D(f) \subseteq \Spec B$ is an open neighborhood of $X$ containing $x$ isomorphic to $\Spec B_x$, and the lift gives a map $D(f) \to \Spec A$. So, we're done with $U = D(f)$ after composing with $\Spec A \hookrightarrow Y$.
+	
+	In other words, we've reduced to the algebraic problem of showing that for a Noetherian ring $R$, an $R$-algebra $B$, and a finitely generated $R$-algebra $A$, a map $\varphi_0 : A \to B_\frp$ extends to a map $\varphi : A \to B_f$. Since $A$ is a finitely generated $R$-algebra, we can find a surjective map $\psi : R[T_1,\ldots,T_n] \to A$. Let $\varphi_0(\psi(T_i)) = f_i/g_i$ for some $f_i \in B$ and $g_i \notin \frp$. Then $R[T_1,\ldots,T_n]$ is Noetherian, so we can write $\ker(\psi) = (h_1,\ldots,h_m)$. Since
+	\[ 0/1 = \varphi_0(\psi(h_i(T_1,\ldots,T_n))) = h_i(f_1/g_1,\ldots,f_n/g_n) = a_i/b_i \]
+	for some $a_i \in B$ and $b_i \notin \frp$, we can write $a_iu_i = 0$ for some $u_i \notin \frp$. 
+	
+	Finally, write $g = \prod_{i=1}^n g_i$, $u = \prod_{i=1}^m u_i$, $f = gu$, and $F : R[T_1,\ldots,T_n] \to B_f$ defined by $F(T_i) = \left(uf_i\prod_{j \neq i} g_j\right)/f$. Then, for each $1 \leq i \leq m$:
+	\begin{align*}
+	F(h_i(T_1,\ldots,T_n))
+		&= h_i\left(uf_1\left(\prod_{j \neq 1} g_j\right)/f,\ldots,uf_n\left(\prod_{j \neq n} g_j\right)/f\right) \\
+		&= (a_is)/(b_is) \\
+		&= 0
+	\end{align*}
+	for some $s$ such that $b_is$ is a power of $f$, where the final equality follows from $a_isf = a_iu_i\left(sg\prod_{j \neq i} u_j\right) = 0$. Hence $\ker(\psi) \subseteq \ker(F)$ and so it factors through it, i.e. we get a map $\varphi : A \to B_f$ with $F = \varphi \circ \psi$. If $\iota : B_f \to B_\frp$ is the localization map, then
+	\[ \iota(\varphi(\psi(T_i))) = \iota(F(T_i)) = \left(uf_i\prod_{j \neq i} g_j\right)/f = f_i/g_i = \varphi_0(\psi(T_i)) \]
+	So $\iota \circ \varphi \circ \psi = \varphi_0 \circ \psi$ since they agree on $R$ and each $T_i$. But $\psi$ is surjective, so $\iota \circ \varphi = \varphi_0$, which is what we wished to show.
+\end{proof}

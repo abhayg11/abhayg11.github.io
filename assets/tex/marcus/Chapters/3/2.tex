@@ -1,0 +1,6 @@
+\mtexe{3.2}
+\begin{proof}
+	Let $R$ be a domain with $|R|$ finite, and let $\alpha \in R$ be nonzero. Consider the map $\NN \to R$ given by $n \mapsto \alpha^n$. Since the codomain is finite, this map cannot be injective. So, there exist distinct $n,m \in \NN$ with $\alpha^n = \alpha^m$. WLOG, $n < m$, whence we have
+	\[ 0 = \alpha^n(\alpha^{n-m}-1) \]
+	But since $R$ is a domain, we either get $\alpha = 0$ or $\alpha^{n-m}=1$. The former is not true by assumption, and so $\alpha^{n-m}=1$. So $\alpha$ is invertible and $R$ is a field.
+\end{proof}

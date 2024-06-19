@@ -1,0 +1,16 @@
+\mtexe{0.2}
+\begin{proof}
+	First, we simply verify the product:
+	\[ (2,1+\sqrt{-5})^2(3,1+\sqrt{-5})(3,1-\sqrt{-5}) = (4,2+2\sqrt{-5},-4+2\sqrt{-5})(9,3+3\sqrt{-5},3-3\sqrt{-5},6) = (2)(3) = (6) \]
+	Here we've claimed that $(4,2+2\sqrt{-5},-4+2\sqrt{-5}) = (2)$ and $(9,3+3\sqrt{-5},3-3\sqrt{-5},6) = (3)$. Let's verify the first of these. One containment is obvious: each generator on the left is a multiple of $2$, and so is contained in the ideal $(2)$. For the reverse, we need to show that $2$ is in the ideal on the left, which is shown by the following calculation:
+	\[ (2+2\sqrt{-5})-(-4+2\sqrt{-5})-(4) = 2 \]
+	Let's now verify the factorization of $(3)$. Again, one direction is obvious since each generator on the left is a multiple of 3. For the reverse, note that $9-6 = 3$, so 3 is contained in the ideal on the left. So the factorization is indeed as claimed. \\
+	
+	Finally, let's check that this is a factorization into primes in $\ZZ[\sqrt{-5}]$. For each, we show that the quotient is a domain by lifting to the polynomial ring $\ZZ[T]$:
+	\[ \ZZ[\sqrt{-5}]/(2,1+\sqrt{-5}) = \ZZ[T]/(T^2+5,2,1+T) = \FF_2[T]/(T^2+5,T+1) = \FF_2[T]/(T+1) = \FF_2 \]
+	which is a domain. Note we used the fact that in $\FF_2[T]$: $(T^2+5,T+1) = (T+1)$ since $T^2+5 = (T+1)^2$ is a multiple of $T+1$. Similarly:
+	\[ \ZZ[\sqrt{-5}]/(3,1+\sqrt{-5}) = \ZZ[T]/(T^2+5,3,1+T) = \FF_3[T]/(T^2+5,T+1) = \FF_3[T]/(T+1) = \FF_3 \]
+	since $T^2+5 = (T+1)(T-1)$ over $\FF_3$. Finally,
+	\[ \ZZ[\sqrt{-5}]/(3,1-\sqrt{-5}) = \ZZ[T]/(T^2+5,3,1-T) = \FF_3[T]/(T^2+5,T-1) = \FF_3[T]/(T-1) = \FF_3 \]
+	for the same reason. These are all domains, so each of these ideals is indeed prime as claimed.
+\end{proof}

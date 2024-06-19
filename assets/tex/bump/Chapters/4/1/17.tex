@@ -1,0 +1,10 @@
+\mtexe{4.1.17}
+\begin{proof}
+	Suppose $\pi$ appears as a summand of a representation $(\psi,W)$ parabolically induced from a cuspidal one on $M_\lambda(F)$. Then,
+	\[ \Hom_{\GL(n,F)}(\pi,Ind_{P_\lambda(F)}^{\GL(n,F)}\psi,\pi) \cong \Hom_{P_\lambda(F)}(Res_{P_\lambda(F)}^{\GL(n,F)}\pi,\psi) \]
+	by Frobenius reciprocity. We're assuming the former is nontrivial, so the latter must also be, giving us a nontrivial intertwiner $\Phi$. In particular, $\Phi(V)$ contains a nonzero vector $w$; choose any linear functional $\alpha : W \to \CC$ with $\alpha(w) \neq 0$. Then $\Lambda = \alpha \circ \Phi$ is the desired map showing that $\pi$ is cuspidal. By design it is nontrivial on $V$ and linear, and for $u \in U_\lambda(F)$ and $v \in V$:
+	\[ \Lambda(\pi(u)v) = \alpha(\Phi(\pi(u)v)) = \alpha(\psi(u)\Phi(v)) = \alpha(\Phi(v)) = \Lambda(v) \]
+	since $\psi(u)$ acts trivially on $W$. \\
+	
+	Conversely, suppose that $\pi$ is not cuspidal, so that there exists a partition $\lambda$ and a linear functional $\Lambda : V \to \CC$ such that $\Lambda(\pi(u)v) = \Lambda(v)$ for all $u \in U_\lambda(F)$ and $v \in V$. Then,....
+\end{proof}

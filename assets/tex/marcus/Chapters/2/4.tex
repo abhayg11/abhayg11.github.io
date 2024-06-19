@@ -1,0 +1,6 @@
+\mtexe{2.4} 
+\begin{proof}
+    The proof of theorem 2 shows a more general fact: if $A \subseteq B$ are rings, then an element $\alpha \in B$ is integral over $A$ (in that it satisfies a monic polynomial with coefficients in $A$) iff $A[\alpha]$ is a finite $A$-module iff $\alpha \in C$ for some $A$-subalgebra $C$ of $B$ that is a finite $A$-module. So, since $a_0,\ldots,a_{n-1}$ are algebraic integers, we have that each of the extensions:
+    \[ \ZZ \subseteq \ZZ[a_0] \subseteq \ZZ[a_0,a_1] \subseteq \cdots \subseteq \ZZ[a_0,\ldots,a_{n-1}] \]
+    are finite extensions of modules. Further, since $\alpha$ is integral over this final extension, we also have that $\ZZ[a_0,\ldots,a_{n-1}] \subseteq \ZZ[a_0,\ldots,a_{n-1},\alpha]$ is a finite extension. Hence, by our tower laws, $\ZZ \subseteq \ZZ[a_0,\ldots,a_{n-1},\alpha]$ is a finite extension of modules. This is a $\ZZ$-subalgebra of, say, $\CC$ that contains $\alpha$, and so $\alpha$ is integral over $\ZZ$, i.e. it is an algebraic integer.
+\end{proof}

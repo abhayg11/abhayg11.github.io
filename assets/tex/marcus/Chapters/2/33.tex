@@ -1,0 +1,6 @@
+\mtexe{2.33} 
+\begin{proof} 
+    Note that the norm is the product of the conjugates, and that we've determined the conjugates of $\omega$ to be precisely $\omega^k$ for $1 \leq k \leq m$ coprime to $m$. But if $(k,m) = 1$, then $(m-k,m) = 1$, and $m-k \neq k$ since otherwise $m = 2k$ and $(k,m) = k = m/2 > 1$. This gives a pairing on the set of conjugates, so we get:
+    \[ N(\omega) = \prod_{1 \leq k \leq m \atop (k,m) = 1} = \prod_{1 \leq k < m/2 \atop (k,m) = 1} \omega^k\omega^{m-k} = 1 \]
+    since each term equals 1.
+\end{proof}

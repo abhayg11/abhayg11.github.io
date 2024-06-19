@@ -1,0 +1,22 @@
+\mtexe{3.9}
+\begin{proof} ${}$
+\begin{enumerate}
+\item Considering the union of all prime divisors of $I$ and $J$ in $R$, we can write
+\begin{align*} I = P_1^{a_1} \cdots P_n^{a_n} && J = P_1^{b_1} \cdots P_n^{b_n} \end{align*}
+for distinct primes $P_i$ and $a_i,b_i \geq 0$. Then, each prime factors in $S$, so that
+\[ P_iS = Q_{i1}^{c_{i1}} \cdots Q_{it_i}^{c_{it_i}} \]
+where each $c_{iu} > 0$ and as $u$ varies, $Q_{iu}$ enumerates the distinct primes lying over $P_i$. Further, for $i \neq j$ and any valid $u,v$, $Q_{iu} \neq Q_{jv}$ since they lie over distinct primes. Overall, this gives:
+\[ IS = \prod_{i=1}^n \prod_{u=1}^{t_i} Q_{iu}^{a_ic_{iu}} \]
+and
+\[ JS = \prod_{i=1}^n \prod_{u=1}^{t_i} Q_{iu}^{b_ic_{iu}} \]
+Since $IS \mid JS$ and these are all distinct primes, we must have $a_ic_{iu} \leq b_ic_{iu}$ for each $i,u$. Since each $c_{iu}$ is positive, this gives $a_i \leq b_i$ for each $i$, and so $I \mid J$.
+
+\item As suggested, let $J = IS \cap R$. Then, if $x \in I \subseteq R$, then $x \in IS$ also, so $x \in J$, i.e. $I \subseteq J$, so $J \mid I$. But also clearly $JS \subseteq IS$, so $IS \mid JS$, and the previous gives $I \mid J$. Thus $I=J$, i.e. $I = IS \cap R$.
+
+\item I claim the following is necessary and sufficient for $I = (I \cap R)S$: for each prime $P$ dividing $I \cap R$, there is an $n$ such that for each prime $Q$ of $S$ lying over $P$, the exponent of $Q$ in the factorization of $I$ is precisely $ne(Q|P)$. Indeed, this is sufficient, for if this holds, then
+\[ I \cap R = P_1^{n_1} \cdots P_k^{n_k} \]
+and then for each prime $Q$ lying over $P_i$, the exponent of $Q$ in the factorization of $(I \cap R)S$ is $n_ie(Q|P_i)$, which by assumption is the exponent of $Q$ in the factorization of $I$. Conversely, suppose $I = (I \cap R)S$. Then, if $P^n$ divides $I \cap R$ exactly (i.e. $P^{n+1}$ does not divide $I \cap R$), then writing
+\[ P = Q_1^{e_1} \cdots Q_t^{e_t} \]
+we get that $Q_i^{ne_i}$ exactly divides $(I \cap R)S$, and so the exponent of $Q_i$ in $I$ is exactly $ne_i = ne(Q_i|P)$ as claimed.
+\end{enumerate}
+\end{proof}

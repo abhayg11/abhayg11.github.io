@@ -1,0 +1,20 @@
+\mtexe{4.3}
+\begin{proof}
+	Note that $\scO_K = \ZZ[\alpha]$ since it has discriminant $-31$ which is prime. Hence we can find factorizations of primes by factoring $h(X) = X^3+X+1$ in $\FF_p$. Let $g$ denote the number of primes occuring in the factorization of $p\scO_K$.
+	
+	First, if $p$ ramifies, then $p$ must divide the discriminant. I.e. $p=31$, and in this case,
+	\[ h(X) = X^3+X+1 \equiv (X-3)(X-14)^2 \pmod{31} \]
+	So, the case $g = 2$, $e = (1,2)$ and $f = (1,1)$ (as it must by $\sum e_if_i = 3$) occurs, and the other ramified case does not occur, namely $(e,f,g) = (3,1,1)$.
+	
+	Now, we may assume that $e(\frp/p) = 1$ for each $\frp$ lying over $p$ and that $p \neq 31$. If $g=1$, then $p$ is inert, which happens iff $h(X)$ is irreducible mod $p$ iff $h$ has no root mod $p$. This does happen, say for $p = 2$, since neither $0$ nor $1$ is a root in $\FF_2$.
+	
+	If $g = 2$, then we must have $f = (1,2)$, so $h$ factors as a linear polynomial and an irreducible quadratic. For $p = 3$, we get
+	\[ h(X) = X^3+X+1 \equiv (X-1)(X^2+X+2) \pmod{3} \]
+	and the latter factor is irreducible is it does not have $0,1,2$ as a root in $\FF_3$.
+	
+	Finally, if $g=3$, then $h$ totally splits into (distinct) linear factors mod $p$. I haven't yet found such a $p$, but I can prove that one exists. First, let $L$ be a splitting field for $h$ over $K$, and note that $L$ is Galois over $\QQ$. Now $L = \QQ[\beta]$ for some integral $\beta$ with minimal polynomial $u \in \ZZ[X]$. I claim that for infinitely primes $p$, there exists an $n \in \ZZ$ such that $p \mid u(n)$ [Proven below]. In particular, there is one such prime that does not divide $|\scO_L/\ZZ[\beta]|$ and is also not equal to 31. For this prime, the factorization of $u$ gives the factorization of $p\scO_L$. But since $L$ is Galois and $u$ has a root ($n$), $u$ must split completely into linear factors, and so $p\scO_L$ is the product of distinct primes of inertial degree 1. This completes the argument, since the inertial degree is multiplicative, and so $p\scO_K$ is also the product of distinct primes of inertial degree 1. \\
+	
+	To complete the proof, we prove the subclaim. Let $u \in \ZZ[x]$ be a nonconstant polynomial. Then I claim there are infinitely many primes $p$ such that there exists an $n \in \ZZ$ with $p \mid u(n)$. First, suppose $u(0) = 1$. Then if $P$ is any finite set of primes, consider $n = k\prod_{p \in P} p$ for any $k \in \ZZ$. We have $n \equiv 0 \pmod{p}$ for each $p \in P$ and so $u(n) \equiv u(0) = 1 \pmod{p}$. Since $u$ is nonconstant, it takes the value $1$ only finitely many times, and so for $k$ sufficiently large, $u(n) \neq 1$ but is not divisible by any prime in $P$. So it must be divisible by some other prime, and this shows that no finite set of primes suffices. If $u(0) \neq 1$, then consider the polynomial $g(x) = u(u(0)x)/u(0)$. This still has integer coefficients by construction, and has $g(0) = u(0)/u(0) = 1$, so by the above, there are infinitely many primes $p$ for which there exists an $n$ such that $u(u(0)n)/u(0)$ is divisible by $p$. But then $u(u(0)n)$ itself is divisible by $p$, and so the claim is shown.
+\end{proof}
+
+% p = 47 works I think

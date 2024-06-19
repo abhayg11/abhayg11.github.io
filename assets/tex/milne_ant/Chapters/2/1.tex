@@ -1,0 +1,4 @@
+\mtexe{2.1}
+\begin{proof}
+	Note that $(\sqrt{5}+1)(\sqrt{5}-1) = 4 = 2 \cdot 2$. I claim these elements ($\sqrt{5} \pm 1$ and $2$) are irreducible in $\ZZ[\sqrt{5}]$, demonstrating the failure of unique factorization. Indeed, suppose $\alpha$ is one of these three elements, and that it can be written as a product $\alpha = \beta\gamma$. Taking norms gives $N(\beta)N(\gamma) = N(\alpha) = \pm 4$. If $N(\beta) = \pm 1$, then it is a unit, and if $N(\beta) = \pm 4$, then $\gamma$ is a unit and we're done. So, the only possibility remaining is that $N(\beta) = \pm 2$. Writing $\beta = u+v\sqrt{5}$ for integers $u,v$ gives $u^2-5v^2 = \pm 2$. But modulo 4, this gives $(u-v)(u+v) \equiv 2 \pmod{4}$, which is impossible since $u-v$ and $u+v$ have the same parity.
+\end{proof}

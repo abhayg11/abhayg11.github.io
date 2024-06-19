@@ -1,0 +1,14 @@
+\mtexe{2.47} 
+\begin{proof} 
+    Per the previous exercise, we should write $f'$ as a rational function in $\ZZ[x]/f(x)$. We have
+    \[ xf'(x) = x(5x^4-2x) = 5x^5-2x^2 \equiv 5(x^2-15)-2x^2 = 3x^2-75 = 3(x-5)(x+5) \pmod{f(x)} \]
+    So, from the previous exercise,
+    \begin{align*}
+    \disc(\alpha)
+        &= (-1)^{10+15}\frac{3^5f(5)f(-5)}{1^5f(0)} \\
+        &= -\frac{3^5(5^5-5^2+15)(-5^5-5^2+15)}{15} \\
+        &= -\frac{3^4}{5}(-10+5^5)(-10-5^5) \\
+        &= -\frac{3^4}{5}(100-5^{10}) \\
+        &= 3^4(5^9-20)
+    \end{align*}
+\end{proof}

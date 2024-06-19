@@ -1,0 +1,12 @@
+\mtexe{2.5.1} 
+\begin{proof}
+	It is clear that $\dim X \geq \sup_i \dim X_i$, since each $X_i$ is contained in $X$. Now, let $x \in X$, and choose an open neighborhood $U$ of $x$ that intersects only finitely many $X_i$. Then, since the $X_i$ cover, we have:
+	\[ U = \bigcup_{j=1}^n U \cap X_{i_j} \]
+	for some indices $i_1,\ldots,i_n$. Now, consider a chain of irreducible closed subsets of $U$:
+	\[ Z_0 \subsetneq Z_1 \subsetneq \cdots \subsetneq Z_m \]
+	The decomposition above shows:
+	\[ Z_m = \bigcup_{j=1}^n Z_m \cap X_{i_j} \]
+	and irreducibility gives, after possibly rearranging, $Z_m = Z_m \cap X_{i_1}$, i.e. $Z_m \subseteq X_{i_1}$. But then the closure of each $Z_i$ gives a chain of irreducible closed subsets of $X_{i_1}$, and so $\dim(X_{i_1}) \geq m$. To avoid rearranging, we can note therefore that $\sup_i \dim(X_i) \geq m$. Since this applies for each $m$, we can take suprema again to get $\dim(U) \leq \sup_i \dim(X_i)$.
+	
+	Since this is true for a particular $U$, we therefore also get $\dim_x(X) = \inf_{U \ni x}(\dim(U)) \leq \sup_i\dim(X_i)$, and finally, taking suprema over all $x \in X$ gives $\dim(X) \leq \sup_i\dim(X_i)$, as desired.
+\end{proof}

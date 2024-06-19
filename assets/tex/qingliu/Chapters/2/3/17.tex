@@ -1,0 +1,18 @@
+\mtexe{2.3.17} 
+\begin{proof}
+	Suppose $f$ is a closed immersion. Then, topologically, identifying $X$ with its image, we get that $X \subseteq Y$ is a closed subset. If $U \subseteq Y$ is an affine open subset, then under this identification, the preimage of $U$ under $f$ is $X \cap U$. This is a closed subset of $U$, and since $U$ is quasi-compact, so is $X \cap U$. This shows that $f$ is quasi-compact. \\
+	
+	Suppose $f$ is an open immersion and that $Y$ is locally Noetherian. Making similar identifications as above, we have that $X \subseteq Y$ is open, $U$ is affine, and we want to show that $X \cap U$ is quasi-compact. Since $Y$ is locally Noetherian, the previous exercise shows that $U$ is Noetherian, and so $X \cap U$ is an open subscheme of a Noetherian scheme, and hence itself Noetherian. But this means it is the finite union of affine open subschemes--which are the $\Spec$s of Noetherian rings, but we do not use this--and hence quasi-compact, as desired. \\
+	
+	Now assume $f$ is quasi-compact. Let $\{U_i\}$ denote an affine open cover of $Y$. Then, note that $Z = V(\scI)$ can be computed locally:
+	\[ Z = V(\scI) = \{ y \in Y \mid \scI_y \neq \scO_{Y,y} \} = \bigcup_i \{ y \in U_i \mid (\scI|_{U_i})_y \neq \scO_{U_i,y} = \bigcup_i V(\scI|_{U_i}) \} \]
+	So, to show that $Z$ is a scheme, it suffices to show that each $V(\scI_{U_i})$ is a scheme. In other words, replacing symbols, it suffices to show the claim when $Y$ is affine. Note that we may continue to assume $f$ is quasi-compact since each $U_i$ is open.
+	
+	Now, with the assumption that $Y = \Spec A$ is affine, we have that $f$ is determined by the map $\varphi : A \to \scO_X(X)$. In particular, for a prime $\frp \in \Spec A$,
+	\[ \frp \in Z \iff \scI_\frp \neq \scO_{Y,\frp} \iff (\ker\varphi)_\frp \neq A_\frp \iff \ker\varphi \subseteq \frp \iff \frp \in V(\ker\varphi) \]
+	So, $Z = V(\ker\varphi)$ (as topological spaces). In fact, as locally ringed spaces, $Z \cong \Spec(A/\ker\varphi)$, since the canonical map $\Spec(A/\ker\varphi) \to \Spec A = Y$ has image $Z$ and the two agree on principal open subsets. Hence $Z$ is a scheme. \\
+	
+	Part d \\
+	
+	Part e
+\end{proof}

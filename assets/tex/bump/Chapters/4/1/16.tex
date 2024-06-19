@@ -1,0 +1,31 @@
+\mtexe{4.1.16}
+\begin{proof}
+	It suffices to show the generation rules are the same. Indeed, for any $v \in K$:
+	\[ B(v,v) = \frac{1}{2}\Tr(v\bar{v}) = \frac{1}{2}(2N(v)) = N(v) \]
+	So,
+	\[ \left(\omega_1\left(\twomat{1}{x}{}{1}\right)(\Phi)\right)(v) = \psi(xB(v,v))\Phi(v) = \psi(xN(v))\Phi(v) = \left(\omega\left(\twomat{1}{x}{}{1}\right)(\Phi)\right)(v) \]
+	Similarly,
+	\[ \left(\omega_1\left(\twomat{a}{}{}{a^{-1}}\right)(\Phi)\right)(v) = \chi(a)^2\Phi(av) = \Phi(av) = \left(\omega\left(\twomat{a}{}{}{a^{-1}}\right)(\Phi)\right)(v) \]
+	and
+	\[ \left(\omega_1\left(\twomat{}{1}{-1}{}\right)(\Phi)\right)(v) = \epsilon q^{-2/2}\sum_{u \in K} \Phi(u)\psi(2B(u,v)) = \epsilon q^{-1}\sum_{u \in K} \Phi(u)\psi(\Tr(u\bar{v})) = \left(\omega\left(\twomat{}{1}{-1}{}\right)(\Phi)\right)(v) \]
+	which completes the argument so long as the constants $\epsilon$ are the same. In the split case, we have
+	\begin{align*}
+	\epsilon
+		&= \frac{1}{q}\sum_{v \in K} \psi(B(v,v)) \\
+		&= \frac{1}{q}\sum_{a,b \in F} \psi(ab) \\
+		&= \frac{1}{q}\left(q + \sum_{a \in F^\times} \sum_{b \in F} \psi(ab)\right)
+		&= 1 + \frac{1}{q}\sum_{a \in F^\times} \sum_{c \in F} \psi(c) \\
+		&= 1
+	\end{align*}
+	since the sum of $\psi$ over all of $F$ is zero. This is as we expected. In the anisotropic case,
+	\begin{align*}
+	\epsilon
+		&= \frac{1}{q}\sum_{v \in K} \psi(B(v,v)) \\
+		&= \frac{1}{q}\left(\psi(0) + \sum_{v \in K^\times} \psi(N(v))\right) \\
+		&= \frac{1}{q}\left(1+\sum_{y \in F^\times} \psi(y)(q+1)\right) \\
+		&= \frac{1}{q}\left(1+(q+1)\left(\sum_{y \in F} \psi(y) - \psi(0)\right)\right) \\
+		&= \frac{1}{q}(1+(q+1)(0-1)) \\
+		&= -1
+	\end{align*}
+	again, as expected. So, we're done.
+\end{proof}

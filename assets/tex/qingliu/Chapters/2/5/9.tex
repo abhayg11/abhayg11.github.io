@@ -1,0 +1,6 @@
+\mtexe{2.5.9} 
+\begin{proof}
+	Let $x \in X(k)$. To show $\{x\}$ is closed, it suffices to show it is closed in any affine chart $\Spec A$ containing $x$. Suppose instead that it is not, so that for some $A$, $x$ is a non-maximal prime. Then $k = k(x) = \Frac(A/x)$, but $A/x$ is a domain that is not a field, so it is at least 1-dimensional, making $\Frac(A/x)$ have transcendence degree at least 1 over $k$. This is a contradiction, so we must have that $\{x\}$ is closed. More generally, we've shown that if $k(x)$ is algebraic over $k$, then $x$ is closed in $X$.
+	
+	For $X$ an algebraic variety, we have the converse. Indeed, if $x \in X$ is closed, then picking an affine chart, we get that $x$ is a maximal ideal of a finitely generated $k$-algebra $A$. But then $k(x) = A/x$ is a field extension of $k$ that is finitely generated as a $k$-algebra, and so is a finite extension by Zariski's lemma. In particular, $k(x)$ is algebraic over $k$.
+\end{proof}

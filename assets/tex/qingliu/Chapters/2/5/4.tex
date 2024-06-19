@@ -1,0 +1,12 @@
+\mtexe{2.5.4} 
+\begin{proof}
+	The claim is obvious for $r=1$, since it says that if $I \not\subseteq \frp$, then $I \not\subseteq \frp$.
+	
+	Now, suppose the claim is known for $r-1$ and $I \not\subseteq \frp_i$ for $i=1,\ldots,r$. If $\frp_r \supseteq \frp_i$ for some $i < r$, then $\bigcup_{j \neq i} \frp_j = \bigcup_j \frp_j$. But then the induction hypothesis gives $I \not\subseteq \bigcup_{j \neq i} \frp_j$ completing the proof.
+	
+	Otherwise, $\frp_r$ doesn't contain any other $\frp_i$. So, we can choose elements $y_1,\ldots,y_{r-1}$ with $y_i \in \frp_i \setminus \frp_r$. Also choose $z \in I \setminus \frp_r$. Then, let
+	\[ y = z \cdot y_1 \cdots y_{r-1} \]
+	Since $\frp_r$ is prime and none of the multiplicands are in $\frp_r$, we get $y \notin \frp_r$. But also $y \in I\frp_1 \cdots frp_{r-1}$ by construction as suggested. By the induction hypothesis, $I \not\subseteq \bigcup_{i < r} \frp_i$, so we can choose $x \in I \setminus \left(\bigcup_{i < r} \frp_i\right)$ also as suggested.
+	
+	Finally, we have that $x,x+y \in I$, so we would be done if at least one of these is not in $\bigcup_i \frp_i$. Suppose $x \in \bigcup_i \frp_i$. Then by construction, $x \not \frp_1,\ldots,\frp_{r-1}$, so we get $x \in \frp_r$. But then $x+y \in \frp_r \implies y = (x+y)-x \in \frp_r$, which we know is not true. So $x+y \notin \frp_r$. Further, for $i < r$, we have $x+y \not \frp_i$ for a similar reason: if it were, then $x = (x+y)-y \in \frp_i$ as well, which it isn't. So, $x+y$ isn't in any $\frp_i$ as desired.
+\end{proof}

@@ -1,0 +1,44 @@
+\mtexe{4.1.14}
+\begin{proof}
+	For $a \in F$, define
+	\[ G(a) = \sum_{x \in F} \psi(ax^2) \]
+	and write $G = G(1)$. We can sum over quadratic residues instead:
+	\[ G(a) = \sum_{y \in F} |\{ x \in F : x^2 = y \}|\psi(ay) = \sum_{y \in F} (1+\chi(y))\psi(ay) \]
+	Let $u = \sum_{y \in F} \psi(y)$ and note that since $\psi$ is nondegenerate, there is some $b \in F$ with $\psi(b) \neq 1$. Then,
+	\[ u\psi(b) = \psi(b)\sum_{y \in F} \psi(y) = \sum_{y \in F} \psi(y+b) = \sum_{z \in F} \psi(z) = u \]
+	since adding $b$ induces a bijection $F \to F$. So $u = 0$. But if $a \in F^\times$, then
+	\[ \sum_{y \in F} \psi(ay) = \sum_{z \in F} \psi(z) = u = 0 \]
+	since multiplication by $a$ is a bijection. Hence, we get
+	\[ G(a) = \sum_{y \in F} \chi(y)\psi(ay) = \sum_{z \in F} \chi(z/a)\psi(z) = \sum_{z \in F} \chi(az)\psi(z) = \chi(a)\sum_{z \in F} \chi(z)\psi(z) = \chi(a)G(1) \]
+	So, we only need to consider $G$ henceforth. Since $\psi(x)^p = \psi(px) = \psi(0) = 1$, the image of $\psi$ is a root of unity. Further, $\psi(-x) = \psi(x)^{-1} = \overline{\psi(x)}$. Finally $\chi$ is real-valued, so
+	\[ \overline{G} = \sum_{y \in F} \chi(y)\psi(-y) = \sum_{z \in F} \chi(-z)\psi(z) = \chi(-1)\sum_{z \in F} \chi(z)\psi(z) = \chi(-1)G \]
+	We can also use these facts to compute the magnitude:
+	\begin{align*}
+	|G|^2
+		&= G\overline{G} \\
+		&= \sum_{x,y \in F} \chi(xy)\psi(x-y) \\
+		&= \sum_{x,y \in F^\times} \chi(xy)\psi(x-y) \\
+		&= \sum_{x,z \in F^\times} \chi(x^2z)\psi(x-xz) \\
+		&= \sum_{x \in F^\times} \chi(1)\psi(0) + \sum_{z \neq 0,1} \chi(z)\sum_{x \in F^\times} \psi(x(1-z)) \\
+		&= (q-1) + \sum_{z \neq 0,1} \chi(z)(u-\psi(0)) \\
+		&= q - 1 - \sum_{z \neq 0,1} \chi(z) \\
+		&= q - 1 - (0-\chi(1)) \\
+		&= q
+	\end{align*}
+	So, we have $G = \epsilon_0\sqrt{q}$ for some complex number $\epsilon_0$ of magnitude 1. But then $\epsilon_0^{-1}\sqrt{q} = \overline{G} = \chi(-1)G = \chi(-1)\epsilon_0\sqrt{q}$ and so $\epsilon_0^2 = 1/\chi(-1) = \chi(-1)$ and $\epsilon_0^4 = \chi(1) = 1$. So $\epsilon_0$ is a fourth root of unity with square $\chi(-1)$ as claimed. \\
+	
+	As suggested, fix an orthogonal basis $v_1,\ldots,v_n$ for $V$ over $F$. Then,
+	\begin{align*}
+	\sum_{v \in V} \psi(aB(v,v))
+		&= \sum_{a_1 \in F} \cdots \sum_{a_n \in F} \psi(aB(a_1v_1+\cdots+a_nv_n,a_1v_1+\cdots+a_nv_n)) \\
+		&= \sum_{a_1 \in F} \cdots \sum_{a_n \in F} \psi\left(a\sum_{i,j=1}^n a_ia_jB(v_i,v_j)\right) \\
+		&= \sum_{a_1 \in F} \cdots \sum_{a_n \in F} \psi\left(a\sum_{i=1}^n a_i^2B(v_i,v_i)\right) \\
+		&= \sum_{a_1 \in F} \cdots \sum_{a_n \in F} \prod_{i=1}^n \psi(aa_i^2B(v_i,v_i)) \\
+		&= \prod_{i=1}^n \sum_{a_i \in F} \psi(aa_i^2B(v_i,v_i)) \\
+		&= \prod_{i=1}^n \chi(aB(v_i,v_i))\epsilon_0\sqrt{q} \\
+		&= \chi(a^n)\chi(B(v_1,v_1) \cdots B(v_n,v_n))\epsilon_0^nq^{n/2}
+	\end{align*}
+	And so the claim is (kinda?) shown for $\epsilon = \chi(B(v_1,v_1) \cdots B(v_n,v_n))\epsilon_0^n$. Indeed,
+	\[ \epsilon^2 = (\epsilon_0^2)^n = \chi(-1)^n \]
+	as claimed, which also shows that $\epsilon$ is a fourth root of unity.
+\end{proof}

@@ -1,0 +1,30 @@
+\mtexe{7.4}
+\begin{proof}
+	If either $2$ or $17$ is a quadratic residue mod $p$, then we are done. Otherwise, both are nonresidues, in which case $2 \cdot 17 = 34$ is a quadratic residue, and we're still done. \\
+	
+	We have
+	\[ f(x) = 5x^3-7x^2+3x+6 \equiv 5(x^3+2x+4) \equiv 5(x-1)(x^2+x+3) \pmod{7} \]
+	So, we get a similar factorization in $\ZZ_7[x]$ by Hensel; in particular it has a root $\alpha \in \ZZ_7$ congruent to $1 \pmod{7}$. So $7 \mid \alpha-1$ and $|\alpha-1|_7 \leq 1/7 < 1$.
+	
+	Now, write $\alpha = a_0 + 7a_1 + 7^2a_2 + \cdots$ and note
+	\[ 0 = f(\alpha) = 5(a_0+7a_1+\cdots)^3-7(a_0+7a_1+\cdots)^2+3(a_0+7a_1+\cdots)+6 \]
+	Considering this modulo 7 gave us $a_0 = 1$. Now, considering it $\pmod{7^2}$ gives:
+	\begin{align*}
+		& 0 \equiv 5(1+7(3a_1))-7+3(1+7a_1)+6 = 6(21a_1)+7 \pmod{7^2} \\
+		&\implies 0 \equiv 4a_1+1 \pmod{7} \\
+		&\implies 5 \equiv a_1 \pmod{7}
+	\end{align*}
+	So, we can take $a_1 = -2$, giving $\alpha = -13 + 7^2a_2 + \cdots$. Considering the first equation $\pmod{7^3}$ gives:
+	\begin{align*}
+		& 0 \equiv 5(-13+7^2a_2)^3-7(-13+7^2a_2)^2+3(-13+7^2a_2)+6 \equiv 147+7^2 \cdot 4a_2 \pmod{7^3} \\
+		&\implies 3a_2 \equiv 3 \pmod{7} \\
+		&\implies a_2 \equiv 1 \pmod{7}
+	\end{align*}
+	and so we can take $a_2 = 1$, giving $\alpha = 36 + 7^3a_3 + \cdots$. Finally, $\pmod{7^4}$ gives:
+	\begin{align*}
+		& 0 \equiv 5(36+7^3a_3)^3-7(36+7^3a_3)^2+3(36+7^3a_3)+6 \equiv 1029+7^3 \cdot 4a_3 \pmod{7^4} \\
+		&\implies 3a_3 \equiv 3 \pmod{7} \\
+		&\implies a_3 \equiv 1 \pmod{7}
+	\end{align*}
+	So at last we may take $a_3 = 1$, giving $\alpha = 379 + 7^4a_4 + \cdots$. Hence $|\alpha-379| \leq 7^{-4}$ and we're done.
+\end{proof}

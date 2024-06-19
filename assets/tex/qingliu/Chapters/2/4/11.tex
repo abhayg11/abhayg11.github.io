@@ -1,0 +1,20 @@
+\mtexe{2.4.11} 
+\begin{proof}
+	(ii) $\implies$ (iii). Let $U \subseteq f^{-1}(V)$, and consider the maps:
+	\[ \scO_Y(V) \to \scO_X(f^{-1}(V)) \to \scO_X(U) \]
+	The first map is injective by assumption, and so it suffices to show the second is injective. But the injection $\scO_X(f^{-1}(V)) \to \scO_{X,\xi_X}$ factors through this map, so we're done.
+	
+	(iii) $\implies$ (iv). Let $V = \Spec A \subseteq Y$ be an open affine. Then $f^{-1}(V)$ is open in $X$ and so necessarily contains $\xi_X$. Choosing an open affine in $X$ containing $\xi_X$, we can restrict to a principal open set contained in $f^{-1}(V)$, giving us $U = \Spec B \subseteq f^{-1}(V)$. Under these identifications, the injection $\scO_Y(V) \to \scO_X(U)$ is a map $A \to B$ and the generic points are the zero ideals of $A,B$. Since the map injects, the preimage of $0B$ is $0A$, so $f(\xi_X) = \xi_Y$.
+	
+	(iv) $\implies$ (v). Trivial.
+	
+	(v) $\implies$ (i). This is essentially trivial: $\overline{f(X)} \supseteq \overline{\xi_Y} = Y$.
+	
+	(i) $\implies$ (iv). Suppose $f$ is dominant. Then
+	\[ Y = \overline{f(X)} = \overline{f(\overline{\{\xi_X\}})} = \overline{f(\{\xi_X\})} = \overline{\{f(\xi_X)\}} \]
+	so $f(\xi_X)$ is a generic point of $Y$, but $\xi_Y$ is the unique one.
+	
+	(iv) $\implies$ (ii). Suppose $f^\#$ is not injective, whence it is not injective on stalks, so there is some $x \in X$ such that the map $\scO_{Y,f(x)} \to \scO_{X,x}$ is not injective. We have the commutative diagram
+	\[ \begin{tikzcd} \scO_{Y,f(x)} \arrow[r] \arrow[d] & \scO_{X,x} \arrow[d] \\ \scO_{Y,\xi_Y} \arrow[r] & \scO_{X,\xi_X} \end{tikzcd} \]
+	and since the vertical arrows are injections, the bottom arrow must also fail to be injective. But this is a map of fields, so this is impossible.
+\end{proof}

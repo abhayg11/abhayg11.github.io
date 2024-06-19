@@ -1,0 +1,10 @@
+\mtexe{2.4.9} 
+\begin{proof}
+	Let $x \in X$ be a point with $\scO_{X,x}$ is reduced. Pick an affine neighborhood $\Spec A$ of $x$, and note that since $X$ is Noetherian, so is $A$. Think now of $x$ as a prime ideal of $A$. Then $\scO_{X,x} = A_x$, the localization of $A$ at the prime $x$. Since this is a reduced ring, we conclude that $0A_x = \scN(A_x) = \scN(A)_x$, where $\scN$ denotes the nilradical. Since $A$ is Noetherian, we can write $\scN(A) = (f_1,\ldots,f_n)$, and the fact that it localizes to zero means that there exist $a_1,\ldots,a_n \in A \setminus x$ with $a_if_i = 0$. Define
+	\[ U = \left(\bigcap_{i=1}^n D(a_i)\right) \]
+	This is the finite intersection of open sets, and so is open in $\Spec A$, and so also open in $X$. I claim $\scO_{X,y}$ is reduced for each $y \in U$, which would complete the argument for reducedness. Indeed, let $y \in U$ and note that $\scO_{X,y} = A_y$. Such an ideal $y$ then satisfies $a_i \notin y$ for each $i$, and so $f_i/1 = a_if_i/a_i = 0$ in $A_y$. Thus, $\scN(A_y) = \scN(A)_y = (f_1,\ldots,f_n)_y = 0A_y$, showing that $A_y$ is reduced.
+	
+	Now, suppose $x \in X$ is such that $\scO_{X,x}$ is integral. In other words, $\scO_{X,x}$ is reduced and $x$ is contained in a unique irreducible component $Z$. First, let $U$ be an open neighborhood of $x$ such that $\scO_{X,y}$ is reduced for each $y \in U$ as above. Then, note that since $X$ is Noetherian, it has finitely many irreducible components $Z = Z_0,Z_1,\ldots,Z_n$, and we can define:
+	\[ V = U \setminus \left(\bigcup_{i=1}^n Z_i\right) \]
+	Then $x \in V$ since $x \notin Z_i$ for $i \neq 0$, and $V$ is open since it is $U$ minus the finite union of closed sets. Each $y \in V$ also then lies only on $Z$, and so $\scO_{X,y}$ is integral as desired.
+\end{proof}

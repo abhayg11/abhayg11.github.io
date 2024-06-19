@@ -1,0 +1,6 @@
+\mtexe{2.4.2} 
+\begin{proof}
+	Suppose $y$ specializes to $x$. Then, choose an open affine $U = \Spec A$ containing $x$. We must have $y \in U$ as well, else we would have $x \in \overline{\{y\}} \subseteq X \setminus U$. Then we recall that the map $\Spec\scO_{X,x} \to X$ is given by choosing any open affine containing $x$ and factoring the localization map. In particular, for this $U$, we get that the image of $\Spec\scO_{X,x} \to X$ contains the image of the morphism induced by the localization map $A \to A_x$, which is all primes of $A$ contained in $x$. But the statement that $x$ is a specialization of $y$ is precisely that $x \supseteq y$ as primes of $A$, and so $y$ is in the image.
+	
+	Conversely, suppose $y$ is in the image of $\Spec\scO_{X,x} \to X$. Then, if $U = \Spec A$ is any open affine containing $x$, we know that the map factors through the open immersion $U \to X$, and so $y \in U$. But then the map is given by localization of $A$ at $x$, and so we must have $y \subseteq x$ as ideals of $U$, whence $y$ specializes to $x$. 
+\end{proof}

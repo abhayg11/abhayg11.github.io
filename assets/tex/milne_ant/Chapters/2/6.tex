@@ -1,0 +1,16 @@
+\mtexe{2.6}
+\begin{proof}
+	Note that $(1+\sqrt{7})(1-\sqrt{7}) = -6$ and $(1+\sqrt{10})(1-\sqrt{10}) = -9$ are both divisible by 3. Hence $3 \mid \alpha_i\alpha_j$ for $i \neq j$ since each product contains at least one of the above products.
+	
+	On the other hand, the $\alpha_1,\ldots,\alpha_4$ is a full set of conjugates, so $T(\alpha_i^n) = \sum_{j=1}^4 \alpha_j^n$. But modulo $3$, this is the same as $(\sum_{j=1}^4 \alpha_j)^n$, since each of the cross terms is zero mod 3 as we've just shown. Explicitly, this is:
+	\[ T(\alpha_i^n) \equiv (\alpha_1+\cdots+\alpha_4)^n = 4^n \equiv 1^n = 1 \pmod{3\scO_K} \]
+	In other words, $T(\alpha_i^n)-1 = 3r$ for some $r \in \scO_K$. But then $r$ is integral over $\ZZ$ and is rational since $T(\alpha_i^n)-1 \in \ZZ$, so $r \in \ZZ$. In other words, $T(\alpha_i^n) \equiv 1 \pmod{3\ZZ}$. But if $\alpha_i^n = 3\beta$ for some $\beta \in \scO_K$, then $T(\alpha_i^n) = T(3\beta) = 3T(\beta) \in 3\ZZ$, contrary to what we've shown. So no power of $\alpha_i$ is a multiple of 3. \\
+	
+	Now, we have
+	\[ 3 \mid g(\alpha) \text{ in }\ZZ[\alpha] \iff g(\alpha) \in 3\ZZ[\alpha] \iff \overline{g(\alpha)} \in \ZZ[\alpha]/(3) = \ZZ[x]/(3,f(x)) = \FF_3[x]/(\bar{f}(x)) \iff \bar{f} \mid \bar{g} \text{ in } \FF_3[x] \]
+	as claimed. \\
+	
+	The first part of the claim is simply restating the divisibility results above. Since $\FF_3[x]$ is a UFD (in fact a PID), we conclude that $\bar{f}$ doesn't divide $\bar{f_i^n}$ for all $n$, so $\bar{f}$ has an irreducible factor that doesn't divide $\bar{f_i}$. But since $\bar{f}$ divides $\bar{f_i}\cdot\bar{f_j}$, this irreducible factor must appear in the factorization of $\bar{f_j}$ for each $j \neq i$ as claimed. \\
+	
+	As noted, $\bar{f}$ has at least 4 distinct irreducible factors now. It is also the reduction of the minimal polynomial of $\alpha$, so it has degree at most 4 since $[\QQ(\sqrt{7},\sqrt{10}):\QQ] = 4$. So, each factor must be linear. But $\FF_3[x]$ only has 3 distinct linear monic polynomials: $x,x-1,x-2$. This is our contradiction.
+\end{proof}

@@ -1,0 +1,12 @@
+\mtexe{2.3.5}
+\begin{proof}
+	Let $A = \scO_Y(Y)$ be the global sections on $Y$ and let $X = \Spec A$. We will show that $Y \cong X$, and hence is affine as claimed.
+	
+	Notice that $\scO_X(X) = A$. In particular, we have the identity ring homomorphism $i : \scO_Y(Y) \to \scO_X(X)$, and this gives rise to a morphism $f : X \to Y$ of schemes with $\rho(f) = i$ since $\rho$ is surjective by assumption. Similarly, since $X$ is affine, we can apply Proposition 3.25 directly (with the roles of $X$ and $Y$ reversed). That is, for the identity map $j : \scO_X(X) \to \scO_Y(Y)$, we get a morphism $g : Y \to X$ with $\rho(g) = j$ since $\rho$ is also surjective in this case. Now, we use functoriality of $\rho$. Namely, we have:
+	\[ \rho(g \circ f) = \rho(f) \circ \rho(g) = i \circ j = \id_{\scO_X(X)} = \rho(\id_X) \]
+	But since $X$ is affine, $\rho$ is also injective, so we get that $g \circ f = \id_X$. Similarly, we have
+	\[ \rho(f \circ g) = \rho(g) \circ \rho(f) = j \circ i = \id_{\scO_Y(Y)} = \rho(\id_Y) \]
+	However, we do not automatically know that $\rho$ is injective in this case: the assumption only gives us this for maps $X \to Y$ with $X$ affine, while we have a map $Y \to Y$ and are trying to show $Y$ is affine. So, instead, let us work locally. Namely, let $U \subseteq Y$ be an affine chart, and let $\iota : U \hookrightarrow Y$ be the inclusion. Then,
+	\[ \rho(f \circ g \circ \iota) = \rho(\iota) \circ \rho(g) \circ \rho(f) = \rho(\iota) \circ \id_{\scO_Y(Y)} = \rho(\iota) \]
+	But now, we do have injectivity, since $U$ is affine. I.e. we get $\iota = f \circ g \circ \iota$. Written alternatively, we have that $f \circ g$ and the identity map on $Y$ agree when restricted to any affine chart $U$. Since these form a cover, we get that these global sections are equal everywhere, i.e. $f \circ g = \id_Y$. Thus, we have shown that $f,g$ furnish an isomorphism between $X$ and $Y$ as desired.
+\end{proof}

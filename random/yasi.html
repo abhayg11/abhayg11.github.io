@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yasi's Tool</title>
+<script>
+window.addEventListener('load', function() {
+	document.getElementById('myFiles').addEventListener('change', function() {
+		document.getElementById("downloadLink").innerHTML = "";
+		if (this.files.length > 0) {
+			var w = 600;
+			var h = 600;
+			var sizes = document.getElementsByName("size");
+			for (let i = 0; i < sizes.length; i++) {
+				if (sizes[i].checked) {
+					var x = sizes[i].value.split(" ");
+					w = parseInt(x[0]);
+					h = parseInt(x[1]);
+				}
+			}
+			if (w==0) {
+				w = parseFloat(document.getElementById("custom_width").value)*300;
+				h = parseFloat(document.getElementById("custom_height").value)*300;
+			}
+			var rows = Math.floor(3180/(h+3));
+			var cols = Math.floor(2430/(w+3));
+			
+			const urls = []
+			for (let i = 0; i < this.files.length; i++) {
+				urls.push(URL.createObjectURL(this.files[i]));
+			}
+			var can = document.getElementById("myCanvas");
+			var ctx = can.getContext("2d");
+			ctx.clearRect(0,0,can.width,can.height);
+			for (let r = 0; r < rows; r++) {
+				for (let c = 0; c < cols; c++) {
+					var img = new Image();
+					img.onload = function(){
+						ctx.drawImage(this, 75+(w+3)*c, 75+(h+3)*r, w, h);
+					};
+					img.src = urls[(cols*r+c) % urls.length];
+				}
+			}
+		} else {
+			var can = document.getElementById("myCanvas");
+			var ctx = can.getContext("2d");
+			ctx.clearRect(0,0,can.width,can.height);
+		}
+	});
+});
+
+function makeLink() {
+	var can = document.getElementById("myCanvas");
+	var atag = document.getElementById("downloadLink");
+	atag.innerHTML = "Download link";
+	atag.setAttribute("href", can.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+	atag.setAttribute("download", "download.png");
+}
+</script>
+</head>
+<body>
+Try the maximization tool <a href="yasi2.html">here</a>!
+<hr>
+<h1>Fixed size:</h1>
+<input type="file" id="myFiles" multiple="true"><br>
+Image size:<br>
+<input type="radio" name="size" id="2x2" value="600 600" checked><label for="2x2">2"&times;2"</label>
+<input type="radio" name="size" id="25x25" value="750 750"><label for="25x25">2.5"&times;2.5"</label>
+<input type="radio" name="size" id="4x4" value="1200 1200"><label for="4x4">4"&times;4"</label>
+<input type="radio" name="size" id="2x15" value="600 450"><label for="2x15">2"&times;1.5"</label>
+<input type="radio" name="size" id="25x1" value="750 300"><label for="25x1">2.5"&times;1"</label>
+
+<br>
+<input type="radio" name="size" id="custom" value="0 0"><label for="custom">Custom:</label> Width (inches): <input type="text" name="custom_width" id="custom_width" value="1" size=2> Height (inches): <input type="text" name="custom_height" id="custom_height" value="1" size=2>
+<br>
+<button type="button" onclick="makeLink()">Generate download link</button> <a id="downloadLink"></a><br><br>
+<div><canvas id="myCanvas" width=2550 height=3300>No canvas here</canvas></div>
+</body>
+</html>

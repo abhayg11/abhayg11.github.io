@@ -1,0 +1,6 @@
+\mtexe{2.4.7} 
+\begin{proof}
+	Let $x \neq y$ be two points of a scheme $X$. Let $U = \Spec A$ be an open affine neighborhood of $x$. If $y \notin U$, then we're done as we've found an open set containing one point and not the other.
+	
+	Otherwise $y \in U$, so $x,y$ are distinct prime ideals in $A$. As sets, we therefore have either $x \not\subseteq y$ or $y \not\subseteq x$. In the first case, $y \notin V(x)$ so $y \in U \setminus V(x)$ while $x \notin U \setminus V(x)$ giving an open set containing $y$ but not $x$. In the second, $x \in U \setminus V(y)$ while $y \notin U \setminus V(y)$, completing the proof.
+\end{proof}

@@ -1,0 +1,10 @@
+\mtexe{2.5.7} 
+\begin{proof}
+	Note first that dimension is a topological property, so we may assume that all schemes are reduced. Indeed, replacing a scheme with its reduced scheme structure does not change the topology at all, and hence preserves the dimension.
+	
+	Note also that it suffices to show the claim when $Y$ is an affine variety. Indeed, we can cover $Y$ by affine varieties, and the preimage of this gives an open cover of $X$ by algebraic varieties. Showing the claim on each of these restricted maps then gives the result overall since the dimension of $Y$ can be computed locally on this cover and the dimension of $X$ can be computed locally on the preimage cover. So, write $Y = \Spec A$ for $A$ a finitely generated $k$-algebra.
+	
+	Let $S$ denote the set of generic points of irreducible components of $X$. Since $X$ is noetherian, this is a finite set, and purely topologically, we have:
+	\[ \bigcup_{x \in S} V(f(x)) = \bigcup_{x \in S} \overline{f(x)} = \overline{f(S)} = \overline{f(\overline{S})} = \overline{f(X)} = Y \]
+	So, in particular, any minimal prime of $A$ is the image of some generic point of $X$. Choose such a minimal prime, corresponding to a generic point $\xi_Y \in Y$ and a preimage $\xi_X \in X$ also generic. On these irreducible components, $f$ is dominant, so we have an injective map of sheafs, which induces an injection $\scO_{Y,\xi_Y} \to \scO_{X,\xi_X}$. But (after passing to the reduced subscheme structure if necessary) this means that the transcendence degree of the latter is at least as much as the transcendence degree of the former over $k$. So, the dimension of this irreducible component of $Y$ is at most the dimension of this irreducible component of $X$, which is itself at most the dimension of $X$. Taking the supremum over all $\xi_Y \in Y$ gives the result.
+\end{proof}

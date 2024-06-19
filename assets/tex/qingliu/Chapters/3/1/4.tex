@@ -1,0 +1,12 @@
+\mtexe{3.1.4}
+\begin{proof}
+	Note that we have the map $f : X \to Y$ and the inclusion $i : V \to Y$. Construct the fiber product $X \times_Y V$ of these maps, and let $p : X \times_Y V \to X$ be the first projection. I claim that $p$ induces an isomorphism onto its image, $f^{-1}(V)$. Showing this would complete the proof, since then $f^{-1}(V) \cong X \times_Y V$, which is the fiber product of affine schemes over an affine scheme, and is thus affine (given by the tensor product).
+	
+	Let $U = f^{-1}(V)$. First, the fact that the image of $p$ lies in $U$ is obvious. Indeed, for $z \in X \times_Y V$, $f(p(z)) = i(q(z)) \in i(V) = V$, where $q$ is the other projection. So $p(z) \in U$.
+	
+	We'd like to construct the reverse map. For this, note that we have the inclusion map $\iota : U \to X$ and the restriction $f|_U : U \to V$, and clearly $i \circ (f|_U) = f \circ \iota$. So, by the universal property of the fiber product, we get a map $g : U \to X \times_Y V$ such that $\iota = p \circ g$ and $f|_U = q \circ g$. Note that this first fact gives that $p \circ g$ is the identity on $U$. For the other direction, note that $\id_{X \times_Y V}$ is the unique map $h$ from $X \times_Y V$ to itself satisfying $p = p \circ h$ and $q = q \circ h$. But
+	\[ p \circ (g \circ p) = (p \circ g) \circ p = p \]
+	and
+	\[ q \circ (g \circ p) = (q \circ g) \circ p = f|_U \circ p = i|_V \circ q = \id_V \circ q = q \]
+	So, $g \circ p = \id_{X \times_Y V}$ and we've demonstrated the required isomorphism.
+\end{proof}

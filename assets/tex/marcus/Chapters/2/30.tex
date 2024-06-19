@@ -1,0 +1,27 @@
+\begin{exe}{2.30} Let $K = \QQ[\sqrt{7},\sqrt{10}]$ and fix any $\alpha \in \AA \cap K$. We will show that $\AA \cap K \neq \ZZ[\alpha]$. Let $f$ denote the monic irreducible polynomial for $\alpha$ over $\ZZ$ and for each $g \in \ZZ[x]$ let $\overline{g}$ denote the polynomial in $\ZZ_3[x]$ obtained by reducing coefficients $\pmod{3}$.
+\begin{enumerate}
+\item Show that $g(\alpha)$ is divisible by 3 in $\ZZ[\alpha]$ iff $\overline{g}$ is divisible by $\overline{f}$ in $\ZZ_3[x]$.
+\item Now suppose $\ZZ \cap K = \ZZ[\alpha]$. Consider the four algebraic integers
+\begin{align*}
+\alpha_1 &= (1+\sqrt{7})(1+\sqrt{10}) \\
+\alpha_2 &= (1+\sqrt{7})(1-\sqrt{10}) \\
+\alpha_3 &= (1-\sqrt{7})(1+\sqrt{10}) \\
+\alpha_4 &= (1-\sqrt{7})(1-\sqrt{10}) \\
+\end{align*}
+Show that all products $\alpha_i\alpha_j$ ($i \neq j$) are divisible by 3 in $\ZZ[\alpha]$, but that 3 does not divide any power of any $\alpha_i$.
+\item Let $\alpha_i = f_i(\alpha)$, $f_i \in \ZZ[x]$ for each $i=1,2,3,4$. Show that $\overline{f} \mid \overline{f_i}\overline{f_j}$ ($i \neq j$) in $\ZZ_3[x]$ but $\overline{f} \nmid \overline{f_i}^n$. Conclude that for each $i$ , $\overline{f}$ has an irreducible factor (over $\ZZ_3$) which does not divide $\overline{f_i}$ but which does divide all $\overline{f_j}$ , $j \neq i$.
+\item This shows that $\overline{f}$ has at least four distinct irreducible factors over $\ZZ_3$. On the other hand $f$ has degree at most 4. Why is that a contradiction?
+\end{enumerate} \end{exe} 
+\begin{proof} 
+    We show the first claim. Suppose $g(\alpha)$ is divisible by 3. Then there is some $\beta \in \ZZ[\alpha]$ with $g(\alpha) = 3\beta$, and $\beta = h(\alpha)$ for some $h \in \ZZ[x]$. Then $\alpha$ is a root of $g(x)-3h(x)$, so $f \mid g-3h$. Reducing mod 3 gives $\overline{f} \mid \overline{g}$ as claimed. Each of these steps is reversible: if $\overline{f} \mid \overline{g}$, then $f \mid g+3h$ for some $h$, whence $g(\alpha)+3h(\alpha) = 0$, i.e. $g(\alpha) = -3h(\alpha)$ is a multiple of 3. \\
+
+    For the second, note that $(1+\sqrt{7})(1-\sqrt{7}) = -6$ and $(1+\sqrt{10})(1-\sqrt{10}) = -9$ are both multiples of 3, so each product $\alpha_i\alpha_j$ is a multiple of 3 since each product consists of at least one of these pairs of terms. On the other hand, we do have that the $\alpha_i$ are a full set of conjugates, so the trace of $\alpha_i^n$ is
+    \[ \alpha_1^n+\alpha_2^n+\alpha_3^n+\alpha_4^n \]
+    On the other hand, we have
+    \[ 4^n = (\alpha_1+\alpha_2+\alpha_3+\alpha_4)^n = \alpha_1^n+\alpha_2^n+\alpha_3^n+\alpha_4^n + \cdots \]
+    where the excluded terms, from the binomial theorem, each include the product of two different terms. In other words, each term in the ``$\cdots$'' is a multiple of 3 in $\ZZ[\alpha]$, so we can write the trace as $1+3\beta$ for some $\beta \in \ZZ[\alpha]$. By unique representation of numbers in $\QQ(\alpha)$, we thus have that $\beta \in \ZZ$, since the trace is an integer. I.e. the trace is 1 mod 3 and therefore not a multiple of 3. So, $\alpha_i^n$ is not a multiple of 3 in $\ZZ[\alpha]$. \\
+
+    The next result is immediate by combining these two: for $\alpha_i = f_i(\alpha)$, we have that 3 divides $\alpha_i\alpha_j$, so $\overline{f}$ divides $\overline{f_i}\overline{f_j}$ in $\FF_3[x]$, and 3 does not divide $\alpha_i^n$, so $\overline{f}$ does not divide $\overline{f_i^n}$. Since $\FF_3[x]$ is a UFD (even a PID), we have that this latter statement implies that there is a prime $\pi_i$ that divides $\overline{f}$ but not $\overline{f_i}$. But then $\pi_i$ divides $\overline{f_i}\overline{f_j}$, so it divides $\overline{f_j}$ for all $j \neq i$. \\
+
+    Finally, we have that $\overline{f}$ is divisible by the four (distinct) primes $\pi_1,\ldots,\pi_4$ and hence their product. These cannot all be degree 1, since there are only three degree 1 monic polynomials in $\FF_3[x]$: $x, x+1, x+2$. So, at least one has degree 2, whence the product has degree at least $1+1+1+2 = 5$. But $f$ is the minimal polynomial of $\alpha$, and so has degree 4. This gives the contradiction. Thus the ring of integers is not monogenic.
+\end{proof}

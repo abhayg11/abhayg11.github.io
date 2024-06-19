@@ -1,0 +1,10 @@
+\mtexe{3.10}
+\begin{proof}
+	Let $R \subseteq S \subseteq T$ be number rings and let $U \subseteq T$ be prime. Let $Q = S \cap U$ and $P = R \cap Q$ be the corresponding primes lying under. Then $QT$ can be written as a product where one of the factors is $U^{e(U|Q)}$, and $PS$ can similarly be written as a product with one factor equal to $Q^{e(Q|P)}$. Substituting this in gives that $PT = (PS)T$ has a factor of $Q^{e(Q|P)}T = (QT)^{e(Q|P)}$, which has a factor of
+	\[ (U^{e(U|Q)})^{e(Q|P)} = U^{e(U|Q)e(Q|P)} \]
+	and no higher power, so $e(U|P) = e(U|Q)e(Q|P)$.
+	
+	Second, note that the inclusions $R \hookrightarrow S \hookrightarrow T$ composed with the quotient $T \to T/U$ induces ring homomorphisms:
+	\[ R/P \to S/Q \to T/U \]
+	These are nontrivial morphisms and each ring is a field, so they are all injections. I.e. this is a tower of field extensions and the inertial degree is the degree of the extension, so that $f(U|P) = [T/U : R/P] = [T/U : S/Q][S/Q : R/P] = f(U|Q)f(Q|P)$. So, indeed both $e,f$ are multiplicative.
+\end{proof}

@@ -1,0 +1,14 @@
+\mtexe{7.2}
+\begin{proof}
+	First, suppose $x \in D(a,r)$. Then, for $b \in D(a,r)$:
+	\[ |x-b| = |(x-a)+(a-b)| \leq \min\{|x-a|,|a-b|\} < r \]
+	so $x \in D(b,r)$. Conversely, for $x \in D(b,r)$:
+	\[ |x-a| = |(x-b)+(b-a)| \leq \min\{|x-b|,|b-a|\} < r \]
+	so $x \in D(a,r)$. I.e. $D(a,r) = D(b,r)$ for any $b \in D(a,r)$. More generally, if $D(a,r) \cap D(b,r')$ is nonempty for some $a,b \in K$ and $0 < r' \leq r$, then if $c \in D(a,r) \cap D(b,r')$, we have:
+	\[ D(b,r') = D(c,r') \subseteq D(c,r) = D(a,r) \]
+	and so the larger disk contains the smaller. \\
+	
+	It is a standard fact that if $\sum a_n$ converges, then $a_n \to 0$. So, now suppose that $a_n \to 0$. Let $\epsilon > 0$, and note that there is some $N$ such that $|a_n| < \epsilon$ for $n \geq N$. Then, if $N \leq n < m$, we have
+	\[ \left|\sum_{i=n}^m a_i\right| \leq \min\{|a_i| : i=n,\ldots,m\} < \epsilon \]
+	So, the series is Cauchy. Since $K$ is complete with respect to $|\cdot|$, we conclude that $\sum a_n$ converges.
+\end{proof}

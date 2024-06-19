@@ -1,0 +1,12 @@
+\mtexe{3.20}
+\begin{proof}
+	Let $f_i = f(Q_i|P)$, and write $B_i = \{ \beta_{i1},\ldots,\beta_{if_i}\}$. Let
+	\[ s = \sum_{i=1}^r \sum_{j=1}^{e_i} \sum_{k=1}^{f_i} c_{ijk}\alpha_{ij}\beta_{ik} \]
+	for some $c_{ijk} \in R$, and suppose $s \in P$. We'd like to show that each $c_{ijk} \in P$. Consider this equation mod $Q_i$. Then since $s \in P \subseteq PS \subseteq Q_i$:
+	\[ 0 \equiv s \equiv \sum_{k=1}^{f_i} c_{i1k}\alpha_{i1}\beta_{ik} = \alpha_{i1}\sum_{k=1}^{f_i} c_{i1k}\beta_{ik} \pmod{Q_i} \]
+	since $\alpha_{hj} \in Q_i$ for $h \neq i$ as well as for $h=i$ and $j>1$. But $\alpha_{i1} \neq 0$ since it isn't in $Q_i$, so the sum must be zero. But $\beta_{ik}$ is a basis for $S/Q_i$ over $R/P$ (as $k$ varies), so we conclude $c_{i1k} \in P$ for all $k$. Since $i$ was arbitrary, $c_{i1k} \in P$ for all $i,k$.
+	
+	Now, suppose we've shown $c_{irk} \in P$ for all $r$ less than some $j > 1$. Then we'll show $c_{ijk} \in P$ for all $i,k$. For this, consider $s$ modulo $Q_i^j$. Then, again $s \in P \subseteq PS \subseteq Q_i^{e_i} \subseteq Q_i^j$, so:
+	\[ 0 \equiv s \equiv \sum_{k=1}^{f_i} c_{ijk}\alpha_{ij}\beta_{ik} = \alpha_{ij}\sum_{k=1} c_{ijk}\beta_{ik} \pmod{Q_i^j} \]
+	Now, $\alpha_{ij} \notin Q_i^j$, so we must have that the sum is in $Q_i$. Again using the fact that $\beta_{ik}$ forms a basis gives $c_{ijk} \in P$ for all $i,k$. By induction $c_{ijk} \in P$ for all $i,j,k$, as claimed.
+\end{proof}

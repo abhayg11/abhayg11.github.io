@@ -1,0 +1,49 @@
+\mtexe{2.46} 
+\begin{proof} 
+    Since $f'(r) = 0$, we have $f'(x) = (x-r)g(x)$ for some $g \in \QQ[x]$. Since $r \in \ZZ$, $f'$ and $x-r$ are in $\ZZ[x]$, so by Gauss' Lemma, $g \in \ZZ[x]$ as well. Then, if $\alpha_i$ are the roots of $f$, then:
+    \begin{align*}
+    \disc(\alpha)
+        &= \pm N(f'(\alpha)) \\
+        &= \pm N((\alpha-r)g(\alpha)) \\
+        &= \pm N(\alpha-r)N(g(\alpha)) \\
+        &= \pm N(g(\alpha))\prod_i (\alpha_i-r) \\
+        &= \pm N(g(\alpha))f(r)
+    \end{align*}
+    Since $g$ has integer coefficients, $g(\alpha)$ is an algebraic integer, so it has integral norm. So, this shows $f(r) \mid \disc(\alpha)$ as claimed. \\
+
+    More generally, suppose $f'(r/s) = 0$ for $\gcd(r,s)=1$. Then we can write:
+    \[ f'(x) = (x-r/s)g(x) \]
+    for some $g \in \QQ[x]$. There is a rational number $a/b$ such that $ag/b$ is a primitive polynomial (integral polynomial with no common divisor of the coefficients). So, we get:
+    \[ asf'(x)/b = (sx-r)ag(x)/b \]
+    Then $sx-r$ and $ag/b$ are primitive, so by Gauss' Lemma, we get that $asf'/b$ is primitive. But $f' \in \ZZ[x]$, so $a$ divides all of the coefficients of $asf'/b$. Since it is primitive, this forces $a=1$.
+
+    Similarly, $s/\gcd(s,b)$ divides all of the coefficients of $sf'/b$, which, by primitivity, gives $s/\gcd(s,b) = 1$, i.e. $s = \gcd(s,b)$, so $s \mid b$. I.e., $b = su$ for some $u \in \ZZ$.
+    
+    So, $g/b \in \ZZ[x]$, and so does $ug/b$. That is, we are able to factorize
+    \[ f'(x) = (x-r/s)g(x) = (sx-r)g(x)/s = (sx-r)ug(x)/(su) = (sx-r)ug(x)/b \]
+    as a product of $(sx-r)$ and an integer polynomial. Rename $ug/b$ as $g$ in the sequel, so we have $f'(x) = (sx-r)g(x)$.
+
+    Now, we proceed in the same way as before:
+    \begin{align*}
+    \disc(\alpha)
+        &= \pm N(f'(\alpha)) \\
+        &= \pm N((s\alpha-r)g(\alpha)) \\
+        &= \pm N(g(\alpha))\prod_i (s\alpha_i-r) \\
+        &= \pm N(g(\alpha))s^nf(r/s)
+    \end{align*}
+    Since $s^nf(r/s)$ is an integer (the denominators clearly cancel), this gives $s^nf(r/s) \mid \disc(\alpha)$ in this case. \\
+
+    We have that $g(x)f'(x) = h(x)+f(x)k(x)$ for some polynomial $k \in \ZZ[x]$. Let $\alpha_1,\ldots,\alpha_n$ be the roots of $f$; let $a_1,\ldots,a_r$ be the roots of $g$; let $b_1,\ldots,b_s$ be the roots of $h$; let $G$ be the leading coefficient of $g$; and let $H$ be the leading coefficient of $h$. By assumption, $a_j,b_j \in \QQ$ for all $j$. Then,
+    \begin{align*}
+    \disc(\alpha)
+        &= (-1)^{(n^2-n)/2}N(f'(\alpha)) \\
+        &= (-1)^{(n^2-n)/2}\frac{N(h(\alpha)+f(\alpha)k(\alpha))}{N(g(\alpha))} \\
+        &= (-1)^{(n^2-n)/2}\frac{N(h(\alpha))}{N(g(\alpha))} \\
+        &= (-1)^{(n^2-n)/2}\frac{\prod_i h(\alpha_i)}{\prod_i g(\alpha_i)} \\
+        &= (-1)^{(n^2-n)/2}\frac{\prod_i H\prod_{j=1}^s (\alpha_i-b_j)}{\prod_i G\prod_{j=1}^r (\alpha_i-a_j)} \\
+        &= (-1)^{(n^2-n)/2}\frac{H^n\prod_{j=1}^s \prod_i (\alpha_i-b_j)}{G^n\prod_{j=1}^r \prod_i (\alpha_i-a_j)} \\
+        &= (-1)^{(n^2-n)/2}\frac{H^n\prod_{j=1}^s (-1)^nf(b_j)}{G^n\prod_{j=1}^r (-1)^nf(a_j)} \\
+        &= (-1)^{(n^2-n)/2 + n(s+r)}\frac{H^n\prod_{j=1}^s f(b_j)}{G^n\prod_{j=1}^r f(a_j)}
+    \end{align*}
+    I.e., up to a constant, we only need the product of evaluating $f$ at the roots of $h$ over the roots of $g$ to find the discriminant.
+\end{proof}

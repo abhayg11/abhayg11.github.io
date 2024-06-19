@@ -1,0 +1,26 @@
+\mtexe{6.2}
+\begin{proof}
+	Note that the statement is obvious for $m = 1,2$. Suppose $m \geq 3$ henceforth.
+	
+	Let $\zeta = e^{2\pi i/m}$, so that $\cos(2\pi/m) = (\zeta+\zeta^{-1})/2$. Let $L = \QQ(\zeta)$ and $K = \QQ(\cos(2\pi/m))$. Then the above shows that $L \supseteq K$. In fact, the galois group of $L/\QQ$ includes the transposition $\tau$ satisfying $\tau(\zeta) = \zeta^{-1}$, and it is clear that $K \subseteq L^\tau$, the fixed field under $\tau$.
+	
+	Further, we have $\zeta = \cos(2\pi/m)+i\sin(2\pi/m)$, so $L \subseteq K(u)$ for $u = i\sin(2\pi/m))$, which satisfies
+	\[ u^2-\cos^2(2\pi/m)+1 = -\sin^2(2\pi/m)-\cos^2(2\pi/m)+1 = 0 \]
+	so that $[K(u):K] \leq 2$. Overall, we get
+	\[ [L^\tau:K] = \frac{[L:K]}{[L:L^\tau]} = \frac{[K(u):K]}{2[K(u):L]} = \frac{1}{[K(u):L]} \leq 1 \]
+	So, it must equal 1, giving $K = L^\tau$. But then
+	\[ \scO_K = \scO_L \cap K = \ZZ[\zeta] \cap L^\tau = \ZZ[\zeta]^\tau \]
+	So, it suffices to determine the elements of $\ZZ[\zeta]$ that are fixed by $\tau$.
+	
+	First, note that we've shown in particular that $[L:\QQ] = \phi(m)$ is even, so let $k = \phi(m)/2$ and note that $\{\zeta^{-k},\zeta^{1-k},\ldots,\zeta^{k-1}\}$ is an integral basis for $\ZZ[\zeta]$. Further, we have a relation for $\zeta$ of the form:
+	\[ \zeta^{2k}+a_{2k-1}\zeta^{2k-1}+\cdots+a_1\zeta+1 = 0 \]
+	since $\zeta$ is integral over $\ZZ$ of degree $\phi(m) = 2k$ and $N(\zeta) = 1$. Suppose $\beta \in \ZZ[\zeta]^\tau$. Then we can write
+	\[ \beta = b_{-k}\zeta^{-k} + b_{1-k}\zeta^{1-k} + \cdots + b_{k-1}\zeta^{k-1} \]
+	Applying $\tau$ gives
+	\begin{align*}
+	\tau(\beta)
+		&= b_{-k}\zeta^k + b_{1-k}\zeta^{k-1} + \cdots + b_{k-1}\zeta^{1-k} \\
+		&= b_{-k}(-a_{2k-1}\zeta^{k-1}-\cdots-\zeta^{-k}) + b_{1-k}\zeta^{k-1} + \cdots + b_{k-1}\zeta^{1-k} \\
+	\end{align*}
+	This is supposed to equal $\beta$, and by comparing coefficients in the stated basis, we first get $b_{-k} = -b_{-k}$, giving $b_{-k} = 0$. Comparing the remaining coefficients gives $b_i = b_{-i}$ for the other $i$. So, $\beta$ is a $\ZZ$-linear combination of $1,\zeta+\zeta^{-1},\zeta^2+\zeta^{-2},\ldots,\zeta^{k-1}+\zeta^{1-k}$, and so $\beta \in \ZZ[\zeta+\zeta^{-1}]$. Conversely, it is obvious that each element of $\ZZ[\zeta+\zeta^{-1}]$ is fixed by $\tau$, so we get $\scO_K = \ZZ[\zeta+\zeta^{-1}] = \ZZ[2\cos(2\pi/m)]$ as claimed.
+\end{proof}

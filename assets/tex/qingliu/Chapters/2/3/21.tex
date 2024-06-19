@@ -1,0 +1,30 @@
+\mtexe{2.3.21} 
+\begin{proof}
+	For the first claim, let $p$ be as in the previous exercise. We showed already that for $x \in \Spec A$ and $\sigma \in G$ that $p(\sigma(x)) = p(x)$, so $p = p \circ \sigma$ as desired. Now suppose $f : \Spec A \to Z$ is any morphism of schemes with $f \circ \sigma = f$ for all $\sigma \in G$. Let $U = \Spec B \subseteq Z$ be an open affine neighborhood. Then restricting $f$ to $f^{-1}(U)$ gives a map $f : f^{-1}(U) \to U$ which is determined by the ring homomorphism $f^\# : B \to \scO_{\Spec A}(f^{-1}(U))$. Note that for any $\sigma \in G$, we have $\sigma \circ f^\# = f^\#$ by the corresponding property on $f$. So, the image of $f^\#$ lies in the subring $\scO_{\Spec A}(f^{-1}(U))^G$.
+	
+	We would like to identify this with the sheaf of $A^G$ on an open subset, and we could do this if $f^{-1}(U) = p^{-1}(V)$ for some open $V$. Clearly $f^{-1}(U) \subseteq p^{-1}(p(f^{-1}(U)))$, and since $p$ is an open map, $p(f^{-1}(U))$ is indeed open: so we only need equality. For this, note that if $y \in p^{-1}(p(f^{-1}(U)))$, then $p(y) \in p(f^{-1}(U))$, so there is some $z \in f^{-1}(U)$ with $p(y) = p(z)$. From the previous, this means that there is some $\sigma \in G$ with $\sigma(z) = y$. But then $f(y) = f(\sigma(z)) = f(z) \in U$, so $y \in f^{-1}(U)$ as desired.
+	
+	In other words, we now have a ring homomorphism
+	\[ f^\# : B \to \scO_{\Spec A}(p^{-1}(p(f^{-1}(U))))^G = \scO_{\Spec A^G}(p(f^{-1}(U))) \]
+	This defines a morphism of schemes $g_U : \Spec A^G|_{p(f^{-1}(U))} \to U \hookrightarrow Z$ satisfying $g_U \circ \sigma = g_U$ since the corresponding statement is true for $g_U^\#$. Note that as $U$ ranges over all open affines in $Z$, $f^{-1}(U)$ defines an open cover of $\Spec A$, and so $p(f^{-1}(U))$ defines an open cover of $\Spec A^G$ since $p$ is open and surjective. So, we've defined morphisms on an open cover, and as long as they agree on overlaps, we can glue them to a morphism $g : \Spec A^G \to Z$. This is essentially automatic, since each morphism comes solely from restricting $f$. But then since each $g_U$ is $G$-equivariant, so is $G$, as can be checked locally. \\
+	
+	The argument here is essentially the same. If $U$ is an open subscheme of $\Spec A$ that is $G$-equivariant, then the map $p|_U : U \to p(U)$ is also $G$-equivariant, and so satisfies the first part of the universal property for the quotient. Then, if $f : U \to Z$ is also $G$-equivariant, then we can similarly pull back open subsets of $Z$ to $U$ and push them forward via $p$ to define a map $p(U) \to Z$ via gluing. This argument would then show that $p(U)$ is the quotient $U/G$. \\
+	
+	This also follows from gluing the results of the previous exercise. However, in this case, there is no clear existing candidate for the target scheme $X/G$, so we must construct the scheme itself via gluing (Lemma 3.33).
+	
+	Let $\{U_i\}$ denote the collection defined in the problem; that is, for each $x \in X$, there is an affine neighborhood of $x$ that is stable under $G$, and we let $\{U_i\}$ denote this collection of affine neighborhoods. Each is affine, so we have a corresponding collection of rings: $U_i = \Spec A_i$. Now, define $X_i = \Spec(A_i^G) = (\Spec A_i)/G$, for each $i$, and $p_i : U_i \to X_i$ the projection we've been considering. For a pair of indices $i,j$, define $X_{ij} = p_i(U_i \cap U_j) \subseteq X_i$, and let $f_{ij} : X_{ij} \to X_{ji}$ be given by $f_{ij} = p_j \circ p_i^{-1}$.
+	
+	Foremost, we need to see that each $f_{ij}$ is well-defined. In particular, we're not claiming that $p_i$ is invertible, even when restricted to $p_i(U_i \cap U_j)$, but rather that $p_j$ is constant on this preimage. Indeed, this is clear, for if $p_i(x) = p_i(y)$, then there is some $\sigma \in G$ with $\sigma(x) = y$, whence $p_j(x) = p_j(y)$ as well. Then, it is also the case that the collections $\{X_{ij}\},\{f_{ij}\}$ satisfy the conditions of Lemma 3.33. So, we define $X/G$ to be the ($\ZZ$-)scheme guaranteed by that lemma, and $g_i : X_i \to X/G$ the guaranteed maps.
+	
+	Finally, we would like to justify the name $X/G$. Let $p : X \to X/G$ be given by $p(x) = g_i(p_i(x))$ for any $i$ such that $x \in U_i$. This is well-defined, for if $x \in U_j$ also, then
+	\[ g_i(p_i(x)) = g_j(f_{ij}(p_i(x))) = g_j(p_j(x)) \]
+	Now, if $\sigma \in G$, then for any $x \in U_i$, we have $\sigma(x) \in U_i$ also since each $U_i$ is $G$-equivariant, so:
+	\[ p(\sigma(x)) = g_i(p_i(\sigma(x))) = g_i(p_i(x)) = p(x) \]
+	since $p_i \circ \sigma = p_i$ for each $i$. So, $p \circ \sigma = p$ as desired. Lastly, suppose we have a morphism $f : X \to Z$ with $f \circ \sigma = f$ for all $\sigma \in G$. Then for $x \in X$, define $h : X/G \to Z$ by $h(p(x)) = f(x)$.
+	
+	Again, we need to see that this is well-defined. Suppose $p(x) = p(z)$. Then, if $x \in U_i$, $z \in U_i$ also by invariance of each $U_i$. So, we have
+	\[ g_i(p_i(x)) = p(x) = p(z) = g_i(p_i(z)) \]
+	Since each $g_i$ is an open immersion, this gives $p_i(x) = p_i(z)$. Then, note that for each $\sigma \in G$, that $f|_{U_i} \circ \sigma = f|_{U_i}$, so this restriction factors through the quotient. That, is there is a map $h_i : U_i/G = p(U_i) \to Z$ with $f|_{U_i} = h_i \circ p_i$. Overall:
+	\[ f(x) = f|_{U_i}(x) = h_i(p_i(x)) = h_i(p_i(z)) = f|_{U_i}(z) = f(z) \]
+	and so $h$, as above, is well-defined. But this completes the argument, for we've defined $h$ such that $f = h \circ p$, i.e. we've shown that $f$ factors through the quotient map, so $X/G$ is indeed the quotient.
+\end{proof}

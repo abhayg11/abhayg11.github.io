@@ -1,0 +1,10 @@
+\mtexe{1.9}
+\begin{proof}
+    Note that if $\alpha \in \ZZ[i]$ is such that $N(\alpha) = p$ is prime or $N(\alpha) = p^2$ for a prime $p \equiv 3 \pmod{4}$, then $\alpha$ is irreducible by problem 3 above. I claim this is a complete list.
+
+    Indeed, suppose $\alpha$ is irreducible. Then $\alpha\overline{\alpha} = N(\alpha)$ is its unique factorization. So, if we factorize $N(\alpha)$ over $\ZZ$, then first we note that no prime can occur with an exponent of $3$ or higher, else $N(\alpha)$ would have at least three irreducible factors.
+    
+    Further, it cannot have distinct factors $p,q$. For then, counting the irreducible factors gives that these would have to themselves be irreducible. So, up to unit multiples, we have $p = \alpha$ and $q = \overline{alpha}$. Taking norms gives $p^2 = N(\alpha) = N(\overline{\alpha}) = q^2$.
+    
+    The only remaining case is that $N(\alpha) = p$ for some prime, or that $N(\alpha) = p^2$. These are precisely the cases above, unless $N(\alpha) = 2^2$ or $N(\alpha) = p^2$ for $p \equiv 1 \pmod{4}$. But we've already seen in these cases that $p$ factors as the product of (at least) two irreducible factors, whence $p^2 = N(\alpha)$ has at least four irreducible factors, again contradicting unique factorization.
+\end{proof}

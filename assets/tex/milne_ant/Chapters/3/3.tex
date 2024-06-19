@@ -1,0 +1,20 @@
+\mtexe{3.3}
+\begin{proof}
+	First, suppose $p = x^2+y^2$. Modulo 4, the only squares are 0 and 1, so we get that $p$ must be one of $0,1,2$ mod $4$. The first case is impossible since then $p$ is divisible by 4, and the third case happens only for $p=2$. Otherwise, we've shown $p \equiv 1 \pmod{4}$ as claimed.
+	
+	Conversely, suppose $p \equiv 1 \pmod{4}$. Then $4 \mid p-1 = |\FF_p^\times|$, which is a cyclic group, so there is some $\alpha \in \FF_p^\times$ of order 4. Thus, in $\FF_p[x]$, the polynomial $x^2+1$ is reducible, namely as $(x-\alpha)(x+\alpha)$. Now, if we consider the ideal $(p) \subseteq \ZZ[i]$, we can compute:
+	\[ \ZZ[i]/(p) = \ZZ[x]/(p,x^2+1) = \FF_p[x]/(x^2+1) \]
+	which is not a domain as we've just shown that $x^2+1$ is reducible. So $(p)$ is not prime and instead splits as a product of two prime ideals in $\ZZ[i]$. But this is a PID, so we get a factorization of $p$ itself as a product $p = uv$ for $u,v \in \ZZ[i]$ primes. Taking norms gives $p^2 = N(u)N(v)$ and since neither of $u,v$ is a unit, we conclude $N(u) = N(v) = p$. But if $u = x+iy$, then this gives $p = N(u) = x^2+y^2$ as desired. \\
+	
+	Suppose now that $p = x^2+2y^2$. The only squares mod 8 are $0,1,4$, so we conclude that $p \pmod{4}$ is one of: $0,1,2,3,4,6$. The cases $0,4,6$ are ruled out immediately since $p$ would be even and not equal to $2$. If $p \equiv 2 \pmod{8}$, then $p = 2$. Otherwise, $p \equiv 1,3 \pmod{8}$ as claimed.
+	
+	Conversely, suppose $p$ is either 1 or 3 modulo 8. By quadratic reciprocity, $-2$ is a square mod $p$, so $x^2+2$ factors in $\FF_p$. Similarly, we now consider the splitting of $(p) \subseteq \ZZ[\sqrt{-2}]$:
+	\[ \ZZ[\sqrt{-2}]/(p) = \ZZ[x]/(x^2+2,p) = \FF_p[x]/(x^2+2) \]
+	so $(p)$ splits as a product of two primes. The rest of the argument is exactly as above, where we conclude by noting that $p = N(x+y\sqrt{-2}) = x^2+2y^2$. \\
+	
+	Finally, suppose $p = x^2+3y^2$. Modulo 3, the squares are 0 and 1, so this gives that $p$ is itself either $0$ or $1$ mod 3. If $p \equiv 0 \pmod{3}$, then $p=3$. Otherwise, $p \equiv 1 \pmod{3}$ as claimed.
+	
+	Conversely, suppose $p \equiv 1 \pmod{3}$. Then $3 \mid p-1 = |\FF_p^\times|$, so as in the first case, there is some $\alpha \in \FF_p$ of order 3. So, $\alpha$ satisfies $x^3-1$ but not $x-1$, whence it satisfies their quotient: $(x^3-1)/(x-1) = x^2+x+1$. We conclude that this polynomial is thus reducible in $\FF_p[x]$. This gives the desired splitting of $(p)$ in the ring of integers of $\QQ(\sqrt{-3})$, which is $\ZZ(\zeta_3)$ for $\zeta_3 = (-1+\sqrt{-3})/2$ a primitive cube root of unity. Thus:
+	\[ \ZZ[\zeta_3]/(p) = \ZZ[x]/(x^2+x+1,p) = \FF_p[x]/(x^2+x+1) \]
+	Again, the argument continues as before, giving $p = N(a+b\zeta_3) = a^2-ab+b^2$. If $a$ is even, we get $p = (a/2-b)^2 + 3(a/2)^2$ and if $b$ is even we similarly get $p = (a-b/2)^2 + 3(b/2)^2$. Finally, if $a,b$ are both odd, then we get $p = [(a+b)/2]^2 + 3[(a-b)/2]^2$. So, in any case, we are done.
+\end{proof}

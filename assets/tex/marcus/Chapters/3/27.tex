@@ -1,0 +1,22 @@
+\mtexe{3.27}
+\begin{proof}
+	Notice
+	\[ \disc(\alpha) = 4^4(-5)^5+5^5(-5)^4 = 3^2 \cdot 5^5 \cdot 41 \]
+	So, for $p \neq 3,5$, we get that $p \nmid |R/\ZZ[\alpha]|$, and we can find the factorization of $pR$ by factoring $x^5-5x-5 \pmod{p}$.
+	
+	To handle $p=5$, note:
+	\[ (\alpha R)^5 = \alpha^5R = 5(\alpha+1)R = 5R \]
+	since $\alpha+1$ is a unit. Indeed, if $\alpha_1,\ldots,\alpha_5$ are the conjugates of $\alpha$, then,
+	\[ f(x) = x^5-5x-5 = \prod_i (x-\alpha_i) \]
+	So, evaluating at $-1$ gives:
+	\[ -1 = f(-1) = \prod_i (-1-\alpha_i) = -\prod_i (1+\alpha_i) = -N(1+\alpha) \]
+	So, $N(1+\alpha)=1$ and $1+\alpha$ is a unit as claimed. But then $\alpha R$ is the unique prime lying over $5$ and $5$ is totally ramified. This aligns with the polynomial factorization since
+	\[ x^5-5x-5 \equiv x^5 \pmod{5} \]
+	as claimed.
+	
+	Finally, in the specific case of $p=2$ we get:
+	\[ x^5-5x-5 \equiv (x^2+x+1)(x^3+x^2+1) \pmod{2} \]
+	and each of these is irreducible since they are at most degree 3 and have no roots in $\FF_2$. So,
+	\[ 2R = (2,\alpha^2+\alpha+1)(2,\alpha^3+\alpha^2+1) \]
+	is the factorization.
+\end{proof}

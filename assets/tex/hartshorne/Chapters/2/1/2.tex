@@ -1,0 +1,18 @@
+\mtexe{2.1.2}
+\begin{proof}
+	Representing stalks at $P$ by pairs $\left<U,s\right>$ with $U$ an open neighborhood of $P$ and $s$ a section on $X$ up to equivalence under further restriction to neighborhoods of $P$, we have that
+	\begin{align*}
+	\left<U,s\right> \in \ker(\varphi_P)
+		&\iff \varphi_P\left<U,s\right> = 0 \\
+		&\iff \left<U,\varphi(U)(s)\right> = \left<U,0\right> \\
+		&\iff (\exists V \subseteq U) : \varphi(U)(s)|_V = 0 \\
+		&\iff (\exists V \subseteq U) : \varphi(V)(s|_V) = 0 \\
+		&\iff (\exists V \subseteq U) : s|_V \in \ker(\varphi(V)) \\
+		&\iff \left<U,s\right> \in (\ker\varphi)_P
+	\end{align*}
+	Since stalks of a presheaf and stalks of its sheafification agree, this same computation works for the image (we use this fact in the reverse direction of the final biconditional). \\
+	
+	Now, $\varphi$ is injective iff $\ker\varphi = 0$, iff $(\ker\varphi)_P = 0$ for all $P$, iff $\ker(\varphi_P)=0$ for all $P$, iff each $\varphi_P$ is injective. For surjectivity, note by proposition 1.1 that the induced map $\im\varphi \to \scG$ is an isomorphism iff it is an isomorphism on stalks. So, $\varphi$ surjects iff $\im\varphi = \scG$, iff $(\im\varphi)_P = \scG_P$ for all $P$, iff $\im(\varphi_P) = \scG_P$ for all $P$, iff $\varphi_P$ is surjective for each $P$. \\
+	
+	
+\end{proof}

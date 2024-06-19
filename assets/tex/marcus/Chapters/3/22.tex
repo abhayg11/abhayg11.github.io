@@ -1,0 +1,20 @@
+\mtexe{3.22}
+\begin{proof}
+	Suppose $\alpha^5 - 2\alpha - 2 = 0$. Then
+	\[ \disc(\alpha) = 5^5(-2)^4 + 4^4(-2)^5 = 2^4 \cdot 3 \cdot 13 \cdot 67 \]
+	Let $R = \ZZ[\alpha]$ and $S$ be the ring of integers in $\QQ(\alpha)$. We know $R \subseteq S$ and
+	\[ \disc(R) = \disc(S)|S/R|^2 \]
+	So, we have that $|S/R|$ is a power of two, since the square of no other prime divides $\disc(R)$. So, finally, we seek the power of 2 dividing $\disc(S)$. The previous problem suggests studying the factorization of $2S$. But from 2.43, $\alpha+1$ is a unit, and so
+	\[ (\alpha S)^5 = \alpha^5S = (2\alpha+2)S = 2(\alpha+1)S = 2S \]
+	So, the factorization of $2S$ is given by the factorization of $\alpha S$ raised to the fifth. But the exponents in the factorization of $2S$ sum to at most $n=5$, so this must be the factorization itself. I.e. $\alpha S$ is the unique prime lying over $2$ with $e=5$ and $f=1$. By the previous exercise, $\disc(S)$ is divisible by $2^{(5-1) \cdot 1} = 2^4$.
+	
+	This completes the computation, showing that $|S/R| = 1$, i.e. $S = R = \ZZ[\alpha]$. \\
+	
+	Now consider the case $\alpha^5+2\alpha^4-2 = 0$; we consider 2.44 now. Then,
+	\[ \disc(\alpha) = -2^4 \cdot 971 \]
+	So, as before, we consider $2S$. But
+	\[ (\alpha S)^5 = \alpha^5S = (-2\alpha^4+2)S = 2(\alpha^4-1)S = 2S \]
+	since $\alpha^4-1$ is a unit. So, this is the factorization, and the previous problem gives that if $S$ is the ring of integers in $\QQ(\alpha)$, then $\disc(S)$ is divisible by $2^4$ as well. So,
+	\[ |S/\ZZ[\alpha]|^2 = \disc(\alpha)/\disc(S) \mid 971 \]
+	so that $S = \ZZ[\alpha]$ as before.
+\end{proof}

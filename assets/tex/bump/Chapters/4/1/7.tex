@@ -1,0 +1,23 @@
+\mtexe{4.1.7}
+\begin{proof}
+	We've already noted that $A,B$ are normal subgroups since $\overline{A},\overline{B}$ are normal subgroups of $\overline{H}$, since it is abelian. Then clearly $AB$ is normal as well.
+	
+	Now, define $\chi : A \cap B \to \CC$ by $\chi(s) = \chi_B(s)\chi_A(s^{-1})$. This is a character, since
+	\[ \chi(st) = \chi_B(st)\chi_A((st)^{-1}) = \chi_B(s)\chi_B(t)\chi_A(t^{-1})\chi_A(s^{-1}) = \chi(s)\chi(t) \]
+	We use this to show uniqueness. Suppose $x$ is such that $\chi_B(s) = \chi_A(x^{-1}sx)$ for all $s \in A \cap B$. Then,
+	\[ \chi(s) = \chi_B(s)\chi_A(s^{-1}) = \chi_A(x^{-1}sx)\chi_A(s^{-1}) = \chi_A(x^{-1}sxs^{-1}) = \chi_0(x^{-1}sxs^{-1}) = \left<x^{-1},s\right> \]
+	So, $x^{-1}$ is determined modulo $(A \cap B)^\perp = A^\perp B^\perp = AB$ since $A,B$ are polarizing.
+	
+	Finally, we show existence. FINISH
+	
+	% chi_B(s)chi_A(s) = chi_A(x'sx)chi_A(s) = chi_A(x'sxs)
+	
+	% <x',s> = chi_0(x'sxs') = chi_A(x'sx)chi_A(s') = chi_B(s)chi_A(s')
+	
+	% \[ z^{-1}y^{-1}x = ba \]
+	
+	% are normal subgroups of H and that there exists
+% a unique (double) coset xBA = BxA \in B \\ H / A such that (choosing a
+% representative x of the coset) the characters s \mapsto \chi_A(x^{-1}sx) and s \mapsto \chi_B(s)
+% coincide on A \cap B .
+\end{proof}

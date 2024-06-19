@@ -1,0 +1,10 @@
+\mtexe{2.3} 
+\begin{proof}
+    To finish the proof, we need to show that for $r,s \in \QQ$ and $m$ squarefree such that $2r$ and $r^2-ms^2$ are integers, if $m \equiv 2,3 \pmod{4}$:
+    \[ r,s \in \ZZ\]
+    and otherwise for $m \equiv 1 \pmod{4}$:
+    \[ 2r,2s \in \ZZ \text{ and } 2r \equiv 2s \pmod{2} \]
+    Since $2r \in \ZZ$, we consider the two cases of it being even and odd. If $2r$ is even, then $r \in \ZZ$. Then $ms^2 \in \ZZ$ as well, and since $m$ is squarefree, this gives that $s^2 \in \ZZ$, and hence $s \in \ZZ$. This can happen in either case for $m$ above.
+
+    Otherwise $2r$ is odd. Then $4ms^2 = (2r)^2 - 4(r^2-ms^2)$ is an integer. As before, since $m$ is squarefree, we conclude $4s^2$ is an integer, and so $2s \in \ZZ$ as well. Furthermore, the expression above is the difference of an odd square and a multiple of four, so we get $m(2s)^2 \equiv 1 \pmod{4}$. Hence we get that $2s$ is odd and $m \equiv 1 \pmod{4}$. This falls under the second case.
+\end{proof}

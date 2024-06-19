@@ -1,0 +1,14 @@
+\mtexe{2.4.8} 
+\begin{proof}
+	For points $x,y \in X$, define $x \leq y$ if $y \in \overline{\{x\}}$, i.e. if $x$ specializes to $y$. First, I claim this is a partial order on $X$. It is clearly reflexive as $x \in \overline{\{x\}}$. It is also transitive: if $x \in \overline{\{y\}}$ and $y \in \overline{\{z\}}$, then $\overline{\{z\}}$ is a closed set containing $y$, whence it contains the full closure $\overline{\{y\}}$, and therefore $x \in \overline{\{z\}}$.
+	
+	Finally, suppose $x \neq y$. Then, from the previous exercise, $X$ is $T_0$, so WLOG there is some open set $U$ containing $x$ but not $y$. But then $y \in X \setminus U$, a closed set, and so $\overline{\{y\}} \subseteq X \setminus U$. But $x$ is not in the latter, so it cannot be in the former, i.e. $y \not\leq x$. In other words, $\leq$ is antisymmetric, and therefore a partial order.
+	
+	Now, let $C \subseteq X$ be a totally ordered subset. Let
+	\[ U = \bigcup_{x \in C} X \setminus \overline{\{x\}} \]
+	First, suppose that $U = X$. Then we've exhibited an open cover of $X$, and so by quasi-compactness, we conclude that there are $x_1,\ldots,x_n \in C$ with
+	\[ X = \bigcup_{i=1}^n X \setminus \overline{\{x_i\}} \implies \emptyset = \bigcap_{i=1}^n \overline{\{x_i\}} \]
+	Since $C$ is totally ordered, any finite subset has a maximum. WLOG, we may assume $x_1 \geq x_i$ for each $i$, i.e. $x_1 \in \overline{\{x_i\}}$ for each $i$, contradicting the fact that the intersection of these closures is empty.
+	
+	So, we must have that $U$ is proper. Let $z \in X \setminus U$. Then, for all $x \in C$, we have $z \in \overline{\{x\}}$, i.e. $z \geq x$. So $z$ is an upper bound for $C$. Thus, we've shown that any totally ordered subset of $X$ has an upper bound, i.e. Zorn's lemma applies. Thus, let $y \in X$ be a maximal element. Then if $x \in \overline{\{y\}}$, we get $x \geq y$ and so $x = y$ by maximality. So, we have $\overline{\{y\}} = \{y\}$, which implies that $y$ is a closed point, which is what we wished to show.
+\end{proof}

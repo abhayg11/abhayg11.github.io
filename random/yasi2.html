@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yasi's Other Tool</title>
+<script>
+window.addEventListener('load', function() {
+	document.getElementById('myFile').addEventListener('change', function() {
+		document.getElementById("downloadLink").innerHTML = "";
+		if (this.files && this.files[0]) {
+			var url = URL.createObjectURL(this.files[0]);
+			var n = document.getElementById("num").value;
+			
+			var can = document.getElementById("myCanvas");
+			var ctx = can.getContext("2d");
+			ctx.clearRect(0,0,can.width,can.height);
+			var img = new Image();
+			img.onload = function(){
+				var a = 1;
+				var b = 2401;
+				while (a+1<b) {
+					var sw = Math.floor((a+b)/2);
+					var sh = Math.floor(this.height*(sw/this.width));
+					if (Math.floor(2400/sw)*Math.floor(3150/sh) >= n) {
+						a = sw;
+					} else {
+						b = sw;
+					}
+				}
+				var sh = Math.floor(this.height*(a/this.width));
+				var rows = Math.floor(3150/sh);
+				var cols = Math.floor(2400/a);
+				for (let r = 0; r<rows; r++) {
+					for (let c = 0; c<cols; c++) {
+						ctx.drawImage(this, 75+a*c, 75+sh*r, a-3, sh-3);
+					}
+				}
+			};
+			img.src = url;
+		}
+	});
+});
+
+function makeLink() {
+	var can = document.getElementById("myCanvas");
+	var atag = document.getElementById("downloadLink");
+	atag.innerHTML = "Download link";
+	atag.setAttribute("href", can.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+	atag.setAttribute("download", "download.png");
+}
+</script>
+</head>
+<body>
+Try the fixed size tool <a href="yasi.html">here</a>!
+<hr>
+<h1>Maximizer:</h1>
+<input type="file" id="myFile"><br>
+Number of images (minimum): <input type="number" id="num" min="1" value="16"><br>
+<button type="button" onclick="makeLink()">Generate download link</button> <a id="downloadLink"></a><br><br>
+<div><canvas id="myCanvas" width=2550 height=3300>No canvas here</canvas></div>
+</body>
+</html>

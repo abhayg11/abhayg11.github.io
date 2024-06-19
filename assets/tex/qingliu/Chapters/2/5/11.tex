@@ -1,0 +1,14 @@
+\mtexe{2.5.11} 
+\begin{proof}
+	This is just the sheaf condition. \\
+	
+	Let $U = \Spec A$ be an affine chart in $X$. Since $\dim(X)=0$, $\dim(U) = 0$, so every prime of $A$ is maximal, i.e. every point of $U$ is closed. Since there are only finitely many of them, this means every subset is closed, so every point in $U$ is open in $U$, whence it is open in $X$ as well. So $X$ has the discrete topology.
+	
+	But for rings $A$ and $B$, note that the coproduct of $\Spec A$ and $\Spec B$ in the category of schemes is $\Spec(A \times B)$. In particular, the finite disjoint union of affine schemes is again affine. But each singleton $\{x\}$ is affine; indeed, the affine sets form a base for the topology on $X$ and $\{x\}$ is open, so it contains an open affine $U$ that contains $x$, which must be $U = \{x\}$ itself. So, now, $X$ is affine as the disjoint union of the finitely many singletons. \\
+	
+	Note that we've already shown that $X$ has the discrete topology. Hence if $X = \Spec A$, from the previous two points, we get
+	\[ A = \scO_X(X) = \prod_{x \in X} \scO_X(\{x\}) = \prod_{x \in X} \scO_{X,x} = \bigoplus_{\frp \in \Spec A} A_\frp \]
+	as claimed. \\
+	
+	For a counterexample when $A$ has positive dimension, consider $A$ to be a DVR with uniformizer $t$ and field of fractions $K$. Then $\dim A = 1$ and $\Spec A = \{ (0),(t) \}$. The singleton $\{(t)\}$ is not open since $\{(0)\}$ is not closed, as $(0)$ is not maximal. So not every singleton is open, unlike above. Further, we have $\bigoplus_{\frp \in \Spec A} A_\frp =  K \oplus A$. But this is not isomorphic to $A$ since $\Spec(K \oplus A) = \{(0) \oplus A, K \oplus (0), K \oplus (t)\}$ has 3 points, rather than 2.
+\end{proof}

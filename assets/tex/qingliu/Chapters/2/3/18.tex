@@ -1,0 +1,8 @@
+\mtexe{2.3.18} 
+\begin{proof}
+	Since $X$ is an affine variety over $k$, we can write $X = \Spec k[x_1,\ldots,x_n]/I$ for some ideal $I$. Let $f_1,\ldots,f_m$ be a set of generators for $I$. Then, in the ring $k[x_0,x_1,\ldots,x_n]$ obtained by adjoining one additional variable, we can homogenize each $f_i$ to a polynomial $g_i$ by multiplying monomials of lower than maximal degree by an appropriate power of $x_0$. That is, $g_i$ is homogeneous, $g_i|_{x_0=1} = f_i$, and $x_0 \nmid g_i$.
+	
+	Let $J = (g_1,\ldots,g_m)$, $B = k[x_0,\ldots,x_n]/J)$, and $\overline{X} = \Proj B$. I claim this is the desired space. From lemma 3.41, $\overline{X}$ is a projective variety over $k$ with support $V_{+}(J) \subseteq \PP^n_k$. Further, we have
+	\[ D_{+}(x_0) \cong \Spec B_{(x_0)} = \Spec (k[x_0,\ldots,x_n]/J)_{(x_0)} = \Spec k[x_1,\ldots,x_n]/I \]
+	where the last claim follows from an isomorphism of rings. Namely, we have a map $k[x_1,\ldots,x_n] \to (k[x_0,\ldots,x_n]/J)_{(x_0)}$ by mapping each $x_i$ to $x_0^{-1}x_i$. Under this map, each $f_i$ maps to $\frac{g_i}{x_0^{\deg g_i}} = 0$ in the quotient ring, and so this factors through a map from $k[x_1,\ldots,x_n]/I$. The inverse of this map can be similarly defined by evaluating an element of $(k[x_0,\ldots,x_n]/J)_{(x_0)}$ at $x_0 = 1$. Under this evaluation, each $g_i/(x_0^{\deg g_i})$ maps to $f_i$, and so the map is well-defined to $k[x_1,\ldots,x_n]/I$. This establishes the desired isomorphism.
+\end{proof}

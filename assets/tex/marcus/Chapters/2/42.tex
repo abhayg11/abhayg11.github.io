@@ -1,0 +1,59 @@
+\mtexe{2.42} 
+\begin{proof} 
+    One direction is clear. Suppose $\alpha \in R$. Then $N_{\QQ(\sqrt{m})}^K(\alpha)$ is the product of (some of the) conjugates of $\alpha$, which are all algebraic integers, and so the product is also an algebraic integer. Similarly, $T_{\QQ(\sqrt{m})}^K(\alpha)$ is the sum of algebraic integers, and so is also an algebraic integer.
+
+    Conversely, suppose that both this trace and norm are algebraic integers. Then consider the (monic) minimal polynomial of $\alpha$ over $\QQ(\sqrt{m})$. Since $[K:\QQ(\sqrt{m})] \leq 2$, this polynomial has two coefficients other than the leading coefficient, which are therefore this norm (the constant term) and trace (the linear term). I.e. $\alpha$ satisfies a monic polynomial with algebraic integer coefficients, so that $\alpha$ is itself an algebraic integer (see, e.g., exercise 4). Note that this proof only relies on $\QQ(\sqrt{m}) \subseteq K$ being a degree 2 subextension. So, we reach the same conclusion about $\sqrt{n},\sqrt{k}$. \\
+    
+    Consider the case $m \equiv 3 \pmod{4}$ and $n,k \equiv 2 \pmod{4}$. Let $\alpha \in R$, so $\alpha = A+B\sqrt{m}+C\sqrt{n}+D\sqrt{k}$ for some $A,B,C,D \in \QQ$ (since $\sqrt{k}$ is a $\QQ$-multiple of $\sqrt{mn}$). Then, all of the traces are algebraic integers, so $2A+2C\sqrt{n}$, $2A+2B\sqrt{m}$, and $2A+2D\sqrt{k}$ are all algebraic integers. Since $m,n,k$ are squarefree and not congruent to 1 modulo 4, we get that each of the coefficients are integers, i.e. $A,B,C,D \in \frac12\ZZ$, which gives the first result:
+    \[ \alpha = \frac{a+b\sqrt{m}+c\sqrt{n}+d\sqrt{k}}{2} \]
+    for $a,b,c,d \in \ZZ$. Then, taking the trace over $\QQ(\sqrt{m})$ gives that
+    \begin{align*}
+    \frac{a+b\sqrt{m}+c\sqrt{n}+d\sqrt{k}}{2} &\cdot \frac{a+b\sqrt{m}-c\sqrt{n}-d\sqrt{k}}{2} \\
+        &= \frac{(a+b\sqrt{m})^2-(c\sqrt{n}+d\sqrt{k})^2}{4} \\
+        &= \frac{a^2+2ab\sqrt{m}+mb^2-nc^2-2cd\sqrt{nk}-kd^2}{4} \\
+        &= \frac{(a^2+mb^2-nc^2-kd^2)+(2ab-2cdn/\gcd(n,m))\sqrt{m}}{4}
+    \end{align*}
+    is an algebraic integer. I.e. $4 \mid a^2+mb^2-nc^2-kd^2$ and $4 \mid 2ab-2cdn/\gcd(n,m)$. Since $m$ is odd, $\gcd(n,m)$ is odd, so $2cdn/\gcd(m,n)$ is a multiple of $4$. So, $4 \mid 2ab$, so $2 \mid ab$, and at least one is even. We have:
+    \[ 2(c^2+d^2) \equiv nc^2+kd^2 \equiv a^2+mb^2 \equiv a^2-b^2 \pmod{4} \]
+    But then $a^2-b^2$ is even, so $a \equiv b \pmod{2}$. Since one is even, both are. Thus the above equation is zero throughout (mod 4), so $c^2+d^2$ is even, which means $c \equiv d \pmod{2}$ as well. Conversely, if $a,b$ are even and $c,d$ have the same parity, then it is clear that $N_{\QQ(\sqrt{m})}^K(\alpha)$ is an algebraic integer. Thus, $\alpha$ is a $\ZZ$-linear combination of
+    \[ 1,\sqrt{m},\sqrt{n},\frac{\sqrt{n}+\sqrt{k}}{2} \]
+    and each of these is an algebraic integer. So, it's an integral basis. \\
+
+    CASES C,D OMITTED FOR NOW. \\ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    Note that $\QQ(\sqrt{m},\sqrt{n}) = \QQ(\sqrt{m},\sqrt{k})$ since $\sqrt{n} = \gcd(m,n)\sqrt{k}/\sqrt{m}$. So, we can interchange $n,m,k$ in any order. Thus we've covered all cases. Indeed, we summarize the cases for $m,n,k \pmod{4}$ in the below table, using the fact that $k = nm/\gcd(m,n)^2$, along with which case (b/c/d) covers it:
+    \begin{center} \begin{tabular}{c|c|c|c}
+    $m$ & $n$ & $k$ & Case \\
+    \hline
+    1 & 1 & 1 & (d) \\
+    1 & 2 & 2 & (c) \\
+    1 & 3 & 3 & (c) \\
+    2 & 2 & $\pm 1$ & (b),(c) \\
+    2 & 3 & 2 & (b) \\
+    3 & 3 & 1 & (c)
+    \end{tabular} \end{center}
+    In particular, if $m,n$ are not both even, then $\gcd(m,n)$ is odd, so $\gcd(m,n)^2 \equiv 1 \pmod{4}$ and $k \equiv mn \pmod{4}$. \\
+
+    In all cases, we have
+    \begin{align*}
+    \disc_\QQ^K(1,\sqrt{m},\sqrt{n},\sqrt{mn})
+        &= \disc_\QQ^{\QQ(\sqrt{m})}(1,\sqrt{m})^2N_\QQ^{\QQ(\sqrt{m})}(\disc_{\QQ(\sqrt{m})}^K(1,\sqrt{n})) \\
+        &= (4m)^2N_\QQ^{\QQ(\sqrt{m})}(4n) \\
+        &= (16mn)^2
+    \end{align*}
+    Multiplying the last term by $1/\gcd(m,n)$ gives:
+    \[ \disc(1,\sqrt{m},\sqrt{n},\sqrt{k}) = \frac{(16mn)^2}{\gcd(m,n)^2} = 256mnk \]
+    We adjust this for each of the following cases.
+
+    In case (b), we can write the basis in terms of our given elements using the matrix:
+    \[ \left(\begin{array}{cccc} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1/2 \\ 0 & 0 & 0 & 1/2 \end{array}\right) \]
+    Thus, the discriminant of the ring in case (b) is $256mnk/2^2 = 64mnk$ as claimed. In this case, the three quadratic subfields have discriminants $4m,4n,4k$, respectively, so we get $64mnk = (4m)(4n)(4k)$, also as claimed.
+
+    In case (c), we have the change of basis matrix:
+    \[ \left(\begin{array}{cccc} 1 & 1/2 & 0 & 0 \\ 0 & 1/2 & 0 & 0 \\ 0 & 0 & 1 & 1/2 \\ 0 & 0 & 0 & 1/2 \end{array}\right) \]
+    Thus, the discriminant of the ring in case (c) is $256mnk/4^2 = 16mnk = (m)(4n)(4k)$.
+
+    In case (d), we swap $n,k$ in the basis and have the change of basis matrix:
+    \[ \left(\begin{array}{cccc} 1 & 1/2 & 1/2 & 1/4 \\ 0 & 1/2 & 0 & 1/4 \\ 0 & 0 & 0 & 1/4 \\ 0 & 0 & 1/2 & \gcd(m,n)/4 \end{array}\right) \]
+    Thus, the discriminant of the ring in this case is $256mnk/(-16)^2 = mnk$, which is exactly the product of $m,n,k$, the discriminants of the quadratic subfields.
+\end{proof}

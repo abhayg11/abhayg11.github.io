@@ -1,0 +1,10 @@
+\mtexe{2.25} 
+\begin{proof} 
+    Since $\alpha$ is algebraic, it satisfies a polynomial with coefficients in $\ZZ$ (not necessarily monic) by clearing denominators. I.e.
+    \[ a_n\alpha^n + \cdots + a_1\alpha + a_0 = 0 \]
+    for some $a_0,\ldots,a_n \in \ZZ$ and $a_n \neq 0$. Multiplying through by $a_n^{n-1}$ gives:
+    \[ (a_n\alpha)^n + a_{n-1}(a_n\alpha)^{n-1} + a_{n-2}a_n(a_n\alpha)^{n-2} + \cdots + a_n^{n-1}a_0 = 0 \]
+    and this is an integral relation for $a_n\alpha$.
+
+    So, if $\{\alpha_1,\ldots,\alpha_k\}$ is a finite set of algebraic numbers, there are integers $m_1,\ldots,m_k$ such that $m_i\alpha_i$ are algebraic integers for all $i$, whence $m\alpha_i$ is an algebraic integer for all $i$ for $m = m_1\cdots m_k$.
+\end{proof}

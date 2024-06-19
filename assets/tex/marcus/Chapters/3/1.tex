@@ -1,0 +1,12 @@
+\mtexe{3.1}
+\begin{proof}
+	Let R be a (unital, commutative) ring. Suppose first that every ideal is finitely generated. Then, consider an ascending sequence of ideals:
+	\[ I_1 \subseteq I_2 \subseteq I_3 \subseteq \cdots \]
+	Then, let
+	\[ I = \bigcup_{n=1}^\infty I_n \]
+	First, note that $I$ is an ideal. Indeed, if $x,y \in I$, then there are $n,m$ with $x \in I_n$ and $y \in I_m$. Then $x,y \in I_{\max\{n,m\}}$, so $x+y \in I_{\max\{n,m\}} \subseteq I$. Further, if $r \in R$ is arbitrary, then $rx \in I_n \subseteq I$. Thus, by assumption, $I = (a_1,\ldots,a_n)$ for some elements $a_i \in R$. Then, for each $i$, $a_i \in I_{m_i}$ for some indices $m_i$, and then $a_i \in I_m \subseteq I$ for $m = \max\{m_1,\ldots,m_n\}$. But then $I = I_m$, and so the chain stabilizes: $I = I_m = I_{m+1} = I_{m+2} = \cdots$. \\
+	
+	Second, assume that ascending chains stabilize. Let $S$ be a nonempty set of ideals of $R$. Assume, for contradiction, that $S$ has no maximal element. Then, we can inductively choose a sequence of ideals as follows: let $I_1 \in S$ be arbitrary. Then, since $I_1$ is not a maximal element of $S$, there is an ideal $I_2 \in S$ with $I_1 \subsetneq I_2$. Continue in this way: given $I_n \in S$, it is not maximal, so choose $I_{n+1} \in S$ with $I_n \subsetneq I_{n+1}$. But then we've constructed an ascending chain of ideals of $R$ that does not stabilize, contrary to assumption. \\
+	
+	Finally, suppose every nonempty collection of ideals has a maximal element. Let $I \subseteq R$ be an ideal, and let $S = \{ (a_1,\ldots,a_n) \mid n \in \NN, a_i \in I \}$ be the collection of finitely generated ideals contained in $I$. By assumption, this has a maximal element $(a_1,\ldots,a_n)$. But if $I \neq (a_1,\ldots,a_n)$, then there is some $a \in I \setminus (a_1,\ldots,a_n)$, giving that $(a_1,\ldots,a_n,a) \in S$ strictly contains $(a_1,\ldots,a_n)$. This would contradict maximality, and so we conclude $I = (a_1,\ldots,a_n)$ is finitely generated.
+\end{proof}

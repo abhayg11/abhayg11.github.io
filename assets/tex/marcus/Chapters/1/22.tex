@@ -1,0 +1,8 @@
+\mtexe{1.22}
+\begin{proof}
+    Suppose that $p$ divides $\alpha$. Then,
+    \[ \alpha/p = a_0/p + a_1/p\omega + \cdots + a_{p-2}/p\omega^{p-2} \]
+    On the other hand, $\alpha/p \in \ZZ[\omega]$, and so we can write:
+    \[ \alpha/p = b_0 + b_1\omega + \cdots + b_{p-2}\omega^{p-2} \]
+    for integers $b_i$ (note that we can only use terms up to $\omega^{p-2}$ since higher terms can be reduced using $f$ from the previous problem). But the uniqueness we proved above gives $b_i = a_i/p$, i.e. $a_i = pb_i$ is a multiple of $p$.
+\end{proof}

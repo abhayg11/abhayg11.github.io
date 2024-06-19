@@ -1,0 +1,31 @@
+\mtexe{5.2}
+\begin{proof}
+	This is entirely mechanical. We wish to find the continued fraction expansion of $\sqrt{67}$. Explicitly, we compute:
+	\begin{align*}
+		\frac{1}{\sqrt{67}-8} &= \frac{\sqrt{67}+8}{3} \\
+		\frac{1}{(\sqrt{67}+8)/3-5} &= \frac{\sqrt{67}+7}{6} \\
+		\frac{1}{(\sqrt{67}+7)/6-2} &= \frac{\sqrt{67}+5}{7} \\
+		\frac{1}{(\sqrt{67}+5)/7-1} &= \frac{\sqrt{67}+2}{9} \\
+		\frac{1}{(\sqrt{67}+2)/9-1} &= \frac{\sqrt{67}+7}{2} \\
+		\frac{1}{(\sqrt{67}+7)/2-7} &= \frac{\sqrt{67}+7}{9} \\
+		\frac{1}{(\sqrt{67}+7)/9-1} &= \frac{\sqrt{67}+2}{7} \\
+		\frac{1}{(\sqrt{67}+2)/7-1} &= \frac{\sqrt{67}+5}{6} \\
+		\frac{1}{(\sqrt{67}+5)/6-2} &= \frac{\sqrt{67}+7}{3} \\
+		\frac{1}{(\sqrt{67}+7)/3-5} &= \sqrt{67}+8
+	\end{align*}
+	So, the continued fraction expansion is: $[8; 5, 2, 1, 1, 7, 1, 1, 2, 5, 16, 5, 2, 1, 1, 7, \ldots]$. For the fundamental unit, we should compute the convergent $p/q$ corresponding to $[8; 5, 2, 1, 1, 7, 1, 1, 2, 5]$, which is:
+	\begin{align*}
+	\frac{p}{q}
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{1}{1+\frac{1}{1+\frac{1}{7+\frac{1}{1+\frac{1}{1+\frac{1}{2+\frac{1}{5}}}}}}}}} \\
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{1}{1+\frac{1}{1+\frac{1}{7+\frac{1}{1+\frac{1}{1+\frac{5}{11}}}}}}}} \\
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{1}{1+\frac{1}{1+\frac{1}{7+\frac{1}{1+\frac{11}{16}}}}}}} \\
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{1}{1+\frac{1}{1+\frac{1}{7+\frac{16}{27}}}}}} \\
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{1}{1+\frac{1}{1+\frac{27}{205}}}}} \\
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{1}{1+\frac{205}{232}}}} \\
+		&= 8+\frac{1}{5+\frac{1}{2+\frac{232}{437}}} \\
+		&= 8+\frac{1}{5+\frac{437}{1106}} \\
+		&= 8+\frac{1106}{5967} \\
+		&= \frac{48842}{5967} \\
+	\end{align*}
+	So, a fundamental unit for $\QQ(\sqrt{67})$ is $48842+5967\sqrt{67}$.
+\end{proof}

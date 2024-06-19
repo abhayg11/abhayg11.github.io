@@ -1,0 +1,10 @@
+\mtexe{2.36} 
+\begin{proof} 
+    First, we show the set spans. Let $\gamma \in R_{k+1}$. Then $\pi(\gamma) \in \pi(R_{k+1})$, so $\pi(\gamma) = a\pi(\beta)$ since $\pi(\beta)$ generates the image. Now, $\pi(\gamma-a\beta) = 0$, so $\gamma-a\beta \in \ker(\pi) \cap R_{k+1}$. But $\ker(\pi) = F_k$, so $\gamma-a\beta \in F_k \cap R_{k+1} \subseteq F_k \cap R = R_k$. The remaining terms in the set form a $\ZZ$-basis for $R_k$, so this shows that
+    \[ \gamma = a\beta + \left(a_0 + a_1\frac{f_1(\alpha)}{d_1} + \cdots + a_{k-1}\frac{f_{k-1}(\alpha)}{d_{k-1}}\right) \]
+    for some $a_i \in \ZZ$. So it spans.
+
+    Further, the set is independent. Indeed, if
+    \[ 0 = a\beta + a_0 + \cdots + a_{k-1}\frac{f_{k-1}(\alpha)}{d_{k-1}} \]
+    Then, applying $\pi$ gives $0 = a\pi(\beta)$ since each $f_i$ has degree $i < k$. But $\pi(\beta)$ generates the infinite cyclic image, so we must have $a=0$. Then the relation above becomes a relation on the remaining terms, which were known to be independent. So $a_i = 0$ for each $i$ as well; thus the described set is a basis.
+\end{proof}

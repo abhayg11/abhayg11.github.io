@@ -1,0 +1,13 @@
+\mtexe{2.40} 
+\begin{proof} 
+    It's clear that the $f_i$ form an integral basis for $\ZZ[\alpha]$. Then,
+    \[ \disc(\alpha) = \disc(1,f_1(\alpha),\ldots,f_{n-1}(\alpha)) = (d_1 \cdots d_{n-1})^2\disc\left(1,\frac{f_1(\alpha)}{d_1},\ldots,\frac{f_{n-1}(\alpha)}{d_{n-1}}\right) = (d_1 \cdots d_{n-1})^2\disc(R) \] \\
+    
+    With respect to the basis $1,f_1(\alpha)/d_1,\ldots,f_{n-1}(\alpha)/d_{n-1}$, $R$ is generated freely by the vectors $e_0,\ldots,e_{n-1}$ and $\ZZ[\alpha]$ is generated freely by $e_0,d_1e_1,\ldots,d_{n-1}e_{n-1}$. So, the quotient is the product of the cyclic groups $\ZZ/d_i\ZZ$ for $i=1,\ldots,n-1$. Thus, $R/\ZZ[\alpha]$ has order $d_1 \cdots d_{n-1}$. \\
+
+    For $i,j$ with $i+j < n$, we have $f_i(\alpha)/d_i$ and $f_j(\alpha)/d_j$ are in $R$, so their product is as well, i.e. $f_i(\alpha)f_j(\alpha)/(d_id_j) \in R$. But this is $d_id_j$ over a monic polynomial in $\alpha$ of degree $i+j$, so the leading term comes from an integer multiple of $f_{i+j}(\alpha)/d_{i+j}$. I.e. there is some $n \in \ZZ$ with $n/d_{i+j} = 1/(d_id_j)$, so that $d_{i+j} = nd_id_j$. This shows $d_id_j \mid d_{i+j}$ as claimed. \\
+
+    Finally, similarly, we have $(f_1(\alpha)/d_1)^i$ is in $R$, and it is a monic polynomial in $\alpha$ of degree $i$ divided by $d_1^i$, so we have $n/d_i = 1/d_1^i$ for some $n \in \ZZ$. I.e. $nd_1^i = d_i$, so $d_1^i \mid d_i$ as claimed. Thus, $d_1^{2i} \mid d_i^2$ for each $i$, and taking the product $i=1,\ldots,n-1$ gives:
+    \[ d_1^{2+4+\cdots+2(n-1)} \mid \prod_{i=1}^{n-1} d_i^2 \mid \disc(\alpha) \]
+    where the final divisibility comes from the first part and the fact that $\disc(R)$ is an integer. But the first term here is $d_1^{(n-1)n}$, so this gives the claim.
+\end{proof}

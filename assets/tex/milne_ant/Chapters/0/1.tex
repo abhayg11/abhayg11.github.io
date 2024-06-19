@@ -1,0 +1,6 @@
+\mtexe{0.1}
+\begin{proof}
+	As noted, we need to characterize $a,b \in \QQ$ such that $2a,a^2-db^2 \in \ZZ$. Multiplying the second through by 4 gives $(2a)^2-d(2b)^2 \in \ZZ$, whence $d(2b)^2 \in \ZZ$ since $2a \in \ZZ$, from which we get $2b \in \ZZ$ by prime factorization and the fact that $d$ is squarefree. So, we may rewrite $a = x/2$ and $b = y/2$ for $x,y \in \ZZ$, and wish to characterize when $x^2-dy^2$ is a multiple of $4$. Finally, we consider cases: suppose $d \equiv 2,3 \pmod{4}$. If $y$ is odd, then $x^2-dy^2 \equiv x^2-d \not\equiv 0 \pmod{4}$ since $d$ is not a square modulo $4$. So instead, $y$ must be even, whence $x$ is also even and $\alpha = a+b\sqrt{d} = (x/2)+(y/2)\sqrt{d} \in \ZZ[\sqrt{d}]$. So in this case $\ZZ[\sqrt{d}]$ is precisely the ring of integers.
+	
+	On the other hand, suppose now $d \equiv 1 \pmod{4}$. Then $x^2-dy^2 \equiv x^2-y^2 \equiv 0 \pmod{4}$ whenever $x$ and $y$ have the same parity. I.e. the ring of integers is $\left\{ \frac{x+y\sqrt{d}}{2} : x,y \in \ZZ, x \equiv y \pmod{2} \right\} = \ZZ\left[\frac{1+\sqrt{d}}{2}\right]$. Indeed, one can check that in this case the minimal polynomial for $(1+\sqrt{d})/2$ is $T^2-T-(d-1)/4$.
+\end{proof}

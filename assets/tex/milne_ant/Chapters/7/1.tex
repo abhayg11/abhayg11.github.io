@@ -1,0 +1,10 @@
+\mtexe{7.1}
+\begin{proof}
+	Note that WLOG $d \in \ZZ$ and $d > 0$. For each $i$, choose $b_i \in \ZZ$ large enough that $N(\frp_i)^{-b_i} < d\epsilon$. Then, since $\frp_i$ and $\frp_j$ are coprime for $i,j$ distinct, so are their powers, and so by CRT we can find $x \in \scO_K$ satisfying:
+	\[ x \equiv da_i \pmod{\frp_i^{b_i}} \]
+	for each $i$. I claim that $a = x/d$ is the desired element. Indeed, for each $i$, we have
+	\[ |a-a_i|_i = |x/d-a_i|_i = \frac{|x-da_i|_i}{|d|_i} = \frac{N(\frp_i)^{-\nu_{\frp_i}(x-da_i)}}{d} \leq \frac{N(\frp_i)^{-b_i}}{d} < \epsilon \]
+	as claimed. Further, for $|\cdot|$ any other finite absolute value on $K$,
+	\[ |a| = |x/d| = |x|/d \leq 1/d \]
+	since $x \in \scO_K$.
+\end{proof}

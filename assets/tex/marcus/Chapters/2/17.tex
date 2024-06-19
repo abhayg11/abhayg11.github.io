@@ -1,0 +1,10 @@
+\mtexe{2.17}
+\begin{proof}
+    Assume $L/K$ is a finite extension of degree $n$ as usual. Note that $K \subseteq K[\alpha] \subseteq L$ is a tower of fields. Hence, in particular, $L$ is a $K[\alpha]$-vector space, so we can choose a basis $\beta_1,\ldots,\beta_r$. Then, if $\alpha$ is an element of degree $d$ over $K$ (it must be finite since $L/K$ is finite), then it satisfies a polynomial
+    \[ \alpha^d + c_{d-1}\alpha^{d-1} + \cdots + c_0 = 0 \]
+    Then, $1,\alpha,\ldots,\alpha^{d-1}$ is a basis for $K[\alpha]$ over $K$. Then the $n = dr$ elements $\beta_i\alpha^j$ for $1 \leq i \leq r$ and $0 \leq j < d$ form a basis for $L$ over $K$. With respect to this basis, multiplication by $\alpha$ is block diagonal, with each block of the form:
+    \[ \left(\begin{array}{ccccccc} 0 & 0 & 0 & 0 & \cdots & 0 & -c_0 \\ 1 & 0 & 0 & 0 & \cdots & 0 & -c_1 \\ 0 & 1 & 0 & 0 & \cdots & 0 & -c_2 \\ 0 & 0 & 1 & 0 & \cdots & 0 & -c_3 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 0 & -c_{d-2} \\ 0 & 0 & 0 & 0 & \cdots & 1 & -c_{d-1} \end{array}\right) \]
+    and a total of $r$ blocks (one for each $\beta_i$). Then the trace of this block is $-c_{d-1}$, which is the sum of the roots of the minimal polynomial above of $\alpha$, i.e. $-c_{d-1} = t(\alpha)$ as denoted in the text. This gives the equality on traces: $T(\alpha) = \frac{n}{d}t(\alpha) = r(-c_{d-1})$, which is the trace of the full block diagonal matrix.
+
+    The determinant is similar: the determinant of the above block is $(-1)^dc_0$, which is the product of the roots of the minimal polynomial. In other words, we have $N(\alpha) = (n(\alpha))^{n/d} = \left[(-1)^dc_0\right]^r$, which is the determinant of the full block diagonal matrix.
+\end{proof}

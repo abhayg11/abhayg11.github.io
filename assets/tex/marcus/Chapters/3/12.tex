@@ -1,0 +1,20 @@
+\mtexe{3.12}
+\begin{proof}
+	We show both containments. First, note that
+	\[ (5,\alpha+2)(5,\alpha^2+3\alpha-1) = (25,5\alpha+10,5\alpha^2+15\alpha-5,5\alpha^2+5\alpha) \]
+	Clearly this is contained in $5S$ since each generator is. Conversely, this ideal contains
+	\[ (5\alpha+10)(2\alpha+2) - 2(5\alpha^2+15\alpha-5) - 25 = 5 \]
+	and so it contains $5S$. So the two are equal. \\
+	
+	Consider the map $\ZZ[x] \to \FF_5[x]/(x^2+3x-1)$ (that maps $x$ and $1$ to themselves). The kernel clearly contains $5$ and $x^2+3x-1$. If $f$ is in the kernel, then by polynomial division we can write $f(x) = q(x)(x^2+3x-1)+r(x)$ for $q,r \in \ZZ[x]$ and $r$ of degree at most 1 since $x^2+3x-1$ is monic. Then $r$ is in the kernel, and factorizing it (since $\ZZ[x]$ is a UFD), we find that each prime factor of $r$ is nonzero in the image except possibly $5$. Since $r$ is in the kernel, it must be divisible by $5$, i.e. $f \in (x^2+3x-1,5)$, so this is precisely the kernel. I.e. we have an isomorphism:
+	\[ \ZZ[x]/(5,x^2+3x-1) \cong \FF_5[x]/(x^2+3x-1) \]
+	as claimed. \\
+	
+	Consider the map $\ZZ[x] \to S/(5,\alpha^2+3\alpha-1)$ that maps $x$ to $\alpha$. Then clearly $5$ is in the kernel and $x^2+3x-1 \mapsto \alpha^2+3\alpha-1 = 0$ in the latter ring. So, this factors as a map
+	\[ \ZZ[x]/(5,x^2+3x-1) \to S/(5,\alpha^2+3\alpha-1) \]
+	as claimed. \\
+	
+	So, $S/(5,\alpha^2+3\alpha-1)$ is (isomorphic to) a quotient of $\FF_5[x]/(x^2+3x-1)$. But $x^2+3x-1$ is irreducible in this ring since it has no roots in $\FF_5$. So $\FF_5[x]/(x^2+3x-1)$ is a field and so the only ideals are the zero and improper ideals, hence the only quotients are itself and the zero ring. So, we get that $(5,\alpha^2+3\alpha-1) = S$ or $S/(\alpha^2+3\alpha-1) \cong \FF_{25}$. \\
+	
+	Finally, from the first part, if $(5,\alpha^2+3\alpha-1) = S$, then $5S = (5,\alpha+2)S$. But then $\alpha+2 \in 5S$, so that $(\alpha+2)/5 \in S$, which isn't true by unique representation of elements in $\QQ[\alpha]$.
+\end{proof}

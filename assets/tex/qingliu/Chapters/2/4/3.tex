@@ -1,0 +1,8 @@
+\mtexe{2.4.3} 
+\begin{proof}
+	Note that the principal open subscheme $D(t)$ is isomorphic to $\Spec((\scO_K[T])_t) = \Spec(K[T])$ since inverting the uniformizer gives the field of fractions for a DVR.
+	
+	Geometrically, recall that $\Spec\scO_K$ is a two-point space, with the open (generic) point, and the closed point. Then, $\Spec\scO_K[T]$ is a pair of lines, an "open" line corresponding to $\Spec K[T]$ and a closed line. The closed point $(t,T)$ is the origin of the closed line, and we are asking for closed points of the open line that specialize to the origin. From this model, we should expect only the origin of the open line will specialize to the origin, i.e. the point corresponding to the ideal $(T)$ in $K[T]$.
+	
+	Now, let's prove this algebraically. Let $P \in \Spec K[T]$ be a closed point that specializes to $(t,T)$ in $\Spec\scO_K[T]$. In other words, we have $P \cap \scO_K[T] \subseteq (t,T)$. Now, since $K[T]$ is a PID, we can write $P = (f)$ for some $f$, and since $P$ is maximal, it is nonzero, and so $f$ is irreducible. Clearing denominators, we have that $af \in P \cap \scO_K[T]$ for some $a \in \scO_K^\times$. Now, if $f$ has a nonzero constant term $b \in K$, then $ab \in (t,T)$ since $af,T \in (t,T)$. But $ab$ is a unit, contradicting that $(t,T)$ is proper. I.e. we must have that $f(0) = 0$, but then $T \mid f$. By irreducibility, we have that $(f) = (T)$, i.e. that $P$ is the origin in $\Spec K[T]$ as claimed.
+\end{proof}

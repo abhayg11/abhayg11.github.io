@@ -1,0 +1,10 @@
+\mtexe{2.4.5} 
+\begin{proof}
+	Note that the connected component of $X$ containing a point $x \in X$ is the union of all connected subsets of $X$ containing $x$. Thus, if $Z$ is any irreducible subset of $X$, then $Z$ is connected, so $Z$ is contained in the connected component of any $x \in Z$. \\
+	
+	Now, suppose $X$ is locally Noetherian, and let $U$ be a connected component. We wish to show $U$ is open, so let $x \in U$. Since $X$ is locally Noetherian, $x$ has an open neighborhood that is the finite union of affine neighborhoods of Noetherian rings. Then $x$ is contained in one such neighborhood, say $x \in V = \Spec A$ where $A$ is Noetherian. It now suffices to exhibit a connected open subset of $V$ containing $x$.
+	
+	For this, note that there are only finitely many irreducible components in $V$. We induct on the number of such components that do not contain $x$. If there are none, then each irreducible component of $V$ overlaps (at $x$), and so by the previous problem, $V$ itself is connected and is of course open in $V$. So, suppose there is at least one irreducible component $Z$ not containing $x$. Then the complement of $Z$ is open, so it is covered by principal open sets; choose $f \in A$ so that $x \in D(f) \subseteq V \setminus Z$. The irreducible components of $D(f)$ are given by intersecting irreducible components of $V$ with $D(f)$; in particular $Z$ does not appear. So, in $D(f)$, there are strictly fewer irreducible components that do not contain $x$. Finally, $D(f) \cong \Spec A_f$ is the spectrum of a Noetherian ring, so induction applies and gives an open connected subset $W \subseteq D(f)$ containing $x$. But $D(f)$ is open in $V$, and so $W$ is open in $V$ as desired. \\
+	
+	Lastly, note that each irreducible component is contained in some connected component, and each connected component contains at least one irreducible component. So, there is a surjection from the set of irreducible components to the set of connected components. When $X$ is Noetherian, there are only finitely many of the former and so only finitely many of the latter.
+\end{proof}

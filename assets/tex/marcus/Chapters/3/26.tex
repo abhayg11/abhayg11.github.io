@@ -1,0 +1,33 @@
+\mtexe{3.26}
+\begin{proof}
+	Write $m = hk^2$ as in 2.41. Then from that exercise, $|R/\ZZ[\alpha]| = d_2 \mid 3k$. If $p^2 \nmid m$, then $p \nmid k$, and so $p \nmid |R/\ZZ[\alpha]|$, and the factorization of $pR$ comes from the factorization of $x^3-m \pmod{p}$. \\
+	
+	Note $p \mid k$, $p^2 \nmid k$, and $p \nmid h$ in this case. Then:
+	\[ \gamma^3 = \frac{\alpha^6}{k^3} = \frac{m^2}{k^3} = h^2k \]
+	which is cubefree and not divisible by $p^2$. So, as in the first part, the factorization of $pR$ is given by factoring $x^3-h^2k \equiv x^3 \pmod{p}$. So, we get our answer: $pR = (p,\gamma)^3$. \\
+	
+	We have a $\ZZ$-basis for $R$ given by $1,\alpha,f_2(\alpha)/d_2$ from 2.41, whence $|R/\ZZ[\alpha]| = d_2$. In the case $m \not\equiv \pm 1 \pmod{9}$, we get $d_2 = k$. We do further case work. If, modulo 9, $m$ is either of $2$ or $5$, then $3 \nmid k$, so we can factorize directly. But $x^3-m$ is irreducible over $\FF_3$ since it is cubic with no roots, so we get that $3$ is inert in $R$.
+	
+	If $m$ is either of $4$ or $7$ modulo 9, then $3 \nmid k$ still, but $x^3-m \equiv (x-1)^3 \pmod{3}$. So $3$ is totally ramified in this case, given by $3R = (3,\alpha-1)^3$.
+	
+	If $m$ is either of $\pm 3 \pmod{9}$, then $3 \mid m$, but $3 \nmid k$. So we can still factor the minimal polynomial of $\alpha$ and get $x^3-m \equiv x^3 \pmod{3}$, so $3R = (3,\alpha)^3$ in this case.
+	
+	Finally, if $9 \mid m$, then $3 \mid k$ and $3 \nmid h$. So $h^2k \equiv \pm 3 \pmod{9}$ and we fall into the previous case when considering $\gamma$. That is, $3R = (3,\gamma)^3$ in this last case. \\
+	
+	As suggested, consider $m \equiv \pm 1 \pmod{9}$ and $m \not\equiv \pm 8 \pmod{27}$. Let $\beta = (\alpha \mp 1)^2/3$. Then, $\beta \in R$ and
+	\[ \beta^2 = \frac{\alpha^4 \mp 4\alpha^3 + 6\alpha^2 \mp 4\alpha + 1}{9} = \frac{6\alpha^2 + (m \mp 4)\alpha + (1 \mp 4m)}{9} \]
+	Hence,
+	\[ \left(\begin{array}{c} 1 \\ \beta \\ \beta^2 \end{array}\right) = \left(\begin{array}{ccc} 1 & 0 & 0 \\ 1 & \mp 2/3 & 1/3 \\ (1 \mp 4m)/9 & (m \mp 4)/9 & 2/3 \end{array}\right)\left(\begin{array}{c} 1 \\ \alpha \\ \alpha^2 \end{array}\right) \]
+	So, $\disc(\beta) = \det(A)^2\disc(\alpha)$ for this matrix $A$. I.e.
+	\[ \disc(\beta) = \left(\mp\frac{4}{9} - \frac{m \mp 4}{27}\right)^2(-27m^2) = \frac{-(m \pm 8)^2m^2}{27} \]
+	Note that this is divisible by $3$ but no higher power of 3 since $v_3(m \pm 8) = 2$. So, $3$ does not divide $|R/\ZZ[\beta]|$, and we can determine the splitting of $3R$ by factoring the minimal polynomial of $\beta$ over $\FF_3$. This is:
+	\[ x^3 - x^2 + \frac{1 \pm 2m}{3}x - \frac{(m \mp 1)^2}{27} \equiv x^3-x^2 = x^2(x-1) \pmod{3} \]
+	since the linear and constant coefficients are divisible by 3. So, we finally get:
+	\[ 3R = (3, \beta)^2(3, \beta-1) \]
+	in this case. \\
+	
+	We directly find:
+	\[ \disc(R) = \frac{\disc(\alpha)}{|R/\ZZ[\alpha]|^2} = \frac{-27m^2}{(3k)^2} = -3h^2k^2 \]
+	in this case. But $3 \nmid h,k$, so $9 \nmid \disc(R)$. On the other hand, if $3R = P^3$ for a prime $P$ of $R$, then we would get that $v_3(\disc(R))$ is at least $\sum (e_i - 1)f_i = 2$. This isn't the case, so $3R$ isn't the cube of a prime. Since $3 \mid \disc(R)$, 3 is ramified, and so we only have the case $3R = P^2Q$ for distinct primes $P,Q$.
+\end{proof}
+

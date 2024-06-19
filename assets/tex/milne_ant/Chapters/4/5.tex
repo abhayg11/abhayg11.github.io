@@ -1,0 +1,8 @@
+\mtexe{4.5}
+\begin{proof}
+	Let $I_1,\ldots,I_n$ be integral ideals of $K$ that represent all ideal classes of $K$, so that the class group has order $n$. Then $I_j^n$ is principal for each $j$, so we can find elements $\alpha_1,\ldots,\alpha_n \in K^\times$ with $I_j^n = (\alpha_j)$. Consider the extension $L = K(\alpha_1^{1/n},\ldots,\alpha_n^{1/n})$ given by adjoining the $n$-th roots of these numbers.
+	
+	First, note that $\alpha_j^{1/n} \in \scO_L$ since they satisfy $T^n - \alpha_j$, and so are integral over $\scO_K$. Second, note that
+	\[ (\alpha_j^{1/n})^n = (\alpha_j) = I_j^n\scO_L \]
+	But by uniqueness of factorization in $\scO_L$, this gives $I_j\scO_L = (\alpha_j^{1/n})$. Finally, if $I$ is an arbitrary nonzero ideal of $\scO_K$, then $I = \gamma I_j$ for some $\gamma \in K^\times$ and some $j$, whence $I\scO_L = \gamma I_j\scO_L = (\alpha_j^{1/n}\gamma)$ is principal. So, indeed, every ideal of $\scO_K$ is principal in $\scO_L$.
+\end{proof}

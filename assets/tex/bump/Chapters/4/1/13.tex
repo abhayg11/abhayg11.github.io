@@ -1,0 +1,94 @@
+\mtexe{4.1.13}
+\begin{proof}
+	We'll compute very explicitly for $g = \twomat abcd$ and $g' = \two rstu$ acting on $(x,y,z) \in H$:
+	\begin{align*}
+	{}^g({}^{g'}(x,y,z))
+		&= {}^g(rx+sy,tx+uy,z) \\
+		&= (a(rx+sy)+b(tx+uy),c(rx+sy)+d(tx+uy),z) \\
+		&= ((ar+bt)x+(as+bu)y,(cr+dt)x+(cs+du)y,z) \\
+		&= {}^{\twomat{ar+bt}{as+bu}{cr+dt}{cs+du}}(x,y,z) \\
+		&= {}^{gg'}(x,y,z)
+	\end{align*}
+	as desired. \\
+	
+	[I think this is the approach being suggested, but the hint seems to gloss over the question of existence.] Note that the stated equations do define a function $SL(2,F) \to PGL(W)$, which can be checked directly by showing that they satisfy the relations for $SL(2,F)$. To see that this function is precisely $\omega_1$, it suffices to note that any function $f$ satisfying those equations also satisfies $\pi(^gh) = f(g)\pi(h)f(g)^{-1}$, since this characterizes $\omega_1$. For this, it suffices to check in the specific cases where $h = (u,0,0)$ and $h = (0,u,0)$, since these generate $H$, and it suffices to check $g$ of the forms shown, since these generate $G$.
+	
+	So now, note for $g = \twomat{1}{x}{}{1}$, $h = (u,0,0)$, $\Phi \in W$, and $v \in V$:
+	\begin{align*}
+	(\pi(^gh)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v)
+		&= (\pi(h)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v) \\
+		&= \psi(-2B(u,v))(f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v) \\
+		&= \psi(-2B(u,v))\psi(xB(v,v))(\pi(h)^{-1}f(g)^{-1}\Phi)(v) \\
+		&= \psi(-2B(u,v))\psi(xB(v,v))\psi(-2B(v,-u))(f(g)^{-1}\Phi)(v) \\
+		&= \psi(xB(v,v))\psi(-xB(v,v))\Phi(v) \\
+		&= \Phi(v)
+	\end{align*}
+	as desired. For $h = (0,u,0)$, we similarly compute
+	\begin{align*}
+	(\pi(^gh)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v)
+		&= (\pi(xu,u,0)f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(v) \\
+		&= (\pi(xu/2,0,0)\pi(0,u,0)\pi(xu/2,0,0)f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(v) \\
+		&= \psi(-2B(xu/2,v))(\pi(0,u,0)\pi(xu/2,0,0)f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(v) \\
+		&= \psi(-B(xu,v))(\pi(xu/2,0,0)f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(u+v) \\
+		&= \psi(-B(xu,v))\psi(-2B(xu/2,u+v))(f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(u+v) \\
+		&= \psi(-2B(xu,v)-B(xu,u))\psi(xB(u+v,u+v))(\pi(0,-u,0)f(g)^{-1}\Phi)(u+v) \\
+		&= \psi(xB(v,v))(f(g)^{-1}\Phi)(v) \\
+		&= \psi(xB(v,v))\psi(-xB(v,v))\Phi(v) \\
+		&= \Phi(v)
+	\end{align*}
+	Now, consider the case $g = \twomat{a}{}{}{a^{-1}}$ and $h = (u,0,0)$:
+	\begin{align*}
+	(\pi(^gh)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v)
+		&= (\pi(au,0,0)f(g)\pi(-u,0,0)f(g)^{-1}\Phi)(v) \\
+		&= \psi(-2B(au,v))(f(g)\pi(-u,0,0)f(g)^{-1}\Phi)(v) \\
+		&= \psi(-2aB(u,v))\chi(a)^{\dim V}(\pi(-u,0,0)f(g)^{-1}\Phi)(av) \\
+		&= \psi(-2aB(u,v))\chi(a)^{\dim V}\psi(-2B(-u,av))(f(g)^{-1}\Phi)(av) \\
+		&= \chi(a)^{\dim V}\chi(a^{-1})^{\dim V}\Phi(v) \\
+		&= \Phi(v)
+	\end{align*}
+	For the same $g$, if $h = (0,u,0)$:
+	\begin{align*}
+	(\pi(^gh)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v)
+		&= (\pi(0,u/a,0)f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(v) \\
+		&= (f(g)\pi(0,-u,0)f(g)^{-1}\Phi)(v+u/a) \\
+		&= \chi(a)^{\dim V}(\pi(0,-u,0)f(g)^{-1}\Phi)(av+u) \\
+		&= \chi(a)^{\dim V}(f(g)^{-1}\Phi)(av) \\
+		&= \chi(a)^{\dim V}\chi(a^{-1})^{\dim V}\Phi(v) \\
+		&= \Phi(v)
+	\end{align*}
+	For the last two, we will use Fourier inversion. For completion, we prove the relevant fact:
+	\begin{align*}
+	\hat{\hat\Phi}(v)
+		&= \epsilon q^{-\dim(V)/2}\sum_{w \in V} \hat\Phi(w)\psi(2B(w,v)) \\
+		&= \epsilon^2 q^{-\dim(V)}\sum_{w,w' \in V} \psi(2B(w,v+w'))\Phi(w') \\
+		&= \epsilon^2 q^{-\dim(V)}\left(q^{\dim(V)}\Phi(-v) + \sum_{w' \neq -v} \Phi(w')\sum_{w \in V} \psi(2B(w,v+w')) \\
+		&= \epsilon^2\Phi(-v)
+	\end{align*}
+	Now, penultimately, take $g = \twomat{}{1}{-1}{}$ and $h = (u,0,0)$. Then
+	\begin{align*}
+	(\pi(^gh)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v)
+		&= (\pi(0,-u,0)f(g)\pi(-u,0,0)f(-I)f(g)\Phi)(v) \\
+		&= (f(g)\pi(-u,0,0)f(-I)f(g)\Phi)(v-u) \\
+		&= \epsilon q^{-\dim(V)/2}\sum_{w \in V} (\pi(-u,0,0)f(-I)f(g)\Phi)(w)\psi(2B(w,v-u)) \\
+		&= \epsilon q^{-\dim(V)/2}\sum_{w \in V} \psi(-2B(-u,w))(f(-I)f(g)\Phi)(w)\psi(2B(w,v-u)) \\
+		&= \epsilon q^{-\dim(V)/2}\sum_{w \in V} \psi(2B(u,w))\chi(-1)^{\dim(V)}(f(g)\Phi)(-w)\psi(2B(w,v-u)) \\
+		&= \epsilon q^{-\dim(V)/2}\chi(-1)^{\dim(V)}\sum_{w \in V} \psi(2B(w,v))\hat{\Phi}(-w) \\
+		&= \epsilon q^{-\dim(V)/2}\chi(-1)^{\dim(V)}\sum_{w' \in V} \psi(2B(w',-v))\hat{\Phi}(w') \\
+		&= \chi(-1)^{\dim(V)}\hat{\hat{\Phi}}(-v)
+		&= \epsilon^2\chi(-1)^{\dim(V)}\Phi(v)
+	\end{align*}
+	showing that $\pi(^gh)f(g) = f(g)\pi(h)$ in $PGL(W)$. Finally, when $h = (0,u,0)$ instead:
+	\begin{align*}
+	(\pi(^gh)f(g)\pi(h)^{-1}f(g)^{-1}\Phi)(v)
+		&= (\pi(u,0,0)f(g)\pi(0,-u,0)f(-I)f(g)\Phi)(v) \\
+		&= \psi(-2B(u,v))(f(g)\pi(0,-u,0)f(-I)f(g)\Phi)(v) \\
+		&= \psi(-2B(u,v))\epsilon q^{-\dim(V)/2}\sum_{w \in V} (\pi(0,-u,0)f(-I)f(g)\Phi)(w)\psi(2B(w,v)) \\
+		&= \epsilon q^{-\dim(V)/2}\sum_{w \in V} (f(-I)f(g)\Phi)(w-u)\psi(2B(w-u,v)) \\
+		&= \epsilon q^{-\dim(V)/2}\sum_{w \in V} \chi(-1)^{\dim(V)}(f(g)\Phi)(u-w)\psi(2B(w-u,v)) \\
+		&= \chi(-1)^{\dim(V)}\epsilon q^{-\dim(V)/2}\sum_{w \in V} \hat{\Phi}(u-w)\psi(2B(w-u,v)) \\
+		&= \chi(-1)^{\dim(V)}\epsilon q^{-\dim(V)/2}\sum_{w' \in V} \hat{\Phi}(w')\psi(2B(w',-v)) \\
+		&= \chi(-1)^{\dim(V)}\hat{\hat{\Phi}}{(-v)
+		&= \chi(-1)^{\dim(V)}\epsilon^2\Phi(v)
+	\end{align*}
+	completing the argument.
+\end{proof}

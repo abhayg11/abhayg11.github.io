@@ -1,0 +1,8 @@
+\mtexe{3.2.2}
+\begin{proof}
+	Let $U \hookrightarrow X$ be an open immersion into the locally Noetherian scheme $X$. We can choose a cover of $X$ by (not necessarily finitely many) Noetherian affines $\{\Spec A_i\}$. It suffices to show that each $U \cap \Spec A_i$ is covered by finitely many affines of finitely generated $A_i$-algebras. We drop the subscript in the sequel.
+	
+	Since $U \cap \Spec A$ is open in $\Spec A$, it equals $\Spec A \setminus V(I)$ for some ideal $I$ of $A$. Since $A$ is Noetherian, we have $I = (f_1,\ldots,f_m)$ for some $f_i \in A$, whence
+	\[ U \cap \Spec A = \Spec A \setminus V(I) = \Spec A \setminus V(f_1,\ldots,f_m) = \Spec A \setminus \bigcap_{i=1}^m V(f_i) = \bigcup_{i=1}^m D(f_i) \]
+	So, we're done, since $D(f_i) \cong \Spec A_{f_i}$ is affine and Noetherian since the localization of a Noetherian ring is Noetherian.
+\end{proof}

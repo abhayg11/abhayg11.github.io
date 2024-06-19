@@ -1,0 +1,16 @@
+\mtexe{2.3.8} 
+\begin{proof}
+	The first claim is immediate. Indeed, if $x \in X$, then since the $f_{i,x}$ generate $\scO_{X,x}$, at least one of them cannot be in the maximal ideal of this local ring. That is, $f_i \notin \frm_{X,x}$ for some $i$. But then $x \in X_{f_i}$ for this $i$, so $X$ is the union of the $X_{f_i}$.
+	
+	Now, note that if $f \in \scO_X(X)$ for any scheme $X$, then there is some $g \in \scO_X(X_f)$ with $(f|_{X_f})g = 1$. That is, $f|_{X_f}$ is a unit. This is clear: for $p \in X_f$, we have $f_p$ is invertible, so there is some open $U$ containing $p$ and some $g(p) \in \scO_X(U)$ with $(f|_U)g(p) = 1$. Gluing these gives the $g$ we seek.
+	
+	For $i \in \{0,\ldots,n\}$, let $A_i = A[u_{ij}]$ for variables $u_{ij}$ with $j \in \{0,\ldots,n\} \setminus \{i\}$. That is, each $A_i$ is a polynomial ring over $A$ in $n$ variables. Define the ring homomorphisms $\varphi_i : A_i \to \scO_{X_f}(X_f)$ by $\varphi_i(u_{ij}) = (f_i|_{X_{f_i}})^{-1}(f_j|_{X_{f_i}})$. By the note above, this is well-defined, since $f_i|_{X_{f_i}}$ is invertible. These induce morphisms $F_i : X_{f_i} \to \Spec A_i$.
+	
+	Notice that
+	\[ D_{+}(T_i) = \Spec A[T_0,\ldots,T_n]_{(T_i)} = \Spec A\left[\frac{T_0}{T_i},\ldots,\frac{T_n}{T_i}\right] \]
+	which has a clear isomorphism with $\Spec A_i$ given by $u_{ij} \mapsto T_j/T_i$. Via these isomorphisms, we can extend our maps to $F_i : X_{f_i} \to \PP_A^n$ by composing with the inclusion maps.
+	
+	Finally, we will glue these maps to get a single morphism $f : X \to \PP_A^n$. It is clear from the construction that $f$ satisfies the desired properties. \\
+	
+	In the case that $A$ is a field and $x \in X(A)$ is a rational point, we can write $f_i(x)$ for the image of $f_{i,x}$ in $\scO_{X,x}/\frm_{X,x} = A$. Then, via the identification of the $A$-rational points of $\PP_A^n$ with equivalence classes of $(n+1)$-tuples in $A$, we have $f(x) = [f_0(x) : \cdots : f_n(x)]$.
+\end{proof}
