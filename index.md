@@ -53,7 +53,7 @@ For all of this source code (tex files), see [&#x21B7;this repo](https://github.
 
 ### Macaulay2
 
-* [Hello, World!](macaulay2/helloworld.md)
+* [Hello, World!](macaulay2/helloworld.html)
 
 ### Other
 
