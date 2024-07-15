@@ -1,4 +1,18 @@
 \mtexe{3.1.10}
 \begin{proof}
+	First, note that the scheme morphisms $X \times_S Y \to X$ and $X \times_S Y \to Y$ include as part of their data continuous maps $sp(X \times_S Y) \to sp(X)$ and $sp(X \times_S Y) \to sp(Y)$, respectively, which commute after projecting down to $sp(S)$. Hence by the universal property of the fiber product in the category of topological spaces, we get a continuous map $f : sp(X \times_S Y) \to sp(X) \times_{sp(S)} sp(Y)$ as claimed. \\
 	
+	Explicitly, we can identify a point of $sp(X) \times_{sp(S)} sp(Y)$ as a pair $(x,y)$ with $x \in X$ and $y \in Y$ such that $\pi(x) = \rho(y) \in S$. But then we've seen (3.1.7) that there is some $z \in X \times_S Y$ that projects to both $x$ and $y$ under the scheme morphisms. By the construction of $f$, we get $f(z) = (x,y)$, and so $f$ is indeed surjective. \\
+	
+	Indeed,
+	\[ X \times_S Y = \Spec(\CC \times_\RR \CC) = \Spec(\CC[x]/(x^2+1)) \cong \Spec(\CC \oplus \CC) \]
+	as claimed. But $sp(X)$, $sp(Y)$, and $sp(S)$ are all singletons, so the topological fiber product is also. Hence $f$ cannot inject since the domain has two points. \\
+	
+	Again, in this case each space is a singleton, so the only fiber is all of $\Spec(A)$. But we've already shown that this is an infinite set. \\
+	
+	Note that in this case, $X \times_S Y = \AA_k^2 = \Spec(k[x,y])$, and $sp(X) \times_{sp(S)} sp(Y) = sp(X) \times sp(Y) = \Spec(k[x]) \times \Spec(k[y])$ since $sp(S)$ is a singleton. We can also describe $f$ explicitly: for a prime ideal $P \subseteq k[x,y]$, we have $f(P) = (P \cap k[x], P \cap k[y])$.
+	
+	Suppose first that $k$ is infinite. Consider the open subset $D(x-y) \subseteq \AA_k^2$, and suppose that $f(D(x-y))$ is open. Then, it contains an open rectangle since they form a basis for the product topology, say $U \times V$ for $U \subseteq \Spec(k[x])$ and $V \subseteq \Spec(k[y])$. Identifying the two copies of $\AA_k^1$ as $\Spec(k[t])$, we get that $U,V \subseteq \AA_k^1$. Since $\AA_k^1$ is irreducible, we must have that $U \cap V$ is a nonempty open set. So, its complement is a proper closed set $V(I)$, and since $k[t]$ is a PID, we may assume $I = (g)$ is principal. But then $g$ has finitely many roots in $k$, so there is some $a \in k$ with $g(a) \neq 0$. Thus, $(g) \not\subseteq (t-a)$. In other words, $(t-a) \notin \AA_k^1 \setminus (U \cap V)$, so $(t-a) \in U \cap V$. Reverting to our original notation, this means that $((x-a),(y-a)) \in f(D(x-y))$, so there is some prime $P$ with $P \cap k[x] = (x-a)$ and $P \cap k[y] = (y-a)$. Thus, $P \supseteq (x-a,y-a)$, but this ideal is maximal, so $P = (x-a,y-a)$. However, then $x-y = (x-a)-(y-a) \in P$, and so $P \notin D(x-y)$, contrary to assumption. So we must be mistaken that $f(D(x-y))$ is open at all.
+	
+	Now, suppose that $k = \FF_q$ is a finite field. FINISH / IS IT TRUE?
 \end{proof}

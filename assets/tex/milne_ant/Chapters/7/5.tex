@@ -1,4 +1,14 @@
 \mtexe{7.5}
 \begin{proof}
+	Since $\QQ_2$ has characteristic zero, every quadratic extension is obtained by adjoining the square root of an element of $\QQ_2^\times$. Further, if $a,b \in \QQ_2^\times$ and $a/b \in (\QQ_2^\times)^2$, then $\QQ_2(\sqrt{a}) = \QQ_2(\sqrt{b})$, so we can reduce to looking for representatives of $\QQ_2^\times/(\QQ_2^\times)^2$.
 	
+	But we know that $\QQ_2^\times = \left<2\right> \oplus \ZZ_2^\times$, so $(\QQ_2^\times)^2 = \left<4\right> \oplus (\ZZ_2^\times)^2$, and so $\QQ_2^\times/(\QQ_2^\times)^2 = \{1,2\} \oplus \ZZ_2^\times/(\ZZ_2^\times)^2$. It remains to compute the latter term.
+	
+	Explicitly, $\ZZ_2^\times = 1+2\ZZ_2$, so a general element has the form $1+2a$ for $a \in \ZZ_2$. Then, $(1+2a)^2 = 1+4(a+a^2)$, and note that $a^2+a \equiv 0 \pmod{2}$, so we have that $(\ZZ_2^\times)^2 \subseteq 1+8\ZZ_2$. In fact, they are equal, for if $b \in \ZZ_2$, then $x^2+x-2b \equiv x(x+1) \pmod{2}$, so by Hensel, there is some $a \in \ZZ_2$ such that $a^2+a = 2b$. But then $(1+2a)^2 = 1+4(a^2+a) = 1+8b$.
+	
+	So, at last, we have representatives for $\QQ_2^\times/(\QQ_2^\times)^2$: $\{ 1, 1+2, 1+4, 1+2+4, 2, 2+4, 2+8, 2+4+8 \} = \{ 1,2,3,5,6,7,10,14 \}$. Of course, $1$ represents the class of squares themselves, so does not give a quadratic extension. So, the complete list of quadratic extensions of $\QQ_2$ is $\QQ_2(\sqrt{m})$ where $m$ is any of the above integers (except 1).
+	
+	It remains to show that this list has no duplicates. Suppose that $\QQ_2(\sqrt{a}) = \QQ_2(\sqrt{b})$ for $a,b$ as above. Then in particular we can write
+	\[ \sqrt{a} = x+y\sqrt{b} \]
+	for some $x,y \in \QQ_2$. Squaring gives $a = x^2+by^2+2xy\sqrt{b}$, so if $xy \neq 0$ then $\sqrt{b} = (a-x^2-by^2)/(2xy) \in \QQ_2$, contrary to assumption. So we have two cases left. If $x=0$, then $\sqrt{a} = y\sqrt{b}$, so $a = by^2$, but we've already noted that the above residues are distinct mod squares, so this gives $a=b$. Alternatively $y=0$ in which case $\sqrt{a} = x \in \QQ_2$, which also cannot be. So, indeed, the seven extensions listed above are distinct and enumerate all quadratic extensions of $\QQ_2$.
 \end{proof}

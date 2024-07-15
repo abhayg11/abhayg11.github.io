@@ -1,4 +1,15 @@
 \mtexe{7.6}
 \begin{proof}
+	Without loss of generality, after reordering, we may assume $p_i$ is odd for all $i$ except possibly $i=1$. Let $K_i = \QQ(\alpha_1,\ldots,\alpha_i)$, so that $K_0 = \QQ$ and $K_m = K$. It suffices to show that $K_i \neq K_{i-1}$ for all $i$, since each extension is of degree at most 2. For $i = 1$, this is obvious, since $\sqrt{p_1} \in \QQ(\sqrt{p_1}) \setminus \QQ$. Now, fix $i \geq 2$. Let $n = 4p_1 \cdots p_{i-1}$, let $\zeta_n$ be a primitive $n$th root of unity, and let $L = \QQ(\zeta_n)$. Then for $j < i$ we have $\zeta_{p_j} \in L$, so $\QQ(\zeta_{p_j}) \subseteq L$, and so $\sqrt{\pm p_j} \in L$, since $\QQ(\sqrt{\pm p_j})$ is the unique quadratic subextension of $\QQ(\zeta_{p_j})$. Further, we have $\sqrt{-1} = \zeta_n^{n/4} \in L$, so we also have $\sqrt{p_j} \in L$ for all $j < i$. Hence, $K_{i-1} \subseteq L$. On the other hand, we cannot have $\sqrt{p_i} \in L$, for if it were, then $p_i$ would ramify in $\scO_L$. But for cyclotomic extensions, we know that this would imply $p_i \mid n$, which cannot be since $p_i$ is an odd prime distinct from each of $p_1,\ldots,p_{i-1}$. So, $K_i \not\subseteq L$, and so it cannot be that $K_i = K_{i-1}$, as desired.
 	
+	Now, let $\gamma = \sum_{i=1}^m \sqrt{p_i}$. We will show by induction on $m$ that $K = \QQ(\gamma)$. For $m=1$, this is again obvious. Suppose this is known for all smaller $m$, and for contradiction, suppose $K \neq \QQ(\gamma)$. Then $\QQ(\gamma)$ is fixed by some element of the Galois group of $K/\QQ$. But we can identify these directly; namely, for any $S \subseteq \{1,\ldots,m\}$, we have the automorphism $\sigma_S$ given by
+	\[ \sigma_S(\alpha_i) = \begin{cases} \alpha_i & \text{if }i \notin S \\ -\alpha_i & \text{if }i \in S \end{cases} \]
+	This indeed gives the $2^m$ automorphisms we expect. But it is obvious that $\gamma - \sigma_S(\gamma) \neq 0$ for any nonempty $S$ since it is positive as twice the sum of square roots.
+	
+	Hence the minimal polynomial $f$ of $\gamma$ is irreducible of degree $2^m$. Fix a prime $p$, and consider the factorization of $f$ over $\ZZ_p$. Partition $\{p_1,\ldots,p_m\}$ into the sets $Q,R$ of quadratic residues and nonresidues mod $p$, respectively (consider $p$ itself to be a quadratic residue for this argument, if it appears). For each $q \in Q$, choose $a_q \in \FF_p$ such that $a_q^2 = q \pmod{p}$, which we can do since they are all quadratic residues. Fix an $r_0 \in R$ and for each $r \in R$, choose $b_r \in \FF_p$ such that $b_r^2 = r_0r \pmod{p}$, which again can be done since $r_0r$ is the product of nonresidues, and hence is a residue (remark: if $R = \emptyset$, we will not use $r_0$, so no inappropriate assumption is made here). Now, consider all polynomials of the form
+	\[ X - \sum_{q \in Q} \pm a_q - r_0^{-1}\left(\sum_{r \in R} b_r\right)^2
 \end{proof}
+
+
+gamma - sqrt{p_1} - ... - sqrt{p_k} = sqrt{p_{k+1}} + ... + sqrt{p_m}
+

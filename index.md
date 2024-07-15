@@ -3,6 +3,16 @@ layout: page
 title: Home
 ---
 
+# Contact Info
+
+Work: <firstinitial><last> AT utah DOT edu
+Personal: <first> DOT <last> DOT 127 AT gmail DOT com
+Office: JWB 121
+
+My current students are probably looking for the information [here](#teaching).
+
+---
+
 Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
 
 ![Headshot](assets/img/headshot.jpg)  
@@ -25,7 +35,7 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ### Current courses
 
-* None
+* Summer 2024 - [&#x21B7;pre-REU: Expanding circle maps, digit expansions and topological Markov chains](https://www.math.utah.edu/~vinhage/prereu24/materials/)
 
 ### Previous courses
 
