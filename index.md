@@ -53,7 +53,6 @@ My interests are in number theory, arithmetic geometry, and representation theor
 ### Textbook Solutions
 
 For all of this source code (tex files), see [&#x21B7;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
-
 * Bump - Automorphic Forms and Representations: [Chapter 4](assets/tex/bump/Chapter4.pdf)
 * Hartshorne - Algebraic Geometry: [Chapter 2](assets/tex/hartshorne/Chapter2.pdf)
 * Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](assets/tex/marcus/Chapter2.pdf) \| [Chapter 3](assets/tex/marcus/Chapter3.pdf)
@@ -75,7 +74,6 @@ For all of this source code (tex files), see [&#x21B7;this repo](https://github.
 # Personal
 
 When I'm not doing mathematics, I enjoy...
-
 * Dancing
 	- Living Traditions 2023: [&#x21B7;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x21B7;Live dhol](https://youtu.be/Y2OWHEJIoe4)
 * Animation
