@@ -5,8 +5,8 @@ title: Home
 
 # Contact Info
 
-Work: \<firstinitial>\<last> AT utah DOT edu  
-Personal: \<first> DOT \<last> DOT 127 AT gmail DOT com  
+Work: \<firstinitial>\<lastname> AT utah DOT edu  
+Personal: \<firstname> DOT \<lastname> DOT 127 AT gmail DOT com  
 Office: JWB 121
 
 My current students are probably looking for the information [here](#teaching).
