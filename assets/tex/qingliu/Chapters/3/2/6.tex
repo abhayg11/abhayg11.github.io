@@ -1,4 +1,12 @@
 \mtexe{3.2.6}
 \begin{proof}
+	Note, the claim does not make sense without an additional assumption. For example, when $X = \Spec\FF_p$ and $Y = S = \Spec\ZZ$, with all maps defined by the universal property of $\Spec\ZZ$ being terminal, we indeed have a map of integral $S$-schemes that are finite-type over $S$, but it doesn't induce a map $\FF_p = K(Y) \to K(X) = \QQ$ since no such map exists. In particular, what's missing is that the map $f$ needs to map the generic point of $X$ to the generic point of $Y$; equivalently, we will assume henceforth that $f$ is dominant.
 	
+	Now, one direction is clear; if $f$ induces an isomorphism between open subsets $U$ of $X$ and $V$ of $Y$, then it also induces an isomorphism on the ring of sections, which gives the isomorphism on the corresponding fields of fractions, which is precisely the isomorphism $K(Y) \to K(X)$.
+	
+	So, now suppose that $f_\xi : K(Y) \to K(X)$ is an isomorphism. Choose an open affine $\Spec R \subseteq S$ containing the image of $\xi$, choose an open affine $\Spec A \subseteq Y$ in the preimage of $\Spec R$ that also contains the image of $\xi$, and finally choose an open affine $\Spec B \subseteq X$ containing the preimage of $\Spec A$. We then have that $A,B$ are domains and finitely generated $R$-algebras, and that $f$ induces an $R$-algebra homomorphism $\varphi : A \to B$. The condition that $f$ is dominant tells us that $\varphi$ is injective, and $f_\xi$ being an isomorphism tells us that $\varphi$ induces an isomorphism between $\Frac(A)$ and $\Frac(B)$. After identifying $A$ with its image, we assume $A \subseteq B$ and that $\Frac(A)=\Frac(B)$; it suffices to exhibit $B_h = A_g$ for some $g \in A$ and $h \in B$.
+	
+	Note that since $B$ is a finitely generated $R$-algebra, it is certainly a finitely generated $A$-algebra (say, with the same generators), so that $B = A[x_1,\ldots,x_n]$ for some $x_i \in B$. Each $x_i \in B$, so they are in $\Frac(B) = \Frac(A)$, so we may write them in the form $x_i = a_i/u_i$ for $a_i,u_i \in A$. Let $g = \prod_{i=1}^n a_iu_i$, and consider $A_g,B_g$. On the one hand, $A_g \subseteq B_g$, since $B_g$ contains $A$ and contains $1/g$. On the other hand, $A_g$ contains $A$ and
+	\[ \frac{a_i^2\prod_{j \neq i} a_ju_j}{g} = \frac{a_i}{u_i} = x_i \]
+	for each $i$, so $A_g$ contains $B$. But $A_g$ also obviously contains $1/g$, so it contains $B_g$. This completes the proof by taking $U = \Spec B_g$ and $V = \Spec A_g$.
 \end{proof}
