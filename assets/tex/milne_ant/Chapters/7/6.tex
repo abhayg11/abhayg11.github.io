@@ -6,8 +6,9 @@
 	\[ \sigma_S(\alpha_i) = \begin{cases} \alpha_i & \text{if }i \notin S \\ -\alpha_i & \text{if }i \in S \end{cases} \]
 	This indeed gives the $2^m$ automorphisms we expect. But it is obvious that $\gamma - \sigma_S(\gamma) \neq 0$ for any nonempty $S$ since it is positive as twice the sum of square roots.
 	
-	Hence the minimal polynomial $f$ of $\gamma$ is irreducible of degree $2^m$. Fix a prime $p$, and consider the factorization of $f$ over $\ZZ_p$. Partition $\{p_1,\ldots,p_m\}$ into the sets $Q,R$ of quadratic residues and nonresidues mod $p$, respectively (consider $p$ itself to be a quadratic residue for this argument, if it appears). For each $q \in Q$, choose $a_q \in \FF_p$ such that $a_q^2 = q \pmod{p}$, which we can do since they are all quadratic residues. Fix an $r_0 \in R$ and for each $r \in R$, choose $b_r \in \FF_p$ such that $b_r^2 = r_0r \pmod{p}$, which again can be done since $r_0r$ is the product of nonresidues, and hence is a residue (remark: if $R = \emptyset$, we will not use $r_0$, so no inappropriate assumption is made here). Now, consider all polynomials of the form
-	\[ X - \sum_{q \in Q} \pm a_q - r_0^{-1}\left(\sum_{r \in R} b_r\right)^2
+	Hence the minimal polynomial $f$ of $\gamma$ is irreducible of degree $2^m$. Fix a prime $p$, and consider the factorization of $f$ over $\FF_p$. Partition $\{p_1,\ldots,p_m\}$ into the sets $Q,R$ of quadratic residues and nonresidues mod $p$, respectively (consider $p$ itself to be a quadratic residue for this argument, if it appears). For each $q \in Q$, choose $a_q \in \FF_p$ such that $a_q^2 = q \pmod{p}$, which we can do since they are all quadratic residues. Fix an $r_0 \in R$ and for each $r \in R$, choose $b_r \in \FF_p$ such that $b_r^2 = r_0r \pmod{p}$, which again can be done since $r_0r$ is the product of nonresidues, and hence is a residue (remark: if $R = \emptyset$, we will not use $r_0$, so no inappropriate assumption is made here). Now, consider all polynomials of the form
+	\[ X - \sum_{q \in Q} \pm a_q - r_0^{-1}\left(\sum_{r \in R} \pm b_r\right)^2
+	where each $\pm$ is chosen independently, except that the $\pm$ coefficient of $b_{r_0}$ is always chosen to be $+$.
 \end{proof}
 
 
