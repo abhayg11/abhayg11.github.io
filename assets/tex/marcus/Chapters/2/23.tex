@@ -1,3 +1,28 @@
-\mtexe{2.23} 
-\begin{proof} 
+\mtexe{2.23}
+\begin{proof}
+	The generalized definition for the discriminant should be the following: given an extension of number fields $L/K$ of degree $n$, consider the $K$-embeddings $\sigma_1,\ldots,\sigma_n$ of $L$ into $\CC$. Define
+	\[ \disc^L_K(\alpha_1,\ldots,\alpha_n) = \det((\sigma_i(\alpha_j))_{ij})^2 \]
+	for any $n$-tuple of elements $\alpha_1,\ldots,\alpha_n \in L$.
+	
+	Then Theorem 6 generalizes immediately:
+	\[ \disc^L_K(\alpha_1,\ldots,\alpha_n) = \det((T^L_K(\alpha_i\alpha_j))_{ij}) \]
+	The proof is the same as in the text, since it makes no explicit reference to $\QQ$ or $\ZZ$. \\
+	
+	Similarly, the corollary generalizes: $\disc^L_K(\alpha_1,\ldots,\alpha_n) \in K$, and if each $\alpha_i$ is an algebraic integer, then $\disc^L_K(\alpha_1,\ldots,\alpha_n) \in \scO_K$, which follows from the above since $T^L_K$ has image in $K$, and maps algebraic integers to elements of $\scO_K$. \\
+	
+	Theorem 7 now reads: $\disc^L_K(\alpha_1,\ldots,\alpha_n) = 0$ iff $\alpha_1,\ldots,\alpha_n$ are linearly dependent over $K$. Again, the proof goes through exactly as before. \\
+	
+	Finally, theorem 8: Supposing $L = K[\alpha]$ and $\alpha_1,\ldots,\alpha_n$ are the images of $\alpha$ in $\CC$ under the embeddings, we have
+	\[ \disc^L_K(1,\ldots,\alpha^{n-1}) = \prod_{1 \leq r < s \leq n} (\alpha_r-\alpha_s)^2 = (-1)^{n(n-1)/2}N^L_K(f'(\alpha)) \]
+	where $f$ is the minimal polynomial of $\alpha$ over $K$. The proof again requires little to no modification. \\
+	
+	Let the notation be as in the suggestion. Then both $A$ and $B$ have a natural partitioning into block matrices of size $m \times m$, allowing us to compute that the product $AB$ also consists of an $n \times n$ grid of $m \times m$ submatrices, with the $(i,j)^\text{th}$ submatrix having $(h,k)^\text{th}$ entry
+	\[ \sigma_i(\tau_k(\beta_h))\sigma_i(\alpha_j) = \sigma_i(\alpha_j\tau_k(\beta_h)) = \sigma_i(\tau_k(\alpha_j\beta_h)) \]
+	In other words, as $i,j,k,h$ vary, we get precisely that $AB$ has entries corresponding to the application of the $mn$ embeddings of $M$ into $\CC$, applied to each of the basis elements for $M/K$. So, the squared determinant gives exactly the discriminant:
+	\[ \det(AB)^2 = \disc_K^M(\alpha_1\beta_1,\ldots,\alpha_n\beta_m) \]
+	We now study $\det(A)^2$ and $\det(B)^2$ independently. The latter is more straightforward: $B$ is obtained by taking a matrix and replacing each entry with an $m \times m$ copy of the identity matrix times that entry, so overall, the determinant is raised to the $m^\text{th}$ power. I.e. $\det(B)^2 = \disc_K^L(\alpha_1,\ldots,\alpha_n)^m$.
+	
+	Since $A$ is block-diagonal, we can compute its determinant as the product of the determinants of the blocks. 
+	
+	partc
 \end{proof}

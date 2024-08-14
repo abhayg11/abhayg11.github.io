@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  16 MAY 2024 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  4 AUG 2024 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -819,11 +819,7 @@ tex.def
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 \l__pdf_internal_box=\box112
-) (Chapter2.aux
-
-LaTeX Warning: Label `[' multiply defined.
-
-)
+) (Chapter2.aux)
 \openout1 = `Chapter2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -994,19 +990,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
 ) (Chapters/2/16.tex [5]) (Chapters/2/17.tex) (Chapters/2/18.tex)
 (Chapters/2/19.tex [6]) (Chapters/2/20.tex) (Chapters/2/21.tex [7])
-(Chapters/2/22.tex) (Chapters/2/23.tex) (Chapters/2/24.tex) (Chapters/2/25.tex)
-(Chapters/2/26.tex) (Chapters/2/27.tex) (Chapters/2/28.tex [8])
-(Chapters/2/29.tex
+(Chapters/2/22.tex) (Chapters/2/23.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+
+Overfull \hbox (2.05528pt too wide) in paragraph at lines 11--12
+[]\OT1/LinuxLibertineT-TLF/m/n/10 Similarly, the corol-lary gen-er-al-izes: $[]
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []; [] ; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/
+n/10 2 \OML/cmm/m/it/10 K$\OT1/LinuxLibertineT-TLF/m/n/10 , and if each $\OML/c
+mm/m/it/10 []$ \OT1/LinuxLibertineT-TLF/m/n/10 is an al-ge-braic in-te-ger, th
+en $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []; [] ; []\OT1/cmr/m/n/10 ) \OMS/c
+msy/m/n/10 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+) (Chapters/2/24.tex [8]) (Chapters/2/25.tex) (Chapters/2/26.tex)
+(Chapters/2/27.tex) (Chapters/2/28.tex [9]) (Chapters/2/29.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-) (Chapters/2/30.tex [9]
+) (Chapters/2/30.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
@@ -1016,7 +1046,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) (Chapters/2/31.tex [10]) (Chapters/2/32.tex) (Chapters/2/33.tex
+) (Chapters/2/31.tex) (Chapters/2/32.tex) (Chapters/2/33.tex
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
@@ -1027,7 +1057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-) (Chapters/2/35.tex
+[11]) (Chapters/2/35.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -1042,7 +1072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-[11]
+
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
@@ -1052,13 +1082,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--26
 
  []
 
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 30--32
 
  []
 
-[12]) (Chapters/2/36.tex) (Chapters/2/37.tex) (Chapters/2/38.tex)
-(Chapters/2/39.tex [13]) (Chapters/2/40.tex
+) (Chapters/2/36.tex [13]) (Chapters/2/37.tex) (Chapters/2/38.tex)
+(Chapters/2/39.tex) (Chapters/2/40.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
@@ -1073,7 +1103,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-) (Chapters/2/41.tex
+[14]) (Chapters/2/41.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
@@ -1088,7 +1118,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
  []
 
-[14]
+
 Underfull \hbox (badness 10000) in paragraph at lines 27--29
 
  []
@@ -1103,7 +1133,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
  []
@@ -1118,7 +1148,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
-[15]
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
@@ -1128,7 +1158,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--59
 
  []
 
-
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
@@ -1143,7 +1173,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
@@ -1158,7 +1188,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[17]) (Chapters/2/43.tex [18]
+) (Chapters/2/43.tex [18]
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
 
  []
@@ -1168,17 +1198,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 66--68
 
  []
 
-[19]) (Chapters/2/44.tex
+) (Chapters/2/44.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 26--28
 
  []
@@ -1188,41 +1218,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-[20]) (Chapters/2/45.tex
+) (Chapters/2/45.tex [21]
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-[21]) (Chapters/2/46.tex
+) (Chapters/2/46.tex [22]
 Underfull \hbox (badness 10000) in paragraph at lines 11--13
 
  []
 
-[22]
+
 Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
-) (Chapters/2/47.tex) (Chapters/2/48.tex [23] [24]
+[23]) (Chapters/2/47.tex) (Chapters/2/48.tex [24]
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
 ) [25] (Chapter2.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `Chapter2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24881 strings out of 478338
- 479334 string characters out of 2836700
- 755239 words of memory out of 3000000
- 42693 multiletter control sequences out of 15000+600000
+ 24887 strings out of 478338
+ 478308 string characters out of 2836700
+ 755301 words of memory out of 3000000
+ 42699 multiletter control sequences out of 15000+600000
  479402 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,16n,92p,867b,689s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 89i,16n,92p,867b,668s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_
 kijugd.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libert
 ine/lbtn_oexx6f.enc}{C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
@@ -1245,10 +1272,11 @@ rs/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 msy7.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/symbols/msbm5.pfb><C:/Users/12698/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Chapter2.pdf (25 pages, 517697 bytes).
+eX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/12698/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on Chapter2.pdf (25 pages, 522755 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
+ 240 PDF objects out of 1000 (max. 8388607)
  48 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

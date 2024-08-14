@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  16 MAY 2024 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.23)  4 AUG 2024 12:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -960,10 +960,10 @@ Package rerunfilecheck Info: File `Chapter1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24753 strings out of 478338
- 476551 string characters out of 2836700
- 751178 words of memory out of 3000000
- 42654 multiletter control sequences out of 15000+600000
+ 24760 strings out of 478338
+ 475816 string characters out of 2836700
+ 751226 words of memory out of 3000000
+ 42661 multiletter control sequences out of 15000+600000
  479402 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,10n,92p,861b,530s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -983,7 +983,7 @@ ublic/amsfonts/cm/cmr10.pfb><C:/Users/12698/AppData/Local/Programs/MiKTeX/fonts
 X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/12698/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/12698/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chapter1.pdf (6 pages, 339798 bytes).
+Output written on Chapter1.pdf (6 pages, 339805 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
