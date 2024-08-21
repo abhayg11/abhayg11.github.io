@@ -1,4 +1,12 @@
 \mtexe{7.8}
 \begin{proof}
+	Note that $X^3-X+2$ is irreducible over $\QQ_5$. Indeed, it is reducible if and only if it has a root, and a root would be in $\ZZ_5$, and its reduction mod $5$ would give a solution in $\FF_5$. But we can compute $x^3-x+2$ for each $x \in \FF_5$ explicitly to see it has no roots.
 	
+	On the other hand, $X^3-3X+2$ has the same Newton polygon (in fact, the coefficients have the same 5-adic valuations). However, it is reducible, since it factors as $(X-1)^2(X+2)$ in $\FF_5$ and so the factorization lifts as a quadratic and a linear factor by Hensel. \\
+	
+	Working backwards, we seek three distinct irreducible quadratic polynomials over $\QQ_5$. Since $2,3$ are quadratic nonresidues mod 5, we can choose $X^2-2$, $X^2-3$, and $(X+1)^2-2 = X^2+2X-1$. So, the polynomial
+	\[ f(X) = (X^2-2)(X^2-3)(X^2+2X-1)+5g(X) = X^6+2X^5-6X^4-10X^3+11X^2+12X-6+5g(X) \]
+	reduces mod 5 to the product of distinct irreducibles, and so correctly lifts by Hensel to the product of three irreducibles. If we choose $g(X) = X^2$, then we get
+	\[ f(X) = X^6 + 2X^5 - 6X^4 - 10X^3 + 16X^2 + 12X - 6 \]
+	which is irreducible over $\ZZ$ by Eisenstein ($p=2$).
 \end{proof}

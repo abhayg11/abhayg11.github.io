@@ -1,4 +1,14 @@
 \mtexe{7.7}
 \begin{proof}
+	We'll split up the question into two cases. First, we show that there are finitely many $n$ with $p \nmid n$ such that $K$ contains $\zeta_n$. Suppose $\zeta_n \in K$, whence it is also in $\scO_K$, and consider $\Phi_n \in \ZZ[X]$, the cyclotomic polynomial for the $n$th roots of unity. Since $\Phi_n(\zeta_n) = 0$, this equation holds mod $\frm_K$, the unique maximal ideal of $\scO_K$. Hence, the residue field of $K$ contains a primitive $n$th root of unity, and so $n \mid q-1$, where $q = p^f$ is the size of the residue field. Hence there are only finitely such $n$.
 	
+	Second, we consider the case when $p \mid n$. Write $n = p^rn'$, where $p \nmid n'$. Then $K$ contains $\zeta_n$ if and only if it contains both $\zeta_{p^r}$ and $\zeta_{n'}$. Thus, it suffices to show that $K$ only contains finitely many $\zeta_{p^r}$ since we've addressed $\zeta_{n'}$ above. So, suppose $K$ contains $\zeta_{p^r}$, so that we have a tower of fields: $\QQ_p \subseteq \QQ_p(\zeta_{p^r}) \subseteq K$. Ramification indices are multiplicative, so we get
+	\[ e(K \mid \QQ_p) = e(K \mid \QQ_p(\zeta_{p^r}))e(\QQ_{p(\zeta_{p^r}) \mid \QQ_p) \geq \phi(p^r) = p^{r-1}(p-1)  \]
+	But this now gives a bound on $r$ that depends only on $K$. Hence, there are only finitely many possible values for $r$, as desired. \\
+	
+	First, note that $\sum_n \zeta_np^n$ is indeed Cauchy since $|\zeta_np^n| = p^{-n} \to 0$ and the absolute value is nonarchimedean. For simplicity, we will consider the subsum over all $n$ coprime to $p$. Suppose, for contradiction, that it converges to $\beta \in \QQ_p^{\text{al}}$. For each $k$, let $\beta_k = \sum_{n \leq k \atop p \nmid n} \zeta_np^n$ be the partial sum. Then notice that
+	\[ |\beta-\beta_k| \leq p^{-(k+1)} \]
+	Let $\alpha_k$ be another conjugate of $\beta_k$. Then $\beta_k-\alpha_k$ is a sum of terms of the form $p^n\zeta_n(1-\zeta_n^i)$ for some $n$ with $p \nmid n \leq k$ and some $i$ for each $n$. This term has absolute value $p^{-n}$ since the first factor is $p^n$, the second is a unit, and the third has norm dividing $n^n$, which is a unit in $\ZZ_p$. Since the terms have different absolute values, the absolute value of the sum is precisely the maximum, which is at least $p^{-k}$.
+	
+	In other words, we are in a situation where Krasner applies. We've shown that $\beta$ is closer to $\beta_k$ than any of its conjugates for each $k$, and so $\QQ_p(\beta)$ contains each $\beta_k$. But then it contains $\beta_k-\beta_{k-1} = \zeta_k$ for each $k$, so it contains $\zeta_kp^k$ for each $k$ coprime to $p$. But then $\QQ_p(\beta)$ contains each such $\zeta_k$, contradicting the first half of this problem.
 \end{proof}

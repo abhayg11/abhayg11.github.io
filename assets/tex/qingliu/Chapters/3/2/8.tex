@@ -1,4 +1,6 @@
 \mtexe{3.2.8}
 \begin{proof}
+	Suppose $f : X \to Y$ is a morphism of finite type with finite fibers, and let $y \in Y$. Then $X_y \cong f^{-1}(y)$ is a finite set, and the induced map $X_y \to k(y)$ is a morphism of finite type. For any $x \in X_y$, we can choose an open affine $\Spec A$ containing $x$, and this condition guarantees that $A$ is a finitely generated $k(y)$-algebra. Then $\scO_{X_y,x} = A_x$ is the localization of $A$ at the prime $x$, which is a finitely generated $k(y)$-algebra, and so by Noether normalization is module-finite over a polynomial ring over $k(y)$ with as many variables as the dimension of $A_x$. So, we are done if $\dim A_x = 0$. But a polynomial ring in at least one variable over a field has infinitely many primes (Euclid), while $A_x$ only has finitely many. \\
 	
+	For a counterexample, consider a field extension $L/K$. Then the structure map $f : \Spec L \to \Spec K$ obviously has finite fibers, but in order for it to be quasi-finite, we need the stalk of $\Spec L$ at its only point to be finite over the residue field of $\Spec K$ at its point. I.e. we need $L/K$ to be a finite field extension, so take $L/K$ any infinite extension for a counterexample.
 \end{proof}
