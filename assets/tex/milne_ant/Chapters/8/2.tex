@@ -1,0 +1,18 @@
+\mtexe{8.2}
+\begin{proof}
+	First, suppose $i > 0$, and let $\sigma,\tau \in G_i$. Then write $a(\tau) = x + y\Pi$, and note:
+	\begin{align*}
+	\Pi + a(\sigma\tau)\Pi^{i+1}
+		&= \sigma(\tau(\Pi)) \\
+		&= \sigma(\Pi+a(\tau)\Pi^{i+1}) \\
+		&= \sigma(\Pi+x\Pi^{i+1}+y\Pi^{i+2}) \\
+		&= \Pi + a(\sigma)\Pi^{i+1} + x(\Pi+a(\sigma)\Pi^{i+1})^{i+1} + y(\Pi+a(\sigma)\Pi^{i+1})^{i+2} \\
+	\end{align*}
+	So, working modulo $\Pi^{i+2}$ gives
+	\[ \Pi + a(\sigma\tau)\Pi^{i+1} \equiv \Pi + a(\sigma)\Pi^{i+1} + x\Pi^{i+1} \equiv \Pi + [a(\sigma)+a(\tau)]\Pi^{i+1} \pmod{\Pi^{i+2}} \]
+	and so $a(\sigma\tau) \equiv a(\sigma)+a(\tau) \pmod{\Pi}$ as desired. Notice that we've used $i > 0$ in particular to argue that the term $a(\sigma)\Pi^{(i+1)^2}$ vanishes modulo $\Pi^{i+2}$, etc. \\
+	
+	Conversely, if $i = 0$, then the same computation as above shows
+	\[ a(\sigma\tau) = a(\sigma) + a(\tau) + a(\sigma)a(\tau) + y\Pi(a(\sigma)+a(\sigma)^2) \]
+	and so $a(\sigma\tau) \equiv a(\sigma) + a(\tau) + a(\sigma)a(\tau) \pmod{\Pi}$. Hence for any $\sigma \in G_0 \setminus G_1$, we have $a(\sigma^2) - 2a(\sigma) \equiv a(\sigma)^2 \not\equiv 0 \pmod{\Pi}$, showing that the proposed map is not a homomorphism.
+\end{proof}
