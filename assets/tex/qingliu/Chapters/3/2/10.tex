@@ -1,5 +1,23 @@
 \mtexe{3.2.10}
 \begin{proof}
 	Recall that we previously showed (exercise 2.3.20) that if $A$ is a ring, $G$ is a finite group of automorphisms of $A$, $A^G$ is the invariant subring, and $p : \Spec A \to \Spec A^G$ the morphism induced by $A^G \hookrightarrow A$, then $p(x_1) = p(x_2)$ if and only if there is a $\sigma \in G$ such that $\sigma(x_1) = x_2$.
-	In our case, $G$ is the Galois group of $K/k$ and $A = L \otimes_k K$; in order to show that $G$ acts transitively on $\Spec A$, it thus suffices to show that $p(x_1) = p(x_2)$ for any $x_1,x_2 \in A$. So, we should compute $A^G = (L \otimes_k K)^G$. Suppose that $\sum_i \ell_i \otimes r_i \in A^G$. 
+	In our case, $G$ is the Galois group of $K/k$ and $A = L \otimes_k K$; in order to show that $G$ acts transitively on $\Spec A$, it thus suffices to show that $p(x_1) = p(x_2)$ for any $x_1,x_2 \in A$. So, we should compute $A^G = (L \otimes_k K)^G$. For this, consider the exact sequence
+	\[ 0 \to k \to K \xrightarrow{f} \prod_{\sigma \in G} K \]
+	of $k$-modules, where $f(a) = (\sigma(a)-a)_{\sigma \in G}$. Indeed, this is exact since the kernel of the nontrivial map is precisely those $a \in K$ such that $\sigma(a) = a$ for all $\sigma$; i.e. it is the fixed field of $K$ under $G$, which is $k$ by definition. Then, $L$ is a free $k$-module, hence a flat $k$-module, so tensoring gives the exact sequence
+	\[ 0 \to L \to K \otimes_k L \xrightarrow{f \otimes \id_L} \to \left(\prod_{\sigma \in G} K\right) \otimes_k L \]
+	So, $L$ is precisely the kernel of $f \otimes \id_L$. But this map acts exactly as $G$ does: for a simple tensor $a \otimes b \in K \otimes_k L$, we have $\sigma(a \otimes b) = \sigma(a) \otimes b = (\sigma \otimes \id_L)(a \otimes b)$, and so the kernel of $f \otimes \id_L$ is precisely the fixed subring of $K \otimes_k L$. Note that this proof only requires $L$ to be a $k$-module; nowhere did we use that it is a field.
+	
+	But now, we're done, since $p(x_1) = p(x_2)$ is the unique point of $\Spec L$ for any $x_1,x_2$ as above. \\
+	
+	Note that the action of $G$ on $X_K$ is as follows: each element $\sigma \in G$ induces a map which we also denote $\sigma : \Spec K \to \Spec K$. Thus we get a double Cartesian diagram
+	\[ \begin{tikzcd} X_K \arrow[r, "f_\sigma"] \arrow[d] & X_K \arrow[r] \arrow[d] & X \arrow[d] \\ \Spec K \arrow[r, "\sigma"] & \Spec K \arrow[r] & \Spec k \end{tikzcd} \]
+	The map $f_\sigma$ is the action of $\sigma$ on $X_K$. This description makes it clear that, on points, each $f_\sigma$ is a homeomorphism with inverse $f_{\sigma^{-1}}$, and so carries irreducible components to irreducible components. So, it suffices to understand each $f_\sigma$ on generic points of $X_K$.
+	
+	First, let $\eta \in X$ denote its generic point. Then, I claim that each generic point of $X_K$ lies in the fiber over $\eta$. Indeed, let $\xi \in X_K$ be a generic point of some irreducible component of $X_K$, and let $\pi : X_K \to X$ denote the projection. Choose an affine neighborhood $\Spec A$ of $\pi(\xi)$ and an affine neighborhood $\Spec B$ of $\xi$ contained in $\pi^{-1}(\Spec A)$. Then $\eta \in \Spec A$ is the unique minimal prime, and $\xi \in \Spec B$ is one of its minimal primes. Note that $k \hookrightarrow K$ is free, hence flat, and that this is preserved by base change, so $A \to B$ is flat. So, this extension satisfies going down; in particular, $\pi(\xi)$ is a prime ideal in $\Spec A$, so it contains $\eta$, and if this containment were proper, we could find a prime ideal properly contained in $\xi$ that projects to $\eta$. But $\xi$ is minimal, so this cannot be. Hence, $\pi(\xi) = \eta$ as claimed.
+	
+	So now, we know that all generic points lie in the fiber $(X_K)_\eta$ over $\eta$, which can be constructed itself as a fiber product via the following diagram:
+	\[ \begin{tikzcd} (X_K)_\eta \arrow[r] \arrow[d] & \Spec k(\eta) \arrow[d] \\ X_K \arrow[r,"\pi"] \arrow[d] & X \arrow[d] \\ \Spec K \arrow[r] & \Spec k \end{tikzcd} \]
+	But this makes it clear that $(X_K)_\eta \cong \Spec(k(\eta)) \times_k \Spec K = \Spec(k(\eta) \otimes_k K)$, and the first part of this problem demonstrates that $G$ therefore acts transitively on it, as claimed. \\
+	
+	Finally,
 \end{proof}
