@@ -5,8 +5,7 @@ title: Home
 
 # Contact Info
 
-Work: \<firstinitial>\<lastname> AT utah DOT edu  
-Personal: \<firstname> DOT \<lastname> DOT 127 AT gmail DOT com  
+[Work Message](https://docs.google.com/forms/d/e/1FAIpQLSftPbasi-MWPYgw60U6WxMLNv4Kl1PuiOK2pRLTq30Au4yevw/viewform?usp=sf_link) | [Personal Message](https://docs.google.com/forms/d/e/1FAIpQLSfZYKXpQ05JjhMZjeAKn2WVTH5-M_zR_uot5u0m9_4SOLlsSA/viewform?usp=sf_link)  
 Office: JWB 121
 
 My current students are probably looking for the information [here](#teaching).
