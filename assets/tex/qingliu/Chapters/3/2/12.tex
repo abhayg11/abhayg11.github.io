@@ -1,4 +1,12 @@
 \mtexe{3.2.12}
 \begin{proof}
+	We are trying to compute the number of irreducible components of $X_{\bar{k}}$, where $\bar{k}$ is a fixed algebraic closure of $k$. First, we note that as usual, each generic point of $X_{\bar{k}}$ lies in the generic fiber of $\pi : X_{\bar{k}} \to X$. Indeed, if $\eta \in X$ is the generic point, and $\xi \in X_K$ is some generic point, then choosing an affine neighborhood $\Spec A$ of $\pi(\xi)$, we get an affine neighborhood $\Spec(A \otimes_k \bar{k})$ of $\xi$. Since $k \hookrightarrow \bar{k}$ is free, it is flat, and so $A \to A \otimes_k \bar{k}$ is flat, whence it satisfies going-down. So, if $\pi(\xi)$ isn't minimal, then we can find a prime contained in $\xi$ that does contract to a minimal prime of $A$, but $\xi$ is minimal, so this is impossible. So $\pi(\xi)$ is a minimal prime, and $\eta$ is the generic point, so it is contained in $A$ and is the unique minimal prime there. So $\pi(\xi) = \eta$ as claimed.
 	
+	Further, we have that the generic fiber is precisely composed of generic points. That is, if $\pi(\xi) = \eta$, then $\xi$ is a generic point of $X_{\bar{k}}$. Indeed, choose affine neighborhoods as above, and note that $k \hookrightarrow \bar{k}$ is also integral, which means that $A \to A \otimes_k \bar{k}$ is also integral. Further, $A$ is also a free $k$-module, so $A$ is flat, which means this map is also an injection. So, $A \otimes_k \bar{k}$ also satisfies incomparability over $A$. In particular, if $\xi$ were not a minimal prime of $A \otimes_k \bar{k}$, then it contains a minimal prime, but both of these must then contract to $\eta$, contradicting incomparability. So we must have that $\xi$ is minimal, i.e. it is a generic point of $X_{\bar{k}}$.
+	
+	So, we have reduced the problem to counting the size of the fiber over $\eta$. By considering the diagram
+	\[ \begin{tikzcd} \Spec(\bar{k} \otimes_k k(X)) \arrow[r] \arrow[d] & X_{\bar{k}} \arrow[r] \arrow[d,"\pi"] & \Spec \bar{k} \\ \Spec k(X) \arrow[r] & X \arrow[r] & \Spec k \end{tikzcd} \]
+	we see that each square is cartesian, and so the fiber is isomorphic (as a scheme) to $\Spec(\bar{k} \otimes_k k(X))$, so we want to count this set.
+	
+	To do this,
 \end{proof}

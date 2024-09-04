@@ -30,7 +30,59 @@
 	\end{align*}
 	Hence, we must conclude that $f$ is irreducible in $\FF_3$. But then it is also irreducible in $\ZZ$, and so in $\QQ$. Further, we can conclude by Dedekind that the Galois group contains a $6$-cycle. \\
 	
-	Now, we will consider $f$ modulo $13$.
+	Now, we will consider $f$ modulo $13$. <INCLUDE THE WORK TO SHOW THAT IT SPLITS AS 5,1>. \\
+	
+	Finally, consider $f$ module $19$ <THIS GIVES 4,1,1 I THINK>. \\
+	
+	Overall, we have shown the galois group $G$ of $f$ to be a transitive subgroup of $S_6$ containing a 4-cycle, a 5-cycle, and a 6-cycle. Hence, $|G| \geq 60$, and explicitly enumerating subgroups of $S_6$ requires that $G$ is isomorphic to one of $A_5,S_5,A_6,S_6$. Note that a 6-cycle is an odd permutation, so it cannot be $A_6$. There are two distinct conjugacy classes of $S_5$ in $S_6$. The usual one, obtained as the stabilizer of a point, is not transitive, so cannot be $G$, nor can its contained copy of $A_5$. The other one, however, arises from the outer isomorphism of $S_6$ applied to this subgroup; this is transitive, so we must consider it (another way to see that it is transitive is that the injection $S_5 \hookrightarrow S_6$ arises from the conjugation action of $S_5$ on its sylow-5 subgroups, which is transitive). Nonetheless, note that the only element of order 4 in $S_5$ must be a 4-cycle, so even though this embedding doesn't preserve cycle type in general, the 4-cycle in $G \subseteq S_6$ would correspond to a 4-cycle in $S_5$ under this embedding, which is again an odd permutation.
+	
+	So, we conclude that either $G = S_6$ or $G = S_5 \subseteq S_6$ via the exceptional embedding. Investigating other small primes suggests that we do not have all elements of $S_6$, and so we would guess (without full proof) that $G = S_5$. \\
+	
+	Finally, we do this computation with a computer. In Sage, this can be accomplished directly via:
+	\begin{verbatim}
+sage: (x^6 + 2*x^5 + 3*x^4 + 4*x^3 + 5*x^2 + 6*x + 7).galois_group(pari_group=True)
+PARI group [120, -1, 14, "L(6):2 = PGL(2,5) = S_5(6)"] of degree 6
+	\end{verbatim}
+	Here, we see that the group order is $120$, and sage (PARI) has identified the group as being isomorphic to $PGL_2(\FF_5) \cong S_5$. This confirms our guess above.
+	
+	For more detail, we can also compute factorizations themselves. Running the following gives us the degrees of the factors after reducing modulo $p$ for various primes, discarding the factorizations with repeated roots (i.e. those that ramify):
+	\begin{verbatim}
+sage: for p in primes(100):
+....:     u = list(f.change_ring(GF(p)).factor())
+....:     ram = False
+....:     for t in u:
+....:         if t[1] > 1:
+....:             ram = True
+....:             break
+....:     if ram:
+....:         continue
+....:     print(p,[t[0].degree() for t in u])
+....:     
+3 [6]
+5 [3, 3]
+11 [6]
+13 [1, 5]
+17 [1, 5]
+19 [1, 1, 4]
+23 [1, 1, 4]
+29 [1, 5]
+31 [1, 1, 4]
+37 [3, 3]
+41 [1, 5]
+43 [1, 1, 4]
+47 [6]
+53 [3, 3]
+59 [1, 1, 4]
+61 [1, 1, 2, 2]
+67 [6]
+71 [6]
+73 [1, 1, 2, 2]
+79 [2, 2, 2]
+83 [1, 1, 4]
+89 [1, 5]
+97 [3, 3]
+	\end{verbatim}
+	Notice that the ratios that appear for the various cycle types are: $([6], 5/23)$, $([3,3], 4/23)$, $([1,5], 5/23)$, $([1,1,4], 6/23)$, $([1,1,2,2], 2/23)$, $([2,2,2], 1/23)$.
 \end{proof}
 
 f(x) = x^6+2x^5+3x^4+4x^3+5x^2+6x+7
