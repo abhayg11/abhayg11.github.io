@@ -1,4 +1,8 @@
 \mtexe{8.4}
 \begin{proof}
-	
+	Write $|k| = q$. Each absolute value is multiplicative, so it suffices to show the product formula for elements of $k[X]$ only. Furthermore, since $k[X]$ is a UFD, it suffices to show it on irreducibles. So, let $f \in k[X]$ be monic and irreducible of degree $d$. Then $f \in fk[X]$ and clearly is not contained in any other prime ideal of $k[X]$. We also have $\nu_{fk[X]}(f) = 1$ and $|k[X]/fk[X]| = q^d$. Writing
+	\[ f(X) = \frac{\bar{f}(X^{-1})}{(X^{-1})^d} \]
+	where $\bar{f}$ denotes the reciprocal polynomial. Note that $\bar{f}k[X^{-1}]$ is a prime ideal of $k[X^{-1}]$, but the absolute value associated to $\bar{f}$ and $f$ are equivalent (by the same calculation as above). Finally, for $\frp = X^{-1}k[X^{-1}]$, we have $\nu_\frp(f) = -d$ and $|k[X^{-1}]/X^{-1}k[X^{-1}]| = q$. These two expressions give the full factorization in both $k[X]$ and $k[X^{-1}]$, so we can compute the product formula:
+	\[ \prod |f| = |f|_{fk[X]}|f|_{X^{-1}k[X^{-1}]} = \left(\frac{1}{q^d}\right)^1\left(\frac{1}{q}\right)^{-d} = 1 \]
+	as claimed.
 \end{proof}
