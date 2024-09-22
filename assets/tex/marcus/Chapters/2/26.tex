@@ -1,3 +1,12 @@
-\mtexe{2.26} 
-\begin{proof} 
+\mtexe{2.26}
+\begin{proof}
+	As in the original proof, write each $\gamma_i$ in terms of the $\beta_i$ to get an equation:
+	\[ \left(\begin{array}{c} \gamma_1 \\ \gamma_2 \\ \vdots \\ \gamma_n \end{array}\right) = M\left(\begin{array}{c} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n \end{array}\right) \]
+	for some matrix $M$ with integer entries. Similarly, we can write
+	\[ \left(\begin{array}{c} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n \end{array}\right) = N\left(\begin{array}{c} \gamma_1 \\ \gamma_2 \\ \vdots \\ \gamma_n \end{array}\right) \]
+	Write $B = \disc(\beta_1,\ldots,\beta_n)$ and $C = \disc(\gamma_1,\ldots,\gamma_n)$. Applying each embedding $\sigma_i$, taking determinants, and squaring each of the previous relations gives
+	\[ C = \det(N)^2B \text{ and } B = \det(M)^2C \]
+	Now, $B = 0$ if and only if $C = 0$, in which case they are equal, so we may assume they are nonzero. Then
+	\[ B = \det(M)^2\det(N)^2B \]
+	implies that $\det(M)^2\det(N)^2 = 1$, and this is a product of nonnegative integers, so both equal $1$. Substituting this back in above gives $B = C$ as claimed.
 \end{proof}
