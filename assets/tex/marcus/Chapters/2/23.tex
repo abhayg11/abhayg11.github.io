@@ -17,12 +17,21 @@
 	where $f$ is the minimal polynomial of $\alpha$ over $K$. The proof again requires little to no modification. \\
 	
 	Let the notation be as in the suggestion. Then both $A$ and $B$ have a natural partitioning into block matrices of size $m \times m$, allowing us to compute that the product $AB$ also consists of an $n \times n$ grid of $m \times m$ submatrices, with the $(i,j)^\text{th}$ submatrix having $(h,k)^\text{th}$ entry
-	\[ \sigma_i(\tau_k(\beta_h))\sigma_i(\alpha_j) = \sigma_i(\alpha_j\tau_k(\beta_h)) = \sigma_i(\tau_k(\alpha_j\beta_h)) \]
+	\[ \sigma_i(\tau_h(\beta_k))\sigma_i(\alpha_j) = \sigma_i(\alpha_j\tau_h(\beta_k)) = \sigma_i(\tau_h(\alpha_j\beta_k)) \]
 	In other words, as $i,j,k,h$ vary, we get precisely that $AB$ has entries corresponding to the application of the $mn$ embeddings of $M$ into $\CC$, applied to each of the basis elements for $M/K$. So, the squared determinant gives exactly the discriminant:
 	\[ \det(AB)^2 = \disc_K^M(\alpha_1\beta_1,\ldots,\alpha_n\beta_m) \]
 	We now study $\det(A)^2$ and $\det(B)^2$ independently. The latter is more straightforward: $B$ is obtained by taking a matrix and replacing each entry with an $m \times m$ copy of the identity matrix times that entry, so overall, the determinant is raised to the $m^\text{th}$ power. I.e. $\det(B)^2 = \disc_K^L(\alpha_1,\ldots,\alpha_n)^m$.
 	
-	Since $A$ is block-diagonal, we can compute its determinant as the product of the determinants of the blocks. 
+	Since $A$ is block-diagonal, we can compute its determinant as the product of the determinants of the blocks. Consider the $n \times n$ matrix $A'$ whose $(h,k)$-th entry is $\tau_h(\beta_k)$. Similarly, we have that the entries are given by the $L$-embeddings of $M$ into $\CC$, applied to a basis of $M/L$, so $\det(A')^2 = \disc_L^M(\beta_1,\ldots,\beta_n)$. But then the $i$th block of $A$ is $\sigma_i(A')$ (applied entrywise), so
+	\[ \det(A)^2 = \prod_{i=1}^m \det(\sigma_i(A'))^2 = \prod_{i=1}^m \sigma_i(\det(A')^2) = N_K^L(\disc_L^M(\beta_1,\ldots,\beta_n)) \]
+	The result now follows from the equality $\det(AB) = \det(A)\det(B)$.
 	
-	partc
+	Let $\alpha_1,\ldots,\alpha_n$ and $\beta_1,\ldots,\beta_m$ be integral bases for $R$ and $S$, respectively. Under the stated hypotheses, $T = RS$, so $\alpha_i\beta_j$ is an integral basis for $T$. From the above,
+	\begin{align*}
+	(\disc T)
+		&= \disc_\QQ^{KL}(\alpha_i\beta_j) \\
+		&= \disc_\QQ^K(\alpha_1,\ldots,\alpha_n)^{[KL:L]}N_\QQ^K(\disc_K^{KL}(\beta_1,\ldots,\beta_m)) \\
+		&= (\disc R)^{[L:\QQ]}(\disc S)^{\disc R)^{[K:\QQ]}
+	\end{align*}
+	since $\beta_1,\ldots,\beta_m$ is a basis for $L/K$, and so $\disc_K^{KL}(\beta_1,\ldots,\beta_m) = \disc_\QQ^L(\beta_1,\ldots,\beta_m)$ and the norm simply multiplies this integer by itself $[K:\QQ]$ times.
 \end{proof}
