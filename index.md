@@ -57,7 +57,7 @@ For all of this source code (tex files), see [&#x21B7;this repo](https://github.
 * Hartshorne - Algebraic Geometry: [Chapter 2](assets/tex/hartshorne/Chapter2.pdf)
 * Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](assets/tex/marcus/Chapter2.pdf) \| [Chapter 3](assets/tex/marcus/Chapter3.pdf)
 * Milne - Algebraic Number Theory: [Solutions](assets/tex/milne_ant/Solutions.pdf)
-* Qing Liu - Algebraic Geometry and Arithmetic Curves: [Chapter 1](assets/tex/qingliu/Chapter1.pdf) \| [Chapter 2](assets/tex/qingliu/Chapter2.pdf)
+* Qing Liu - Algebraic Geometry and Arithmetic Curves: [Chapter 1](assets/tex/qingliu/Chapter1.pdf) \| [Chapter 2](assets/tex/qingliu/Chapter2.pdf) \| [Chapter 3](assets/tex/qingliu/Chapter3.pdf)
 * Vakil - The Rising Sea: [Solutions](assets/tex/risingsea/main.pdf)
 
 ### Macaulay2
