@@ -1,3 +1,24 @@
 \mtexe{2.27} 
-\begin{proof} 
+\begin{proof}
+	Fix isomorphisms $G \cong \ZZ^n$ and $H \cong \ZZ^n$. The inclusion map $H \hookrightarrow G$ gives an injective linear map $T : \ZZ^n \to \ZZ^n$. Expressing $T$ as a matrix, we can convert it to Smith normal form; i.e. there exist matrices $A,B$ with $\det(A),\det(B) = \pm 1$ such that
+	\[ ATB = \left(\begin{array}{cccc} d_1 & 0 & \cdots & 0 \\ 0 & d_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & d_n \end{array}\right) \]
+	with $d_1 \mid d_2 \mid \cdots \mid d_n$. But then after changing basis for $H$, we may assume $B = I$ and similarly, changing basis for $G$ allows us to assume $A = I$. So, the inclusion map is given by the matrix above. In other words, for some basis $\beta_1,\ldots,\beta_n$ of $G$, we have that $d_1\beta_1,\ldots,d_n\beta_n$ is a basis of $H$. This shows both parts a and b, since now $G/H \cong \ZZ/d_1\ZZ \oplus \cdots \oplus \ZZ/d_n$ is a finite group, and we have a basis of the desired form. \\
+	
+	Using these bases,
+	\begin{align*}
+	\disc(H)
+		&= \disc(d_1\beta_1,\ldots,d_n\beta_n) \\
+		&= d_1^2 \cdots d_n^2 \disc(\beta_1,\ldots,\beta_n) \\
+		&= (d_1 \cdots d_n)^2\disc(G) \\
+		&= |G/H|^2\disc(G)
+	\end{align*}
+	as desired. \\
+	
+	By definition, if $\alpha_1,\ldots,\alpha_n$ are an integral basis for $R$, then $\disc(R) = \disc(\alpha_1,\ldots,\alpha_n)$. Conversely, suppose these discriminants are equal. We know that $\disc(R)$ is nonzero, and so $\disc(\alpha_1,\ldots,\alpha_n) \neq 0$, whence $\alpha_1,\ldots,\alpha_n$ are not linearly dependent. So, $H = \left<\alpha_1,\ldots,\alpha_n\right>$ is free abelian of rank $n$, contained in $R$, which is also free abelian of rank $n$. So, by the previous, we get that
+	\[ |R/H|^2\disc(R) = \disc(H) = \disc(\alpha_1,\ldots,\alpha_n) = \disc(R) \]
+	Hence $|R/H|^2 = 1$, so $R = H$ and $\alpha_1,\ldots,\alpha_n$ is an integral basis. \\
+	
+	Defining $H$ as above and writing the same chain of equalities gives:
+	\[ |R/H|^2\disc(R) = \disc(H) = \disc(\alpha_1,\ldots,\alpha_n) \]
+	But now $|R/H|^2$ divides $\disc(\alpha_1,\ldots,\alpha_n)$, and since it's squarefree, we conclude $|R/H| = 1$ finishing the proof as before.
 \end{proof}
