@@ -1,4 +1,10 @@
 \mtexe{3.2.16}
 \begin{proof}
+	Note that if the structure map $A \to B$ that makes $B$ into an $A$-algebra were not injective, then we could take any nonzero $g$ in the kernel to prove the claim. So, we assume $A \hookrightarrow B$ is injective and identify it with its image, so that $A \subseteq B$ is a subring. Then $B \otimes_A K \cong S^{-1}B$, where $S = A \setminus \{0\}$. Let $b \in B$, and since $B \otimes_A K$ is finite over $K$, $b/1$ is integral over $K$, i.e.
+	\[ \frac{b^n}{1} + \frac{a_{n-1}b^{n-1}}{d_{n-1}} + \cdots + \frac{a_0}{d_0} = \frac01 \]
+	Let $d = d_0 \cdots d_{n-1}$ and multiply through by $d^n$ above to get
+	\[ \frac{(db)^n + a_{n-1}'(db)^{n-1} + \cdots + a_0'}{1} = \frac01 \]
+	in $S^{-1}B$. Thus $a[(db)^n + a_{n-1}'(db)^{n-1} + \cdots + a_0'] = 0$ for some $a \in S$. But then again multiplying through by $a^{n-1}$ gives an integral relation for $adb$. So, we have shown the claim for $g = ad$ (which is in $S$, and so nonzero). \\
 	
+	Note that $B = A[b_1,\ldots,b_m]$ for some $b_i \in B$ by assumption. By the above, we can find $g_1,\ldots,g_m \in A \setminus \{0\}$ such that $g_ib_i$ are integral over $A$ for each $i$. Let $h = g_1 \cdots g_m$ be the product and note that $B_h = A_h[b_1,\ldots,b_m]$. But each $g_i$ is a unit in both $A_h,B_h$, so $B_h = A[g_1b_1,\ldots,g_mb_m]$ as well, and this expresses $B_h$ as generated as an algebra over $A_h$ by finitely many integral elements, so $B_h$ is finite over $A_h$ as desired. 
 \end{proof}
