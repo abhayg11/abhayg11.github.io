@@ -1,3 +1,12 @@
 \mtexe{3.35}
 \begin{proof}
+	This is exactly what we get by applying $\sigma_i$ to both sides of $f(x) = (x-\alpha)g(x)$ since $f \in K[x]$ is fixed by each $\sigma_i$. \\
+	
+	Since we are in characteristic zero, the roots of $f$ are distinct, so if $i \neq j$ then $\alpha_i \neq \alpha_j$. Since $\alpha_j$ is a root of $f$ but not of $x-\alpha_i$, we thus conclude $\alpha_j$ is a root of $g_i$. This gives $g_i(\alpha_j) = 0$ for $i \neq j$ as claimed.
+	
+	For the case $i=j$, let us differentiate the above conclusion:
+	\[ f'(x) = g_i(x) + (x-\alpha_i)g_i'(x) \]
+	Thus, evaluating at $\alpha_i$ gives $g_i(\alpha_i) = f'(\alpha_i)$, also as claimed. \\
+	
+	...
 \end{proof}
