@@ -1,6 +1,12 @@
 \mtexe{3.34}
 \begin{proof}
-	More generally, we know that nondegenerate bilinear forms on finite-dimensional vector space have dual bases. Define the inner product $\left<\cdot,\cdot\right> : L \times L \to K$ by $\left<a,b\right> = T(ab)$. Linearity of the trace shows that this is bilinear, and the fact that $T(x) = 0 \implies x = 0$ gives nondegeneracy. Hence with respect to the basis $\alpha_1,\ldots,\alpha_n$, $\left<\cdot,\cdot\right>$ has a dual basis $\beta_1,\ldots,\beta_n$. Thus, $T(\alpha_i\beta_j) = \left<\alpha_i,\beta_j\right> = \delta_{ij}$, which is what we sought.
+	More generally, we know that nondegenerate bilinear forms on finite-dimensional vector space have dual bases. Define the inner product $\left<\cdot,\cdot\right> : L \times L \to K$ by $\left<a,b\right> = T(ab)$. Linearity of the trace shows that this is bilinear, and the fact that $N(x) = 0 \implies x = 0$ and $N(x)$ is a multiple of $x$ gives nondegeneracy. Hence with respect to the basis $\alpha_1,\ldots,\alpha_n$ of $L/K$, $\left<\cdot,\cdot\right>$ has a dual basis $\beta_1,\ldots,\beta_n$. Thus, $T(\alpha_i\beta_j) = \left<\alpha_i,\beta_j\right> = \delta_{ij}$, which is what we sought.
 	
-	...
+	Notice that $A^\ast$ and $B$ are both $R$-modules. Further, it is clear that each $\beta_i \in A^\ast$, since $T(\alpha_j\beta_i) = \delta_{ij} \in R$ for each $j$, which implies $T(\beta_iA) \subseteq R$. This is true for each $i$, so we get $B \subseteq A^\ast$.
+	
+	Suppose now that $\gamma \in A^\ast$. Define
+	\[ \beta = \sum_{j=1}^n \left<\gamma,\alpha_j\right>\beta_j \]
+	Then, $\beta \in B$ since we've written it as an $R$-linear combination of $\beta_1,\ldots,\beta_n$, and for each $i$, we have:
+	\[ \left<\alpha_i,\beta\right> = \left<\alpha_i,\sum_{j=1}^n \left<\gamma,\alpha_j\right>\beta_j\right> = \sum_{j=1}^n \left<\gamma,\alpha_j\right>\left<\alpha_i,\beta_j\right> = \left<\gamma,\alpha_i\right> \]
+	The form is symmetric, so we can also express this by saying $\left<\alpha_i,\beta-\gamma\right> = 0$ for each $i$. But then $\left<\alpha,\beta-\gamma\right> = 0$ for any $\alpha \in L$ by linearity, and so $\beta-\gamma = 0$ by nondegeneracy. In other words, we have $\gamma = \beta \in B$ as desired.
 \end{proof}
