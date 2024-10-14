@@ -1,4 +1,10 @@
 \mtexe{3.3.1}
 \begin{proof}
+	Note that the map on stalks can be computed locally, so the fact that $f^\#_x$ is surjective for each $x \in X$ is immediate. So, the question posed here is really topological, as we need only to show that $f$ is a homeomorphism onto its image. Notice that for each $i$, the restriction $f_i : f^{-1}(Y_i) \to Y_i$ is a closed immersion, and so a homeomorphism onto its image, which we denote $Z_i = f(X) \cap Y_i$. Thus, it has a well-defined continuous inverse $g_i : Z_i \to f^{-1}(Y_i)$. I claim that $f(X) = \bigcup_i Z_i$ and that the $g_i$ agree on overlaps, so that they can be glued to a continuous function $g : f(X) \to X$ since each $Z_i$ is open in $f(X)$. Then, it is clear that $f \circ g = \id_{f(X)}$ and $g \circ f = \id_X$, so this would complete the argument.
 	
+	The first subclaim is obvious:
+	\[ \bigcup_i Z_i = \bigcup_i (f(X) \cap Y_i) = f(X) \cap \bigcup_i Y_i = f(X) \]
+	since the $Y_i$ cover $f(X)$. So, finally, suppose $y \in Z_i \cap Z_j$. In particular, $y \in f(X)$, so $y = f(x)$ for some $x \in X$. Then $y \in Y_i$, so $x \in f^{-1}(Y_i)$, the domain of $f_i$. In particular,
+	\[ g_i(y) = g_i(f(x)) = g_i(f_i(x)) = x \]
+	But the exact same argument shows $x \in f^{-1}(Y_j)$, so that $g_j(y) = x$ as well, and so $g_i(y) = g_j(y)$ for any $y$ in their common domain. Thus, we can apply pasting and we win.
 \end{proof}
