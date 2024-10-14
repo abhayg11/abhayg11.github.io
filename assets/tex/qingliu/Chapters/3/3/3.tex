@@ -1,4 +1,12 @@
 \mtexe{3.3.3}
 \begin{proof}
+	If $\dim(X) = \infty$, the claim is obvious, so throughout we will assume $\dim(X)$ is finite. First, let us show the claim when $Y$ is finite-dimensional and irreducible by induction on its dimension. If $\dim(Y) = 0$, there is nothing to show as $\dim(X) \geq \dim(Y)$ trivially.
 	
+	So, suppose $\dim(Y) > 0$ and the claim is known for smaller dimensions. Note that $X$ has a finite number of irreducible components $X_1,\ldots,X_n$. Then,
+	\[ \bigcup_{i=1}^n f(X_i) = f\left(\bigcup_{i=1}^n X_i\right) = f(X) = Y \]
+	and so by irreducibility of $Y$ and closedness of $f$, we must have that $Y = f(X_i)$ for some $i$. Replacing $X$ with $X_i$ allows us to assume now that $X$ is also irreducible since $\dim(X) \geq \dim(X_i)$. Next, choosing a maximal chain of irreducible closed subsets in $Y$ gives us an irreducible closed subset $Y' \subseteq Y$ with $\dim(Y') = \dim(Y)-1$. Let $X' = f^{-1}(Y')$, and note that the restriction of $f$ to $X'$ is a surjective closed map, so by induction, $\dim(X') \geq \dim(Y') = \dim(Y)-1$. On the other hand, $X' \neq X$ since otherwise $Y = f(X) = f(X') = Y'$, and these have different dimensions. So, a chain of irreducible closed subsets of $X'$ of length $\dim(Y)-1$ can be extended by the irreducible closed set $X$ itself, giving $\dim(X) \geq \dim(Y)-1 + 1 = \dim(Y)$ as desired.
+	
+	We now deduce the general case in stages. Suppose still that $\dim(Y)$ is finite, but that $Y$ is not necessarily irreducible. Then, writing $\{Y_i\}$ for the irreducible closed subsets and $X_i = f^{-1}(Y_i)$, we get
+	\[ \dim(Y) = \sup_i \dim(Y_i) \leq \sup_i \dim(X_i) \leq \dim(X) \]
+	where the middle inequality follows from the case we just handled. Finally, suppose that $\dim(Y)$ is infinite. Then the same computation, restricted to finite dimensional $Y_i$, shows that $\dim(X) = \infty$ as well and we're done.
 \end{proof}
