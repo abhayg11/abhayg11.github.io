@@ -1,4 +1,8 @@
 \mtexe{3.3.2}
 \begin{proof}
+	$(iii) \implies (ii)$: Take $Y = \Spec\ZZ$. Then we have a unique morphism $X \to Y$, and by assumption it is separated, so we have shown that $X$ is separated over an affine scheme. \\
 	
+	$(ii) \implies (i)$: Suppose $X \to \Spec A$ is separated. Then $\Spec A \to \Spec \ZZ$ is also separated since any morphism of affine schemes is separated. But the composition of separated morphisms is separated, so we get that $X \to \Spec \ZZ$ is separated, showing that $X$ is separated. \\
+	
+	$(i) \implies (iii)$: Suppose $X \to Y$ is an arbitrary morphism and consider them both as $\ZZ$-schemes. Then the composition $X \to Y \to \Spec \ZZ$ is separated by assumption, but this implies that the former map $X \to Y$ must itself be separated, which is what we wished to show.
 \end{proof}
