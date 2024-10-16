@@ -1,4 +1,6 @@
 \mtexe{3.3.7}
 \begin{proof}
+	Suppose first that $X \to Y$ is separated and let $Y'$ be a $Y$-scheme. Then $X \times_Y Y' \to Y'$ is also separated since separated morphisms are preserved by base change. So, by the previous exercise, sections of this map are closed immersions. \\
 	
+	Conversely, suppose that sections of $X \times_Y Y' \to Y'$ are closed immersions for all $Y$-schemes $Y'$. Taking $Y' = X$ as a $Y$-scheme via the same morphism $X \to Y$, we get that any section of $X \times_Y X \to X$ is a closed immersion. But $\Delta : X \to X \times_Y X$ is such a section, since it is defined by $(\id_X,\id_X)$. So, the diagonal is a closed immersion, which means that $X \to Y$ is separated by definition.
 \end{proof}
