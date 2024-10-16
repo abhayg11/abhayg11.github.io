@@ -1,4 +1,14 @@
 \mtexe{3.3.4}
 \begin{proof}
+	In any scheme, the dimension of the irreducible component corresponding to the generic point $\xi$ is the same as the dimension of the intersection of that irreducible component with any open subscheme containing $\xi$. So, picking such a generic point of $X \times_k Y$, we can choose open affines in $\Spec A \subseteq X$ and $\Spec B \subseteq Y$ containing the image of $\xi$ and obtain the open affine $\Spec(A \otimes_k B)$ of the product. By Noether normalization, $A$ and $B$ are finite over polynomial rings over $k$ with $q$ and $r$ variables, respectively, so the tensor is finite over a polynomial ring with $q+r$ variables. Hence each minimal prime lies over $(0)$ in the polynomial ring, and in particular the intersection with the irreducible component is $V(\xi)$, which then has the same dimension as $V(0)$ in the polynomial ring, namely $q+r$ as claimed. \\
 	
+	SKETCH: As noted, $X \cap Y \cong \Delta(Z) \cap (X \times_k Y)$. We've just shown that $X \times_k Y$ has irreducible components of dimension $q+r$. When $Z = \AA_k^n$, $Z \times_k Z = \AA_k^{2n}$, and $\Delta(Z)$ is the closed subset determined by the $k$-points
+	\[ (a_1,a_1,a_2,a_2,\ldots,a_n,a_n) \]
+	I.e. it is $V(x_1-x_2,x_3-x_4,\ldots,x_{2n-1}-x_{2n})$. This is cut out by $n$ equations, and by Corollary 2.5.26, each one of these drops the dimension by at most 1 (0 if nilpotent, 1 otherwise). So $\dim(X \cap Y) \geq q+r-n$ as claimed. The case $Z = \PP_k^n$ is similar. \\
+	
+	As per the hint, write $X = V_{+}(I)$ and $Y = V_{+}(J)$ for homogeneous ideals $I,J$ of $B = k[t_0,\ldots,t_n]$. Then $V(I) \cap V(J)$ is nonempty in $\Spec(B)$ since both $I$ and $J$ are contained in the irrelevant ideal $(t_0,\ldots,t_n)$. By the previous part, we get
+	\[ \dim(V(I) \cap V(J)) \geq \dim(V(I))+\dim(V(J))-(n+1) = \dim(\Spec(B/I))+\dim(\Spec(B/J))-n-1 = \dim(\Proj(B/I))+\dim(\Proj(B/J))-n+1 = q+r-n+1 \geq 1 \]
+	But this means that $V(I) \cap V(J)$ contains another prime besides the irrelevant ideal, giving an element of $V_{+}(I) \cap V_{+}(J) = X \cap Y$ as claimed. \\
+	
+	Write $X = A \sqcup B$ for disjoint closed subsets $A,B$. If $A$ contains all generic points of $X$, then $X = A$ and $B = \emptyset$ as desired; similarly for $B$. Otherwise $A$ and $B$ both contain some but not all generic points of $X$, and since it is pure of dimension 1, $\dim(A) = \dim(B) = 1$. But then $A$ and $B$ are closed in $\PP_k^2$ and by the above argument they intersect nontrivially, contrary to assumption. So $X$ must indeed be connected.
 \end{proof}
