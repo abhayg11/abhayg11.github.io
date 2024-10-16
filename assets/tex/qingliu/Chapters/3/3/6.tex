@@ -1,4 +1,8 @@
 \mtexe{3.3.6}
 \begin{proof}
-	
+	Let $g : Y \to X$ be a section of $f$, so that $f \circ g = \id_Y$. Consider the diagram of fiber products:
+	\[ \begin{tikzcd} X \times_X Y \arrow[dr,"h"] \\ & X \times_Y Y \arrow[r,"p_1"] \arrow[d,"p_2"] & X \arrow[d,"\id_X"] \\ & Y \arrow[r,"g"] & X \arrow[dr,"f"] \\ & & & Y \end{tikzcd} \]
+	Since $f$ is separated, $h$ is a closed immersion. Since we took the fiber product along $\id_X$, we get that the projection $p_2 \circ h : X \times_X Y \to Y$ is an isomorphism. Finally, since we also took a product along the composition $f \circ g = \id_Y$, we get that $p_1$ is an isomorphism. But then we can write
+	\[ g = g \circ (p_2 \circ h) \circ (p_2 \circ h)^{-1} = (\id_X \circ p_1) \circ h \circ (p_2 \circ h)^{-1} = p_1 \circ h \circ (p_2 \circ h)^{-1} \]
+	which exhibits $g$ as an isomorphism followed by a closed immersion, followed by another isomorphism. So $g$ itself is a closed immersion as claimed.
 \end{proof}
