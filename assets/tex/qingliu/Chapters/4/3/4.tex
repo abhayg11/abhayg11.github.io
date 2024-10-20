@@ -1,4 +1,12 @@
-\mtexe{4.3.4}
+\begin{exercise}[4.3.4] Let $k$ be a field. Let $A$ be the polynomial ring $k[x,y]$. Show, by computing the dimension of the fibers, that the canonical morphism $\Proj A[T_0,T_1]/(yT_0 - xT_1) \to \Spec A$ is not flat. \end{exercise}
 \begin{proof}
+	Note that $X = \Proj A[T_0,T_1]/(yT_0-xT_1)$ and $Y = \Spec A$ are both $k$-varieties. We also have that $f : X \to Y$ is surjective. Indeed, let $\frp \in Y$ be a prime ideal of $A$. If $x \notin \frp$, then $\frp$ is the image of a point $\frp' \in \Spec k[x,y]_{x} \cong \Spec k[x,y,1/x]$. But in $X$, we have $D_{+}(T_0) \cong \Spec A[T_1]/(y-xT_1) \cong \Spec k[x,y,T_1]/(y-xT_1) \cong \Spec k[x,y,y/x]$, and we have the inclusions $k[x,y] \subseteq k[x,y,y/x] \subseteq k[x,y,1/x]$. This induces maps $\Spec k[x,y,1/x] \to D_{+}(T_0) \to Y$, and the image of $\frp'$ is $\frp$, so we have found an element of $X$ mapping to $\frp$. The argument is perfectly analogous if $y \notin \frp$.
 	
+	Finally, suppose $x,y \in \frp$, so that $\frp = (x,y)$. Then writing $D_{+}(T_0)$ as $\Spec k[x,y,T_1]/(y-xT_1)$ makes it clear that $\frp k[x,y,T_1]/(y-xT_1)$ is prime, as it is prime in $k[x,y,T_1]$ and contains $y-xT_1$. Finally, it is clear that contracting back to $k[x,y]$ gives $\frp$, so we have shown surjectivity.
+	
+	Hence, if $f$ were a flat morphism, we would have that $\dim X_y = \dim X - \dim Y$ for all $y \in Y$. Directly,
+	\[ \dim(X) = \dim(\Proj A[T_0,T_1]/(yT_0-xT_1)) = \dim(\Spec k[x,y,T_0,T_1]/(yT_0-xT_1))-1 = 3-1 = 2 \]
+	and
+	\[ \dim(Y) = \dim(\Spec k[x,y]) = 2 \]
+	So, each fiber should be zero dimensional. On the other hand, the fiber over $(x,y)$ contains at least $\Spec k[x,y,T_1]/(x,y) \cong \Spec k[T_1]$ by the above argument, which is 1-dimensional. So, $f$ cannot be flat.
 \end{proof}
