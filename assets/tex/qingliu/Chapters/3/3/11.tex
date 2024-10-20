@@ -1,4 +1,20 @@
 \mtexe{3.3.11}
 \begin{proof}
+	Note that $X_{red} \to X$ is a surjective closed immersion, both of which are stable under base change, so $X_{red} \times_Y Z \to X \times_Y Z$ is a surjective closed immersion, which means it is a closed immersion and a homeomorphism on points.
 	
+	The morphisms in question fit into a commutative diagram
+	\[ \begin{tikzcd} X_{red} \arrow[r] \arrow[d] & Y_{red} \arrow[d] \\ X \arrow[r] & Y \end{tikzcd} \]
+	where the vertical arrows are closed immersions. This immediately shows that $X \to Y$ separated implies $X_{red} \to Y$ separated since the composition of separated morphisms is separated. It also gives $X_{red} \to Y$ separated implies $X_{red} \to Y_{red}$ separated as whenever a composition is separated so is the first map. Further, we can reverse this one: if $X_{red} \to Y_{red}$ is separated, then $X_{red} \to Y$ is separated as the composition of separated morphisms again. For the final implication, suppose $X_{red} \to Y$ is separated. Then consider the diagram
+	\[ \begin{tikzcd} X_{red} \arrow[rr,"i"] \arrow[d,"\Delta_{X_{red}}"] & & X \arrow[d,"\Delta_X"] \\ X_{red} \times_Y X_{red} \arrow[r] & X_{red} \times_Y X \arrow[r] & X \times_Y X \end{tikzcd} \]
+	By the universal property of fiber products, this diagram commutes -- in brief detail, compose both maps $X_{red} \to X \times_Y X$ with the two projections $X \times_Y X \to X$ and note that the result along both sides of the diagram give $i$. But now the image of $\Delta_X$ is the same as the image of the composition $\Delta_X \circ i$ since $i$ is surjective, which has the same image as composition along the bottom half of the diagram. But each map in this composition is a closed immersion -- $\Delta_{X_{red}}$ by assumption that $X_{red} \to Y$ is separated, and the other maps by the first paragraph above. So, the image of $\Delta_X$ is closed and $X \to Y$ is separated as claimed. \\
+	
+	If $X \to Y$ is separated, then $F_i \to X \to Y$ is separated since the closed immersion $F_i \to X$ is separated. Conversely, suppose each $F_i \to Y$ is separated. We have a similar diagram:
+	\[ \begin{tikzcd} F_i \arrow[rr] \arrow[d,"\Delta_{F_i}"] & & X \arrow[d,"\Delta_X"] \\ F_i \times_Y F_i \arrow[r] & F_i \times_Y X \arrow[r] & X \times_Y X \end{tikzcd} \]
+	and the same argument as above shows that the image of $F_i \to X \to X \times_Y X$ is closed. But the $F_i$ provide a finite closed cover of $X$, so the image of $\Delta_X$ is the (finite) union of these closed sets, and so is also closed, showing that $X \to Y$ is separated. \\
+	
+	For the first part of the analogous argument for properness, the same proof works; properness is also preserved by compositions, and if the composition of morphisms is proper with the latter map separated, then the former is proper, which applies everywhere we used it above. For the final implication, if $X_{red} \to Y$ is proper. Then it is separated, and so by the previous part $X \to Y$ is separated and assumed to be of finite type. But then $X_{red} \to X$ is a surjective morphism of $Y$-schemes, $X$ is a separated finite-type $Y$-scheme, and $X_{red}$ is a proper $Y$-scheme. So $X$ is a proper $Y$-scheme, i.e. $X \to Y$ is proper.
+	
+	If $X \to Y$ is proper, then $F_i \to X \to Y$ is proper for each $i$ by taking compositions again. Finally, suppose that each $F_i \to Y$ is proper and again that $X \to Y$ is of finite type. By the previous part, $X \to Y$ is separated. So, we need to show that $X \to Y$ is universally closed. Let $Z$ be a $Y$-scheme, and consider the Cartesian diagram:
+	\[ \begin{tikzcd} F_i \times_Y Z \arrow[r] \arrow[d] & X \times_Y Z \arrow[r] \arrow[d] & Z \arrow[d] \\ F_i \arrow[r] & X \arrow[r] & Y \end{tikzcd} \]
+	The bottom is proper, so the top is proper since it is stable under base change. In particular, the top is a closed map. But the morphism $F_i \times_Y Z \to X \times_Y Z$ is a closed immersion, so we have reduced the problem to showing that the closedness of a map can be checked on a finite closed cover, which is clear.
 \end{proof}
