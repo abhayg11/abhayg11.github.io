@@ -1,4 +1,8 @@
 \mtexe{3.3.10}
 \begin{proof}
+	Let $\pi_1,\pi_2$ denote the two projections from $X \times_S Y$. Then, by definition $\pi_1 \circ (\id_X,f) = \id_X$, so $(\id_X,f)$ is a section of $\pi_1$ as claimed. If $Y \to S$ is separated, then $\pi_1$ is separated since that property is stable under base change, and so by exercise 3.3.6, $(\id_X,f)$ is a closed immersion, which implies in particular that $\Gamma_f$ is closed in $X \times_S Y$. \\
 	
+	Now, in the case that $Y \to S$ is separated, we've already noted that $(\id_X,f)$ is a closed immersion and now we are giving $\Gamma_f$ the induced reduced closed subscheme structure. But then both the inclusion map $i : \Gamma_f \hookrightarrow X \times_S Y$ and $X \xrightarrow{(\id_X,f)} X \times_S Y$ are closed immersions, and by construction, they have the same image. So, we have two reduced closed subscheme structures on the same set, which must therefore be isomorphic. Let $h : \Gamma_f \to X$ be one of the isomorphisms. Then
+	\[ h = \id_X \circ h = \pi_1 \circ (\id_X,f) \circ h = \pi_1 \circ i \]
+	which shows that $h$ is induced by the projection $\pi_1$, completing the claim.
 \end{proof}
