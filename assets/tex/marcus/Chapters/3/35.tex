@@ -8,5 +8,21 @@
 	\[ f'(x) = g_i(x) + (x-\alpha_i)g_i'(x) \]
 	Thus, evaluating at $\alpha_i$ gives $g_i(\alpha_i) = f'(\alpha_i)$, also as claimed. \\
 	
-	...
+	Directly, the $(i,j)-$th entry of $NM$ is
+	\begin{align*}
+	\sum_{k=1}^n \sigma_i(\gamma_{k-1}/f'(\alpha))\alpha_j^{k-1}
+		&= \frac{1}{\sigma_i(f'(\alpha))}\sum_{k=0}^{n-1} \sigma_i(\gamma_k)\alpha_j^k \\
+		&= \frac{g_i(\alpha_j)}{f'(\alpha_i)}
+		&= \frac{f'(\alpha_j)\delta_{ij}}{f'(\alpha_i)} \\
+		&= \delta_{ij}
+	\end{align*}
+	So, $NM = I$ as claimed. As square matrices with entries in a field, this implies that $MN = I$ as well, which has $(i,j)-$th entry:
+	\[ \sum_{k=1}^n \alpha_k^{i-1}\sigma_k(\gamma_{j-1}/f'(\alpha)) = \sum_{k=1}^n \sigma_k(\alpha^{i-1}\gamma_{j-1}/f'(\alpha)) = T(\alpha^{i-1}\gamma_{j-1}/f'(\alpha)) \]
+	The fact that this is the kronecker delta tells us that $\{1,\alpha,\ldots,\alpha^{n-1}\}$ and $\{\gamma_0/f'(\alpha),\ldots,\gamma_{n-1}/f'(\alpha)\}$ are dual bases as claimed. \\
+	
+	Note that $(x-\alpha)g(x) = f(x)$ and $f \in K[x]$. If $\alpha \in S$, then in fact $f \in R[x]$. Expanding this multiplication explicitly and investigating the coefficient of $x^i$ gives that
+	\[ \gamma_{i-1}-\alpha\gamma_i \in R \]
+	for $i=0,\ldots,n-1$, where we define $\gamma_{-1} = 0$ for convenience. The coefficient of $x^n$ also gives $\gamma_{n-1} = 1$. But now, induction makes it clear that $\gamma_i \in R[\alpha]$ for all $i$; it is certainly true for $i=n$ and the above recurrence allows us to pass from $i$ to $i-1$.
+	
+	Conversely...
 \end{proof}
