@@ -24,5 +24,17 @@
 	\[ \gamma_{i-1}-\alpha\gamma_i \in R \]
 	for $i=0,\ldots,n-1$, where we define $\gamma_{-1} = 0$ for convenience. The coefficient of $x^n$ also gives $\gamma_{n-1} = 1$. But now, induction makes it clear that $\gamma_i \in R[\alpha]$ for all $i$; it is certainly true for $i=n$ and the above recurrence allows us to pass from $i$ to $i-1$.
 	
-	Conversely...
+	Conversely, the same recurrence shows that $M = R\gamma_0 + \cdots + R\gamma_{n-1}$ contains $R[\alpha]$. Indeed, we will show inductively that it contains $\alpha^i$ for $i \geq 0$. First, since again $\gamma_{n-1} = 1$, we have that $\alpha^0 = 1 \in M$. If $\alpha^i \in M$, then write
+	\[ \alpha^i = c_0\gamma_0 + \cdots + c_{n-1}\gamma_{n-1} \]
+	for $c_0,\ldots,c_{n-1} \in R$. Multiplying by $\alpha$ gives
+	\[ \alpha^{i+1} = c_0\alpha\gamma_0 + \cdots + c_{n-1}\alpha\gamma_{n-1} = c_0\gamma_{-1} + \cdots + c_{n-1}\gamma_{n-2} = c_1\gamma_0 + \cdots + c_{n-1}\gamma_{n-2} \in M \]
+	as desired. \\
+	
+	From the previous exercise, we showed that $A^\ast = B$, where $A$ has a given basis over $R$ and $B$ has the dual basis. In the case $A = R[\alpha]$, we can use the basis $1,\ldots,\alpha^{n-1}$ and the dual basis $\gamma_0/f'(\alpha),\ldots,\gamma_{n-1}/f'(\alpha)$ to conclude
+	\[ R[\alpha]^\ast = R\gamma_0/f'(\alpha) + \cdots + R\gamma_{n-1}/f'(\alpha) = (f'(\alpha))^{-1}(R\gamma_0 + \cdots + R\gamma_{n-1}) = (f'(\alpha))^{-1}R[\alpha] \]
+	as desired. \\
+	
+	Then, by the definition of the different,
+	\[ \diff(R[\alpha]) = (R[\alpha]^\ast)^{-1} = ((f'(\alpha))^{-1}R[\alpha])^{-1} = f'(\alpha)S \]
+	For the final equality, note that if $x \in ((f'(\alpha))^{-1}R[\alpha])^{-1}$, then $xf'(\alpha){-1}R[\alpha] \subseteq S$ and in particular, since $1 \in R[\alpha]$, $xf'(\alpha)^{-1} \in S$, so $x \in f'(\alpha)S$. Conversely, if $x \in f'(\alpha)S$, then ...
 \end{proof}
