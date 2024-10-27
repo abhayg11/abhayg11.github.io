@@ -1,3 +1,6 @@
 \mtexe{3.36}
 \begin{proof}
+	It suffices to show that $\alpha_1,\ldots,\alpha_n$ are independent over $K$. Let $c_1,\ldots,c_n \in K$ be such that
+	\[ c_1\alpha_1 + \cdots + c_n\alpha_n = 0 \]
+	Clearing denominators, we may assume that $c_i \in R$ for each $i$. Then, reducing mod $PS$, we get a similar dependence relation. The images of the $\alpha_i$ are independent in $S/PS$ (over $R/P$), so we conclude that $c_i \in P$ for each $i$. So, we have $(c_1,\ldots,c_n) \subseteq P$ as ideals in $R$. If the former is nonzero, then by a lemma in the text, we can find $\gamma \in K$ such that $\gamma(c_1,\ldots,c_n)$ is still an ideal of $R$ not contained in $P$. But the exact same argument applied to $\gamma\sum_i c_i\alpha_i = 0$ gives $\gamma c_i \in P$ for each $i$, contrary to construction. So, we must have $(c_1,\ldots,c_n) = 0$, so each $c_i$ is zero, showing that $\{\alpha_1,\ldots,\alpha_n\}$ is independent over $K$.
 \end{proof}
