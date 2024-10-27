@@ -36,5 +36,9 @@
 	
 	Then, by the definition of the different,
 	\[ \diff(R[\alpha]) = (R[\alpha]^\ast)^{-1} = ((f'(\alpha))^{-1}R[\alpha])^{-1} = f'(\alpha)S \]
-	For the final equality, note that if $x \in ((f'(\alpha))^{-1}R[\alpha])^{-1}$, then $xf'(\alpha){-1}R[\alpha] \subseteq S$ and in particular, since $1 \in R[\alpha]$, $xf'(\alpha)^{-1} \in S$, so $x \in f'(\alpha)S$. Conversely, if $x \in f'(\alpha)S$, then ...
+	For the final equality, note that if $x \in ((f'(\alpha))^{-1}R[\alpha])^{-1}$, then $xf'(\alpha){-1}R[\alpha] \subseteq S$ and in particular, since $1 \in R[\alpha]$, $xf'(\alpha)^{-1} \in S$, so $x \in f'(\alpha)S$. Conversely, if $x \in f'(\alpha)S$, then
+	\[ xf'(\alpha)^{-1}R[\alpha] \subseteq (f'(\alpha)S)(f'(\alpha)^{-1}R[\alpha]) \subseteq R[\alpha]S \subseteq S \]
+	so $x \in (f'(\alpha)^{-1}R[\alpha])^{-1}$ by definition. \\
+	
+	Note that $R[\alpha] \subseteq S$, and both $\cdot^\ast$ and $\cdot^{-1}$ are inclusion-reversing, so $\diff(R[\alpha]) \subseteq \diff(S)$. But $f'(\alpha) = f'(\alpha) \cdot 1 \in f'(\alpha)S = \diff(R[\alpha])$, so this suffices for the claim.
 \end{proof}
