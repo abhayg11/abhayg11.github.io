@@ -1,4 +1,10 @@
 \mtexe{3.3.13}
 \begin{proof}
+	Given an equivalence class $\{(U_i,f_i)\}$ of morphisms $f_i : U_i \to Y$, let $U = \bigcup_i U_i$. Then $\{U_i\}$ is an open cover of $U$ and $f_i$ is a morphism defined on $U_i$ such that they agree on intersections, so by gluing we can define a morphism $f : U \to Y$ and this is the desired maximal element. \\
 	
+	In one direction, note that if $x \in U$, then we can simply take $y = f(x)$; the map $\scO_{Y,y} \to \scO_{X,x}$ is a local ring homomorphism as desired. Conversely, suppose that the image of $\scO_{Y,y} \to K(Y) \to K(X)$ is dominated by $\scO_{X,x}$. Then we have a local ring homomorphism $\scO_{Y,y} \to \scO_{X,x}$, and applying $\Spec$ and including into $Y$ gives a composition $\Spec\scO_{X,x} \to \Spec\scO_{Y,y} \to Y$. Since $X,Y$ are of finite type over $S$ and $S$ is locally Noetherian, exercise 3.2.4 allows us to extend this morphism locally; that is, there is an open set $V$ containing $x$ and a morphism $g : V \to Y$ such that the following commutes:
+	\[ \begin{tikzcd} & V \arrow[dr,"g"] \\ \Spec\scO_{X,x} \arrow[ur] \arrow[r] & \Spec\scO_{Y,y} \arrow[r] & Y \end{tikzcd} \]
+	But now $g$ and $f$ induce the same map $K(Y) \to K(X)$, so they agree on a neighborhood of the generic point, and since $Y$ is separated, they agree on their intersection. So, $V \subseteq U$ and so $x \in U$ as desired. \\
+	
+	...
 \end{proof}
