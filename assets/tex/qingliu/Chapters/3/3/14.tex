@@ -1,4 +1,6 @@
 \mtexe{3.3.14}
 \begin{proof}
-	
+	Using the notation of the previous exercise, if $f$ is defined everywhere then $U = X$ and $\Gamma_f \to X$ is the isomorphism from exercise 3.3.10b. Conversely, suppose $g : \Gamma_f \to X$ is an isomorphism. Then we have the morphism $h = \bar{f} \circ g^{-1} : X \to Y$. On $g^{-1}(U)$, we know that $\bar{f} = f \circ g$, so:
+	\[ h|_U = (\bar{f} \circ g^{-1})|_U = (\bar{f})|_{g^{-1}(U)} \circ (g^{-1})|_U = (f \circ g)|_U \circ (g^{-1})|_U = f|_U \]
+	But $f$ is maximal among such maps, so we must have $f = h$, and in particular, $f$ has domain $X$.
 \end{proof}
