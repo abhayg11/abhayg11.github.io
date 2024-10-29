@@ -1,4 +1,23 @@
 \mtexe{3.3.15}
 \begin{proof}
+	Suppose we have shown that the finiteness of a morphism can be checked on an open cover in the case that the codomain is affine and the cover is by principal open subsets, and let $f,X,Y,Y_i$ be as in the statement. In particular, note that the singleton $\{Y_i\}$ is an open cover for the open subscheme $Y_i$ itself, and since each $Y_i$ is affine and the full scheme is principal ($=D(1)$), the reduction hypothesis shows that each restriction $f^{-1}(Y_i) \to Y_i$ is a finite morphism.
 	
+	Now, let $V \subseteq Y$ be an arbitrary open affine. Then, each point of $V$ is contained in some $Y_i$, and the intersection $V \cap Y_i$ is open, so we can reduce to a principal open set of $V$ containing that point. This now covers $V$ by principal open subsets $\{U_j\}$. Furthermore, each of these is also an open affine subset of some $Y_i$, and we've shown that the morphism $f^{-1}(Y_i) \to Y_i$ is finite, so $f^{-1}(U_j)$ is also affine and $\scO_X(f^{-1}(U_j))$ is finite over $\scO_Y(U_j)$. But again, by the reduction hypothesis, we conclude that $f^{-1}(V) \to V$ is a finite morphism, and in particular, $f^{-1}(V)$ itself is open, with $\scO_X(f^{-1}(V))$ finite over $\scO_Y(V)$. Thus, we have shown that it suffices to show the reduction. I.e. henceforth we assume $Y$ is affine and that $Y_i = D(h_i)$ is principal for each $i$. Note further that we may assume there are only finitely many $Y_i$ since affine schemes are quasi-compact. \\
+	
+	Note that condition (3.2) of section 2.3.1 is indeed satisfied, since we have covered $X$ by finitely many affines -- each $f^{-1}(Y_i)$ -- and each intersection is the union of finitely many open affines. Indeed, being separated is local on the base, and each restriction $f^{-1}(Y_i) \to Y_i$ is a map of affine schemes, so separated. Hence, gluing gives that $X \to Y$ is separated, and $Y$ is affine, so $Y$ is separated (over $\ZZ$); hence $X$ is also separated and the intersection of two affines is again affine (and certainly covered by finitely many affines).
+	
+	Now, let $g_i = f^\#(Y)(h_i) \in \scO_X(X)$. By proposition 2.3.12, the map $X_{g_i} \hookrightarrow X \to \Spec\scO_X(X)$ factors through $D(g_i) \subseteq \Spec\scO_X(X)$ and gives an isomorphism $\scO_X(X)_{g_i} \xrightarrow{\cong} \scO_X(X_{g_i})$. On the other hand, by the lemmas below,
+	\[ X_{g_i} = X_{f^\#(Y)(h_i)} = f^{-1}(Y_{h_i}) = f^{-1}(D(h_i)} = f^{-1}(Y_i) \]
+	which is affine by assumption. So, the isomorphism of global sections implies that the map $X_{g_i} \to D(g_i) \subseteq \Spec\scO_X(X)$ is an isomorphism of schemes. But the above recognition of $X_{g_i}$ makes it clear that these form an open cover of $X$ and so similarly $D(g_i)$ is an open cover of $\Spec\scO_X(X)$, so gluing gives that the map $X \to \Spec\scO_X(X)$ itself is an isomorphism, and in particular $X$ is affine. \\
+	
+	Thus, we've now reduced to a ring theory claim. Namely, we have that $\varphi : A \to B$ is a ring homomorphism, and we have elements $h_1,\ldots,h_r \in A$ such that $(h_1,\ldots,h_r) = A$ and $\varphi_i : A_{h_i} \to B_{h_i} = B \otimes_A A_{h_i}$ is a finite ring homomorphism. We'd like to show that $\varphi$ is itself finite. We do this very directly; since $B_{h_i}$ is finite over $A_{h_i}$, we can choose generators. By clearing denominators, we may assume that the generators are of the form $b_{ij}/1$ with $b_{ij} \in B$. I claim that the full collection $\{b_{ij}\}_{ij}$ generates $B$ as an $A$-module.
+	
+	Indeed, let $N = \sum_{ij} Ab_{ij}$ be the $A$-module they generate, let $b \in B$, and let $I = (N : bA) = \{ a \in A \mid ab \in N \}$. It is clear that $I$ is an ideal of $A$, and we are done if $I = A$ since then $1 \in I$ so $b \in N$. So, suppose $I$ is proper for contradiction, and let $M$ be a maximal ideal containing $I$. Then, since we've chosen generators for $B_{h_i}$ over $A_{h_i}$, we can write
+	\[ \frac{b}{1} = \sum_j \frac{c_{ij}b_{ij}}{h_i^{n_i}} \]
+	for some $c_{ij} \in A$ and $n_i \in \NN$. In particular, note that the coefficients may have different exponents on $h_i$, but we can make a common denominator. But this means that $h_i^{n_i+m_i}b = h_i^{m_i}\sum_j c_{ij}b_{ij} \in N$ for some $m_i \in \NN$, so in particular $h_i^{n_i+m_i} \in I$. Since $M$ is prime, we thus get $h_i \in M$. But this is true for all $i$, so $A = (h_1,\ldots,h_r) \subseteq M$, which furnishes our contradiction. So, indeed, $B$ is finite over $A$, and we are done.
 \end{proof}
+
+Lemmas:
+	If $\scU$ is an affine open cover of $X$ and $g \in \scO_X(X)$, then $X_g = \bigcup_{U \in \scU} D(g|_U)$.
+	[Corollary] If $X$ is affine and $g \in \scO_X(X)$, then $X_g = D(g)$.
+	If $f : X \to Y$ and $h \in \scO_Y(Y)$ then $f^{-1}(Y_h) = X_{f^\#(Y)(h)}$
