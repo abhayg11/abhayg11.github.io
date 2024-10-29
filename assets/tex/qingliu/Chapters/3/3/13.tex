@@ -6,5 +6,11 @@
 	\[ \begin{tikzcd} & V \arrow[dr,"g"] \\ \Spec\scO_{X,x} \arrow[ur] \arrow[r] & \Spec\scO_{Y,y} \arrow[r] & Y \end{tikzcd} \]
 	But now $g$ and $f$ induce the same map $K(Y) \to K(X)$, so they agree on a neighborhood of the generic point, and since $Y$ is separated, they agree on their intersection. So, $V \subseteq U$ and so $x \in U$ as desired. \\
 	
-	...
+	Consider the relevant diagram:
+	\[ U \arrow[rrrd,"f"] \arrow[rdd,"\id_U"] \\ & U \times_S Y \arrow[r] \arrow[d] & X \times_S Y \arrow[r] \arrow[d] & Y \arrow[d] \\ & U \arrow[hook,r] & X \arrow[r] & S \end{tikzcd} \]
+	The map $(\id_U,f)$ into the fiber product is a closed immersion since $Y/S$ is separated and the usual map $U \times_S Y \to X \times_S Y$ is an open immersion. So, if we let $U'$ denote the image of $U$ in the latter scheme, we have that $\Gamma_f = \overline{U'}$, and that $U'$ is an open subset of $\Gamma_f$. In particular, we can give $U'$ the scheme structure arising from being an open subscheme of $\Gamma_f$.
+	
+	But then, the composition $U \to U' \to \Gamma_f \to X$ is equal to the composition along the other side of the diagram: $U \xrightarrow{\id_U} U \hookrightarrow X$, which is just the inclusion into $X$. Thus, we have that $U \to U'$ is actually an isomorphism. This gives both results. First, since $U$ is an open subscheme of $X$, which is integral, $U$ is itself integral. In particular, this means $U$ is irreducible, and so $U'$ is irreducible and the closure of an irreducible topological space in any superspace remains irreducible, so $\Gamma_f$ is irreducible. Since $\Gamma_f$ is also reduced, we have $\Gamma_f$ integral as desired. Further, the isomorphism $U \to U'$ also establishes an isomorphism between open subsets of $X$ and $\Gamma_f$ compatible with the projection map, so this shows that the projection is birational. \\
+	
+	We may take $Z = \Gamma_f$. We've already shown that the first projection induces a birational morphism $g : Z \to X$, and we take $\bar{f} : Z \to Y$ to be the map induced by the second projection. Then $g^{-1}(U) = U'$ and here, the fact that $\bar{f} = f \circ g$ follows from the commutativity above. Notice further that $\Gamma_f \to X \times_S Y$ is a closed immersion and so is proper and projective, so if $Y \to S$ is proper (projective), then $X \times_S Y \to X$ is proper (projective) since this is preserved by base change, and so $g$ is proper (projective) as a composition of such maps.
 \end{proof}
