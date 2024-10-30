@@ -1,4 +1,12 @@
 \mtexe{3.3.16}
 \begin{proof}
+	The reductions in the previous proof work identically when we replace "finite" with "integral" in the statements. Namely, we can, in the exact same way, reduce to the case that $X,Y$ are both affine schemes, and show the following ring-theoretic result: if $\varphi : A \to B$ is a ring homomorphism, $(h_1,\ldots,h_r) = A$ for some $h_1,\ldots,h_r \in A$, and $\varphi_i : A_{h_i} \to B_{h_i} = B \otimes_A A_{h_i}$ is an integral ring homomorphism for each $i$, then $\varphi$ is itself integral. We will again omit $\varphi$ from the notation and simply write $ab$ for $\varphi(a)b$ when $a \in A$ and $b \in B$.
 	
+	Let $b \in B$, and let $I = \{a \in A \mid ab \text{ is integral over } A \}$. As before, it is clear that $I$ is an ideal of $A$. Assume that $I$ is proper for contradiction and let $M$ be a maximal ideal of $A$ containing it. Then $b/1$ is integral over $A_{h_i}$, so
+	\[ \left(\frac{b}{1}\right)^{n_i} + \sum_{j=0}^{n_i-1} \frac{c_{ij}b^j}{h_i^{m_i}} = 0/1 \]
+	for some $n_i,m_i \in \NN$ and $c_{ij} \in A$, where again we've made a common denominator. So, we must have
+	\[ h_i^{m_i}b^{n_i} + \sum_{j=0}^{n_i-1} c_{ij}b^j = 0 \]
+	after possibly replacing $m_i$ by a larger exponent, and the $c_{ij}$ by the corresponding product by a power of $h_i$. Choosing $k_i$ so that $k_in_i \geq m_i+n_i$ and multiplying through by $h_i^{k_in_i-m_i}$ gives:
+	\[ (h_i^{k_i}b)^{n_i} + \sum_{j=0}^{n_i-1} c_{ij}'(h_i^{k_i}b)^j = 0 \]
+	after absorbing the remaining powers into $c_{ij}$. But this shows that $h_i^{k_i}b$ is integral over $A$, so $h_i^{k_i} \in I \subseteq M$, and so $h_i \in M$. But as before, this is a contradiction since now $M \supseteq A$. So, we must have that $I = A$ is not proper, so $1 \in I$, so $1b = b$ is integral over $A$ already.
 \end{proof}
