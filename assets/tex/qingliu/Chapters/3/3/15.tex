@@ -17,7 +17,57 @@
 	for some $c_{ij} \in A$ and $n_i \in \NN$. In particular, note that the coefficients may have different exponents on $h_i$, but we can make a common denominator. But this means that $h_i^{n_i+m_i}b = h_i^{m_i}\sum_j c_{ij}b_{ij} \in N$ for some $m_i \in \NN$, so in particular $h_i^{n_i+m_i} \in I$. Since $M$ is prime, we thus get $h_i \in M$. But this is true for all $i$, so $A = (h_1,\ldots,h_r) \subseteq M$, which furnishes our contradiction. So, indeed, $B$ is finite over $A$, and we are done.
 \end{proof}
 
-Lemmas:
-	If $\scU$ is an affine open cover of $X$ and $g \in \scO_X(X)$, then $X_g = \bigcup_{U \in \scU} D(g|_U)$.
-	[Corollary] If $X$ is affine and $g \in \scO_X(X)$, then $X_g = D(g)$.
-	If $f : X \to Y$ and $h \in \scO_Y(Y)$ then $f^{-1}(Y_h) = X_{f^\#(Y)(h)}$
+For the above proof, I used some basic lemmas which I did not find earlier in the text. I state and prove them here. Note that $X$ and $Y$ are schemes and $f$ is a morphism of schemes.
+
+\begin{lem} If $U \subseteq X$ is an open subscheme and $g \in \scO_X(X)$, then $U_{g|_U} = U \cap X_g$. \end{lem}
+\begin{proof}
+	This is essentially immediate, since for any $x \in U$, $\scO_{X,x} = \scO_{U,x}$ and $g_x = (g|_U)_x$. That is, stalks can be computed locally. So:
+	\[ U_{g|_U} = \{x \in U \mid (g|_U)_x \in \scO_{U,x}^\ast\} = \{x \in U \mid g_x \in \scO_{X,x}^\ast \} = \{x \in X \mid g_x \in \scO_{X,x}^\ast\} \cap U = X_g \cap U \]
+	as claimed.
+\end{proof}
+
+\begin{lem}	If $\scU$ is an affine open cover of $X$ and $g \in \scO_X(X)$, then $X_g = \bigcup_{U \in \scU} D(g|_U)$. \end{lem}
+\begin{proof}
+	Note that the expression on the right is meaningful: since each $U \in \scU$ is affine, it is of the form $\Spec A$, and we have $g|_U \in \scO_X(U) = A$, so that $D(g|_U)$ is a principal open subset of $U$.
+	
+	First, suppose $x \in X_g$, and choose $U = \Spec(A) \in \scU$ such that $x \in U$. Identifying $x$ now as a prime ideal of $A$, we can write $\varphi : A \to A_x$ for the localization map. Then $g_x \in \scO_{X,x}^\ast$, and these stalks can be computed locally, so $g_x = (g|_U)_x = \varphi(g|_U)$, and $\scO_{X,x} = \scO_{U,x} = A_x$, so we now have the condition that $\varphi(g|_U) \in A_x^\ast$. But the elements mapping to a unit are precisely those outside of the prime ideal, so we have that $g|_U \notin x$, i.e. $x \in D(g|_U)$ as desired. \\
+	
+	Essentially all of this argument is reversible. If $x \in D(g|_U)$ for some $U = \Spec A \in \scU$, then $g|_U \notin x$ when $x$ is viewed as a prime ideal of $A$, and so $g_x = \varphi(g|_U) \in A_x^\ast = \scO_{U,x}^\ast = \scO_{X,x}^\ast$, and so $x \in X_g$, where $\varphi$ has the same definition as above. This completes the claim.
+\end{proof}
+
+\begin{lem} If $X$ is affine and $g \in \scO_X(X)$, then $X_g = D(g)$ \end{lem}
+\begin{proof}
+	This is actually a corollary of the previous lemma, obtained by taking $\scU = \{X\}$, which is indeed an affine open cover in this case.
+\end{proof}
+
+\begin{lem} If $f : X \to Y$ and $h \in \scO_Y(Y)$ then $f^{-1}(Y_h) = X_{f^\#(Y)(h)}$
+\begin{proof}
+	Suppose the claim is known when $Y$ is affine. Choose an affine open cover $\scU$ of $Y$. Then,
+	\begin{align*}
+	f^{-1}(Y_h)
+		&= f^{-1}\left(\bigcup_{V \in \scU} V \cap Y_h\right) \\
+		&= \bigcup_{V \in \scU} f^{-1}(V \cap Y_h) \\
+		&= \bigcup_{V \in \scU} f^{-1}(V_{h|_V}) \\
+		&= \bigcup_{V \in \scU} f^{-1}(V)_{f^\#(V)(h|_V)} \\
+		&= \bigcup_{V \in \scU} f^{-1}(V)_{f^\#(Y)(h)|_{f^{-1}(V)}} \\
+		&= \bigcup_{V \in \scU} f^{-1}(V) \cap X_{f^\#(Y)(h)} \\
+		&= X_{f^\#(Y)(h)}
+	\end{align*}
+	So, we may assume $Y$ is affine.
+	
+	Now, suppose the claim is known when $X$ is affine. Choose an affine open cover $\scU$ of $X$, and for each $U \in \scU$, let $\iota_U : U \hookrightarrow X$ denote the inclusion. Note that on points, for any subset $Z$ of $X$, $\iota^{-1}(Z) = Z \cap U$, and on sections, if $\alpha \in \scO_X(X)$, then $\alpha|_U = \iota^\#(X)(\alpha)$. Then
+	\begin{align*}
+	X_{f^\#(Y)(h)}
+		&= \bigcup_{U \in \scU} U \cap X_{f^\#(Y)(h)} \\
+		&= \bigcup_{U \in \scU} U_{f^\#(Y)(h)|_U} \\
+		&= \bigcup_{U \in \scU} U_{\iota_U^\#(X)(f^\#(Y)(h))} \\
+		&= \bigcup_{U \in \scU} U_{(f \circ \iota_U)^\#(Y)(h)} \\
+		&= \bigcup_{U \in \scU} (f \circ \iota_U)^{-1}(Y_h) \\
+		&= \bigcup_{U \in \scU} \iota_U^{-1}(f^{-1}(Y_h)) \\
+		&= \bigcup_{U \in \scU} U \cap f^{-1}(Y_h) \\
+		&= f^{-1}(Y_h)
+	\end{align*}
+	as desired.
+	
+	So, at last, we may assume that $X = \Spec B$ and $Y = \Spec A$ are both affine, and we write $\varphi = f^\#(Y)$ for the ring homomorphism $A \to B$ inducing the scheme map. Now, we have $f^{-1}(Y_h) = f^{-1}(D(h))$ is the set of primes of $B$ that contract to a prime not containing $h$ and $X_{f^\#(Y)(h)} = X_{\varphi(h)} = D(\varphi(h))$ is the set of primes of $B$ that don't contain $\varphi(h)$. But these two sets are obviously equal: for a prime $P$ of $B$, $\varphi(h) \in P \iff h \in \varphi^{-1}(P)$. So, we are done.
+\end{proof}
