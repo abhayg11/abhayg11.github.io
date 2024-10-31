@@ -1,4 +1,19 @@
 \mtexe{4.1.5}
 \begin{proof}
+	TODO: Fix this proof. The proof itself is okay, but the problem ought to assume $f$ is integral over $A[T]$ initially, not $A$ itself.
+	
+	
+	Note that $\Frac(A)[T]$ is a PID, so certainly normal, and so integrally closed in $\Frac(A[T])$. Since $f$ is integral over $A$, it is also integral over $\Frac(A)[T]$, and so we conclude $f \in \Frac(A)[T]$. \\
+	
+	Since $f$ is integral over $A$, we can write an integral relation
+	\[ f^n + a_{n-1}f^{n-1} + \cdots + a_0 = 0 \]
+	for some $a_i \in A$. Furthermore, since we've shown that $f \in \Frac(A)[T]$, we can write
+	\[ f(T) = \sum_{j=0}^d \frac{b_j}{c_j}T^j \]
+	for some $b_j,c_j \in A$. Let $A_0 = \ZZ[a_0,\ldots,a_{n-1},b_0,\ldots,b_d,c_0,\ldots,c_d] \subseteq A$. Then $A_0$ is a subring of $A$, it is finitely generated over $\ZZ$, $f$ is integral over $A_0[T]$ (since each $a_i \in A_0$), and $f \in \Frac(A_0)[T]$ (since $b_j,c_j \in A_0$). \\
+	
+	By clearing denominators, it is obvious that for each $i \geq 0$, there is some $u_i \in A_0$ such that $u_if^i \in A_0[T]$. Let $a = u_0 \cdots u_{n-1}$, for $n$ as above. I claim, inductively, that $af^i \in A_0[T]$ for each $i$. For $i=0,\ldots,n-1$, this is immediate from the defining property of $u_i$. Now, supposing $i \geq n$ and we have shown all previous cases, we have
+	\[ af^i = af^{i-n}f^n = af^{i-n}\sum_{j=0}^{n-1} -a_jf^j = \sum_{j=0}^{n-1} -a_jaf^{i+j-n} \in A_0[T] \]
+	by the induction hypothesis, since $i+j-n \leq i+n-1-n = i-1$ for each $j$. \\
+	
 	
 \end{proof}
