@@ -1,4 +1,10 @@
 \mtexe{4.1.1}
 \begin{proof}
-	
+	Let $b \in B$. Fix generators $m_1,\ldots,m_n \in M$ of $M$ as an $A$-module. Then, there exists $c_{ij} \in A$ such that
+	\[ bm_i = \sum_{j=1}^n c_{ij}m_j \]
+	for each $i$. Let $C$ be the matrix whose $(i,j)$ entry is $c_{ij}$. Then we can rewrite this system of equations as
+	\[ b\left(\begin{array}{c} m_1 \\ m_2 \\ \vdots \\ m_n \end{array}\right) = C\left(\begin{array}{c} m_1 \\ m_2 \\ \vdots \\ m_n \end{array}\right) \]
+	Let $m$ denote the column vector above. By Cayley-Hamilton, we have that $f(C) = 0$, where $f \in A[x]$ is the (monic) characteristic polynomial of $C$. But then from the above, we conclude
+	\[ f(b)m = f(C)m = 0m = 0 \]
+	and so $f(b)m_i = 0$ for all $i$. But then $f(b)(Am_1 + \cdots + Am_n) = 0$, i.e. $f(b)M = 0$, and since $M$ is a faithful $B$-module, we conclude $f(b) = 0$. So, $b$ is integral over $A$, as the root of a monic polynomial with coefficients in $A$.
 \end{proof}
