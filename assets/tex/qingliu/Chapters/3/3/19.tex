@@ -1,4 +1,6 @@
 \mtexe{3.3.19}
 \begin{proof}
+	As suggested, since $Y$ is affine, $f$ factors as $X \xrightarrow{g} \Spec\scO_X(X) \to Y$. But since $X$ is proper over $k$, $\scO_X(X)$ is integral over $k$, and since $X/k$ is finite type, $\scO_X(X)$ is finitely generated over $k$, so $\scO_X(X)$ is Artinian and in particular, $\Spec\scO_X(X)$ is finite and discrete. So, the image $f(X)$ is a finite set.
 	
+	Further, since the composition $X \xrightarrow{f} Y \to \Spec k$ is proper and the latter is separated, $f$ itself is proper. Then, let $y \in f(X)$, let $x \in X$ be such that $f(x) = y$, and let $p = g(x) \in \Spec\scO_X(X)$. Then since $\Spec\scO_X(X)$ is discrete, $\{p\}$ is closed, so $g^{-1}(p)$ is a closed subset of $X$ containing $x$, and $f(g^{-1}(p))$ is a closed subset of $Y$ (since $f$ is proper hence closed). But $f(g^{-1}(p)) = \{y\}$ since each point maps through $p \in \scO_X(X)$, which maps to $y$. So, $\{y\}$ is closed and $f(X)$ consists of closed points.
 \end{proof}
