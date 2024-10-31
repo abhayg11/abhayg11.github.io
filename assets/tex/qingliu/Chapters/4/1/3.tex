@@ -1,4 +1,6 @@
 \mtexe{4.1.3}
 \begin{proof}
+	To clarify the assumptions, take $A$ a normal, noetherian, local, 2-dimensional ring, and let $X = \Spec A$. We'd like to show that $X \setminus \{s\}$ is non-affine, locally Noetherian, and has dimension at most 1. The last of these is immediate: we've removed the unique closed point, so every chain of irreducible closed subsets of $X \setminus \{x\}$ can be extended to a chain of irreducible closed subsets of length one greater in $X$. The fact that $X$ is noetherian also implies that $X \setminus \{s\}$ is Noetherian.
 	
+	So, we'd like to argue that $X \setminus \{s\}$ is not affine. But notice that $\codim(\{s\},X) = 2$ since a maximal chain of irreducible closed subsets of $X$ must begin with $\{s\}$, so by Theorem 3.1.14, $\scO_X(X) \to \scO_X(X \setminus \{s\})$ is an isomorphism. Hence, if $X \setminus \{s\}$ were also affine, it would equal $\Spec\scO_X(X \setminus \{s\}) = \Spec(A)$, and would also, say, be 2-dimensional, which it is not. So, $X \setminus \{s\}$ is not affine, as desired.
 \end{proof}
