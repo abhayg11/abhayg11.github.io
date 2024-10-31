@@ -1,4 +1,10 @@
 \mtexe{4.1.2}
 \begin{proof}
-	
+	Fix a nonzero $a \in I$, and fix generators $x_1,\ldots,x_n \in I$ of $I$ as an $A$-module. Then, for each $i$, write
+	\[ \varphi(x_i) = \sum_{j=1}^n c_{ij}x_j \]
+	for some $c_{ij} \in A$. Write $C$ for the matrix whose $(i,j)$ entry is $c_{ij}$, write $x$ for the column vector whose $i$th entry is $x_i$, and let $f \in A[T]$ be the monic characteristic polynomial of $C$. Then, since $\varphi$ is $A$-linear, $\varphi(a)x_i = \varphi(ax_i) = a\varphi(x_i)$, so
+	\[ \varphi(a)x = aCx \implies \frac{\varphi{a}}{a}x = Cx \]
+	Applying $f$ gives
+	\[ f(\varphi(a)/a)x = f(C)x = 0 \]
+	and so $f(\varphi(a)/a) = 0$ since we're in a domain. So, $\varphi(a)/a$ is integral over $A$ as claimed.
 \end{proof}
