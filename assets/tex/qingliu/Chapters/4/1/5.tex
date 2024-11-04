@@ -1,19 +1,24 @@
 \mtexe{4.1.5}
 \begin{proof}
-	TODO: Fix this proof. The proof itself is okay, but the problem ought to assume $f$ is integral over $A[T]$ initially, not $A$ itself.
+	Note that the problem is misstated. We should assume that $f \in \Frac(A[T])$ is integral over $A[T]$, rather than over $A$ itself, since we are trying to show that $A[T]$ is normal. Further, to simplify later parts, I will proceed by contradiction. That is, suppose $A[T]$ is not normal, so that I may choose such an $f$ with $f \notin A[T]$. Further, among all such counterexamples, I may choose $f$ of minimum degree. I will otherwise proceed as the exercise states.
 	
+	First, note that $\Frac(A)[T]$ is a PID, so certainly normal, and so integrally closed in $\Frac(A[T])$. Since $f$ is integral over $A[T]$, it is also integral over $\Frac(A)[T]$, and so we conclude $f \in \Frac(A)[T]$. \\
 	
-	Note that $\Frac(A)[T]$ is a PID, so certainly normal, and so integrally closed in $\Frac(A[T])$. Since $f$ is integral over $A$, it is also integral over $\Frac(A)[T]$, and so we conclude $f \in \Frac(A)[T]$. \\
+	Since $f$ is integral over $A[T]$, we can write an integral relation
+	\[ f^N + g_{N-1}f^{n-1} + \cdots + g_0 = 0 \]
+	for some $g_i \in A[T]$. Furthermore, since we've shown that $f \in \Frac(A)[T]$, we can write
+	\[ f(T) = \sum_{k=0}^d \frac{b_k}{c_k}T^k \]
+	for some $b_k,c_k \in A$. Finally, note that each $g_i$ is a polynomial, so we can write
+	\[ g_i(T) = \sum_k a_{ij}T^j \]
+	where each of these sums is finite. Let $A_0 = \ZZ[a_{ij},b_k,c_k] \subseteq A$, where each index ranges over all possible values. Then $A_0$ is a subring of $A$, it is finitely generated over $\ZZ$, $f$ is integral over $A_0[T]$ (since each $g_i \in A_0[T]$), and $f \in \Frac(A_0)[T]$ (since $b_k,c_k \in A_0$). \\
 	
-	Since $f$ is integral over $A$, we can write an integral relation
-	\[ f^n + a_{n-1}f^{n-1} + \cdots + a_0 = 0 \]
-	for some $a_i \in A$. Furthermore, since we've shown that $f \in \Frac(A)[T]$, we can write
-	\[ f(T) = \sum_{j=0}^d \frac{b_j}{c_j}T^j \]
-	for some $b_j,c_j \in A$. Let $A_0 = \ZZ[a_0,\ldots,a_{n-1},b_0,\ldots,b_d,c_0,\ldots,c_d] \subseteq A$. Then $A_0$ is a subring of $A$, it is finitely generated over $\ZZ$, $f$ is integral over $A_0[T]$ (since each $a_i \in A_0$), and $f \in \Frac(A_0)[T]$ (since $b_j,c_j \in A_0$). \\
+	By clearing denominators, it is obvious that for each $n \geq 0$, there is some $u_n \in A_0$ such that $u_nf^n \in A_0[T]$. Let $a = u_0 \cdots u_{N-1}$, for $N$ as above. I claim, inductively, that $af^n \in A_0[T]$ for each $n \geq 0$. For $i=0,\ldots,N-1$, this is immediate from the defining property of $u_n$. Now, supposing $n \geq N$ and we have shown all previous cases, we have
+	\[ af^n = af^{n-N}f^N = af^{n-N}\sum_{i=0}^{N-1} -g_if^i = \sum_{j=0}^{N-1} -g_iaf^{n+i-N} \in A_0[T] \]
+	by the induction hypothesis, since $n+i-N \leq n+N-1-N = n-1$ for each $j$ and $g_j \in A_0[T]$ by construction. \\
 	
-	By clearing denominators, it is obvious that for each $i \geq 0$, there is some $u_i \in A_0$ such that $u_if^i \in A_0[T]$. Let $a = u_0 \cdots u_{n-1}$, for $n$ as above. I claim, inductively, that $af^i \in A_0[T]$ for each $i$. For $i=0,\ldots,n-1$, this is immediate from the defining property of $u_i$. Now, supposing $i \geq n$ and we have shown all previous cases, we have
-	\[ af^i = af^{i-n}f^n = af^{i-n}\sum_{j=0}^{n-1} -a_jf^j = \sum_{j=0}^{n-1} -a_jaf^{i+j-n} \in A_0[T] \]
-	by the induction hypothesis, since $i+j-n \leq i+n-1-n = i-1$ for each $j$. \\
+	Here, I modify the suggested argument slightly. Namely, note that the leading coefficient of $f^n$ is $\alpha_d^n$. So, we conclude that $a\alpha_d^n \in A_0$ for all $n$, since $af^n \in A_0[T]$. In other words, $A_0[\alpha_d] \subseteq a^{-1}A_0$, which is a finitely generated $A_0$-module. So, $\alpha_d$ is integral over $A_0$, so it is integral over $A$. But $A$ is normal, so $\alpha_d \in A$. This contradicts the minimality of $f$, since now $g(T) = f(T) - \alpha_dT^d$ is also an element of $\Frac(A[T])$ that is integral over $A[T]$, as the difference of two integral elements, but of lower degree. Thus, our assumption that $A[T]$ is not normal must be false, which is what we wished to show. \\
 	
-	
+	In the Noetherian case, we have the following briefer argument: note that
+	\[ A[T] = \left(\bigcap_{\frp \in \Spec(A) \atop \height\frp = 1} A_\frp\right)[T] = \bigcap_{\frp \in \Spec(A) \atop \height\frp = 1} A_\frp[T] \]
+	Each localization $A_\frp$ is a 1-dimensional, local, Noetherian, normal domain, and so must be a DVR. In particular, it is a UFD, so it is normal. But then the intersection of normal subrings of a field is normal. Indeed, if $f \in \Frac(A[T])$ is integral over $A[T]$, then it is integral over each $A_\frp[T]$, so it is contained in each $A_\frp[T]$, so it is contained in $A[T]$ as desired.
 \end{proof}
