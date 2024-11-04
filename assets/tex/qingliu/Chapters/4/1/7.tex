@@ -1,4 +1,12 @@
 \mtexe{4.1.7}
 \begin{proof}
+	Let us consider the problem in charts. First note that $D_{+}(x) \cong \Spec k[y,z]/(1-y^2z)$, that $D_{+}(y) \cong \Spec k[x,z]/(x^3-z)$, that $D_{+}(z) \cong \Spec k[x,y]/(x^3-y^2)$, and that these three open sets cover $\Proj k[x,y,z]/(x^3-y^2z)$. So, it suffices to consider each normalization.
 	
+	Note that $k[y,z]/(1-y^2z) \cong k[t]_{t^2}$, the localization of the polynomial ring at the powers of $t^2$. Indeed, we have the map $\varphi : k[y,z]/(1-y^2z) \to k[t]_{t^2}$ given by $y \mapsto t$ and $z \mapsto t^{-2}$, and we have the map $\psi : k[t]_{t^2} \to k[y,z]/(1-y^2z)$ given by $t \mapsto y$. But $k[t]$ is normal, and the localization of a normal domain at any multiplicative subset remains normal. So $D_{+}(x)$ is normal. \\
+	
+	Second, note that $k[x,z]/(x^3-z) \cong k[t]$ via $x \mapsto t$, $z \mapsto t^3$, and $t \mapsto x$ in the reverse direction. But again, $k[t]$ is normal, so $D_{+}(y)$ is also already normal. \\
+	
+	Finally, note $k[x,y]/(x^3-y^2) \cong k[t^2,t^3] \subseteq k[t]$ via $x \mapsto t^2$, $y \mapsto t^3$. It is clear that this is a surjective map $k[x,y]/(x^3-y^2) \to k[t^2,t^3]$, and for injectivity, suppose that $f(x,y) \in k[x,y]$ is a lift of an element in the kernel. Then we may write $f(x,y) = g(x,y)(y^2-x^3) + h(x)y + r(x)$ by polynomial division. Then, applying the map gives $0 = h(t^2)t^3 + r(t^2)$. But the first summand has only odd powers of $t$ and the second only even powers, so we must have $h = r = 0$. Thus $f \in (x^3-y^2)$ as desired.
+	
+	The normalization, then, is clearly $k[t]$ since $\Frac(k[t^2,t^3])$ contains $t^3/t^2 = t$, $t$ is integral over $k[t^2,t^3]$, and $k[t^2,t^3] \subseteq k[t]$. Gluing the normalizations back together give us that the overall normalization is $\Proj k[t,u]$ via the map induced from $\Proj$ by $x \mapsto t^2u$, $y \mapsto t^3$, and $z \mapsto u^3$.
 \end{proof}

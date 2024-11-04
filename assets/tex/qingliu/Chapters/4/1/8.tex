@@ -1,4 +1,16 @@
 \mtexe{4.1.8}
 \begin{proof}
+	Let us consider the problem in charts. First note that $D_{+}(x) \cong D_{+}(y) \cong \Spec\scO_K[x,z]/(x-az^2)$, that $D_{+}(z) \cong \Spec\scO_K[x,y]/(xy-a)$, and that these three open sets cover $\Proj\scO_K[x,y,z]/(xy-az^2)$. So, it suffices to show that each is normal.
 	
+	Note that $\scO_K[x,z]/(x-az^2) \cong \scO_K[t]$ via the maps $\varphi,\psi$ given by $\varphi(x) = at^2$, $\varphi(z) = t$, and $\psi(t) = z$. But $\scO_K$ is a Dedekind domain, so it is normal, and so $\scO_K[t]$ is normal by exercise 4.1.5. Hence the first two charts are already normal.
+	
+	So, we seek to show that $\scO_K[x,y]/(xy-a)$ is normal. First, note that we have an isomorphism $f : \scO_K[x,y]/(xy-a) \to \scO_K[t,a/t] \subseteq \scO_K[t]_t$ given by $f(x) = t$ and $f(y) = a/t$. Let $u$ be an element of the field of fractions integral over $\scO_K[t,a/t]$. Then $u$ is also integral over $\scO_K[t]_t = \scO_K[t,t^{-1}]$, which is a localization of a normal domain, hence normal, and so $u \in \scO_K[t,t^{-1}]$. Second, note that we have a reflection $\sigma' : \scO_K[x,y]/(xy-a) \to \scO_K[x,y]/(xy-a)$ given by $x \mapsto y$ and $y \mapsto x$. Then $\sigma = f \circ \sigma \circ f^{-1}$ is an isomorphism of $\scO_K[t,a/t]$ to itself such that $\sigma(t) = a/t$ and $\sigma(a/t) = t$. Since $\sigma$ is an isomorphism, it extends to the field of fractions, and finally, note that $\sigma(u)$ is also integral over $\scO_K[t,a/t]$, since $\sigma$ fixes the coefficients in the integral relation.
+	
+	We are trying to show that $u \in \scO_K[t,a/t]$. We can use the fact that $u \in \scO_K[t,t^{-1}]$ to write
+	\[ u = \sum_{i=r}^s c_it^i \]
+	for some $r \leq s \in \ZZ$ and $c_i \in \scO_K$. Without loss of generality, we may assume that $s = -1$; if $u$ contains nonnegative powers of $t$, we may subtract them off, since we already know that they are contained in $\scO_K[t,a/t]$. Then we can also write
+	\[ \sigma(u) = \sum_{i=r}^{-1} c_i(a/t)^i = \sum_{i=1}^{-r} c_{-i}a^{-i}t^i \]
+	But then $\sigma(u) \in \scO_K[t,t^{-1}]$ also, since it is also integral over $\scO_K[t,a/t] \subseteq \scO_K[t,1/t]$, and so we must have that the coefficients are in $\scO_K$. That is, $c_i = a^{-i}c_i'$ must be a multiple of $a^{-i}$, so that
+	\[ u = \sum_{i=r}^{-1} c_it^i = \sum_{i=1}^{-r} c_{-i}'(a/t)^i \in \scO_K[t,a/t] \]
+	as desired.
 \end{proof}
