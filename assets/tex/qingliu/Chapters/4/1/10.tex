@@ -1,4 +1,10 @@
 \mtexe{4.1.10}
 \begin{proof}
+	Checking that $Y$ is normal can be done locally. Note that under the given assumptions, the quotient exists since we can find an open affine cover of $X$ that is $G$-invariant. In other words, we can reduce to showing that if $A$ is a normal domain acted on by a finite group $G$, then $A^G$ is a normal domain. First, note that $G$ acts naturally on $\Frac(A)$ by acting on the numerator and denominator separately. Then $\Frac(A^G) = \Frac(A)^G$. Indeed, if $a,b \in A^G$ and $b \neq 0$, then $a/b$ is fixed by $G$, so $\Frac(A^G) \subseteq \Frac(A)^G$. Conversely, suppose $a/b \in \Frac(A)^G$. Then writing $N(x) = \prod_{\sigma \in G} \sigma(x)$, we have that $u = N(b)/b \in A$, $a/b = (au)/(bu)$, $\sigma(bu) = \sigma(N(b)) = N(b)$, and
+	\[ \sigma(au) = \sigma(a/b)\sigma(N(b)) = a/b \cdot N(b) = au \]
+	and so $au,bu \in A^G$ as desired.
 	
+	So, now suppose $u \in \Frac(A^G)$ is integral over $A^G$. Then it is integral over $A$ as well, so $u \in A$ by normality. But then $u \in A \cap \Frac(A^G) = A \cap \Frac(A)^G = A^G$, showing that $A^G$ is normal. \\
+	
+	Note that $X \to X/G$ is finite, finite morphisms are stable under base change, finite morphisms are preserved by compositions, and closed immersions are finite, so $Z \to X$ is finite as claimed.
 \end{proof}
