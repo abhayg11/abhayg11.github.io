@@ -1,3 +1,18 @@
 \mtexe{3.37}
 \begin{proof}
+	Let $M$ be a normal closure for $L/K$, and let $\sigma_1,\ldots,\sigma_n$ be $K$-automorphisms of $M$ that restrict to all of distinct embeddings $L \hookrightarrow M$. Let $T$ be the ring of integers in $M$, and choose $x \in I$. Then $x$ is contained in each prime of $S$ that lies over $P$. In fact, the same is therefore also true for each prime of $T$ lying over $P$, and so $\sigma_i(x)$ is also contained in each such prime, since $\sigma_i$ just permutes these primes. Let $Q'$ be one such prime in $T$, and note then that
+	\[ T_K^L(x) = \sum_{i=1}^n \sigma_i(x) \in Q' \cap K = P \]
+	as desired. \\
+	
+	This is immediate: $(P^{-1}S)(PS) = (PP^{-1})S = RS = S$, so $P^{-1}S = (PS)^{-1}$. \\
+	
+	This combines the previous claims:
+	\[ T^L_K((PS)^{-1}IS) = T^L_K(P^{-1}SI) = P^{-1}T^L_K(I) \subseteq P^{-1}P = R \]
+	so that $(PS)^{-1}I \subseteq S^\ast$ by definition. \\
+	
+	Taking inverses gives:
+	\[ \diff(S) = (S^\ast)^{-1} \subseteq ((PS)^{-1}I)^{-1} = PSI^{-1} = Q^{e-1} \]
+	as desired. \\
+	
+	This is immediate from exercise 35, where we showed that $f'(\alpha) \in \diff(S)$, so $\diff(S) \mid f'(\alpha)S$.
 \end{proof}
