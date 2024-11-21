@@ -4,7 +4,7 @@ title: Curriculum Vitae
 mathmode: ON
 ---
 
-View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
+View as pdf (last updated 2024/11/21): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 
 # Education
 
@@ -47,7 +47,7 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 
 # Teaching
 
-## University of Utah
+### University of Utah
 
 | **Year** | **Course** | **Title** | **Links** |
 | 2024 | MATH 1210 | Calculus I | [Syllabus](assets/pdf/2024_1210_syllabus.pdf) |
