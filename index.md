@@ -3,6 +3,8 @@ layout: page
 title: Home
 ---
 
+<!--- TODO: Sync CV with overleaf --->
+
 # Contact Info
 
 [Work Message](https://docs.google.com/forms/d/e/1FAIpQLSftPbasi-MWPYgw60U6WxMLNv4Kl1PuiOK2pRLTq30Au4yevw/viewform?usp=sf_link) | [Personal Message](https://docs.google.com/forms/d/e/1FAIpQLSfZYKXpQ05JjhMZjeAKn2WVTH5-M_zR_uot5u0m9_4SOLlsSA/viewform?usp=sf_link)  

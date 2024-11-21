@@ -6,5 +6,23 @@
 	
 	So, now suppose $u \in \Frac(A^G)$ is integral over $A^G$. Then it is integral over $A$ as well, so $u \in A$ by normality. But then $u \in A \cap \Frac(A^G) = A \cap \Frac(A)^G = A^G$, showing that $A^G$ is normal. \\
 	
-	Note that $X \to X/G$ is finite, finite morphisms are stable under base change, finite morphisms are preserved by compositions, and closed immersions are finite, so $Z \to X$ is finite as claimed.
+	If we can show that $Z \to X$ is finite and birational, we'll be done. Indeed, locally, we would have the situation that $A$ is a normal domain, and that $A \subseteq A' \subseteq \Frac(A)$, with the first extension being finite. But then normality implies that $A' = A$. So, we show the claim. Note that $X \to X/G$ is finite since $S$ is locally Noetherian, finite morphisms are stable under base change, finite morphisms are preserved by compositions, and closed immersions are finite, so $Z \to X$ is finite as claimed.
+	
+	So we only need to show birationality, and given the setup, it suffices to show that they have the same function field. Choosing an affine neighborhood of $Y$ containing the image of the generic point of $Z$ and pulling back to neighborhoods in $X$ and $Z$, we now need to show the following ring-theoretic fact: if $A$ is a normal domain acted on by a finite group $G$, then $\Frac((A \otimes_{A^G} A)/\frp) = \Frac(A)$ for any minimal prime $\frp$ of $A \otimes_{A^G} A$. First, we show that $\frp$ has to lie over $(0) \in \Spec(A)$ with respect to both projections. For contradiction, suppose it lies over some $\frq \neq (0)$. Then since we have an integral extension, we have going-up, so we can find primes $\fra \subsetneq \frp'$ lying over $(0) \subsetneq \frq$. Then, extending the action of $G$ to $A \otimes_{A^G} A$, we have that the action remains transitive on fibers, and so $\sigma(\frp') = \frp$ for some $\sigma \in G$. But then $\sigma(\fra) \subsetneq \frp$, contradicting minimality of $\frp$.
+	
+	So, we know that $\frp$ lies over $(0)$. But we can thus enumerate all such $\frp$ by finding suitable candidates and showing this is exactly the correct number. First, we can count the number of such $\frp$; it is the size of the dual fiber $\{ z \in \Spec(A \otimes_{A^G} A) : \pi_1(z) = 0, \pi_2(z) = 0 \}$, where $\pi_i$ denote the two projections to $\Spec A$, which we showed previously (exercise 3.1.7) to be homeomorphic to:
+	\[ \Spec(\Frac(A) \otimes_{\Frac(A^G)} \Frac(A)) \]
+	Letting $K = \Frac(A)$, we have that $\Frac(A^G) = K^G$ is the fixed subfield, so $K/K^G$ is a Galois extension, and in particular, $K = K^G[x]/(f(x))$ for some irreducible polynomial $f \in K^G[x]$ of degree $n = |G|$ (here, we assume $G$ acts faithfully; we may replace $G$ by $G/\ker\varphi$ where $\varphi$ is the morphism of the action if needed). Then,
+	\[ K \otimes_{K^G} K = K \otimes_{K^G} K^G[x]/(f(x)) = K[x]/(f(x)) = K^n \]
+	since $f(x)$ has $n$ distinct roots in $K$ (the orbit of any root under $G$). So, it has exactly $n$ primes.
+	
+	On the other hand, we have $n$ clear candidates for primes of $A \otimes_{A^G} A$. Let $\iota : A \to K$ be a fixed embedding, and for each $\sigma \in G$, consider the map $(\id_A,\sigma) : A \otimes_{A^G} A \to A$. This is well-defined, since the two maps agree on $A^G$, and this map is surjective since, say, $\id_A$ is. Hence, the image is a domain, the kernel is a prime, and it is clear that it lies over $0$ in both factors of the tensor since $\id_A,\sigma$ are both injective. Finally, I claim that the association $\sigma \mapsto \ker(\id_A,\sigma)$ is injective, so that we have picked out exactly $n$ primes. Indeed, suppose that $\ker(\id_A,\sigma) = \ker(\id_A,\tau)$. Then for all $x \in A$, we have
+	\begin{align*}
+		(\id_A,\sigma)(1 \otimes x &- \sigma(x) \otimes(1)) = \sigma(x) - \sigma(x) = 0 \\
+		&\implies 0 = (\id_A,\tau)(1 \otimes x - \sigma(x) \otimes(1)) = \tau(x) - \sigma(x) \\
+		&\implies \tau(x) = \sigma(x)
+	\end{align*}
+	showing that $\tau = \sigma$ (again, using faithfulness).
+	
+	Finally, we can compute the residue field at each of these primes of $A \otimes_{A^G} A$. But we have already shown that the quotient by such a prime is $A$, so the residue field is $\Frac(A)$ as desired. This completes the argument.
 \end{proof}
