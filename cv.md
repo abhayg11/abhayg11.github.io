@@ -26,6 +26,7 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 
 | **Year** | **Location** | **Title** | **Description** |
 | 2024 | Southwest Center for Arithmetic Geometry | Arizona Winter School | Attended AWS 2024 in the study group for Dr. Valentijn Karemaker's work. |
+| 2023 | Southwest Center for Arithmetic Geometry | Preliminary Arizona Winter School | Attended the lecture series of Dr. Lassina Dembele, completed exercises, and discussed them in weekly problem sessions. |
 | 2022 | Institute for Advanced Study | PCMI Summer School - Number Theory Informed by Computation | Attended the 2022 Park City Mathematics Institute Summer School. Attended lectures, problem sessions, and implemented algorithms for point-counting algorithms, etc. |
 | 2017--2018 | Kalamazoo College | Senior Thesis with Dr. Michele Intermont: On a Generalization of the Bestvina-Brady Construction | Studied a functor that assigned a subcomplex of an \\((n+1)\\)-dimensional torus to a given \\(n\\)-dimensional simplicial complex. Investigated the combinatorial properties of this functor, as well as the topological and geometric properties of the toroidal spaces. |
 | 2018 | Joint Mathematics Meetings (JMM) | Poster Presentation | Presented senior thesis (above) during the student poster presentation. Poster and presentation received Outstanding Poster designation for being in the top 15% of presented topics in topology. |
@@ -43,6 +44,18 @@ View as pdf (last updated 2023/06/17): [pdf](assets/pdf/Curriculum_Vitae.pdf)
 | 2015 | Kalamazoo College | First-year Mathematics Award | Given annually to the sophomore student who, during the first year, demonstrated the greatest achievement in mathematics. |
 | 2015--2017 | Kalamazoo College | Lower Michigan Mathematics Competition | First place team all three years. |
 | 2014--2018 | Kalamazoo College | Dean's List | |
+
+# Teaching
+
+## University of Utah
+
+| **Year** | **Course** | **Title** | **Links** |
+| 2024 | MATH 1210 | Calculus I | [Syllabus](assets/pdf/2024_1210_syllabus.pdf) |
+| 2024 | pre-REU (TA) | Expanding circle maps, digit expansions, and topological Markov chains. | [&#x21B7;Homepage](https://www.math.utah.edu/~vinhage/prereu24/materials/) |
+| 2024 | MATH 2210 | Calculus III | [Syllabus](assets/pdf/2024_2210_syllabus.pdf) |
+| 2023 | MATH 3210 | Foundations of Analysis I | [Syllabus](assets/pdf/2023_3210_syllabus.pdf) |
+| 2023 | MATH 1320 (TA) | Engineering Calculus II | |
+| 2022 | MATH 1320 (TA) | Engineering Calculus II | |
 
 # Skills
 
