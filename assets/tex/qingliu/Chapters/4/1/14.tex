@@ -1,4 +1,8 @@
 \mtexe{4.1.14}
 \begin{proof}
+	First, a claim: if $S \subseteq Y$ is any subset containing a nonempty open subset $U$ of $Y$, then $S$ is open. Indeed, it suffices to check this on an open cover, so let $T = \Spec A$ be an open affine subscheme, and we'll show that $S \cap T$ is open in $T$. First, note that $U \cap T \neq \emptyset$, since both $U$ and $T$ contain the generic point of $Y$. So, $T \setminus U = V(I)$ for some nonzero ideal $I$ of $A$. But since $A$ is Dedekind, $V(I)$ is finite, consisting of the primes dividing $I$. Thus $T \setminus S$ is also finite, as a proper subset, in which case $T \cap S$ is the complement of a finite set of closed points, which makes it open as desired.
+	
+	Now, note that in the setup of the exercise, we have that $f$ is birational, so it induces an isomorphism between a nonempty open subscheme of $X$ and an open subscheme of $Y$. But then $f(X)$ is a subset of $Y$ containing a nonempty open subset, so by the above argument, $f(X)$ is open. Replacing $Y$ with $f(X)$, we may assume $f$ is surjective, and now seek to show that $f$ is an isomorphism (which would imply that the original map was an open immersion).
+	
 	
 \end{proof}
