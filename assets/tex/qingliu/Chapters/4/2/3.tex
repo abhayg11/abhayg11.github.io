@@ -2,7 +2,11 @@
 \begin{proof}
 	We compute the Jacobian:
 	\[ J = (3x^2,2y) \]
-	which could only have rank zero if $x=y=0$, but then $y^2+x^3+t^n \neq 0$. So, it always has rank 1, and is thus everywhere regular. \\
+	which could only have rank zero if $x=y=0$, but then $y^2+x^3+t^n \neq 0$. So, it always has rank 1, and is thus everywhere regular. (A bit more formally: this argument holds for $x,y$ in an algebraic closure of $K$, so $\Spec K[x,y]/(x^3+y^2+t^n)$ is smooth over $K$, whence it is regular).  \\
+	
+	Let $k = \scO_K/(t)$ be the residue field of the closed point $(t)$ of $\Spec \scO_K$. Then, the special fiber of $\Spec A \to \Spec \scO_K$ is
+	\[ \Spec(A \otimes_{\scO_K} k) = \Spec(k[x,y]/(x^3+y^2)) \]
+	which is reduced, and in fact integral, since $x^3+y^2$ is irreducible in $k[x,y]$. To conclude that $A$ is normal via Lemma 4.1.18, we need to show that $\scO_{\Spec A}(U)$ is flat over $\scO_K$ for every open affine $U$ of $\Spec A$, but from inspection of the proof, it actually suffices to do this for an open affine cover, so in this case, it suffices to show that $A$ is flat over $\scO_K$. But $\scO_K$ is a DVR, so being flat is equivalent to being torsion-free, and $A$ is a domain, so we're done. \\
 	
 	
 \end{proof}

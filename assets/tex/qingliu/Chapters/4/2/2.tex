@@ -1,10 +1,8 @@
 \mtexe{4.2.2}
 \begin{proof}
-	We can see that $X = \Spec k[x,y,z]/(x^2-yz)$ is singular quickly from the Jacobian criterion:
+	We can see that $X = \Spec R$ where $R = k[x,y,z]/(x^2-yz)$ is singular quickly from the Jacobian criterion:
 	\[ J = (2x, -z, -y) \]
-	which is zero at $(0,0,0)$, while at regular points it would have rank $3-\dim\scO_{X,x} = 3-2 = 1$. Furthermore, at all other points, $J$ does have rank 1, so these points are regular and normal.
+	which is zero at $(0,0,0)$, while at regular points it would have rank $3-\dim\scO_{X,x} = 3-2 = 1$.
 	
-	Thus, it remains only to show that $X$ is normal at the origin. In other words, we need to show that $k[x,y,z,1/x,1/y,1/z]/(x^2-yz)$ is integrally closed in its field of fractions. But we can identify
-	\[ k[x,y,z,1/x,1/y,1/z]/(x^2-yz) \cong k[x,y,x^2/y,1/x,1/y,y/x^2] = k[x,y,1/x,1/y] = k[x,y]_{xy} \]
-	as a localization of a polynomial ring. So, it is indeed normal.
+	Now, we would like to show $R$ is normal. Note that $R_y = k[x,y,z,1/y]/(x^2-yz) \cong k[x,y,1/y] = k[x,y]_y$ via $z \mapsto x^2/y$ is normal as the localization of a polynomial ring, and $R_z$ is normal for a symmetric reason. We would be done if $R = R_y \cap R_z$ (the intersection taking place in, say, $\Frac(R)$). The intersection obviously contains $R$, so suppose $f(x,y,z)/y^n = g(x,y,z)/z^m$ is in the intersection. Then $z^mf(x,y,z) = y^ng(x,y,z)$. The map $k[x,y,z] \to k[t,1/t]$ with $x \mapsto 1$, $y \mapsto t$, and $z \mapsto 1/t$ factors through $R$, so applying it here gives $t^{-m}f(1,t,1/t) = t^ng(1,t,1/t)$. 
 \end{proof}
