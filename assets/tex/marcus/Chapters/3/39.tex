@@ -1,3 +1,30 @@
 \mtexe{3.39}
 \begin{proof}
+	As suggested, let $A_{ij} = \sigma_j(\alpha_i)$ and $B_{ij} = \sigma_i(\beta_j)$. Then $(AB)_{ij}$ is given by:
+	\[ \sum_k A_{ik}B_{kj} = \sum_k \sigma_k(\alpha_i)\sigma_k(\beta_j) = \sum_k \sigma_k(\alpha_i\beta_j) = T(\alpha_i\beta_j) = \delta_{ij} \]
+	i.e. $AB = I$. But $\disc(\alpha_1,\ldots,\alpha_n) = \det(A)^2$ and similarly for $\beta$ and $B$, so their product is 1 as claimed. \\
+	
+	Since each $\alpha_i \in R \subseteq R^\ast$, we can find a matrix $C$ with integer entries $C_{ik}$ such that
+	\[ \alpha_i = \sum_k C_{ik}\beta_k \]
+	Then,
+	\[ A_{ij} = \sigma_j(\alpha_i) = \sum_k C_{ik}\sigma_j(\beta_k) = \sum_k C_{ik}B_{jk} = (CB^T)_{ij} \]
+	I.e. $A = CB^T$. Thus,
+	\[ |\disc(R)| = |\disc(\alpha_1,\ldots,\alpha_n)| = |\det(A)^2| = |\det(CB^T)^2| = |\det(C)^2||\det(B)^2| = \frac{|R^\ast/R|^2}{|\disc(R)|} \]
+	so that $|\disc(R)| = |R^\ast/R|$ by taking square roots. \\
+	
+	Then,
+	\[ \|\diff(R)\| = |R/\diff(R)| = |R/(R^\ast)^{-1}| = |R^\ast/R| = |\disc(R)| \]
+	using previous exercises. \\
+	
+	Writing $pR = P_1^{e_1} \cdots P_r^{e_r}$, we have from a previous exercise that $\diff(R)$ is divisible by $P_1^{e_1-1} \cdots P_r^{e_r-1}$. Thus, $|\disc(R)| = \|\diff(R)\|$ is divisible by
+	\[ \|P_1^{e_1-1} \cdots P_r^{e_r-1}\| = \prod_{i=1}^r \|P_i^{e_i-1}\| = \prod_{i=1}^r p^{f_i(e_i-1)} = p^k \]
+	where
+	\[ k = \sum_{i=1}^r f_i(e_i-1) \]
+	as claimed. \\
+	
+	From the previous exercise, we have
+	\[ \diff(S) = \diff(S \mid R)(\diff(R)S) \]
+	and so
+	\[ |\disc(S)| = \|\diff(S)\| = \|\diff(S \mid R)\|\|\diff(R)S\| = \|\diff(S \mid R)\|\|\diff(R)\|^{[L:K]} = \|\diff(S \mid R)|\disc(R)|^{[L:K]} \]
+	which is what we wished to show.
 \end{proof}
