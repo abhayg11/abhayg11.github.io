@@ -1,4 +1,10 @@
 \mtexe{4.3.2}
 \begin{proof}
+	The forward direction of the claim ($f$ flat implies that $f$ is flat at certain $x$) is tautological.
 	
+	As stated, I believe the converse statement is false. Namely, choose $Y$ to be a scheme with no closed point (as in exercise 3.3.27). Then the condition of this exercise is vacuously satisfied, and so any morphism to $Y$ of finite type should be flat. But we can choose any closed subset of $Y$ (that is not also open), and the corresponding closed immersion into $Y$ is of finite type but not flat.
+	
+	In fact, we don't even need such pathological examples. Consider the ring homomorphism $k\lBrack t \rBrack [x] \to k \lParen t \rParen$ with $x \mapsto 0$. This is of finite type since we only need to invert $t$ to get $k \lBrack t \rBrack$, it is not a flat map since it isn't torsionfree, but the map on $\Spec$ is a map from a single closed point into a space, with the image not being closed. Thus again we vacuously satisfy the conditions of the exercise, since we now do have closed points in $Y$, but each of their preimages is empty.
+	
+	For the claim to be true, it suffices for $X \to Y$ to be a morphism of $S$-schemes, where $S$ is something??. So now, suppose that $Y$ is quasi-compact and that $f$ is flat at each closed point $x \in X$ with $f(x)$ closed in $Y$. We wish to show that $f$ is closed at all points of $X$. Let $x \in X$ be arbitrary, choose a closed point $y \in \overline{\{f(x)\}}$ (which exists now with our assumption), choose an open affine neighborhood $\Spec A$ of $y$, and choose an open affine $\Spec B$ of $x$ contained in the preimage of $\Spec A$. Note that $f(x) \in \Spec A$ since $y \in \overline{\{f(x)\}}$, so choosing the open set in $X$ as described is possible.
 \end{proof}
