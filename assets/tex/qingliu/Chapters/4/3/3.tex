@@ -1,4 +1,10 @@
 \mtexe{4.3.3}
 \begin{proof}
+	Suppose $f$ is injective. Note that the continuous image of an irreducible space is irreducible and the closure of an irreducible subspace in a larger space is irreducible. So, if $Z \subsetneq Z'$ are irreducible closed subsets of $X$, then $\overline{f(Z)} \subseteq \overline{f(Z')}$ in $Y$. To show the claim, it remains to show that the closure of the images are not equal. Since $f$ is injective, $f(Z) \neq f(Z')$ so we need to show the closures are distinct. But $\overline{f(Z')}$ has a generic point, and if this were in $f(Z)$, then $f(Z)$ would equal $f(Z')$. So, $f(Z)$ doesn't contain this generic point and $\overline{f(Z)}$ is properly contained in $\overline{f(Z')}$. \\
 	
+	Now suppose $f$ is flat and surjective. For each $y \in Y$, we have that $y = f(x)$ for some $x \in X$ by surjectivity, and
+	\[ \dim \scO_{Y,y} = \dim \scO_{X,x} - \dim \scO_{X_y,x} \leq \dim \scO_{X,x} \]
+	by flatness. Taking suprema gives:
+	\[ \dim Y = \sup_{y \in Y} \scO_{Y,y} \leq \sup_{y \in Y \atop f(x) = y} \dim \scO_{X,x} \leq \dim X \]
+	as desired.
 \end{proof}
