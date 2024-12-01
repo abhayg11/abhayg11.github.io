@@ -1,4 +1,14 @@
 \mtexe{5.1.4}
 \begin{proof}
+	This follows from proposition 5.1.14b. Indeed, if $i : U \to X$ denotes the open immersion, then
+	\[ i^\ast\scF \cong (\scF(X) \otimes_{\scO_X(X)} \scO_U(U))^\tilde = (\scF(X) \otimes_A \scO_X(U))^\tilde \]
+	On the other hand, directly from the definition we have
+	\[ i^\ast\scF = i^{-1}\scF \otimes_{i^{-1}\scO_X} \scO_X = \scF|_U \otimes_{\scO_U} \scO_X = \scF|_U \]
+	Evaluating both on global sections (at $U$) gives the result:
+	\[ \scF(U) \cong \scF(X) \otimes_A \scO_X(U) \]
+	as desired. \\
 	
+	As suggested, now consider $A = \ZZ[T]$, $X = \Spec A$, and $U = X \setminus \{(T,p)\}$ the complement of a closed point for some prime $p$. Then the $A$-module $M = \ZZ[T]/(T,p)$ gives the $\scO_X$ module $\scF = \widetilde{M}$. We have $U = D(T) \cup D(p)$, and $\scF(D(T)) = M_T = 0$ and $\scF(D(p)) = M_p = 0$, so $\scF(U) = 0$ by gluing. On the other hand,
+	\[ \scF(X) \otimes_A \scO_X(U) = \ZZ[T]/(T,p) \otimes_A A = \ZZ[T]/(T,p) \]
+	as we've previously shown that $\scO_X(U) = A$. So, the above equality does require $U$ affine.
 \end{proof}
