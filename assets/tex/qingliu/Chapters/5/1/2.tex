@@ -1,4 +1,6 @@
 \mtexe{5.1.2}
 \begin{proof}
+	Note that for any $U$, $\scO_X(U)$ is a domain and an $A$-algebra with field of fractions $K$ (since the local ring at the generic point is $K$), so $K$ is indeed a $\scO_X(U)$-module. Of course, $0$ is a module over any ring, so we have that $\scF$ is an $\scO_X$-module.
 	
+	Suppose $x_0$ is the generic point. Then every open set $U$ contains $x_0$, so $\scF(U) = K$ for all $U$, i.e. $\scF = \widetilde{K}$, which is quasicoherent. Conversely, suppose that $x_0$ is not the generic point. Then we can find an open set $U$ not containing $x_0$, and some point $x \in U$. Then $\scF_x = 0$ since $\scF(U) = 0$, but $(\widetilde{\scF(X)})_x = \widetilde{K}_x = K$. So, in this case, $\scF$ is not quasicoherent. I.e. $\scF$ is quasicoherent iff $\scF = \widetilde{K}$ iff $x_0$ is the generic point.
 \end{proof}
