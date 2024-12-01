@@ -1,4 +1,10 @@
 \mtexe{5.1.3}
 \begin{proof}
+	It is clear that $f\scO_X$ is finitely generated. Namely, on the open cover $\{X\}$ itself, we have the surjection
+	\[ \scO_X^1 \xrightarrow{f} f\scO_X \]
+	It is also clear that $f\scO_X$ is quasicoherent, for on an open affine $U = \Spec A$ with open subset $V$, we have
+	\[ \widetilde{(f\scO_X)(U)}(V) = \widetilde{fA}(V) = f\scO_U(V) = f\scO_X(V) \]
+	so $\widetilde{f\scO_X(U)} = (f\scO_X)|_U$.
 	
+	Finally, it is not in general invertible. For example, consider $X = \Spec k[x,y]/(xy)$ and let $f = x \in \scO_X(X)$. Then, if we had an isomorphism (of modules) $\scO_X|_U \cong f\scO_X|_U$ for any open subset containing the point associated to the prime ideal $(x)$, then we would also get an isomorphism at the stalks, which is $(k[x,y]/(xy))_{(x)} = k$ and $(xk[x,y]/(xy))_{(x)} = 0$.
 \end{proof}
