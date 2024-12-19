@@ -1,3 +1,8 @@
 \mtexe{3.40}
 \begin{proof}
+	Note that for a prime $p \geq 3$, $1,p-1,p^2-1,\ldots,p^r-1$ are $r+1$ distinct elements in the range $1,\ldots,p^r-1$ that are coprime to $p^r$, so $\varphi(p^r) \geq r+1$ as claimed. Similarly, $2-1,\ldots,2^r-1$ are all distinct and coprime to $2^r$, so $\varphi(2^r) \geq r$. \\
+	
+	We know that $p$ is totally ramified in this case, and we've shown that $\disc(\omega)$ is divisible by $p^k$ for $k = \sum_i (e_i-1)f_i = \varphi(p^r)-1$. I.e. $\disc(\omega)$ is divisible by $p^{\varphi(p^r)-1}$ as claimed, and the claim follows from the above estimates. \\
+	
+	Fix a prime $p$ and write $m = p^rn$, where $p \nmid n$. It suffices to show that $p^r \mid 2\disc(R)$. But we have the tower $\QQ \subseteq \QQ(\omega) \subseteq \Frac(R)$ for $\omega = e^{2\pi i/p^r}$, and so in particular, we have $\disc(R)$ is divisible by a power of $\disc(\ZZ[\omega]) = \disc(\omega)$. So, $2\disc(R)$ is divisible by $2\disc(\omega)$, which is divisible by $p^r$ by the above, completing the claim.
 \end{proof}
