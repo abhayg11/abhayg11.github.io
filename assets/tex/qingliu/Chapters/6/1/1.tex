@@ -6,5 +6,34 @@
 		d(b+b') &= (b+b') \otimes 1 - 1 \otimes (b+b') = (b \otimes 1 - 1 \otimes b)+(b' \otimes 1 - 1 \otimes b') = db+db'
 	\end{align*}
 	Further, it satisfies the product rule:
-	\[ d(bb')-bdb'-b'db = (bb') \otimes 1 - 1 \otimes (bb') - b(b' \otimes 1 - 1 \otimes b') - b'(b \otimes 1 - 1 \otimes b) = (bb') \otimes 1 - 1 \otimes (bb') - b' \otimes b - 1 \otimes (bb') - b \otimes b' - 1 \otimes (bb') = 
+	\begin{align*}
+	d(bb')-bdb'-b'db
+		&= (bb') \otimes 1 - 1 \otimes (bb') - b(b' \otimes 1 - 1 \otimes b') - b'(b \otimes 1 - 1 \otimes b) \\
+		&= (bb') \otimes 1 - 1 \otimes (bb') - b' \otimes b + 1 \otimes (bb') - b \otimes b' + 1 \otimes (bb') \\
+		&= (bb') \otimes 1 - b' \otimes b - b \otimes b' + 1 \otimes (bb') \\
+		&= (b \otimes 1 - 1 \otimes b)(b' \otimes 1 - 1 \otimes b')
+	\end{align*}
+	which is clearly in $I^2$, so is zero in $I/I^2$. Finally, elements of $A$ are constants since for $a \in A$:
+	\[ da = a \otimes 1 - 1 \otimes a = a(1 \otimes 1 - 1 \otimes 1) = 0 \]
+	as desired. \\
+	
+	Suppose $d' : B \to M$ is an $A$-derivation of $B$ into $M$. Consider the function $B \times B \to M$ given by $(x,y) \mapsto yd'(x)$. This is $A$-bilinear since $d'$ is $A$-linear, so defines a map $\varphi : B \otimes_A B \to M$, which we can further restrict to $I$ to give a map $\varphi : I \to M$. Further, this map is trivial on $I^2$. Indeed, suppose we have two elements of $I$, written in the form
+	\[ \sum_i r_i \otimes s_i \text{ and } \sum_j x_j \otimes y_j \]
+	for $r_i,s_i,x_j,y_j \in B$ and the sums taking place over some finite index set. The fact that they are in $I$ can be written as
+	\[ \sum_i r_is_i = 0 = \sum_j x_jy_j \]
+	Then, we can compute $\varphi$ of the product as:
+	\begin{align*}
+	\varphi\left(\left(\sum_i r_i \otimes s_i\right)\left(\sum_j x_j \otimes y_j\right)\right)
+		&= \sum_{i,j} \varphi((r_ix_j) \otimes (s_iy_j)) \\
+		&= \sum_{i,j} s_iy_jd'(r_ix_j) \\
+		&= \sum_{i,j} (s_iy_jr_id'x_j + s_iy_jx_jd'r_i) \\
+		&= 0
+	\end{align*}
+	since the first summand, summed over all $i$, gives 0; and the second summand, summed over all $j$, gives 0. So, $\varphi$ factors as a map $\varphi : I/I^2 \to M$.
+	
+	This is the morphism claimed by the universal property. Indeed, for $b \in B$, we have
+	\[ \varphi(d(b)) = \varphi(b \otimes 1 - 1 \otimes b) = 1d'(b) - bd'(1) = d'(b) \]
+	so that $\varphi \circ d = d'$. Finally, to show that $\varphi$ is unique, suppose that $\psi \circ d = d'$ for a $B$-module homomorphism $\psi : I/I^2 \to M$, and choose (a lift of) an element $x = \sum_i r_i \otimes s_i \in I/I^2$. Then
+	\begin{align*}
+	\psi(x)
 \end{proof}
