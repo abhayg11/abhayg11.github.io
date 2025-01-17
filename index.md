@@ -34,10 +34,11 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ### Current courses
 
-* Fall 2024 - University of Utah MATH 1210: [Syllabus](assets/pdf/2024_1210_syllabus.pdf)
+* Spring 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
 
 ### Previous courses
 
+* Fall 2024 - University of Utah MATH 1210: [Syllabus](assets/pdf/2024_1210_syllabus.pdf)
 * Summer 2024 - [&#x21B7;pre-REU: Expanding circle maps, digit expansions and topological Markov chains](https://www.math.utah.edu/~vinhage/prereu24/materials/)
 * Spring 2024 - University of Utah MATH 2210: [Syllabus](assets/pdf/2024_2210_syllabus.pdf)
 * Summer 2023 - University of Utah MATH 3210: [Syllabus](assets/pdf/2023_3210_syllabus.pdf)
