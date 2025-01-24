@@ -17,7 +17,15 @@
 	\[ da = a \otimes 1 - 1 \otimes a = a(1 \otimes 1 - 1 \otimes 1) = 0 \]
 	as desired. \\
 	
-	Suppose $d' : B \to M$ is an $A$-derivation of $B$ into $M$. Consider the function $B \times B \to M$ given by $(x,y) \mapsto yd'(x)$. This is $A$-bilinear since $d'$ is $A$-linear, so defines a map $\varphi : B \otimes_A B \to M$, which we can further restrict to $I$ to give a map $\varphi : I \to M$. Further, this map is trivial on $I^2$. Indeed, suppose we have two elements of $I$, written in the form
+	Let $(\Omega_{B/A}^1, d')$ denote the actual module of relative differentials. Since we've just shown that $d$ is an $A$-derivation, we get a map $\varphi : \Omega_{B/A}^1 \to I/I^2$ of $B$-modules with $d = \varphi \circ d'$. To show this is an isomorphism, we'll construct an inverse. Note that the multiplication map $B \otimes_A B \to B$ is surjective, so $(B \otimes_A B)/I \cong B$. Hence, from proposition 6.1.8d, we get an exact sequence
+	\[ I/I^2 \xrightarrow{\delta} \Omega^1_{(B \otimes_A B)/B} \otimes_{B \otimes_A B} B \xrightarrow{\alpha} \Omega^1_{B/B} \to 0 \]
+	Let us investigate the second term of this sequence. First, note that $B \otimes_A B$ considered as a $B$-algebra is the base change of $B$ along the morphism $A \to B$. Since differentials commute with base change, we have
+	\[ \Omega^1_{(B \otimes_A B)/B} \otimes_{B \otimes_A B} B \cong (\Omega^1_{B/A} \otimes_B (B \otimes_A B)) \otimes_{B \otimes_A B} B \]
+	But now, this expression is given by taking the $B$-module $\Omega^1_{B/A}$ and base-changing along the composition $B \to B \otimes_A B \to B$, which is the identity. So, this is just $\Omega^1_{B/A}$ itself. After making these identifications, we have that $\delta$ is a map $I/I^2 \to \Omega^1_{B/A}$. I claim that $\delta$ is the two-sided inverse of $\varphi$ above, which will complete the proof.
+	
+	Suppose $d' : B \to M$ is an $A$-derivation of $B$ into $M$. Consider the function $B \times B \to M$ given by $(x,y) \mapsto yd'(x)$. This is $A$-bilinear since $d'$ is $A$-linear, so defines a map $\varphi : B \otimes_A B \to M$, which we can further restrict to $I$ to give a $A$-module map $\varphi : I \to M$. In fact, it is a $B$-module map since
+	\[ \varphi(b(x \otimes y)) = \varphi(x \otimes (by)) = byd'(x) = b\varphi(x \otimes y) \]
+	Further, this map is trivial on $I^2$. Indeed, suppose we have two elements of $I$, written in the form
 	\[ \sum_i r_i \otimes s_i \text{ and } \sum_j x_j \otimes y_j \]
 	for $r_i,s_i,x_j,y_j \in B$ and the sums taking place over some finite index set. The fact that they are in $I$ can be written as
 	\[ \sum_i r_is_i = 0 = \sum_j x_jy_j \]
