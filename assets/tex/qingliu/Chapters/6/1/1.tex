@@ -21,29 +21,11 @@
 	\[ I/I^2 \xrightarrow{\delta} \Omega^1_{(B \otimes_A B)/B} \otimes_{B \otimes_A B} B \xrightarrow{\alpha} \Omega^1_{B/B} \to 0 \]
 	Let us investigate the second term of this sequence. First, note that $B \otimes_A B$ considered as a $B$-algebra is the base change of $B$ along the morphism $A \to B$. Since differentials commute with base change, we have
 	\[ \Omega^1_{(B \otimes_A B)/B} \otimes_{B \otimes_A B} B \cong (\Omega^1_{B/A} \otimes_B (B \otimes_A B)) \otimes_{B \otimes_A B} B \]
-	But now, this expression is given by taking the $B$-module $\Omega^1_{B/A}$ and base-changing along the composition $B \to B \otimes_A B \to B$, which is the identity. So, this is just $\Omega^1_{B/A}$ itself. After making these identifications, we have that $\delta$ is a map $I/I^2 \to \Omega^1_{B/A}$. I claim that $\delta$ is the two-sided inverse of $\varphi$ above, which will complete the proof.
-	
-	Suppose $d' : B \to M$ is an $A$-derivation of $B$ into $M$. Consider the function $B \times B \to M$ given by $(x,y) \mapsto yd'(x)$. This is $A$-bilinear since $d'$ is $A$-linear, so defines a map $\varphi : B \otimes_A B \to M$, which we can further restrict to $I$ to give a $A$-module map $\varphi : I \to M$. In fact, it is a $B$-module map since
-	\[ \varphi(b(x \otimes y)) = \varphi(x \otimes (by)) = byd'(x) = b\varphi(x \otimes y) \]
-	Further, this map is trivial on $I^2$. Indeed, suppose we have two elements of $I$, written in the form
-	\[ \sum_i r_i \otimes s_i \text{ and } \sum_j x_j \otimes y_j \]
-	for $r_i,s_i,x_j,y_j \in B$ and the sums taking place over some finite index set. The fact that they are in $I$ can be written as
-	\[ \sum_i r_is_i = 0 = \sum_j x_jy_j \]
-	Then, we can compute $\varphi$ of the product as:
-	\begin{align*}
-	\varphi\left(\left(\sum_i r_i \otimes s_i\right)\left(\sum_j x_j \otimes y_j\right)\right)
-		&= \sum_{i,j} \varphi((r_ix_j) \otimes (s_iy_j)) \\
-		&= \sum_{i,j} s_iy_jd'(r_ix_j) \\
-		&= \sum_{i,j} (s_iy_jr_id'x_j + s_iy_jx_jd'r_i) \\
-		&= 0
-	\end{align*}
-	since the first summand, summed over all $i$, gives 0; and the second summand, summed over all $j$, gives 0. So, $\varphi$ factors as a map $\varphi : I/I^2 \to M$.
-	
-	This is the morphism claimed by the universal property. Indeed, for $b \in B$, we have
-	\[ \varphi(d(b)) = \varphi(b \otimes 1 - 1 \otimes b) = 1d'(b) - bd'(1) = d'(b) \]
-	so that $\varphi \circ d = d'$. Finally, to show that $\varphi$ is unique, suppose that $\psi \circ d = d'$ for a $B$-module homomorphism $\psi : I/I^2 \to M$, and choose (a lift of) an element $x = \sum_i r_i \otimes s_i \in I/I^2$. Then
-	\begin{align*}
-	\psi(x)
-	
-	STILL DON'T KNOW HOW TO FINISH THE PROOF, BUT NOTE: $B$ acts on $I/I^2$ in the way defined above, but this is equivalent to acting on the left factor.
+	But now, this expression is given by taking the $B$-module $\Omega^1_{B/A}$ and base-changing along the composition $B \to B \otimes_A B \to B$, which is the identity. So, this is just $\Omega^1_{B/A}$ itself. After making these identifications, we have that $\delta$ is a map $I/I^2 \to \Omega^1_{B/A}$. I claim that $\delta$ is the two-sided inverse of $\varphi$ above, which will complete the proof. Unwrapping the above identifications gives
+	\[ \delta(\sum_i b_i \otimes c_i) = \sum_i c_id'b_i \]
+	Applying $\varphi$ to this gives
+	\[ \varphi(\delta(\sum_i b_i \otimes c_i)) = \sum_i c_i(b_i \otimes 1 - 1 \otimes b_i) = \sum_i b_i \otimes c_i - 1 \otimes (\sum_i b_ic_i) = \sum_i b_i \otimes c_i \]
+	since $\sum_i b_ic_i = 0$. So, this composition is the identity as desired. Conversely, $\Omega_{B/A}^1$ is generated as a $B$-module by $d'b$ for $b \in B$. On one such element, we have
+	\[ \delta(\varphi(d'b)) = \delta(db) = \delta(b \otimes 1 - 1 \otimes b) = 1d'b - bd'1 = d'b \]
+	since $d'$ is an $A$-derivation and $1 \in A$. This completes the proof.
 \end{proof}
