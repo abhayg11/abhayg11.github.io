@@ -6,7 +6,7 @@ title: Home
 # Contact Info
 
 [Work Message](https://docs.google.com/forms/d/e/1FAIpQLSftPbasi-MWPYgw60U6WxMLNv4Kl1PuiOK2pRLTq30Au4yevw/viewform?usp=sf_link) | [Personal Message](https://docs.google.com/forms/d/e/1FAIpQLSfZYKXpQ05JjhMZjeAKn2WVTH5-M_zR_uot5u0m9_4SOLlsSA/viewform?usp=sf_link)  
-Office: JWB 121
+Office: JWB 314
 
 My current students are probably looking for the information [here](#teaching).
 
@@ -15,7 +15,7 @@ My current students are probably looking for the information [here](#teaching).
 Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
 
 ![Headshot](assets/img/headshot.jpg)  
-(Photo credit: Yasi Shaker)
+(Photo credit: [&#x21B7;Yasi Shaker](https://yasiartiparti.company.site/))
 
 I am a queer mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x21B7;Dr. Federico Ardila](https://fardila.com) and restate them here...
 
@@ -67,6 +67,8 @@ For all of this source code (tex files), see [&#x21B7;this repo](https://github.
 
 ### Other
 
+* [AWS 2025](assets/tex/aws25/)
+* [AWS 2024](assets/tex/aws24/)
 * [PAWS 2023](assets/tex/paws23/)
 * [PCMI 2022](pcmi22/)
 
