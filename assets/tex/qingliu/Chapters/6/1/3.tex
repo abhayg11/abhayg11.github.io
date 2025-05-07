@@ -2,5 +2,9 @@
 \begin{proof}
 	This follows from the parallel fact on rings. Namely, for $\beta \in \widehat{B}$, there is some $b \in B$ with $\beta - b \in I\widehat{B}$, so that $d\beta \in db + d\left(I\widehat{B}\right) \subseteq \rho(\Omega^1_{B/A})+I\Omega^1_{\widehat{B}/A}$. This same decomposition shows that the left-hand side here is also a $\widehat{B}$-module (despite the first summand being only a $B$-module), and since we've just shown it contains a collection of $\widehat{B}$-module generators of the right hand side, they must be equal.
 	
+	The content of the next claim is that the final map is surjective. Indeed, it is obvious that the map $\rho : \Omega^1_{B/A} \to \Omega^1_{\widehat{B}/A}$ induces a map $\Omega^1_{B/A}/I^n \to \Omega^1_{\widehat{B}/A}/I^n$ and we can name its kernel $K_n$. Further, if $n \geq 1$, then any element of the latter module is represented by an element $\beta = b+u$ with $b \in \rho(\Omega^1_{B/A})$ and $u \in I\Omega^1_{\widehat{B}/A}$. But then the coset of $b$ maps to $\beta$ under the induced map $\rho$ above.
 	
+	Next, the commutativity of
+	\[ \begin{tikzcd} \Omega^1_{B/A}/I^{n+1} \arrow[r] \arrow[d] & \Omega^1_{\widehat{B}/A}/I^{n+1} \arrow[d] \\ \Omega^1_{B/A}/I^n \arrow[r] & \Omega^1_{\widehat{B}/A}/I^n \end{tikzcd} \]
+	implies the existence of the map $K_{n+1} \to K_n$. For surjectivity, suppose that $\omega+I^n\Omega^1_{B/A} \in K_n$. Then $\rho(\omega) \in I^n\Omega^1_{\widehat{B}/A}$, MISSING SOMETHING EASY PROBABLY?
 \end{proof}
