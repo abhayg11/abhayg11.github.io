@@ -23,6 +23,7 @@ navbar-links:
   Home: ""
   About Me: "aboutme"
   Curriculum Vitae: "cv"
+  Posts: "posts"
 
 ################
 # --- Logo --- #
