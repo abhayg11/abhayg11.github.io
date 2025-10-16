@@ -66,12 +66,16 @@ For all of this source code (tex files), see [&#x21B7;this repo](https://github.
 
 * [Hello, World!](macaulay2/helloworld.html)
 
-### Other
+### Conferences/Schools
 
 * [AWS 2025](assets/tex/aws25/)
 * [AWS 2024](assets/tex/aws24/)
 * [PAWS 2023](assets/tex/paws23/)
 * [PCMI 2022](pcmi22/)
+
+### Other
+
+* [Spherical completeness of Cp]()
 
 ---
 
