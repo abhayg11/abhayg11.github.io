@@ -34,10 +34,11 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ### Current courses
 
-* Summer 2025 - [&#x21B7;Mathematics Program for High School Students](https://www.math.utah.edu/high-school-program/summerhsp.php)
+* Fall 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
 
 ### Previous courses
 
+* Summer 2025 - [&#x21B7;Mathematics Program for High School Students](https://www.math.utah.edu/high-school-program/summerhsp.php)
 * Spring 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
 * Fall 2024 - University of Utah MATH 1210: [Syllabus](assets/pdf/2024_1210_syllabus.pdf)
 * Summer 2024 - [&#x21B7;pre-REU: Expanding circle maps, digit expansions and topological Markov chains](https://www.math.utah.edu/~vinhage/prereu24/materials/)
@@ -75,7 +76,7 @@ For all of this source code (tex files), see [&#x21B7;this repo](https://github.
 
 ### Other
 
-* [Spherical completeness of Cp](2025/10/16/spherical-completeness-cp
+* [Spherical completeness of Cp](2025/10/16/spherical-completeness-cp)
 
 ---
 
