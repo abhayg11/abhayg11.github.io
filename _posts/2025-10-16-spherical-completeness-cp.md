@@ -25,3 +25,7 @@ First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Th
 ```
 
 Note that this is different from the real case, and works because of the nonarchimedan property of the absolute value. That is, in a real vector space, a closed ball of a fixed radius cannot contain two disjoint balls of a smaller radius unless that smaller radius is less than half of the original radius.
+
+```
+Lemma 2: \(\mathbb{C}_p\) contains a countable dense subset.
+```
