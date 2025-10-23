@@ -18,13 +18,13 @@ First, we will describe a non-constructive proof. We need a few Lemmas first.
 
 #### Lemma 1
 
-If \(r > s > 0\) and \(X\) is a closed ball in \(\mathbb{C}_p\) of radius \(r\), then there are two disjoint balls of radius \(s\) contained in \(X\).
+If \\(r > s > 0\\) and \(X\\) is a closed ball in \(\mathbb{C}_p\\) of radius \(r\\), then there are two disjoint balls of radius \(s\\) contained in \(X\\).
 
 **Proof.**
 
-We can write \(X = B_r(x)\) for some \(x \in \mathbb{C}_p\). Choose \(\alpha,\beta \in \mathbb{C}_p\) with \(|\alpha| < s < |\beta| < r\). Then, we claim that \(B_s(x+\alpha)\) and \(B_s(x+\beta)\) are the relevant balls.
+We can write \\(X = B_r(x)\\) for some \\(x \in \mathbb{C}_p\\). Choose \\(\alpha,\beta \in \mathbb{C}_p\\) with \\(|\alpha| < s < |\beta| < r\\). Then, we claim that \\(B_s(x+\alpha)\\) and \\(B_s(x+\beta)\\) are the relevant balls.
 
-First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta|\).
+First, we show these are contained in \\(X\\). Suppose \\(y \in B_s(x+\alpha)\\). Then \\(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\\), so that \\(y \in X\\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \\(y\\) were in both balls, then, \\(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\\), but \\(|\alpha-\beta| = |\beta| > s\\) since \\(|\alpha| < |\beta|\\).
 
 QED
 
@@ -32,4 +32,7 @@ Note that this is different from the real case, and works because of the nonarch
 
 #### Lemma 2
 
-Cp has a countable dense subset.
+\\(\mathbb{C}_p\\) has a countable dense subset.
+
+**Proof.**
+
