@@ -16,7 +16,7 @@ It is well-known that \\(\mathbb{C}\_p\\) is algebraically closed and complete w
 
 First, we will describe a non-constructive proof. We need a few Lemmas first.
 
-Lemma 1
+<div>Lemma 1
 
 If \(r > s > 0\) and \(X\) is a closed ball in \(\mathbb{C}_p\) of radius \(r\), then there are two disjoint balls of radius \(s\) contained in \(X\).
 
@@ -24,7 +24,7 @@ Proof.
 
 We can write \(X = B_r(x)\) for some \(x \in \mathbb{C}_p\). Choose \(\alpha,\beta \in \mathbb{C}_p\) with \(|\alpha| < s < |\beta| < r\). Then, we claim that \(B_s(x+\alpha)\) and \(B_s(x+\beta)\) are the relevant balls.
 
-First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta|\).
+First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta|\).</div>
 
 Note that this is different from the real case, and works because of the nonarchimedan property of the absolute value. That is, in a real vector space, a closed ball of a fixed radius cannot contain two disjoint balls of a smaller radius unless that smaller radius is less than half of the original radius.
 
@@ -34,4 +34,4 @@ Note that this is different from the real case, and works because of the nonarch
 
 **Proof.**
 
-Note that \(\mathbb{Q} \subseteq \mathbb{C}_p\), so we can consider the algebraic closure of the former in the latter.
+Note that \(\mathbb{Q} \subseteq \mathbb{C}_p\)
