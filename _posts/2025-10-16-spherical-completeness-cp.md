@@ -18,7 +18,7 @@ First, we will describe a non-constructive proof. We need a few Lemmas first.
 
 #### Lemma 1
 
-If \\(r > s > 0\\) and \(X\\) is a closed ball in \(\mathbb{C}_p\\) of radius \(r\\), then there are two disjoint balls of radius \(s\\) contained in \(X\\).
+If \\(r > s > 0\\) and \\(X\\) is a closed ball in \\(\mathbb{C}_p\\) of radius \\(r\\), then there are two disjoint balls of radius \\(s\\) contained in \\(X\\).
 
 **Proof.**
 
@@ -36,3 +36,4 @@ Note that this is different from the real case, and works because of the nonarch
 
 **Proof.**
 
+Note that \\(\mathbb{Q} \subseteq \mathbb{C}_p\\), so we can consider the algebraic closure of the former in the latter.
