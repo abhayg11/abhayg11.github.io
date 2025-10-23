@@ -16,7 +16,7 @@ It is well-known that \\(\mathbb{C}\_p\\) is algebraically closed and complete w
 
 First, we will describe a non-constructive proof. We need a few Lemmas first.
 
-```
+```latex
 Lemma 1: If \(r > s > 0\) and \(X\) is a closed ball in \(\mathbb{C}_p\) of radius \(r\), then there are two disjoint balls of radius \(s\) contained in \(X\).
 Proof.
 We can write \(X = B_r(x)\) for some \(x \in \mathbb{C}_p\). Choose \(\alpha,\beta \in \mathbb{C}_p\) with \(|\alpha| < s < |\beta| < r\). Then, we claim that \(B_s(x+\alpha)\) and \(B_s(x+\beta)\) are the relevant balls.
