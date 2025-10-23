@@ -16,22 +16,22 @@ It is well-known that \\(\mathbb{C}\_p\\) is algebraically closed and complete w
 
 First, we will describe a non-constructive proof. We need a few Lemmas first.
 
-### Lemma 1
+#### Lemma 1
 
-<div>If \(r > s > 0\) and \(X\) is a closed ball in \(\mathbb{C}_p\) of radius \(r\), then there are two disjoint balls of radius \(s\) contained in \(X\).<br>
+<div>If \(r > s > 0\) and \(X\) is a closed ball in \(\mathbb{C}_p\) of radius \(r\), then there are two disjoint balls of radius \(s\) contained in \(X\).<br><br>
 
 <em>Proof.</em><br>
 
-We can write \(X = B_r(x)\) for some \(x \in \mathbb{C}_p\). Choose \(\alpha,\beta \in \mathbb{C}_p\) with \(|\alpha| < s < |\beta| < r\). Then, we claim that \(B_s(x+\alpha)\) and \(B_s(x+\beta)\) are the relevant balls.<br>
+We can write \(X = B_r(x)\) for some \(x \in \mathbb{C}_p\). Choose \(\alpha,\beta \in \mathbb{C}_p\) with \(|\alpha| < s < |\beta| < r\). Then, we claim that \(B_s(x+\alpha)\) and \(B_s(x+\beta)\) are the relevant balls.<br><br>
 
-First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta|\).</div>
+First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta| \qedhere\).</div>
 
 Note that this is different from the real case, and works because of the nonarchimedan property of the absolute value. That is, in a real vector space, a closed ball of a fixed radius cannot contain two disjoint balls of a smaller radius unless that smaller radius is less than half of the original radius.
 
-### Lemma 2
+#### Lemma 2
 
-<div>\(\mathbb{C}_p\) contains a countable dense subset.<br>
+<div>\(\mathbb{C}_p\) contains a countable dense subset.<br><br>
 
-<em>Proof.</em><br>
+<em>Proof.</em><br><br>
 
-Note that \(\mathbb{Q} \subseteq \mathbb{C}_p\). So, we can consider the algebraic closure of the former in the latter.</div>
+Note that \(\mathbb{Q} \subseteq \mathbb{C}_p\). So, we can consider the algebraic closure of the former in the latter. First, note that this field \(\overline{\mathbb{Q}}\) is countable. Indeed, each element is a root of a polynomial with rational coefficients, but there are only countably many such polynomials per degree, only countably many degrees, and only finitely many roots per polynomial.</div>
