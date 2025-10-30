@@ -36,7 +36,7 @@ Note that this is different from the real case, and works because of the nonarch
 
 Note that \(\mathbb{Q} \subseteq \mathbb{C}_p\). So, we can consider the algebraic closure of the former in the latter. First, note that this field \(\overline{\mathbb{Q}}\) is countable. Indeed, each element is a root of a polynomial with rational coefficients, but there are only countably many such polynomials per degree, only countably many degrees, and only finitely many roots per polynomial.<br><br>
 
-To show that it is dense, consider the closure \(Z\), and pick \(\alpha \in \mathbb{Q_p}\), the algebraic closure. Then \(\alpha\) is a root of a monic polynomial \(f \in \mathbb{Q}_p[x]\). By approximating the coefficients, we can write a sequence of polynomials \(f_n \in \mathbb{Q}[x]\) approaching \(f\). But then since the roots of a polynomial are continuous functions of the coefficients, some sequence of roots \(\alpha_n\) of \(f_n\) approaches \(\alpha\). But \(\alpha_n \in \overline{\mathbb{Q}} \subseteq Z\) by construction, and \(Z\) is closed, so \(\alpha \in Z\). So, \(Z \supseteq \overline{\mathbb{Q}_p}\), and since it is closed, it contains the closure, which is all of \(\mathbb{C}_p\). &#x25A0;</div>
+To show that it is dense, consider the closure \(Z\), and pick \(\alpha \in \overline{\mathbb{Q_p}}\), the algebraic closure. Then \(\alpha\) is a root of a monic polynomial \(f \in \mathbb{Q}_p[x]\). By approximating the coefficients, we can write a sequence of polynomials \(f_n \in \mathbb{Q}[x]\) approaching \(f\). But then since the roots of a polynomial are continuous functions of the coefficients, some sequence of roots \(\alpha_n\) of \(f_n\) approaches \(\alpha\). But \(\alpha_n \in \overline{\mathbb{Q}} \subseteq Z\) by construction, and \(Z\) is closed, so \(\alpha \in Z\). So, \(Z \supseteq \overline{\mathbb{Q}_p}\), and since it is closed, it contains the closure, which is all of \(\mathbb{C}_p\). &#x25A0;</div>
 
 #### The proof
 
@@ -44,12 +44,16 @@ Now, we can proceed to the proof of the theorem, that \\(\mathbb{C}_p\\) is sphe
 
 <div><em>Proof.</em><br>
 
-For contradiction, assume that \(\mathbb{C}_p\) is spherically closed. Fix a sequence of real numbers \(r_0 > r_1 > r_2 > r_3 > \cdots\) converging to 1., and let \(S\) denote the set of infinite strings on the alphabet \(\{0,1\}\). We will inductively construct a closed ball corresponding to each finite string as follows: start with \(U_{\emptyset} = B_{r_0}(0)\) to be the closed ball associated with the empty string (of length 0). Then, having defined a closed ball \(U_w\) for a finite string \(w\) of length \(L\), construct \(U_{w0},U_{w1}\) using Lemma 1 as two disjoint balls of radius \(r_{L+1}\) contained in \(U_w\).<br><br>
+For contradiction, assume that \(\mathbb{C}_p\) is spherically closed. Fix a sequence of real numbers \(r_0 > r_1 > r_2 > r_3 > \cdots\) converging to 1, and let \(S\) denote the set of infinite strings on the alphabet \(\{0,1\}\). We will inductively construct a closed ball corresponding to each finite string as follows: start with \(U_{\emptyset} = B_{r_0}(0)\) to be the closed ball associated with the empty string (of length 0). Then, having defined a closed ball \(U_w\) for a finite string \(w\) of length \(L\), construct \(U_{w0},U_{w1}\) using Lemma 1 as two disjoint balls of radius \(r_{L+1}\) contained in \(U_w\).<br><br>
 
 Use Lemma 2 to fix a countable dense subset \(T \subseteq \mathbb{C}_p\). For an infinite word \(s \in S\), letting \(s_n\) denote the length \(n\) prefix, we can define
 
 $$U_s = \bigcap_{n=1}^\infty U_{s_n}$$
 
-By our assumption, \(U_s\) is not empty, and so contains some \(z_s\). But then \(U_s\) contains \(B_1(z)\) as well by our choice of radii above, and since \(T\) is dense, \(T \cap B_1(z) \neq \emptyset\). So, WLOG, we may choose each \(z_s \in T\). This defines a function \((f(s) = z_s) : S \to T\).<br><br>
+By our assumption, \(U_s\) is not empty, and so contains some \(z_s\). But then \(U_s\) contains \(B_1(z_s)\) as well by our choice of radii above, and since \(T\) is dense, \(T \cap B_1(z_s) \neq \emptyset\). So, WLOG, we may choose each \(z_s \in T\). This defines a function \((f(s) = z_s) : S \to T\).<br><br>
 
 But by construction, this function is injective. Indeed, if \(s \neq s'\), then these words differ for some first finite index, i.e. \(s_n \neq s_n'\), but \(s_{n-1} = s_{n-1}'\). But then \(U_{s_n}\) and \(U_{s_n'}\) were constructed as disjoint subsets of \(U_{s_{n-1}}\). Thus \(U_s\) and \(U_{s'}\) are also disjoint, as subsets of these disjoint sets, respectively. Thus we have an injection from an uncountable set to a countable set, which furnishes our contradiction.&#x25A0;</div>
+
+## Constructive proof
+
+Finally, we will do this explicitly, i.e. I will write a nested sequence of closed balls with empty intersection.
