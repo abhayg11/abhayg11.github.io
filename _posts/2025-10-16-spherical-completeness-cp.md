@@ -24,7 +24,7 @@ First, we will describe a non-constructive proof. We need a few Lemmas first.
 
 We can write \(X = B_r(x)\) for some \(x \in \mathbb{C}_p\). Choose \(\alpha,\beta \in \mathbb{C}_p\) with \(|\alpha| < s < |\beta| < r\). Then, we claim that \(B_s(x+\alpha)\) and \(B_s(x+\beta)\) are the relevant balls.<br><br>
 
-First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta|\).  &#x25A0;</div>
+First, we show these are contained in \(X\). Suppose \(y \in B_s(x+\alpha)\). Then \(|y-x| = |y-(x+\alpha)+\alpha| \leq \max\{|y-(x+\alpha)|,|\alpha|\} < r\), so that \(y \in X\). The same argument works for the other ball. Finally, the two are disjoint. Indeed, if \(y\) were in both balls, then, \(|\alpha-\beta| \leq \max\{|(x+\alpha)-y|,|(x+\beta)-y|\} \leq s\), but \(|\alpha-\beta| = |\beta| > s\) since \(|\alpha| < |\beta|\). &#x25A0;</div>
 
 Note that this is different from the real case, and works because of the nonarchimedan property of the absolute value. That is, in a real vector space, a closed ball of a fixed radius cannot contain two disjoint balls of a smaller radius unless that smaller radius is less than half of the original radius.
 
@@ -52,8 +52,40 @@ $$U_s = \bigcap_{n=1}^\infty U_{s_n}$$
 
 By our assumption, \(U_s\) is not empty, and so contains some \(z_s\). But then \(U_s\) contains \(B_1(z_s)\) as well by our choice of radii above, and since \(T\) is dense, \(T \cap B_1(z_s) \neq \emptyset\). So, WLOG, we may choose each \(z_s \in T\). This defines a function \((f(s) = z_s) : S \to T\).<br><br>
 
-But by construction, this function is injective. Indeed, if \(s \neq s'\), then these words differ for some first finite index, i.e. \(s_n \neq s_n'\), but \(s_{n-1} = s_{n-1}'\). But then \(U_{s_n}\) and \(U_{s_n'}\) were constructed as disjoint subsets of \(U_{s_{n-1}}\). Thus \(U_s\) and \(U_{s'}\) are also disjoint, as subsets of these disjoint sets, respectively. Thus we have an injection from an uncountable set to a countable set, which furnishes our contradiction.&#x25A0;</div>
+But by construction, this function is injective. Indeed, if \(s \neq s'\), then these words differ for some first finite index, i.e. \(s_n \neq s_n'\), but \(s_{n-1} = s_{n-1}'\). But then \(U_{s_n}\) and \(U_{s_n'}\) were constructed as disjoint subsets of \(U_{s_{n-1}}\). Thus \(U_s\) and \(U_{s'}\) are also disjoint, as subsets of these disjoint sets, respectively. Thus we have an injection from an uncountable set to a countable set, which furnishes our contradiction. &#x25A0;</div>
 
 ## Constructive proof
 
-Finally, we will do this explicitly, i.e. I will write a nested sequence of closed balls with empty intersection.
+Finally, we will do this explicitly, i.e. I will write a nested sequence of closed balls with empty intersection. First, let me remind you of [&#x21B7;Krasner's Lemma](https://en.wikipedia.org/wiki/Krasner%27s_lemma). Then, let me prove two more lemmas:
+
+#### Lemma 3
+
+If \\(z_n = \sum_{k=1 \atop p \nmid k}^{n-1} p^{-1/k}\\) and \\(x_n\\) is a Galois conjugate not equal to \\(z_n\\) itself, then \\(|z_n-x_n| > p^{1/n} \\).
+
+#### Lemma 4
+
+For \\(z_n\\) as in the previous lemma, the extension \\(\mathbb{Q}_p(z_1,z_2,z_3,\ldots)/\mathbb{Q}_p\\) has infinite degree.
+
+#### The proof
+
+Again, we show that \\(\mathbb{C}_p\\) is spherically incomplete.
+
+<div><em>Proof.</em><br>
+
+For each \(n\), let \(z_n = \sum_{k=1 \atop p \nmid k}^{n-1} p^{-1/k}\) (after fixing a compatible sequence of roots of \(p\)), and \(r_n = p^{1/n}\). Then, we have the closed balls \(B_{r_n}(z_n)\). First, we will show that these are nested, and second, we will show it has empty intersection.<br><br>
+
+To begin, first note that \(r_n\) is a decreasing sequence of real numbers with limit 1. Further, if \(n+1\) is a multiple of \(p\), then \(z_n = z_{n+1}\). Otherwise,
+
+$$|z_{n+1}-z_n| = |p^{-1/n}| = p^{1/n} = r_n$$
+
+So, in either case, \(|z_{n+1}-z_n| \leq r_n\). Now, suppose that \(y \in B_{r_{n+1}}(z_{n+1})\). Then,
+
+$$|y-z_n| \leq \max\{|y-z_{n+1}|,|z_n-z_{n+1}|\} \leq \max\{r_{n+1},r_n\} = r_n$$
+
+as desired.<br><br>
+
+For contradiction, assume now that \(z \in \bigcap_n B_{r_n}(z_n)\). As in the nonconstructive proof, we then get that \(B_z(1)\) is contained in this intersection, and this ball contains an element of \(\overline{\mathbb{Q}_p}\) by density. So, we can assume \(z\) is algebraic over \(\mathbb{Q}_p\). Then, for each \(n\), we have
+
+$$|z_n-z| \leq r_n$$
+
+By Krasner's lemma, this implies that \(z_n \in \mathbb{Q}_p(z)\) for each \(n\). But this is a contradiction because the \(z_n\) generate an infinite extension of \(\mathbb{Q}_p\), but \(\mathbb{Q}_p(z)\) is a finite extension since \(z\) is algebraic. &#x25A0;</div>
