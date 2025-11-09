@@ -61,8 +61,8 @@ Finally, we will do this explicitly, i.e. I will write a nested sequence of clos
 #### Lemma 3
 
 <div>If
-$$z_n = \sum_{k=1 \atop p \nmid k}^{n-1} p^{-1/k}$$
-and \(x_n\) is a Galois conjugate not equal to \(z_n\) itself, then \(|z_n-x_n| > p^{1/n}\).<br>br>
+$$z_n = \sum_{k=1 \atop \gcd(p,k)=1}^{n-1} p^{-1/k}$$
+and \(x_n\) is a Galois conjugate not equal to \(z_n\) itself, then \(|z_n-x_n| > p^{1/n}\).<br><br>
 
 <em>Proof.</em></div>
 
