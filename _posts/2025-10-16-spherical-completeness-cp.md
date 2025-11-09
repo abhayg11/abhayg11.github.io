@@ -60,7 +60,11 @@ Finally, we will do this explicitly, i.e. I will write a nested sequence of clos
 
 #### Lemma 3
 
-If \\(z_n = \sum_{k=1 \atop p \nmid k}^{n-1} p^{-1/k}\\) and \\(x_n\\) is a Galois conjugate not equal to \\(z_n\\) itself, then \\(|z_n-x_n| > p^{1/n} \\).
+<div>If
+$$z_n = \sum_{k=1 \atop p \nmid k}^{n-1} p^{-1/k}$$
+and \(x_n\) is a Galois conjugate not equal to \(z_n\) itself, then \(|z_n-x_n| > p^{1/n}\).<br>br>
+
+<em>Proof.</em></div>
 
 #### Lemma 4
 
@@ -72,9 +76,9 @@ Again, we show that \\(\mathbb{C}_p\\) is spherically incomplete.
 
 <div><em>Proof.</em><br>
 
-For each \(n\), let \(z_n = \sum_{k=1 \atop p \nmid k}^{n-1} p^{-1/k}\) (after fixing a compatible sequence of roots of \(p\)), and \(r_n = p^{1/n}\). Then, we have the closed balls \(B_{r_n}(z_n)\). First, we will show that these are nested, and second, we will show it has empty intersection.<br><br>
+For each \(n\), let \(z_n\) be as in Lemma 3, and \(r_n = p^{1/n}\). Then, we have the closed balls \(B_{r_n}(z_n)\). First, we will show that these are nested, and second, we will show they have empty intersection.<br><br>
 
-To begin, first note that \(r_n\) is a decreasing sequence of real numbers with limit 1. Further, if \(n+1\) is a multiple of \(p\), then \(z_n = z_{n+1}\). Otherwise,
+To begin, first note that \(r_n\) is a decreasing sequence of real numbers with limit 1. Further, if \(n\) is a multiple of \(p\), then \(z_n = z_{n+1}\). Otherwise,
 
 $$|z_{n+1}-z_n| = |p^{-1/n}| = p^{1/n} = r_n$$
 
@@ -86,6 +90,6 @@ as desired.<br><br>
 
 For contradiction, assume now that \(z \in \bigcap_n B_{r_n}(z_n)\). As in the nonconstructive proof, we then get that \(B_z(1)\) is contained in this intersection, and this ball contains an element of \(\overline{\mathbb{Q}_p}\) by density. So, we can assume \(z\) is algebraic over \(\mathbb{Q}_p\). Then, for each \(n\), we have
 
-$$|z_n-z| \leq r_n$$
+$$|z_n-z| \leq r_n < |z_n-x_n|$$
 
-By Krasner's lemma, this implies that \(z_n \in \mathbb{Q}_p(z)\) for each \(n\). But this is a contradiction because the \(z_n\) generate an infinite extension of \(\mathbb{Q}_p\), but \(\mathbb{Q}_p(z)\) is a finite extension since \(z\) is algebraic. &#x25A0;</div>
+for any Galois conjugate \(x_n \neq z_n\), invoking Lemma 4. By Krasner's lemma, this implies that \(z_n \in \mathbb{Q}_p(z)\) for each \(n\). But this is a contradiction because the \(z_n\) generate an infinite extension of \(\mathbb{Q}_p\) while \(\mathbb{Q}_p(z)\) is a finite extension since \(z\) is algebraic. &#x25A0;</div>
