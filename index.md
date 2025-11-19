@@ -12,7 +12,7 @@ My current students are probably looking for the information [here](#teaching).
 
 ---
 
-Welcome to [my](aboutme.html) site! I use this space to organize my personal and professional life.
+Welcome to [my](aboutme) site! I use this space to organize my personal and professional life.
 
 ![Headshot](assets/img/headshot.jpg)  
 (Photo credit: [&#x21B7;Yasi Shaker](https://yasiartiparti.company.site/))
@@ -49,7 +49,7 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ## Research
 
-My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x21B7;Dr. Sean Howe](https://www.math.utah.edu/~howe/) and [&#x21B7;Dr. Gordan Savin](https://www.math.utah.edu/~savin/). Further details TBD.
+My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x21B7;Dr. Sean Howe](https://www.math.utah.edu/~howe/) and [&#x21B7;Dr. Gordan Savin](https://www.math.utah.edu/~savin/). Further details pending.
 
 ## Notes / Code / Etc.
 
@@ -86,11 +86,11 @@ When I'm not doing mathematics, I enjoy...
 * Dancing
 	- Living Traditions 2023: [&#x21B7;Remix](https://youtu.be/eMaFJ0GUA7Y) \| [&#x21B7;Live dhol](https://youtu.be/Y2OWHEJIoe4)
 * Animation
-	- [Blender Donut](animation/donut.html)
+	- [Blender Donut](animation/donut)
 * Playing music
-    - [Santur](music/santur.html)
-    - [Dhol](music/dhol.html)
-    - [Ukulele](music/ukulele.html)
+    - [Santur](music/santur)
+    - [Dhol](music/dhol)
+    - [Ukulele](music/ukulele)
     - Harmonica
 * Playing games. Honorable mentions:
     - Chess
@@ -105,5 +105,5 @@ When I'm not doing mathematics, I enjoy...
 	- Puzzles
 	- Projects
 * Other artwork
-    - [Crochet](art/crochet.html)
+    - [Crochet](art/crochet)
 	- Sketching
