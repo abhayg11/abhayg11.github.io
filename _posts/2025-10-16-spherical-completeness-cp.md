@@ -64,11 +64,27 @@ Finally, we will do this explicitly, i.e. I will write a nested sequence of clos
 $$z_n = \sum_{k=1 \atop \gcd(p,k)=1}^{n-1} p^{-1/k}$$
 and \(x_n\) is a Galois conjugate not equal to \(z_n\) itself, then \(|z_n-x_n| > p^{1/n}\).<br><br>
 
-<em>Proof.</em></div>
+<em>Proof.</em><br>
+
+First, note that inherent in this expression is a collection of choices of roots of \(p\). Then, note that
+
+$$1+x+\cdots+x^{k-1} = \frac{x^k-1}{x-1} = \prod_{i=1}^{k-1} (x-\mu_k^i)$$
+
+where \(\mu_k\) is a primitive \(k\)th root of unity. Evaluating at \(x=1\) gives a product of integral elements equal to \(k\). When \(\gcd(p,k)=1\), we conclude that the absolute value of each term in the product must be 1. In other words, if \(\alpha \neq 1\) is a \(k\)th root of unity, then \(|1-\alpha|=1\).<br>br>
+
+Now, suppose \(x_n,z_n\) are as in the statement. Then the difference \(z_n-x_n\) is a sum of terms of the form \(p^{-1/k}-u\), where \(u\) is a Galois conjugate of \(p^{-1/k}\). In particular, \(u^k = 1/p\) as well, so \((p^{1/k}u)^k=1\) and \(p^{1/k}u\) is a \(k\)th root of unity. So, either \(u = p^{-1/k}\) or
+
+$$|p^{-1/k}-u| = |p^{-1/k}||1-p^{1/k}u| = p^{1/k} \cdot 1 = p^{1/k}$$
+
+Since \(x_n \neq z_n\), at least one of these terms is nonzero, and by the nonarchimedan property, the absolute value of the sum is the minimum of these (using that the nonzero terms have distinct absolute value). I.e. for some \(k\), we get: \(|z_n-x_n| = p^{1/k} > p^{1/n}\) as claimed. &#x25A0;</div>
 
 #### Lemma 4
 
-For \\(z_n\\) as in the previous lemma, the extension \\(\mathbb{Q}_p(z_1,z_2,z_3,\ldots)/\mathbb{Q}_p\\) has infinite degree.
+<div>For \(z_n\) as in the previous lemma, the extension \(\mathbb{Q}_p(z_1,z_2,z_3,\ldots)/\mathbb{Q}_p\) has infinite degree.<br><br>
+
+<em>Proof.</em><br>
+
+Note that if \(k\) is not divisible by \(p\), we have \(z_{k+1}-z_k = p^{-1/k}\), and \(|p^{-1/k}| = p^{1/k}\). But if this extension were finite, it would have value group isomorphic to \(\mathbb{Z}\). But we've found elements with absolute values arbitrarily close (but not equal) to 1, so the value group cannot be discrete. &#x25A0;</div>
 
 #### The proof
 
@@ -92,4 +108,4 @@ For contradiction, assume now that \(z \in \bigcap_n B_{r_n}(z_n)\). As in the n
 
 $$|z_n-z| \leq r_n < |z_n-x_n|$$
 
-for any Galois conjugate \(x_n \neq z_n\), invoking Lemma 4. By Krasner's lemma, this implies that \(z_n \in \mathbb{Q}_p(z)\) for each \(n\). But this is a contradiction because the \(z_n\) generate an infinite extension of \(\mathbb{Q}_p\) while \(\mathbb{Q}_p(z)\) is a finite extension since \(z\) is algebraic. &#x25A0;</div>
+for any Galois conjugate \(x_n \neq z_n\), invoking Lemma 3. By Krasner's lemma (which applies since \(\mathbb{Q}_p\) is nonarchimedean and complete), this implies that \(z_n \in \mathbb{Q}_p(z)\) for each \(n\). But this is a contradiction because the \(z_n\) generate an infinite extension (Lemma 4) of \(\mathbb{Q}_p\) while \(\mathbb{Q}_p(z)\) is a finite extension since \(z\) is algebraic. &#x25A0;</div>
