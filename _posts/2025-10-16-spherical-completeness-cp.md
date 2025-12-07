@@ -70,7 +70,7 @@ First, note that inherent in this expression is a collection of choices of roots
 
 $$1+x+\cdots+x^{k-1} = \frac{x^k-1}{x-1} = \prod_{i=1}^{k-1} (x-\mu_k^i)$$
 
-where \(\mu_k\) is a primitive \(k\)th root of unity. Evaluating at \(x=1\) gives a product of integral elements equal to \(k\). When \(\gcd(p,k)=1\), we conclude that the absolute value of each term in the product must be 1. In other words, if \(\alpha \neq 1\) is a \(k\)th root of unity, then \(|1-\alpha|=1\).<br>br>
+where \(\mu_k\) is a primitive \(k\)th root of unity. Evaluating at \(x=1\) gives a product of integral elements equal to \(k\). When \(\gcd(p,k)=1\), we conclude that the absolute value of each term in the product must be 1. In other words, if \(\alpha \neq 1\) is a \(k\)th root of unity, then \(|1-\alpha|=1\).<br><br>
 
 Now, suppose \(x_n,z_n\) are as in the statement. Then the difference \(z_n-x_n\) is a sum of terms of the form \(p^{-1/k}-u\), where \(u\) is a Galois conjugate of \(p^{-1/k}\). In particular, \(u^k = 1/p\) as well, so \((p^{1/k}u)^k=1\) and \(p^{1/k}u\) is a \(k\)th root of unity. So, either \(u = p^{-1/k}\) or
 
