@@ -5,7 +5,7 @@ title: Home
 
 # Contact Info
 
-[Work Message](https://docs.google.com/forms/d/e/1FAIpQLSftPbasi-MWPYgw60U6WxMLNv4Kl1PuiOK2pRLTq30Au4yevw/viewform?usp=sf_link) | [Personal Message](https://docs.google.com/forms/d/e/1FAIpQLSfZYKXpQ05JjhMZjeAKn2WVTH5-M_zR_uot5u0m9_4SOLlsSA/viewform?usp=sf_link)  
+[Personal Message](https://docs.google.com/forms/d/e/1FAIpQLSfZYKXpQ05JjhMZjeAKn2WVTH5-M_zR_uot5u0m9_4SOLlsSA/viewform?usp=sf_link)  
 Office: JWB 314
 
 My current students are probably looking for the information [here](#teaching).
@@ -15,7 +15,7 @@ My current students are probably looking for the information [here](#teaching).
 Welcome to [my](aboutme) site! I use this space to organize my personal and professional life.
 
 ![Headshot](assets/img/headshot.jpg)  
-(Photo credit: [&#x21B7;Yasi Shaker](https://yasiartiparti.company.site/))
+(Photo credit: [&#x21B7;Yasi Shaker](https://yasishaker.com/))
 
 I am a queer mathematician, musician, activist, and dancer interested in building community and expanding networks. I subscribe strongly to the axioms of mathematics posited by [&#x21B7;Dr. Federico Ardila](https://fardila.com) and restate them here...
 
@@ -34,10 +34,10 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ### Current courses
 
-* Fall 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
 
 ### Previous courses
 
+* Fall 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
 * Summer 2025 - [&#x21B7;Mathematics Program for High School Students](https://www.math.utah.edu/high-school-program/summerhsp.php)
 * Spring 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
 * Fall 2024 - University of Utah MATH 1210: [Syllabus](assets/pdf/2024_1210_syllabus.pdf)
