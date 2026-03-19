@@ -56,7 +56,7 @@ Finally, if you're interested in learning something entirely new, I also accept 
 
 That was a lot of info, so use the tool below to see pricing based on your specific case.
 
-<div>
+<div style="border:1px solid black;">
 <script type="text/javascript">
 function setup() {
 	var a = document.getElementById('studin');
@@ -115,8 +115,7 @@ function update() {
   Total price per student: <output id="totps"></output><br>
   Hourly price: <output id="price"></output><br>
   Hourly price per student: <output id="perstud"></output><br>
- </div>
-
+</div>
 
 ## Evidence
 
