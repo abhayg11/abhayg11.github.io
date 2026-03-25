@@ -32,8 +32,13 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ## Teaching
 
+### Tutoring
+
+I do personalized in-person tutoring. For more information, [click here](tutoring/).
+
 ### Current courses
 
+N/A
 
 ### Previous courses
 
