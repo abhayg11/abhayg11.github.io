@@ -54,13 +54,13 @@ N/A
 
 ## Research
 
-My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x21B7;Dr. Sean Howe](https://www.math.utah.edu/~howe/) and [&#x21B7;Dr. Gordan Savin](https://www.math.utah.edu/~savin/). Further details pending.
+My interests are in number theory, arithmetic geometry, and representation theory. I am currently a graduate student at the University of Utah working with [&#x21B7;Dr. Sean Howe](https://www.math.utah.edu/~howe/). Further details pending.
 
 ## Notes / Code / Etc.
 
 ### Textbook Solutions
 
-For all of this source code (tex files), see [&#x21B7;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
+For the source code (tex files) of everything below, see [&#x21B7;this repo](https://github.com/abhayg11/abhayg11.github.io/tree/main/assets/tex/).
 * Bump - Automorphic Forms and Representations: [Chapter 4](assets/tex/bump/Chapter4.pdf)
 * Hartshorne - Algebraic Geometry: [Chapter 2](assets/tex/hartshorne/Chapter2.pdf)
 * Marcus - Number Fields: [Chapter 1](assets/tex/marcus/Chapter1.pdf) \| [Chapter 2](assets/tex/marcus/Chapter2.pdf) \| [Chapter 3](assets/tex/marcus/Chapter3.pdf)

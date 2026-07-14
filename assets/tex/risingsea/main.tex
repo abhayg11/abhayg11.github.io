@@ -392,6 +392,48 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	so $f(y) \in A$ as claimed. Then it is obvious that $f_i = p_i \circ f$ for each $i$, so $A$ is indeed universal.
 \end{proof}
 
+\mtexe{1.4.C}
+\begin{proof}
+	Interpreting these as sets (although they are also abelian groups), part (a) is subsumed by part (b). Namely, it simply rephrases $\QQ = \bigcup_{n \geq 1} \frac1n\ZZ$ as a colimit.
+	
+	So, let us show that unions are colimits in the category of sets, given appropriate conditions. Namely, let $C$ be a collection of sets such that $A \cap B \in C$ whenever $A,B \in C$. Then, I claim
+	\[ \bigcup_{S \in C} S = \varinjlim C \]
+	where, by $C$, I mean more precisely the diagram with objects the elements of $C$ and maps given by injections $i_{A,B} : A \hookrightarrow B$ whenever $A,B \in C$ satisfy $A \subseteq B$.
+	
+	Let $U$ denote this union. We need to show that it satisfies the universal property of the colimit. For each $S \in C$, we have an injection $i_S : S \hookrightarrow U$, and these are compatible with the given inclusions. Now, suppose that $T$ is some set with morphisms $f_S : S \to T$ for each $S \in C$, such that whenever $A \subseteq B$, we have $f_B|_A = f_A$ (the compatibility condition). Then we can define $f : U \to T$ via:
+	\[ f(x) = f_S(x) \text{ for any }S \in C \text{ with }x \in S \]
+	First, this map appears to depend on various choices, but it does not. Indeed, if $x \in A$ and $x \in B$, then $x \in A \cap B$ and by assumption $A \cap B \in C$, so
+	\[ f_A(x) = f_A(i_{A \cap B,A}(x)) = (f_A \circ i_{A \cap B,A})(x) = f_{A \cap B}(x) = (f_B \circ i_{A \cap B,B})(x) = f_B(i_{A \cap B,B}(x)) = f_B(x) \]
+	Now, this map $f$ makes all of the appropriate diagrams commute. Namely, for any $S \in C$ and $x \in S$, we have
+	\[ (f \circ i_S)(x) = f(x) = f_S(x) \]
+	so that $f \circ i_S = f_S$ as needed. Finally, $f$ is unique with this property, for if $g \circ i_S = f_S$ for all $S \in C$, then for any $x \in S$ we have $g(x) = (g \circ i_S)(x) = f_S(x) = f(x)$, completing the proof. \\
+	
+	Note that part is indeed subsumed by this general case since $\frac1n\ZZ \cap \frac1m\ZZ = \frac1{\gcd(n,m)}\ZZ$.
+\end{proof}
+
+\mtexe{1.4.D}
+\begin{proof}
+	First, we should show that the claimed set is well-defined, i.e. that $\sim$ is an equivalence relation on the disjoint union $U = \bigsqcup_i A_i$. First, it is reflexive, for if $(a,i) \in U$, then $\id_{A_i}$ is part of the diagram, and $\id_{A_i}(a) = a = \id_{A_i}(a)$. Second, it is symmetric, for if $(a,i),(b,j) \in U$ with $f(a) = g(b)$ for some $f : A_i \to A_k$ and $g : A_j \to A_k$, then $g(b) = f(a)$ implies that $(b,j) \sim (a,i)$.
+	
+	Finally, suppose $(a,i),(b,j),(c,k) \in U$ with $f(a) = g(b)$ and $f'(b) = g'(c)$ for some maps $f : A_i \to A_r$, $g : A_j \to A_r$, $f' : A_j \to A_s$, and $g' : A_k \to A_s$. By the first condition of being filtered, there is some $t$ and maps $p : A_r \to A_t$ and $q : A_s \to A_t$. By the second condition of being filtered, there is some $u$ and a map $v : A_t \to A_u$ such that $v \circ (p \circ g) = v \circ (q \circ f')$. Then, (supressing $\circ$ for brevity):
+	\[ (vpf)(a) = (vpg)(b) = (vqf')(b) = (vqg')(c) \]
+	so that $(a,i) \sim (c,k)$ as claimed. \\
+	
+	Now, denote $S = U/\sim$ to be the set of equivalence classes, with elements $\overline{(a,i)}$, the equivalence class of $(a,i)$. Let $f_i : A_i \to S$ be the map $f_i(a) = \overline{(a,i)}$. These maps make $S$ into the colimit in the category of sets. First, they are compatible with maps in the diagram. Indeed, if $f : A_i \to A_j$ is in the diagram and $a \in A_i$, then $(a,i) \sim (f(a),j)$ by definition since $f(a) = \id_{A_j}(f(a))$. So,
+	\[ (f_j \circ f)(a) = \overline{(f(a),j)} = \overline{(a,i)} = f_i(a) \]
+	Since $a$ was arbitrary, this gives $f_j \circ f = f_i$ as desired.
+	
+	Next, it is universal with this property. Indeed, suppose $T$ is an arbitrary set with morphisms $g_i : A_i \to T$ for each $i$ such that $g_j \circ f = g_i$ for any $f : A_i \to A_j$ in the diagram. We'd like to define $g : S \to T$ by
+	\[ g\left(\overline{(a,i)}\right) = g_i(a) \]
+	To do so, we need to show that this is well-defined. So, suppose $(a,i) \sim (b,j)$ via maps $u : A_i \to A_k$ and $v : A_j \to A_k$, i.e. $u(a) = v(b)$. Then,
+	\[ g_i(a) = (g_k \circ u)(a) = g_k(u(a)) = g_k(v(b)) = (g_k \circ v)(b) = g_j(b) \]
+	and so the two seemingly different defintions for $g\left(\overline{(a,i)}\right)$ agree. But then, note that
+	\[ (g \circ f_i)(a) = g(f_i(a)) = g\left(\overline{(a,i)}\right) = g_i(a) \]
+	and so $g \circ f_i = g_i$ gives the factorization we needed. Finally, we need to show that $g$ is unique with this property. But the above equation also provides a definition for $g$; namely, for $\overline{(a,i)} \in S$, we have
+	\[ g\left(\overline{(a,i)}\right) = g(f_i(a)) = g_i(a) \]
+	which forces $g$ to have the claimed expression. This completes the argument.
+\end{proof}
+
 \mtexe{1.4.}
 \begin{proof}
 \end{proof}

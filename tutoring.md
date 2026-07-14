@@ -3,8 +3,6 @@ layout: page
 title: Tutoring
 ---
 
-# Math Tutoring by Abhay
-
 Math doesn't need to be difficult; it's just a muscle that we need to work out like any other. If you're ready to improve your math skills, build confidence, and ace any upcoming tests, you're in the right place! For quick answers to common questions, skip to any of the following sections:
 
 * [Classes](#classes)
@@ -119,13 +117,11 @@ function update() {
 
 ## Evidence
 
-You're spending a lot of time and money by choosing to work with me, so you deserve to know why you should expect that it works! First: my credentials. I am currently in my 4th year in the Ph.D. program at the Math Department of the University of Utah. But this is evidence that I can *do* math, not that I can *teach* math. Here are some quotes from students in classes I've taught in the past:
+You're spending a lot of time and money by choosing to work with me, so you deserve to know why you should expect that it works! First: my credentials. I am currently in my 5th year in the Ph.D. program at the Math Department of the University of Utah. But this is evidence that I can *do* math, not that I can *teach* math. Here are some quotes from students in classes I've taught in the past:
 
 * "Absolutely phenomenal person. They are extremely supportive and will break down problems meeting you on your level. They're extremely smart but never abuse it or make you feel stupid if you are struggling with a certain topic."
 * "Abhay is a really good teacher and clearly knows what he's doing in terms of content mastery. However, Abhay is also able to translate that complete understanding into something digestible for students, which is a strength that not all teachers have."
-* "Honestly the most understanding, compassionate, and fair math professors I’ve had at the U. Teaches content thoroughly and always come so prepared!"
-
-Finally, if it's useful, here's my latest [RateMyProfessor page](https://www.ratemyprofessors.com/professor/2989927): 
+* "Honestly the most understanding, compassionate, and fair math professors I’ve had at the U. Teaches content thoroughly and always come so prepared!" 
 
 ## Register
 
