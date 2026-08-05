@@ -434,7 +434,545 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	which forces $g$ to have the claimed expression. This completes the argument.
 \end{proof}
 
-\mtexe{1.4.}
+\mtexe{1.4.E}
+\begin{proof}
+	We'd like to show that the stated rules makes $S = U/\sim$ of the previous exercise into an $A$-module, that the rules are well-defined, and that it is the colimit in the category of $A$-modules.
+	
+	First, consider the well-definedness of addition. For this, our stated rule is that
+	\[ \overline{(a,i)} + \overline{(b,j)} = \overline{(u(a)+v(b),k)} \]
+	for any choice of coset representatives, $k$, morphism $u : i \to k$, and morphism $v : j \to k$. We will show that the sum is independent of each of these choices, so suppose $(a',i') \sim (a,i)$, $(b',j') \sim (b,j)$, and that we have other morphisms $u' : i' \to k'$ and $v' : j' \to k'$ for some $k'$. By the equivalence assumptions, we have that $f(a) = f'(a')$ for some $f : i \to \ell$ and $f' : i' \to \ell$, and that similarly $g(b) = g'(b')$ for some $g : j \to \ell'$ and $g' : j' \to \ell'$.
+	
+	Now, by repeated application of the first filtered hypothesis, there is some $m$ along with morphisms $\alpha : k \to m$, $\alpha' : k' \to m$, $\beta : \ell \to m$, and $\beta' : \ell' \to m$. Then, by repeated application of the second filtered hypothesis, there is some $m'$ and morphism $\gamma : m \to m'$ so that
+	\[ \gamma\alpha u = \gamma\beta f, \gamma\alpha'u' = \gamma\beta f', \gamma\alpha v = \gamma\beta'g, \gamma\alpha'v' = \gamma\beta'g' \]
+	Then, notice:
+	\begin{align*}
+	\overline{(u(a)+v(b),k)}
+		&= \overline{(\gamma(\alpha(u(a)+v(b))), m'')} \\
+		&= \overline{(\gamma(\beta(f(a)))+\gamma(\beta'(g(b))), m'')} \\
+		&= \overline{(\gamma(\beta(f'(a')))+\gamma(\beta'(g'(b'))), m'')} \\
+		&= \overline{(\gamma(\alpha'(u'(a')))+\gamma(\alpha'(v'(b'))), m'')} \\
+		&= \overline{(\gamma(\alpha'(u'(a')+v'(b'))), m'')} \\
+		&= \overline{(u'(a')+v'(b'),k')}
+	\end{align*}
+	as we wished to show. \\
+	
+	Similarly, let us now show the well-definedness of scalar multiplication, defined as:
+	\[ r \cdot \overline{(a,i)} = \overline{(ra,i)} \]
+	for $r \in A$. Here, the only choice is that of representative, so suppose $(a,i) \sim (a',i')$ via some morphisms $f,f'$ as above. Then,
+	\[ \overline{(ra,i)} = \overline{(f(ra),k)} = \overline{(rf(a),k)} = \overline{(rf'(a'),k)} = \overline{(f'(ra'),k)} = \overline{(ra',i')} \]
+	as desired. \\
+	
+	Next, let us show that this set is an abelian group under addition. First, addition is commutative, for if $(a,i)$, $(b,j)$, $k$, $u$, and $v$ are as above, then
+	\[ \overline{(a,i)}+\overline{(b,j)} = \overline{(u(a)+v(b),k)} = \overline{(v(b)+u(a),k)} = \overline{(b,j)}+\overline{(a,i)} \]
+	For associativity, let $(a,i),(b,j),(c,k) \in U$ be arbitrary. By two applications of the first property of being filtered, we can find $\ell$ along with maps $u : i \to \ell$, $v : j \to \ell$, and $w : k \to \ell$. Then,
+	\begin{align*}
+	(\overline{(a,i)}+\overline{(b,j)})+\overline{(c,k)}
+		&= \overline{(u(a)+v(b),\ell)}+\overline{(c,k)} \\
+		&= \overline{(\id_\ell(u(a)+v(b))+w(c),\ell)} \\
+		&= \overline{(u(a)+(v(b)+w(c)),\ell)} \\
+		&= \overline{(a,i)}+\overline{(v(b)+w(c),\ell)} \\
+		&= \overline{(a,i)+(\overline{(b,j)}+\overline{(c,k)})
+	\end{align*}
+	as desired. Now, fix some index $i_0$; I claim that $\overline{(0,i_0)}$ is the additive identity. For this, let $\overline{(a,i)}$ be arbitrary, and choose $u : i \to k$ and $v : i_0 \to k$ arbitrarily. Then,
+	\[ \overline{(a,i)}+\overline{(0,i_0)} = \overline{(u(a)+v(0),k)} = \overline{(u(a),k)} = \overline{(a,i)} \]
+	as claimed. Finally, I claim that in the setup here, $\overline{(-a,i)}$ is the additive inverse. Indeed,
+	\[ \overline{(a,i)}+\overline{(-a,i)} = \overline{(0,i)} = \overline{(u(0),k)} = \overline{(0,k)} = \overline{(v(0),k)} = \overline{(0,i_0)} \]
+	completing the argument. \\
+	
+	Third, the scalar multiplication rule makes this group into an $A$-module. Let $r,s \in A$ and $(a,i) \in U$ be arbitrary, and note that
+	\[ r \cdot (s \cdot \overline{(a,i)}) = r \cdot \overline{(sa,i)} = \overline{(r(sa),i)} = \overline{((rs)a,i)} = rs \cdot \overline{(a,i)} \]
+	as needed. Also, for $(a,i)$, $(b,j)$, $k$, $u$, and $v$ as previously,
+	\[ r \cdot (\overline{(a,i)}+\overline{(b,j)}) = r \cdot \overline{(u(a)+v(b),k)} = \overline{(r(u(a)+v(b)),k)} = \overline{(u(ra)+v(rb),k)} = \overline{(ra,i)}+\overline{(rb,j)} = r\cdot\overline{(a,i)}+r\overline{(b,j)} \]
+	as required. \\
+	
+	Finally, we need to see that this is the colimit of the $A_i$. The maps are the same as in the previous exercise, namely $f_i : A_i \to S$ is given by $f_i(a) = \overline{(a,i)}$. We need to see that this is a map of $A$-modules:
+	\[ f_i(ra+sb) = \overline{(ra+sb,i)} = \overline{(ra,i)}+\overline{(sb,i)} = r\cdot\overline{(a,i)}+s\cdot\overline{(b,i)} = rf_i(a)+sf_i(b) \]
+	The proof that this is a cone under the diagram is identical to that of the case of Sets. The universality is also nearly identical, but we need to show that the maps defined are also maps of $A$-modules. Indeed, suppose again that $T$ is an arbitrary $A$-module with morphisms $g_i : A_i \to T$ for each $i$ such that $g_j \circ f = g_i$ for any $f : A_i \to A_j$ in the diagram. We again define $g : S \to T$ by
+	\[ g\left(\overline{(a,i)}\right) = g_i(a) \]
+	and the previous exercise shows that this is a well-defined map of sets, and would be the unique one making the relevant diagram commute. So, we need only to show that it is a map of $A$-modules to complete the proof. For this, let $(a,i),(b,j) \in U$ be arbitrary, and choose $u : i \to k$ and $v : j \to k$ however possible. Then:
+	\begin{align*}
+	g\left(r\cdot\overline{(a,i)}+s\cdot\overline{(b,j)}\right)
+		&= g\left(\overline{(u(ra)+v(sb),k)}\right) \\
+		&= g_k(u(ra)+v(sb)) \\
+		&= rg_k(u(a))+sg_k(v(b)) \\
+		&= rg(\overline{(u(a),k)})+sg(\overline{(v(b),k)}) \\
+		&= rg(\overline{(a,i)})+sg(\overline{(b,j)})
+	\end{align*}
+	completing the exercise.
+\end{proof}
+
+\mtexe{1.4.F}
+\begin{proof}
+	Let us establish some notation. Let $A$ be a ring. For $a \in A$, let $m_a : A[x] \to A[x]$ denote the map that is the identity on $A$ with $x \mapsto ax$. Let $\alpha : A \to A[x]$ be the natural inclusion (as constants). We can see immediately that $m_a \circ \alpha = \alpha$ and that $m_a \circ m_{a'} = m_{aa'}$. Also recall that maps out of $A[x]$ are (freely, uniquely) determined by maps out of $A$ and a specified value of $x$.
+
+	Recall that if $A$ is a ring and $S \subseteq A$ is a multiplicative subset, then $S^{-1}A$ is defined by the universal property of being initial among $A$-algebras inverting $S$. Precisely, there is a structure map $i : A \to S^{-1}A$ such that $i(s)$ is a unit for every $s \in S$ and if $f : A \to B$ is a ring map with $f(s)$ a unit for every $s \in S$, then there exists a unique map $g : S^{-1}A \to B$ with $f = g \circ i$. It exists by a direct construction.
+	
+	We will show that $S^{-1}A$ is a filtered colimit of a specific diagram in the category of $A$-algebras. Let us now construct that diagram. For each $s \in S$, consider the $A$-algebra $A_s = A[x]/(sx-1)$ equipped with the quotient map $q_s : A[x] \to A_s$, with structure map $q_s \circ \alpha : A \to A_s$. Then, if $a \in A$ and $s \in S$ are such that $as \in S$, then define $\mu_{a,s}$ as the unique map making the following diagram commute:
+	\[ \begin{tikzcd} A[x] \arrow[d,"q_s"] \arrow[r,"m_a"] & A[x] \arrow[d,"q_{as}"] \\ A_s \arrow[r,"\mu_{a,s}"] & A_{as} \end{tikzcd} \]
+	This exists since top composition kills $sx-1$, as $q_{as}(m_a(sx-1)) = q_{as}(s(ax)-1) = 0$. Note that this collection of objects and morphisms is a diagram since $\mu_{1,s} = \id_{A_s}$ and $\mu_{a',as} \circ \mu_{a,s} = \mu_{aa',s}$. These are also maps of $A$-algebras, since
+	\[ \mu_{a,s} \circ (q_s \circ \alpha) = q_{as} \circ m_a \circ \alpha = q_{as} \circ \alpha \]
+	i.e. the morphisms commute with the structure maps.
+	
+	To show that $S^{-1}A$ is the colimit of this diagram, we begin by establishing it as a cone under the diagram. For $z \in S^{-1}A$, we can define a map $e_z : A[x] \to S^{-1}A$ so that $e_z \circ \alpha = i$ and $e_z(x) = z$. Note that the first condition makes this a map of $A$-algebras, and this evaluation map satisfies $e_z \circ m_a = e_{i(a)z}$ (scaling the input). Then, for $s \in S$, $i(s)$ is invertible and $e_{i(s)^{-1}}(sx-1) = i(s)i(s)^{-1}-i(1) = 0$, so it factors through $q_s$, i.e. there exists $i_s : A_s \to S^{-1}A$ with $e_{i(s)^{-1}} = i_s \circ q_s$. The collection of maps $i_s$ forms a cone under the diagram, since
+	\begin{align*}
+	i_{as} \circ \mu_{a,s} \circ q_s
+		&= i_{as} \circ q_{as} \circ m_a \\
+		&= e_{i(as)^{-1}} \circ m_a \\
+		&= e_{i(a)i(as)^{-1}} \\
+		&= e_{i(s)^{-1}} \\
+		&= i_s \circ q_s
+	\end{align*}
+	and the surjectivity (epi) of $q_s$ implies $i_{as} \circ \mu_{a,s} = i_s$ as desired.
+	
+	Lastly, we'd like to see that it is universal. Namely, let $B$ be an $A$-algebra, i.e. a ring with a map $f : A \to B$, along with $A$-algebra morphisms $f_s : A_s \to B$ such that $f_{as} \circ \mu_{a,s} = f_s$ whenever $a \in A$ and $s,as \in S$. Since these are all $A$-algebra morphisms, we get additional commutation relations, namely that $f = f_s \circ (q_s \circ \alpha)$ for any $s \in S$. From this, note that for any $s \in S$, we have
+	\[ f(s)f_s(q_s(x)) = f_s(q_s(\alpha(s)))f_s(q_s(x)) = (f_s \circ q_s)(sx) = (f_s \circ q_s)(1) = 1 \]
+	so that $f(s)$ is a unit. Thus, we get a unique morphism $g : S^{-1}A \to B$ with $f = g \circ i$. I'd like to show that this factors each $f_s$, i.e. that $f_s = g \circ i_s$. For this, it suffices to show that $f_s \circ q_s = g \circ i_s \circ q_s$ since $q_s$ is epic, and since these are maps on $A[x]$, it suffices to show that they agree after precomposition with $\alpha$ and agree on $x$. For the first of these, note that
+	\begin{align*}
+	g \circ i_s \circ q_s \circ \alpha
+		&= g \circ e_{i(s)^{-1}} \circ \alpha \\
+		&= g \circ i \\
+		&= f \\
+		&= f_s \circ q_s \circ \alpha
+	\end{align*}
+	as desired. For the second,
+	\begin{align*}
+	(g \circ i_s \circ q_s)(x)f(s)
+		&= g(e_{i(s)^{-1}}(x)i(s)) \\
+		&= g(i(s)^{-1}i(s)) \\
+		&= g(1) = 1
+	\end{align*}
+	But we also argued that $(f_s \circ q_s)(x)f(s) = 1$ above, so equating the two and cancelling $f(s)$ gives the agreement on $x$. Thus $f_s = g \circ i_s$ as desired. Finally, we'd like to show that $g$ uniquely factors these maps. So, suppose $g' : S^{-1}A \to B$ is such that $f_s = g' \circ i_s$ for all $s \in S$. Then, choosing any $s \in S$:
+	\[ g' \circ i = g' \circ e_{i(s)^{-1}} \circ \alpha = g' \circ i_s \circ q_s \circ \alpha = f_s \circ q_s \circ \alpha = f \]
+	But $g$ was the unique map with $g \circ i = f$, so we get that $g' = g$ and we are done. \\
+	
+	Note that we never make reference to any properties of $A$ in this proof, nor do we use the notion of a filtered colimit. However, it may be useful to point out that this is actually a filtered colimit. Indeed, for $r,s \in S$, we have $rs \in S$, and so we get arrows $\mu_{r,s} : A_s \to A_{rs}$ and $\mu_{s,r} : A_r \to A_{rs}$ in our diagram. Second, suppose we have two arrows $\mu_{a,s},\mu_{b,s} : A_s \to A_{as}$ (in particular, $bs = as$, which is possible for $b \neq a$ if $A$ is not a domain). Then, by assumption, $as = bs \in S$, and so $abs^2 \in S$ by multiplicativity. But then, since $m_{as} \circ m_a = m_{bs} \circ m_a = m_{abs} = m_{as} \circ m_b$, we get that $\mu_{as,as} \circ \mu_{a,s} = \mu_{as,as} \circ \mu_{b,s}$. I.e. we can further compose by $\mu_{as,as}$ to make the two distinct arrows equal.
+\end{proof}
+
+\mtexe{1.4.G}
+\begin{proof}
+	Let $U = \bigoplus_i M_i$ with natural inclusion maps $f_i : M_i \to U$ and $V = \left<f_i(m_i)-f_j(F(n)(m_i)) \mid n : i \to j, m_i \in M_i\right>$ be the submodule generated by the claimed relations. Let $q : U \to U/V$ denote the quotient map; we'd like to show that $U/V$, equipped with the maps $q \circ f_i$, is the colimit of the diagram.
+	
+	First, we'd like to show that this collection forms a cone under the diagram. To that end, let $n : i \to j$ be an arbitrary morphism in the index category. Then, for any $m_i \in M_i$, we have
+	\[ (q \circ f_j)(F(n)(m_i)) = (q \circ f_i)(m_i) \]
+	since this is precisely one of the relations that generate $V$. So $q \circ f_j \circ F(n) = q \circ f_i$ as needed.
+	
+	Second, we need to show it is universal. Suppose we have an $A$-module $N$ and morphisms $g_i : M_i \to N$ such that $g_j \circ F(n) = g_i$ for every $n : i \to j$. Since $U$ is freely generated by the $M_i$, these morphisms define a unique map $g : U \to N$ so that $g \circ f_i = g_i$. Then, for any $n : i \to j$ and $m_i \in M_i$, we have
+	\[ g(f_i(m_i)-f_j(F(n)(m_i))) = (g \circ f_i - g \circ f_j \circ F(n))(m_i) = (g_i - g_j \circ F(n))(m_i) = 0 \]
+	So, each generator of $V$ is contained in $\ker(g)$, whence $V \subseteq \ker(g)$, so that there is a map $h : U/V \to N$ with $h \circ q = g$. But then,
+	\[ h \circ (q \circ f_i) = g \circ f_i = g_i \]
+	and so $h$ factors the maps $g_i$ through the corresponding $q \circ f_i$ as needed. We finally need $h$ to be unique with this property. So, suppose $h' : U/V \to N$ is such that $h' \circ (q \circ f_i) = g_i$ for all $i$. The uniqueness of $g$ implies then that $g = h' \circ q$. But then $h \circ q = g = h' \circ q$ and $q$ is epic, so $h = h'$ as desired. This completes the proof.
+\end{proof}
+
+\mtexe{1.5.A}
+\begin{proof}
+	The diagram referred to is:
+	\[ \begin{tikzcd} \Mor_\scB(F(A),B) \arrow[r,"g_\ast"] \arrow[d,"\tau_{AB}"] & \Mor_\scB(F(A),B') \arrow[d,"\tau_{AB'}"] \\ \Mor_\scA(A,G(B)) \arrow[r,"G(g)_\ast"] & \Mor_\scA(A,G(B')) \end{tikzcd} \]
+\end{proof}
+
+\mtexe{1.5.B}
+\begin{proof}
+	First, let $\eta_A = \tau_{AF(A)}(\id_{F(A)})$. That is, $\id_{F(A)} \in \Mor_\scB(F(A),F(A))$, and $\tau_{AF(A)} : \Mor_\scB(F(A),F(A)) \to \Mor(A,GF(A))$, so $\eta_A : A \to GF(A)$ has the desired source and target. Then, suppose $g \in \Mor_\scB(F(A),B)$. Then, the commutativity of the diagram in the previous exercise gives
+	\[ \tau_{AB}(g) = \tau_{AB}(g \circ \id_{F(A)}) = \tau_{AB}(g_\ast(\id_{F(A)})) = G(g)_\ast(\tau_{AF(A)}(\id_{F(A)})) = G(g)_\ast(\eta_A) = Gg \circ \eta_A \]
+	as claimed.
+	
+	Similarly, define $\varepsilon_B = \tau_{G(B)B}^{-1}(\id_{G(B)})$. Then, the commutativity of the diagram in the text (called 1.5.0.2 in the edition I'm working from) gives:
+	\[ \tau_{AB}^{-1}(f) = \tau_{AB}^{-1}(\id_{G(B)} \circ f) = \tau_{AB}^{-1}(f^\ast(\id_{G(B)})) = (\tau_{AB}^{-1} \circ f^\ast)(\id_{G(B)}) = (F(f)^\ast \circ \tau_{G(B)B}^{-1})(\id_{G(B)}) = F(f)^\ast(\varepsilon_B) = \varepsilon_B \circ F(f) \]
+	completing the proof.
+\end{proof}
+
+\mtexe{1.5.C}
+\begin{proof}
+	Fix an $A$-module $N$, and for any $A$-modules $M,P$, define the map $\tau_{MP} : \Hom_A(M \otimes_A N, P) \to \Hom_A(M,\Hom_A(N,P))$ by:
+	\[ \tau_{MP}(f)(m)(n) = f(m \otimes n) \]
+	For this to be well-defined, it remains to be shown that $\tau_{MP}(f)$ and $\tau_{MP}(f)(m)$ are maps of $A$-modules for each appropriate $f,m$. For the first, fix $a,a' \in A$, $m,m' \in M$, and $n \in N$. Then
+	\[ \tau_{MP}(f)(am+a'm')(n) = f((am+a'm') \otimes n) = af(m \otimes n)+a'f(m' \otimes n) = a\tau_{MP}(f)(m)(n)+a'\tau_{MP}(f)(m')(n) = (a\tau(f)(m)+a'\tau(f)(m'))(n) \]
+	since the scalar multiplication structure on functions is by multiplying the output. Since this is true for $n$ arbitrary, we have $\tau_{MP}(f)(am+a'm') = a\tau_{MP}(f)(m)+a'\tau_{MP}(f)(m')$, which is what we needed to show. For the second claim, fix $f$ and $m$, and choose $a,a' \in A$ and $n,n' \in N$. Then
+	\[ \tau_{MP}(f)(m)(an+a'n') = f(m \otimes (an+a'n')) = af(m \otimes n)+a'f(m \otimes n') = a\tau_{MP}(f)(m)(n)+a'\tau_{MP}(f)(m)(n') \]
+	which completes the proof of well-definedness.
+	
+	Next, we'd like to show that $\tau_{MP}$ is a bijection. First, let us handle injectivity. Let $f,g \in \Hom_A(M \otimes_A N,P)$ and suppose that $\tau_{MP}(f) = \tau_{MP}(g)$. For $m \in M$ and $n \in N$ arbitrary, we get
+	\[ f(m \otimes n) = \tau_{MP}(f)(m)(n) = \tau_{MP}(g)(m)(n) = g(m \otimes n) \]
+	Since $f$ and $g$ agree on simple tensors and are maps of modules, they agree everywhere, i.e. $f = g$ as claimed.
+	
+	Finally, let us handle surjectivity. Let $\gamma \in \Hom_A(M,\Hom_A(N,P))$. Consider the function $F : M \times N \to P$ given by $F(m,n) = \gamma(m)(n)$. Then, we have
+	\[ F(am+a'm',n) = \gamma(am+a'm')(n) = (a\gamma(m)+a'\gamma(m'))(n) = a\gamma(m)(n)+a'\gamma(m')(n) = aF(m,n)+a'F(m',n) \]
+	and
+	\[ F(m,an+a'n') = \gamma(m)(an+a'n') = a\gamma(m)(n)+a'\gamma(m)(n') = aF(m,n)+a'F(m,n') \]
+	So, $F$ is bilinear, and so induces a map $f : M \otimes_A N \to P$ with $f(m \otimes n) = F(m,n)$ for all $m \in M$ and $n \in N$. Then,
+	\[ \tau_{MP}(f)(m)(n) = f(m \otimes n) = F(m,n) = \gamma(m)(n) \]
+	and so $\tau_{MP}(f) = \gamma$, proving surjectivity and completing the proof.
+\end{proof}
+
+\mtexe{1.5.D}
+\begin{proof}
+	Fix $N$ as in the previous exercise. To show that $- \otimes_A N$ and $\Hom_A(N,-)$ are adjoint, we will show that $\tau_{MP}$ from the previous exercise is natural in both $M$ and $P$.
+	
+	First, suppose we have a morphism $\varphi : M \to M'$. We need to show that the following diagram commutes:
+	\[ \begin{tikzcd} \Hom_A(M' \otimes_A N,P) \arrow[r,"(\varphi \otimes \id_N)^\ast"] \arrow[d,"\tau_{M'P}"] & \Hom_A(M \otimes N,P) \arrow[d,"\tau_{MP}"] \\ \Hom_A(M',\Hom_A(N,P)) \arrow[r,"\varphi^\ast"] & \Hom_A(M,\Hom_A(N,P)) \end{tikzcd} \]
+	So, let $f \in \Hom_A(M' \otimes_A N,P)$, $m \in M$, and $n \in N$. Then,
+	\begin{align*}
+	(\tau_{MP} \circ (\varphi \otimes \id_N)^\ast)(f)(m)(n)
+		&= \tau_{MP}((\varphi \otimes \id_N)^\ast(f))(m)(n) \\
+		&= \tau_{MP}(f \circ (\varphi \otimes \id_N))(m)(n) \\
+		&= (f \circ (\varphi \otimes \id_N))(m \otimes n) \\
+		&= f((\varphi \otimes \id_N)(m \otimes n)) \\
+		&= f(\varphi(m) \otimes n) \\
+		&= \tau_{M'P}(f)(\varphi(m))(n) \\
+		&= (\tau_{M'P}(f) \circ \varphi)(m)(n) \\
+		&= \varphi^\ast(\tau_{M'P}(f))(m)(n) \\
+		&= (\varphi^\ast \circ \tau_{M'P})(f)(m)(n)
+	\end{align*}
+	which finishes naturality in $M$.
+	
+	Now, suppose we have a morphism $\psi : P \to P'$. We need to show that the following diagram commutes:
+	\[ \begin{tikzcd} \Hom_A(M \otimes_A N,P) \arrow[r,"\psi_\ast"] \arrow[d,"\tau_{MP}"] & \Hom_A(M \otimes N,P') \arrow[d,"\tau_{MP'}"] \\ \Hom_A(M,\Hom_A(N,P)) \arrow[r,"\psi_{\ast\ast}"] & \Hom_A(M,\Hom_A(N,P)) \end{tikzcd} \]
+	To that end, let $f \in \Hom_A(M \otimes_A N,P)$, $m \in M$, and $n \in N$. Then,
+	\begin{align*}
+	(\tau_{MP'} \circ \psi_\ast)(f)(m)(n)
+		&= \tau_{MP'}(\psi_\ast(f))(m)(n) \\
+		&= \tau_{MP'}(\psi \circ f)(m)(n) \\
+		&= (\psi \circ f)(m \otimes n) \\
+		&= \psi(f(m \otimes n)) \\
+		&= \psi(\tau_{MP}(f)(m)(n)) \\
+		&= (\psi \circ \tau_{MP}(f)(m))(n) \\
+		&= \psi_\ast(\tau_{MP}(f)(m))(n) \\
+		&= (\psi_\ast \circ \tau_{MP}(f))(m)(n) \\
+		&= \psi_{\ast\ast}(\tau_{MP}(f))(m)(n) \\
+		&= (\psi_{\ast\ast} \circ \tau_{MP})(f)(m)(n)
+	\end{align*}
+	as desired.
+\end{proof}
+
+\mtexe{1.5.E}
+\begin{proof}
+	We will describe the adjointness directly. Fix a ring morphism $B \to A$, and for a $B$-module $N$ and an $A$-module $M$, let $\tau_{NM} : \Hom_A(N \otimes_B A,M) \to \Hom_B(N,M_B)$ be given by:
+	\[ \tau_{NM}(f)(n) = f(n \otimes 1) \]
+	First, let us again show that $\tau_{NM}$ is well-defined, i.e. that $\tau_{NM}(f)$ is a map of $B$-modules between $N$ and $M_B$. For this, suppose $b,b' \in B$ and $n,n' \in N$; then:
+	\[ \tau_{NM}(f)(bn+b'n') = f((bn+b'n') \otimes 1) = bf(n \otimes 1)+b'f(n' \otimes 1) = b\tau_{NM}(f)(n)+b'\tau_{NM}(f)(n') \]
+	as claimed.
+	
+	Next, we show it is an injection. Suppose that $\tau_{NM}(f) = \tau_{NM}(g)$. Then, for $n \in N$ and $a \in A$, we have
+	\begin{align*}
+	f(n \otimes a)
+		&= f(a(n \otimes 1)) \\
+		&= af(n \otimes 1) \\
+		&= a\tau_{NM}(f)(n) \\
+		&= a\tau_{NM}(g)(n) \\
+		&= ag(n \otimes 1) \\
+		&= g(a(n \otimes 1)) \\
+		&= g(n \otimes a)
+	\end{align*}
+	Once again, since $f$ and $g$ agree on simple tensors, we get that $f = g$ everywhere. To address surjectivity, suppose $\gamma \in \Hom_B(N,M_B)$. Define $F : N \times A \to M$ by $F(n,a) = a\gamma(n)$. Then, for $n,n' \in N$, $a,a' \in A$, and $b,b' \in B$, we have
+	\[ F(bn+b'n',a) = a\gamma(bn+b'n') = ab\gamma(n)+ab'\gamma(n) = bF(n,a)+b'F(n',a) \]
+	and
+	\[ F(n,ba+b'a') = (ba+b'a')\gamma(n) = ba\gamma(n)+b'a'\gamma(n) = bF(n,a)+b'F(n,a') \]
+	so that $F$ is $B$-bilinear. So, it induces a map $f : N \otimes_B A \to M$ of $B$-modules satisfying $f(n \otimes a) = F(n,a)$ for all $n \in N$ and $a \in A$. In fact, $f$ is also a map of $A$-modules, since it is already additive and:
+	\begin{align*}
+	f\left(a\sum_i n_i \otimes a_i\right)
+		&= f\left(\sum_i n_i \otimes (aa_i)\right) \\
+		&= \sum_i f(n_i \otimes (aa_i)) \\
+		&= \sum_i F(n_i,aa_i) \\
+		&= \sum_i aa_i\gamma(n_i) \\
+		&= a\sum_i a_i\gamma(n_i) \\
+		&= a\sum_i F(n_i,a_i) \\
+		&= a\sum_i f(n_i \otimes a_i) \\
+		&= af\left(\sum_i n_i \otimes a_i\right)
+	\end{align*}
+	Then, for any $n \in N$,
+	\[ \tau_{NM}(f)(n) = f(n \otimes 1) = F(n,1) = 1\gamma(n) = \gamma(n) \]
+	so that $\gamma = \tau_{NM}(f)$ and $\tau_{NM}$ surjects.
+	
+	Finally, let us show naturality in each coordinate. First, suppose we have a map of $B$-modules $\varphi : N \to N'$. I claim the following commutes:
+	\[ \begin{tikzcd} \Hom_A(N' \otimes_B A,M) \arrow[r,"(\varphi \otimes \id_A)^\ast"] \arrow[d,"\tau_{N'M}"] & \Hom_A(N \otimes_B A,M) \arrow[d,"\tau_{NM}"] \\ \Hom_B(N',M_B) \arrow[r,"\varphi^\ast"] & \Hom_B(N,M_B) \end{tikzcd} \]
+	Let $f \in \Hom_A(N' \otimes_B A,M)$ and $n \in N$. Then,
+	\begin{align*}
+	(\tau_{NM} \circ (\varphi \otimes \id_A)^\ast)(f)(n)
+		&= \tau_{NM}((\varphi \otimes \id_A)^\ast(f))(n) \\
+		&= \tau_{NM}(f \circ (\varphi \otimes \id_A))(n) \\
+		&= (f \circ (\varphi \otimes \id_A))(n \otimes 1) \\
+		&= f(\varphi(n) \otimes 1) \\
+		&= \tau_{N'M}(f)(\varphi(n)) \\
+		&= (\tau_{N'M}(f) \circ \varphi)(n) \\
+		&= (\varphi^\ast(\tau_{N'M}(f)))(n) \\
+		&= (\varphi^\ast \circ \tau_{N'M})(f)(n)
+	\end{align*}
+	For the other direction, let $\psi : M \to M'$ be a map of $A$-modules; we will show that
+	\[ \begin{tikzcd} \Hom_A(N \otimes_B A,M) \arrow[r,"\psi_\ast"] \arrow[d,\tau_{NM}] & \Hom_A(N \otimes_B A,M') \arrow[d,\tau_{NM'}] \\ \Hom_B(N,M_B) \arrow[r,"\psi_\ast"] & \Hom_B(N,M_B') \end{tikzcd} \]
+	Indeed, let $f \in \Hom_A(N \otimes_B A,M)$ and $n \in N$ and note
+	\begin{align*}
+	(\tau_{NM'} \circ \psi_\ast)(f)(n)
+		&= \tau_{NM'}(\psi_\ast(f))(n) \\
+		&= \tau_{NM'}(\psi \circ f)(n) \\
+		&= (\psi \circ f)(n \otimes 1) \\
+		&= \psi(f(n \otimes 1)) \\
+		&= \psi(\tau_{NM}(f)(n)) \\
+		&= (\psi \circ \tau_{NM}(f))(n) \\
+		&= \psi_\ast(\tau_{NM}(f))(n) \\
+		&= (\psi_\ast \circ \tau_{NM})(f)(n)
+	\end{align*}
+	completing the proof.
+\end{proof}
+
+\mtexe{1.5.F}
+\begin{proof}
+	This is immediate from the definition. Namely, if $G$ is an abelian group, then $\id_G$ is a map of abelian semigroups since it preserves the binary operation. Further, if we have a map $f : G \to G'$ of abelian semigroups, where $G'$ is an abelian group, then $f = f \circ \id_G$ shows that it factors, and if $f = f' \circ \id_G$, then $f' = f$, so it factors uniquely.
+\end{proof}
+
+\mtexe{1.5.G}
+\begin{proof}
+	We will define the functor $H$. For a nonempty abelian semigroup $S$ (written additively), $HS$ will be a group with underlying set $(S \times S)/\sim$, where $(a,b) \sim (c,d)$ iff $a+d+x = c+b+x$ for some $x \in S$, with addition defined on classes by $\overline{(a,b)}+\overline{(c,d)} = \overline{(a+c,b+d)}$. We define the groupification map $\pi : S \to HS$ by $\pi(s) = \overline{(s+s,s)}$. Further, for an abelian semigroup morphism $f : S \to S'$, define $Hf : HS \to HS'$ on classes by $Hf(\overline{(a,b)}) = \overline{(f(a),f(b))}$. We need to check many things about these definitions.
+	
+	To begin, let us show that $\sim$ is an equivalence relation. First, note that $a+b+a=a+b+a$, so $(a,b) \sim (a,b)$, i.e. $\sim$ is reflexive. If $(a,b) \sim (c,d)$, then $a+d+x = c+b+x$ for some $x$, so $c+b+x = a+d+x$, and so $(c,d) \sim (a,b)$, showing $\sim$ is symmetric. Finally, if $(a,b) \sim (c,d)$ and $(c,d) \sim (e,f)$, then $a+d+x = c+b+x$ and $c+f+y = e+d+y$, so
+	\[ a+f+(d+x+c+y) = (a+d+x)+(c+f+y) = (c+b+x)+(e+d+y) = e+b+(d+x+c+y) \]
+	whence $(a,b) \sim (e,f)$, so $\sim$ is transitive.
+	
+	Next, we will show that addition on $HS$ doesn't depend on choice of representatives. So, suppose $(a,b) \sim (a',b')$ and $(c,d) \sim (c',d')$, so that $a+b'+x = a'+b+x$ and $c+d'+y = c'+d+y$ for some $x,y \in S$. Then
+	\[ a+c+b'+d'+(x+y) = (a+b'+x)+(c+d'+y) = (a'+b+x)+(c'+d+y) = a'+c'+b+d+(x+y) \]
+	so that $(a+c,b+d) \sim (a'+c',b'+d')$, showing that addition is well-defined.
+	
+	Next, let us show that $HS$ is an abelian group under addition. First, addition is clearly associative and commutative:
+	\begin{align*}
+		\overline{(a,b)}+\overline{(c,d)} = \overline{(a+c,b+d)} = \overline{(c+a,d+b)} = \overline{(c,d)}+\overline{(a,b)} \\
+		(\overline{(a,b)}+\overline{(c,d)})+\overline{(e,f)} = \overline{(a+c,b+d)}+\overline{(e,f)} = \overline{((a+c)+e,(b+d)+f)} = \overline{(a+(c+e),b+(d+f))} = \overline{(a,b)}+\overline{(c+e,d+f)} = \overline{(a,b)}+(\overline{(c,d)}+\overline{(e,f)})
+	\end{align*}
+	Next, since $S$ is nonempty, we can choose $s_0 \in S$ arbitrary. I claim that $(s_0,s_0)$ is the additive identity. Indeed, for $a,b \in S$, we have
+	\[ \overline{(a,b)}+\overline{(s_0,s_0)} = \overline{(a+s_0,b+s_0)} = \overline{(a,b)} \]
+	where the final equality is a consequence of $(a+s_0)+b+x = a+(b+s_0)+x$ (for any $x$). Finally, since $(a+b)+s_0+x = s_0+(b+a)+x$ (again for any $x$), we get $(a+b,a+b) \sim (s_0,s_0)$, and so
+	\[ \overline{(a,b)}+\overline{(b,a)} = \overline{(a+b,b+a)} = \overline{(s_0,s_0)} \]
+	I.e. every element has an additive inverse. This completes the proof that $HS$ is an abelian group.
+	
+	Next, we show that $\pi$ is a map of abelian semigroups:
+	\[ \pi(a)+\pi(b) = \overline{(a+a,a)}+\overline{(b+b,b)} = \overline{(a+a+b+b,a+b)} = \pi(a+b) \]
+	since $(a+b)+(a+b) = a+a+b+b$.
+	
+	We now show that $\pi$ is indeed the groupification morphism. Suppose that $G$ is an abelian group and $f : S \to G$ is an abelian semigroup morphism. Define $f' : HS \to G$ by $f'(\overline{(a,b)}) = f(a)-f(b)$. First, we show this is well-defined. Suppose $(a,b) \sim (c,d)$, so that $a+d+x = c+b+x$ for some $x$. Then,
+	\[ f(a)-f(b) = f(a)-f(b)+f(c+b+x)-f(a+d+x) = f(a)-f(b)+f(c)+f(b)+f(x)-f(a)-f(d)-f(x) = f(c)-f(d) \]
+	so indeed $f'$ is well-defined. Then,
+	\[ (f' \circ \pi)(s) = f'(\pi(s)) = f'(\overline{(s+s,s)}) = f(s+s)-f(s) = f(s)+f(s)-f(s) = f(s) \]
+	for any $s \in S$, so that $f' \circ \pi = f$, which is the needed factorization. Furthermore, $f'$ is unique, for if $g \circ \pi = f$, then
+	\[ g(\overline{(a,b)}) = g(\overline{(a+a,a)}-\overline{(b+b,b)}) = g(\pi(a))-g(\pi(b)) = f(a)-f(b) = f'(\overline{a,b}) \]
+	and so $g = f'$. Note we've used $\overline{(a+a,a)}-\overline{(b+b,b)} = \overline{(a,b)}$, which follows from
+	\[ \overline{(b+b,b)}+\overline{(a,b)} = \overline{(a+b+b,b+b)} = \overline{(a+a,a)} \]
+	with the final equality coming from $(a+b+b)+a+x = (a+a)+(b+b)+x$ (for any $x$).
+	
+	This completes the argument that the groupification exists. We'd like to next show that $H$ is a functor. First, note that each $Hf$ for $f : S \to S'$ is well defined. Indeed, if $(a,b) \sim (c,d)$, then $a+d+x = c+b+x$ for some $x$, and $f(a+d+x) = f(c+b+x)$, so $f(a)+f(d)+f(x) = f(c)+f(b)+f(x)$, whence $(f(a),f(b)) \sim (f(c),f(d))$ in $S'$. Second, note that
+	\[ H\id_S(\overline{(a,b)}) = \overline{(\id_S(a),\id_S(b))} = \overline{(a,b)} = \id_{HS}(\overline{(a,b)}) \]
+	so that $H\id_S = \id_{HS}$. Third, $H$ preserves compositions:
+	\begin{align*}
+	H(f \circ g)(\overline{(a,b)})
+		&= \overline{((f \circ g)(a),(f \circ g)(b))} \\
+		&= \overline{(f(g(a)),f(g(b)))} \\
+		&= Hf(\overline{(g(a),g(b))}) \\
+		&= Hf(Hg(\overline{(a,b)})) \\
+		&= (Hf \circ Hg)(\overline{(a,b)})
+	\end{align*}
+	i.e. $H(f \circ g) = Hf \circ Hg$.
+	
+	For the rest of the exercise, we show that $H$ is left adjoint to the forgetful functor $F$ from abelian groups to abelian semigroups. Namely, I claim that $\pi^\ast : \Hom(HS,G) \to \Hom(S,FG)$ demonstrates the adjointness. The universal property of groupification is exactly the statement that $\pi^\ast$ is a bijection, so we only need to show naturality in each coordinate. If $\varphi : G \to G'$ is a group homomorphism, then
+	\begin{align*}
+	\pi^\ast \circ \varphi_\ast)(f)
+		&= \pi^\ast(\varphi_\ast(f)) \\
+		&= \pi^\ast(\varphi \circ f) \\
+		&= (\varphi \circ f) \circ \pi \\
+		&= \varphi \circ (f \circ \pi) \\
+		&= F\varphi_\ast(f \circ \pi) \\
+		&= F\varphi_\ast(\pi^\ast(f)) \\
+		&= (F\varphi_\ast \circ \pi^\ast)(f)
+	\end{align*}
+	is the naturality statement. If $\psi : S \to S'$ is an abelian semigroup morphism, then
+	\begin{align*}
+	(\pi_S^\ast \circ H\psi^\ast)(f)
+		&= \pi_S^\ast(H\psi^\ast(f)) \\
+		&= \pi_S^\ast(f \circ H\psi) \\
+		&= (f \circ H\psi) \circ \pi_S \\
+		&= f \circ (H\psi \circ \pi_S) \\
+		&= f \circ \pi_{S'} \circ \psi \\
+		&= \psi^\ast(f \circ \pi_{S'}) \\
+		&= \psi^\ast(\pi_{S'}^\ast(f))
+		&= (\psi^\ast \circ \pi_{S'}^\ast)(f)
+	\end{align*}
+	is the other naturality. This completes the argument, establishing the adjointness.
+\end{proof}
+
+\mtexe{1.5.H}
+\begin{proof}
+	The statement in question is that there is an adjoint relationship between the localization functor from $A$-modules to $S^{-1}A$-modules, and the forgetful functor in the opposite relationship. In fact, we've already shown this by applying \prob{1.5.E} to the ring morphism $A \to S^{-1}A$.
+\end{proof}
+
+\mtexe{1.6.A}
+\begin{proof}
+\end{proof}
+
+\mtexe{1.6.B}
+\begin{proof}
+
+\mtexe{1.6.C}
+\begin{proof}
+\end{proof}
+
+\mtexe{1.6.D}
+\begin{proof}
+\end{proof}
+\end{proof}
+
+\mtexe{1.6.E}
+\begin{proof}
+	Suppose
+	\[ A' \xrightarrow{f} A \xrightarrow{g} A'' \]
+	is exact. Then since $F$ is exact, for any map $h : X \to Y$, the following is a short exact sequence
+	\[ 0 \to F\ker(h) \to FX \xrightarrow{Fh} F\im(h) \to 0 \]
+	which gives that $\ker(Fh) = F\ker(h)$ and $\im(Fh) = F\im(h)$. But then,
+	\[ \ker(Fg) = F\ker(g) = F\im(f) = \im(Ff) \]
+	so that $FA' \to FA \to FA''$ is exact.
+\end{proof}
+
+\mtexe{1.6.F}
+\begin{proof}
+	We showed right right-exactness of the tensor product in \prob{1.3.H}. This covers part (b) as well as half of part (a) once we note that if $M$ is an $A$-module, then $S^{-1}M \cong S^{-1}A \otimes_A M$. So, we want to see that localization is left-exact as well, i.e. that it preserves injections. So, suppose $f : M \to N$ is injective, and note that $S^{-1}f : S^{-1}M \to S^{-1}N$ is given by
+	\[ S^{-1}f\left(\frac{m}s\right) = \frac{f(m)}s \]
+	If this is zero, then $tf(m) = 0$ for some $t \in S$, whence $f(tm) = 0$, so $tm = 0$. But then
+	\[ \frac{m}s = \frac{tm}{ts} = 0 \]
+	as desired. \\
+	
+	Next, we will show that $\Hom(C,-)$ is left-exact. Suppose
+	\[ 0 \to A' \xrightarrow{f} A \xrightarrow{g} A'' \]
+	is exact, and apply the above to get the sequence
+	\[ 0 \to \Hom(C,A') \xrightarrow{f_\ast} \Hom(C,A) \xrightarrow{g_\ast} \Hom(C,A'') \]
+	which we'd like to show is exact. First, we need to see that $f_\ast$ is injective. For this, note that
+	\[ 0 = f_\ast(\varphi) = f \circ \varphi \]
+	gives $0 = \varphi$ since $f$ is monic. Second, we have
+	\[ g_\ast f_\ast = (gf)_\ast = 0_\ast = 0 \]
+	so that $\im(f_\ast) \subseteq \ker(g_\ast)$. Finally, if $\varphi : C \to A$ is in $\ker(g_\ast)$, then $0 = g_\ast\varphi = g\varphi$, so that $\varphi$ factors through $\ker(g) = f$. I.e. $\varphi = f\psi$ for some $\psi : C \to A'$, i.e. $\varphi = f_\ast(\psi) \in \im(f_\ast)$.
+	
+	The left-exactness of $\Hom(-,C)$ then follows by duality. Indeed, the exactness of each of the following is a consequence of the previous:
+	\begin{align*}
+		A' \to A \to A'' \to 0 \\
+		0 \to (A'')^{op} \to A^{op} \to (A')^{op} \\
+		0 \to \Hom(X^{op},(A'')^{op}) \to \Hom(X^{op},A^{op}) \to \Hom(X^{op},(A')^{op}) \\
+		0 \to \Hom(A'',X) \to \Hom(A,X) \to \Hom(A',X)
+	\end{align*}
+	which is what we need to show.
+\end{proof}
+
+\mtexe{1.6.G}
+\begin{proof}
+	Localization is exact, so we get the exact sequence
+	\[ (S^{-1}A)^{\oplus q} \to (S^{-1}A)^{\oplus p} \to S^{-1}M \to 0 \]
+	and $\Hom(-,S^{-1}N)$ is left-exact, so we get the exact sequence
+	\[ 0 \to \Hom(S^{-1}M,S^{-1}N) \to \Hom((S^{-1}A)^{\oplus p},S^{-1}N) \to \Hom((S^{-1}A)^{\oplus q},S^{-1}N) \]
+	On the other hand, applying $\Hom(-,N)$ and then localizing gives the exact sequence:
+	\[ 0 \to S^{-1}\Hom(M,N) \to S^{-1}\Hom(A^{\oplus p},N) \to S^{-1}\Hom(A^{\oplus q},N) \]
+	Then, localization induces a map between these two complexes:
+	\[ \begin{tikzcd} 0 \arrow[r] & S^{-1}\Hom(M,N) \arrow[d] \arrow[r] & S^{-1}\Hom(A^{\oplus p},N) \arrow[d] \arrow[r] S^{-1}\Hom(A^{\oplus q},N) \\ 0 \arrow[r] & \Hom(S^{-1}M,S^{-1}N) \arrow[r] & \Hom((S^{-1}A)^{\oplus p},S^{-1}N) \arrow[r] & \Hom((S^{-1}A)^{\oplus q},S^{-1}N) \end{tikzcd} \]
+	First, I claim that the vertical arrow $S^{-1}\Hom(A^{\oplus p},N) \to \Hom((S^{-1}A)^{\oplus p},S^{-1}N)$ is an isomorphism. For injectivity, suppose $f/s$ maps to zero. Then for each standard basis vector $e_i = (0,\ldots,0,1,0,\ldots,0)$ with a 1 in the $i$th position, we get $f(e_i)/s = 0$, i.e. $t_if(e_i) = 0$ for some $t_i \in S$. But then:
+	\[ t_1 \cdots t_pf(a_1e_1+\cdots+a_pe_p) = 0 \]
+	for any $a_i \in A$, i.e. $t_1\cdots t_pf = 0$, so $f/s = 0$. For surjectivity, suppose $g : (S^{-1}A)^{\oplus p} \to S^{-1}N$ is a map of $S^{-1}A$-modules. Then $g(e_i) = n_i/s_i$ for some $n_i \in N$ and $s_i \in S$. Let $s = s_1 \cdots s_p$, let $\hat{s}_i = \prod_{j \neq i} s_j$ be the product of all of the other $s_i$, and let $f : A^{\oplus p} \to N$ be the $A$-module map satisfying $f(e_i) = \hat{s}_in_i$. Then $f/s$ maps to $g$, since
+	\[ \frac{f(e_i)}s = \frac{\left(\prod_{j \neq i}s_j\right)n_i}{\prod_j s_j} = \frac{n_i}{s_i} = g(e_i) \]
+	Thus, in the diagram above, the latter two vertical arrows are isomorphisms. This implies that the first one is also by a diagram chase. Abstracting it out, I claim that if $\beta,\gamma$ are isomorphisms in the following diagram with exact rows:
+	\[ \begin{tikzcd} 0 \arrow[r] & X \arrow[r,"f"] \arrow[d,"\alpha"] & Y \arrow[r,"g"] \arrow[d,"\beta"] & Z \arrow[d,"\gamma"] \\ 0 \arrow[r] & X' \arrow[r,"f'"] & Y' \arrow[r,"g'"] & Z' \end{tikzcd} \]
+	then so is $\alpha$. First, note:
+	\[ g \circ \beta^{-1} \circ f' = \gamma^{-1} \circ \gamma \circ g \circ \beta^{-1} \circ f' = \gamma^{-1} \circ g' \circ \beta \circ \beta^{-1} \circ f' = \gamma^{-1} \circ g' \circ f' = 0 \]
+	by exactness of the bottom row. In particular, $\beta^{-1} \circ f'$ factors through $\ker(g) = f$, i.e. we get a unique map $h : X' \to X$ so that $f \circ h = \beta^{-1} \circ f'$. Then
+	\[ f \circ h \circ \alpha = \beta^{-1} \circ f' \circ \alpha = \beta^{-1} \circ \beta \circ f = f \]
+	so $h \circ \alpha = \id_X$ because $f$ is a monomorphism. Also,
+	\[ f' \circ \alpha \circ h = \beta \circ f \circ h = \beta \circ \beta^{-1} \circ f' = f' \]
+	and so $\alpha \circ h = \id_{X'}$ since $f'$ is a monomorphism. This completes the proof by exhibiting $h$ as the inverse of $\alpha$.
+\end{proof}
+
+\mtexe{1.6.H}
+\begin{proof}
+	Suppose $F$ is right-exact and we have a cochain complex $C^i \xrightarrow{d^i} C^{i+1}$ for each $i$. Then
+	\[ C^i \xrightarrow{d^i} C^{i+1} \to \coker(d^i) \to 0 \]
+	is exact, so
+	\[ FC^i xrightarrow{Fd^i} FC^{i+1} \to F\coker(d^i) \to 0 \]
+	is also exact, giving $F\coker(d^i) = \coker(Fd^i)$. Then, applying $F$ to the standard exact sequence
+	\[ 0 \to \im(d^i) \to C^{i+1} \to \coker(d^i) \to 0 \]
+	gives the exact sequence
+	\[ F\im(d^i) \to FC^{i+1} \to F\coker(d^i) \to 0 \]
+	Hence the composition of the first two is zero, and so the first arrow factors through the kernel of the second. Combined with the above isomorphism, we get $F\im(d^i) \to \im(Fd^i)$. Finally, applying $F$ to
+	\[ 0 \to H^i(C^\bullet) \to \coker(d^{i-1}) \to \im(d^{i-1}) \to 0 \]
+	gives that
+	\[ FH^i(C^\bullet) \to F\coker(d^{i-1}) \to F\im(d^i) \to 0 \]
+	is exact. Hence, the composition
+	\[ FH^i(C^\bullet) \to F\coker(d^{i-1}) \xrightarrow{\cong} \coker(Fd^{i-1}) \to F\im(d^i) \to \im(Fd^i) \]
+	is zero, and so the first arrow factors uniquely through the kernel of $\coker(Fd^{i-1}) \to \im(Fd^i)$, which is $H^i(FC^\bullet)$, i.e. we get the desired map $\alpha : FH^i(C^\bullet) \to H^i(FC^\bullet)$. \\
+	
+	Now, suppose $F$ is left-exact instead. We dualize the above arguments. First, the exactness of
+	\[ 0 \to \ker(d^i) \to C^i \xrightarrow{d^i} C^{i+1} \]
+	gives the exactness of
+	\[ 0 \to F\ker(d^i) \to FC^i \xrightarrow{Fd^i} FC^{i+1} \]
+	so that $F\ker(d^i) = \ker(Fd^i)$. Next, applying $F$ to the exact sequence
+	\[ 0 \to \ker(d^i) \to C^i \to \im(C^i) \to 0 \]
+	gives the exact sequence
+	\[ 0 \to F\ker(d^i) \to FC^i \to F\im(d^i) \]
+	Thus this composition is zero so the latter map factors through the cokernel of the first. Combined with the above isomorphism, this gives a map $\im(Fd^i) \to F\im(d^i)$. Finally, the exactness of
+	\[ 0 \to \im(d^{i-1}) \to \ker(d^i) \to H^i(C^\bullet) \to 0 \]
+	gives that
+	\[ 0 \to F\im(d^{i-1}) \to F\ker(d^i) \to FH^i(C^\bullet) \]
+	is exact. Thus,
+	\[ \im(Fd^{i-1}) \to F\im(d^{i-1}) \to F\ker(d^i) \xrightarrow{\cong} \ker(Fd^i) \to FH^i(C^\bullet) \]
+	is zero and so the last arrow factors through the cokernel of $\im(Fd^{i-1} \to \ker(Fd^i)$, which is $H^i(FC^\bullet)$, i.e. we get a map $\beta : H^i(FC^\bullet) \to FH^i(C^\bullet)$ as claimed. \\
+	
+	Finally, suppose $F$ is exact. To show that $\alpha \circ \beta$ is the identity on $H^i(FC^\bullet), it suffices to show this after precomposition by the epimorphism $\ker(Fd^i) \to H^i(FC^\bullet)$ and postcomposition by the monomorphism $H^i(FC^\bullet) \to \coker(Fd^{i-1})$. So, we're studying the composition
+	\[ \ker(Fd^i) \to FH^i(C^\bullet) \to \coker(Fd^{i-1}) \]
+	By using the kernel and cokernel isomorphisms established above, this is the same as $F(\ker(d^i) \to \coker(d^{i-1})) = (H^i(FC^\bullet) \to \coker(Fd^{i-1})) \circ (\ker(Fd^i) \to H^i(FC^\bullet))$, as needed. To show that $\beta \circ \alpha$ is the identity, note first that $q : F\ker(d^i) \to FH^i(C^\bullet)$ is epic by the exactness of $F$, and similarly $g : FH^i(C^\bullet) \to F\coker(d^{i-1})$ is monic. Writing $q' : F\ker(d^i) \cong \ker(Fd^i) \to H^i(FC^\bullet)$ and $g' : H^i(FC^\bullet) \to \coker(Fd^{i-1}) \cong F\coker(d^{i-1})$, we get the factorizations $q = \beta \circ q'$ and $g = g' \circ \alpha$. Thus,
+	\[ g \circ (\beta \circ \alpha) \circ q = g' \circ \alpha \circ \beta \circ \alpha \circ \beta \circ q' = g' \circ \alpha \circ \beta \circ q' = g \circ q \]
+	which completes the argument.
+\end{proof}
+
+\mtexe{1.6.I}
+\begin{proof}
+	This is a corollary of the following exercise \prob{1.6.J}. Specifically,
+\end{proof}
+
+\mtexe{1.6.J}
+\begin{proof}
+	Let $\scI,\scJ$ be index categories, and consider the product category $\scI \times \scJ$ with objects given by pairs of objects $(i,j)$ for $i$ an object of $\scI$ and $j$ an object of $\scJ$, morphisms $(f,g)$ with $f : i \to i'$ a map in $\scI$ and $g : j \to j'$ a map in $\scJ$, and composition done coordinatewise. Suppose we have a functor $F : \scI \times \scJ \to \scC$. Then, for each object $i \in \scI$, we get a functor $F_i : \scJ \to \scC$ given by $F_i(j) = F(i,j)$ and $F_i(g) = F(\id_i,g)$. Suppose that each $F_i$ has a limit $\lim F_i \in \scC$ with projection maps $\pi_{i,j} : \lim F_i \to F_i(j)$ for each $j \in \scJ$. Then, we can associate to each object $i \in \scI$ the object $G(i) = \lim F_i$. Further, for a map $f : i \to i'$ in $\scI$, consider the maps $F(f,\id_j) \circ \pi_{i,j} : \lim F_i \to F(i',j)$. Then, if $g : j \to j'$ is any map in $\scJ$, we have
+	\[ F_{i'}(g) \circ F(f,\id_j) \circ \pi_{i,j} = F(\id_{i'},g) \circ F(f,\id_j) \circ \pi_{i,j} = F(f,g) \circ \pi_{i,j} = F(f,\id_{j'}) \circ F(\id_i,g) \circ \pi_{i,j} = F(f,\id_{j'}) \circ \pi_{i,j'} \]
+	which shows that the collection of maps is a cone over $F_{i'}$. Thus, we get a unique map $G(f) : \lim F_i \to \lim F_{i'}$ such that $F(f,\id_j) \circ \pi_{i,j} = \pi_{i',j} \circ G(f)$ for each $j$. I claim that $G : \scI \to \scC$ is a functor. Note that
+	\[ F(\id_i,\id_j) \circ \pi_{i,j} = \pi_{i,j} \circ \id_{\lim F_i} \]
+	which shows that $G(\id_i) = \id_{G(i)}$ by uniqueness. Also, given $f : i \to i'$ and $f' : i' \to i''$ in $\scI$, we have
+	\[ F(f' \circ f,\id_j) \circ \pi_{i,j} = F(f',\id_j) \circ F(f,\id_j) \circ \pi_{i,j} = F(f',\id_j) \circ \pi_{i',j} \circ G(f) = \pi_{i'',j} \circ G(f') \circ G(f) \]
+	which shows that $G(f' \circ f) = G(f') \circ G(f)$ as desired.
+	
+	Finally, the setup is complete, and I argue that $\lim G = \lim F$. That is, $F$ has a limit if and only if $G$ does, and any limit for one is a limit for the other (in the sense of objects: the morphisms will be explained below). Note that this essentially says we can compute limits ``stepwise,'' computing the limit for each $i$ first and computing the limit of those limits afterwards. By recognizing that $\scI \times \scJ \cong \scJ \times \scI$, we can compute the limits stepwise in either order, which also proves the statements that limits commute with other limits. With these remarks out of the way, we now proceed with the proof.
+	
+	Suppose first that $\lim G$ exists, with projections $p_i : \lim G \to \lim F_i$ for each $i \in \scI$. I claim that $\lim G$ equipped with the maps $\pi_{i,j} \circ p_i : \lim G \to F_i(j) = F(i,j)$ for each $(i,j) \in \scI \times \scJ$ is a limit of $F$. First, we show that this is a cone over $F$. Suppose we have a map $(f,g) : (i,j) \to (i',j')$ in $\scI \times \scJ$. Then,
+	\begin{align*}
+	F(f,g) \circ (\pi_{i,j} \circ p_i)
+		&= F(f,\id_{j'}) \circ F(\id_i,g) \circ \pi_{i,j} \circ p_i \\
+		&= F(f,\id_{j'}) \circ F_i(g) \circ \pi_{i,j} \circ p_i \\
+		&= F(f,\id_{j'}) \circ \pi_{i,j'} \circ p_i \\
+		&= \pi_{i',j'} \circ G(f) \circ p_i \\
+		&= \pi_{i',j'} \circ p_{i'}
+	\end{align*}
+	as desired. Lastly, we show it is a universal cone. Suppose we have an object $X \in \scC$ with maps $h_{i,j} : X \to F(i,j)$ for each $(i,j)$ such that $F(f,g) \circ h_{i,j} = h_{i',j'}$ for every $(f,g) : (i,j) \to (i',j')$. Notice that, for a fixed $i$ and any $g : j \to j'$, we have
+	\[ F_i(g) \circ h_{i,j} = F(\id_i,g) \circ h_{i,j} = h_{i,j'} \]
+	so that the collection of maps $\{h_{i,j}\}_{j \in \scJ}$ is a cone over $F_i$. Thus, we get a unique map $u_i : X \to \lim F_i$ with $h_{i,j} = \pi_{i,j} \circ u_i$. Then, note that for $f : i \to i'$, we have
+	\[ \pi_{i',j} \circ G(f) \circ u_i = F(f,\id_j) \circ \pi_{i,j} \circ u_i = F(f,\id_j) \circ h_{i,j} = h_{i',j} \]
+	By uniqueness, we conclude that $G(f) \circ u_i = u_{i'}$. In other words, the collection of maps $u_i$ forms a cone over $G$, and so we get a unique map $u : X \to \lim G$ such that $p_i \circ u = u_i$ for each $i$. Then,
+	\[ \pi_{i,j} \circ p_i \circ u = \pi_{i,j} \circ u_i = h_{i,j} \]
+	and so we've factored each $h_{i,j}$ through $u$ as needed. Finally, we need to see that $u$ is unique with this property. Suppose $u' : X \to \lim G$ is such that $\pi_{i,j} \circ p_i \circ u' = h_{i,j}$ for all $(i,j)$. The uniqueness of $u_i$ shows that $p_i \circ u' = u_i$, and the uniqueness of $u$ gives $u' = u$, completing the argument in this direction that $\lim G$ is a limit of $F$.
+	
+	Conversely, suppose now that $\lim F$ exists, with projections $q_{i,j} : \lim F \to F(i,j)$ for each $(i,j)$. Notice that for a fixed $i$ and any $g : j \to j'$, we have
+	\[ F_i(g) \circ q_{i,j} = F(\id_i,g) \circ q_{i,j} = q_{i,j'} \]
+	so that we have a cone over $F_i$, giving for each $i$ a unique map $v_i : \lim F \to \lim F_i$ satisfying $q_{i,j} = \pi_{i,j} \circ v_i$. I claim that $\lim F$, along with the maps $v_i$ is a limit of $G$. To see that it is a cone over $G$, note:
+	\[ \pi_{i',j} \circ G(f) \circ v_i = F(f,\id_j) \circ \pi_{i,j} \circ v_i = F(f,\id_j) \circ q_{i,j} = q_{i',j} \]
+	and so the uniqueness of $v_{i'}$ gives $v_{i'} = G(f) \circ v_i$. Next, we show it is a universal cone. Suppose we have an object $X \in \scC$ with maps $h_i : X \to G(i)$ for each $i$ such that $G(f) \circ h_i = h_{i'}$ for each $f : i \to i'$. Then, for any map $(f,g) : (i,j) \to (i',j')$:
+	\begin{align*}
+	F(f,g) \circ \pi_{i,j} \circ h_i
+		&= F(\id_{i'},g) \circ F(f,\id_j) \circ \pi_{i,j} \circ h_i \\
+		&= F_{i'}(g) \circ \pi_{i',j} \circ G(f) \circ h_i \\
+		&= \pi_{i',j'} \circ h_{i'}
+	\end{align*}
+	so that the collection $\pi_{i,j} \circ h_i$ is a cone over $F$. So, there is a unique map $v : X \to \lim F$ such that $\pi_{i,j} \circ h_i = q_{i,j} \circ v$. Then,
+	\[ \pi_{i,j} \circ v_i \circ v = q_{i,j} \circ v = \pi_{i,j} \circ h_i \]
+	Since $\lim F_i$ is a limit with projections $\pi_{i,j}$, uniqueness gives that $v_i \circ v = h_i$, i.e. $v$ factors each $h_i$ through the corresponding $v_i$. Finally, we show $v$ is unique with this property; suppose that $v_i \circ v' = h_i$ for each $i$. Then
+	\[ q_{i,j} \circ v' = \pi_{i,j} \circ v_i \circ v' = \pi_{i,j} \circ h_i \]
+	and so the uniqueness of $v$ gives $v' = v$, completing the proof entirely.
+\end{proof}
+
+\mtexe{1.6.}
 \begin{proof}
 \end{proof}
 
