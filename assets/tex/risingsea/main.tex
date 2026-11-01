@@ -922,7 +922,29 @@ Note: This last part of the proof could be simplified if we prove that the unive
 
 \mtexe{1.6.I}
 \begin{proof}
-	This is a corollary of the following exercise \prob{1.6.J}. Specifically,
+	This is a corollary of the following exercise \prob{1.6.J}. Specifically, let $\scI$ be the given index category, and let $\scJ$ be the category with exactly three objects and two nonidentity morphisms:
+	\[ \begin{tikzcd} & z \arrow[d,"v"] \\ x \arrow[r,"u"] & y \end{tikzcd} \]
+	Then, we define $F : \scI \times \scJ \to \scC$ by $F(i,x) = a(i)$, $F(i,y) = b(i)$, and $F(i,z) = 0$ on objects. On morphisms, we define:
+	\begin{align*}
+		F(f,\id_x) &= a(f) \\
+		F(f,\id_y) &= b(f) \\
+		F(f,\id_z) &= 0 \\
+		F(f,u) &= b(f) \circ h_i & \text{where }f \in \Hom(i,i') \\
+		F(f,v) &= 0 \\
+	\end{align*}
+	Then $F$ is a functor. Indeed, it is clear that $F$ sends identity maps to identity maps, recalling that $\id_0 = 0$ in an abelian category. It also respects compositions, which we verify exhaustively for arbitrary morphisms $f : i' \to i''$ and $g : i \to i'$:
+	\begin{align*}
+		F(f \circ g,\id_x \circ \id_x) &= a(f \circ g) = a(f) \circ a(g) = F(f,\id_x) \circ F(g,\id_x) \\
+		F(f \circ g,\id_y \circ \id_y) &= b(f \circ g) = b(f) \circ b(g) = F(f,\id_y) \circ F(g,\id_y) \\
+		F(f \circ g,\id_y \circ u) &= b(f \circ g) \circ h_i = b(f) \circ b(g) \circ h_i = F(f,\id_y) \circ F(g,u) \\
+		F(f \circ g,\id_y \circ v) &= 0 = b(f) \circ 0 = F(f,\id_y) \circ F(g,v) \\
+		F(f \circ g,\id_z \circ \id_z) &= 0 = 0 \circ 0 = F(f,\id_z) \circ F(g,\id_z) \\
+		F(f \circ g,u \circ \id_x) &= b(f \circ g) \circ h_i = b(f) \circ b(g) \circ h_i = b(f) \circ h_{i'} \circ a(g) = F(f,u) \circ F(g,\id_x) \\
+		F(f \circ g,v \circ \id_z) &= 0 = F(f,v) \circ 0 = F(f,v) \circ F(g,\id_z)
+	\end{align*}
+	Note that we have essentially used the fact that $h$ is natural here. In the notation of the following exercise, $F_i$ is the diagram:
+	\[ \begin{tikzcd} & 0 \arrow[d] \\ A_i \arrow[r,"h_i"] & B_i \end{tikzcd} \]
+	and so $\lim F_i = \ker(h_i)$ exists. Since we've assumed $\lim \ker h_i$ exists, we now know that $\lim G$ exists, again using the notation of the following exercise. Hence, $F$ also has this object as a limit. On the other hand, it is clear that $\ker(\lim A_i \to \lim B_i)$ is also a limit for $F$, completing the argument that $\ker(\lim A_i \to \lim B_i) \cong \lim \ker h_i$.
 \end{proof}
 
 \mtexe{1.6.J}
@@ -935,7 +957,7 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	\[ F(f' \circ f,\id_j) \circ \pi_{i,j} = F(f',\id_j) \circ F(f,\id_j) \circ \pi_{i,j} = F(f',\id_j) \circ \pi_{i',j} \circ G(f) = \pi_{i'',j} \circ G(f') \circ G(f) \]
 	which shows that $G(f' \circ f) = G(f') \circ G(f)$ as desired.
 	
-	Finally, the setup is complete, and I argue that $\lim G = \lim F$. That is, $F$ has a limit if and only if $G$ does, and any limit for one is a limit for the other (in the sense of objects: the morphisms will be explained below). Note that this essentially says we can compute limits ``stepwise,'' computing the limit for each $i$ first and computing the limit of those limits afterwards. By recognizing that $\scI \times \scJ \cong \scJ \times \scI$, we can compute the limits stepwise in either order, which also proves the statements that limits commute with other limits. With these remarks out of the way, we now proceed with the proof.
+	Finally, the setup is complete, and I argue that $\lim G = \lim F$. That is, $F$ has a limit if and only if $G$ does, and any limit for one is a limit for the other (in the sense of objects: the morphisms will be explained below). Note that this essentially says we can compute limits ``stepwise,'' computing the limit for each $i$ first and computing the limit of those limits afterwards. By recognizing that $\scI \times \scJ \cong \scJ \times \scI$, we can compute the limits stepwise in either order, which also proves the statements that limits commute with other limits. There is a small note to be made, which is that the setup also requires each $F_i$ to have a limit; such statements can often be fulfilled in practice by specific knowledge of the categories $\scI,\scJ,\scC$ (e.g. completeness and size considerations). With these remarks out of the way, we now proceed with the proof.
 	
 	Suppose first that $\lim G$ exists, with projections $p_i : \lim G \to \lim F_i$ for each $i \in \scI$. I claim that $\lim G$ equipped with the maps $\pi_{i,j} \circ p_i : \lim G \to F_i(j) = F(i,j)$ for each $(i,j) \in \scI \times \scJ$ is a limit of $F$. First, we show that this is a cone over $F$. Suppose we have a map $(f,g) : (i,j) \to (i',j')$ in $\scI \times \scJ$. Then,
 	\begin{align*}
@@ -972,37 +994,20 @@ Note: This last part of the proof could be simplified if we prove that the unive
 	and so the uniqueness of $v$ gives $v' = v$, completing the proof entirely.
 \end{proof}
 
+\mtexe{1.6.K}
+\begin{proof}
+	As noted, taking colimits commutes with taking cokernels, so it is automatically right-exact. So, we would like to show that if we begin with injections $f_i : M_i \to N_i$ for each $i$ in a filtered index category, then
+	\[ \colim_i M_i \xrightarrow{f} \colim_i N_i \]
+	is injective. So, suppose we have an element of the kernel, which we represent as an equivalence class $\overline{(m,i)}$ with $m \in M_i$. Then, we have
+	\[ 0 = f\left(\overline{(m,i)}\right) = \overline{(f_i(m),i)} \]
+	so that there is some map $\lambda : i \to i'$ in the index category giving $N_\lambda : N_i \to N_{i'}$ such that $N_\lambda(f_i(m)) = 0$. But then
+	\[ f_{i'}(M_\lambda(m)) = N_\lambda(f_i(m)) = 0 \]
+	and $f_{i'}$ is injective, so $M_\lambda(m) = 0$, whence $\overline{(m,i)} = 0$.
+\end{proof}
+
 \mtexe{1.6.}
 \begin{proof}
 \end{proof}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

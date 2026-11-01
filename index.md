@@ -8,7 +8,7 @@ title: Home
 [Personal Message](https://docs.google.com/forms/d/e/1FAIpQLSfZYKXpQ05JjhMZjeAKn2WVTH5-M_zR_uot5u0m9_4SOLlsSA/viewform?usp=sf_link)  
 Office: JWB 314
 
-My current students are probably looking for the information [here](#teaching).
+My current students are probably looking for the information [here](teaching).
 
 ---
 
@@ -32,25 +32,9 @@ I am a queer mathematician, musician, activist, and dancer interested in buildin
 
 ## Teaching
 
-### Tutoring
+If you're one of my current or past students, you're probably looking for the information [here](teaching).
 
-I do personalized in-person tutoring. For more information, [click here](tutoring).
-
-### Current courses
-
-N/A
-
-### Previous courses
-
-* Fall 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
-* Summer 2025 - [&#x21B7;Mathematics Program for High School Students](https://www.math.utah.edu/high-school-program/summerhsp.php)
-* Spring 2025 - University of Utah MATH 1220: [Syllabus](assets/pdf/2025_1220_syllabus.pdf)
-* Fall 2024 - University of Utah MATH 1210: [Syllabus](assets/pdf/2024_1210_syllabus.pdf)
-* Summer 2024 - [&#x21B7;pre-REU: Expanding circle maps, digit expansions and topological Markov chains](https://www.math.utah.edu/~vinhage/prereu24/materials/)
-* Spring 2024 - University of Utah MATH 2210: [Syllabus](assets/pdf/2024_2210_syllabus.pdf)
-* Summer 2023 - University of Utah MATH 3210: [Syllabus](assets/pdf/2023_3210_syllabus.pdf)
-* Spring 2023 - University of Utah MATH 1320
-* Fall 2022 - University of Utah MATH 1320
+I also do personalized in-person tutoring. For more information, [click here](tutoring).
 
 ## Research
 
